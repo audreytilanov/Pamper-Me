@@ -8,4 +8,9 @@ class Register extends BaseController
     {
         return view('register/register');
     }
+
+    public function verifikasi()
+    {
+        return view('register/verifikasi');
+    }
 }
