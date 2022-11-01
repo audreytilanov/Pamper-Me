@@ -21,7 +21,7 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
   </head>
-  <body class="font-sans">
+  <body class="font-sans text-[#18181B]">
     <?= $this->include('layout/navbar') ?>
     <?= $this->renderSection('content') ?>
   </body>

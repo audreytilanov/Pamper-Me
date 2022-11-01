@@ -1,5 +1,5 @@
 <!-- Navbar Start -->
-<header class="bg-[#ffffff]">
+<header class="bg-[#ffffff] fixed w-full">
   <div class="relative z-20 px-3 lg:px-[80px] lg:px-[80px] py-[16px]">
     <nav class="md:flex md:items-center md:justify-between">
       <div class="flex justify-between items-center">
@@ -59,7 +59,7 @@
           >
         </li>
         <div class="flex">
-          <button
+          <button 
             class="border-2 border-pink-500 px-[16px] py-[6px] rounded-[8px] font-semibold"
           >
             Masuk
