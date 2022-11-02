@@ -37,12 +37,20 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 // Register
-$routes->get('/register', 'Register::index');
-$routes->get('/login', 'Login::index');
-$routes->get('/register/verifikasi', 'Register::verifikasi');
+$routes->get('/register', 'Register::index', ['as' => 'user.register']);
+$routes->post('/register/save', 'Register::save', ['as' => 'user.register.save']);
+$routes->get('/login', 'Login::index', ['as' => 'user.login']);
+$routes->post('/login/auth', 'Login::authLogin', ['as' => 'user.login.auth']);
+$routes->get('/register/verifikasi', 'Register::verifikasi', ['as' => 'user.account.verifikasi']);
 
 // Homepage
 $routes->get('/', 'Homepage::index');
+
+//Logged In
+
+$routes->group('user', ['filter' => 'auth'], static function ($routes) {
+    $routes->get('dashboard', 'Login::dashboard');
+});
 
 /*
  * --------------------------------------------------------------------

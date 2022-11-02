@@ -34,7 +34,7 @@
 
     <!-- Start Forms -->
     <div class="pt-[32px]">
-      <form class="">
+      <form method="post" action="/login/auth" class="">
         <h1 class="font-bold text-3xl">Masuk Akun Pamper Me</h1>
         <div class="py-[32px]">
           <div class="mb-4">
@@ -49,6 +49,7 @@
               id="namaOrangTua"
               type="text"
               placeholder="Masukkan nama orang tua"
+              name="email"
             />
           </div>
           <div class="mb-4">
@@ -63,18 +64,19 @@
               id="password"
               type="password"
               placeholder="Masukkan Password"
+              name="password"
             />
           </div>
           <div class="flex items-center justify-between">
             <button
               class="w-full bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
+              type="submit"
             >
               Membuat Akun
             </button>
           </div>
           <div class="flex justify-center mt-4 text-gray-400">
-            Belum punya akun? <span> <a href="register" class="text-blue-500 font-semibold">Daftar</a> </span> 
+            Belum punya akun? <span> <a href="/register" class="text-blue-500 font-semibold">Daftar</a> </span> 
           </div>
         </div>
       </form>

@@ -59,16 +59,18 @@
           >
         </li>
         <div class="flex">
-          <button 
+          <a 
+          href="<?= url_to('user.login') ?>"
             class="border-2 border-pink-500 px-[16px] py-[6px] rounded-[8px] font-semibold"
           >
             Masuk
-          </button>
-          <button
+          </a>
+          <a
+          href="<?= url_to('user.register') ?>"
             class="bg-pink-500 px-[16px] rounded-[8px] font-semibold text-white ml-2"
           >
             Daftar
-          </button>
+          </a>
         </div>
       </ul>
     </nav>

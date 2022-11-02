@@ -34,7 +34,7 @@
 
     <!-- Start Forms -->
     <div class="pt-[32px]">
-      <form class="">
+      <form method="post" action="/register/save">
         <h1 class="font-bold text-3xl">Daftar Pamper Me</h1>
         <div class="py-[32px]">
           <div class="mb-4">
@@ -49,20 +49,7 @@
               id="namaOrangTua"
               type="text"
               placeholder="Masukkan nama orang tua"
-            />
-          </div>
-          <div class="mb-4">
-            <label
-              class="block text-gray-700 text-sm font-bold mb-2"
-              for="alamatRumah"
-            >
-              Alamat Rumah
-            </label>
-            <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="alamatRumah"
-              type="text"
-              placeholder="Masukkan alamat rumah"
+              name="nama_orangtua"
             />
           </div>
           <div class="mb-4">
@@ -77,6 +64,7 @@
               id="email"
               type="text"
               placeholder="Masukkan email"
+              name="email"
             />
           </div>
           <div class="mb-4">
@@ -84,13 +72,14 @@
               class="block text-gray-700 text-sm font-bold mb-2"
               for="wa"
             >
-              No WA
+              Nomor Whatsapp
             </label>
             <input
               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="wa"
               type="text"
               placeholder="Masukkan nomor WA"
+              name="no_whatsapp"
             />
           </div>
           <div class="mb-4">
@@ -105,16 +94,15 @@
               id="password"
               type="password"
               placeholder="Masukkan Password"
+              name="password"
             />
           </div>
           <div class="flex items-center justify-between">
             <button
               class="w-full bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
+              type="submit"
             >
-              <a href="/register/verifikasi">
                 Membuat Akun
-              </a>
             </button>
           </div>
           <div class="flex justify-center mt-4 text-gray-400">

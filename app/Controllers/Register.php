@@ -2,15 +2,52 @@
 
 namespace App\Controllers;
 
+use App\Models\OrangtuaModel;
+
 class Register extends BaseController
 {
     public function index()
     {
-        return view('register/register');
+        helper(['form']);
+        $data = [];
+        return view('register/register', $data);
     }
 
     public function verifikasi()
     {
         return view('register/verifikasi');
+    }
+
+    public function save()
+    {
+        helper(['form']);
+        $rules = [
+            // 'id_orangtua',
+            'nama_orangtua' => 'required|min_length[3]',
+            'email'         => 'required|min_length[6]|valid_email|is_unique[tb_orangtua.email]',
+            'no_whatsapp'   => 'required|min_length[8]|max_length[14]|is_unique[tb_orangtua.no_whatsapp]',
+            'password'      => 'required|min_length[6]'
+            // 'tgl_daftar'    => 'required',
+            // 'status_pendaftaran',
+            // 'link_foto',
+            // 'status_aktif'
+        ];
+         
+        if($this->validate($rules)){
+            $model = new OrangtuaModel();
+            $data = [
+                'nama_orangtua'     => $this->request->getVar('nama_orangtua'),
+                'email'    => $this->request->getVar('email'),
+                'no_whatsapp'    => $this->request->getVar('no_whatsapp'),
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+                'status_aktif' => 1
+            ];
+            $model->save($data);
+            return redirect()->to('/register/verifikasi');
+        }else{
+            $data['validation'] = $this->validator;
+            return view('register/register', $data);
+        }
+         
     }
 }
