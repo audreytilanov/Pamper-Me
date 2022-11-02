@@ -6,7 +6,11 @@
     <img class="h-screen w-full object-cover" src="/images/babyBanner.png" alt="">
 </div>
 
+
 <div class="px-[80px] py-[64px]">
+
+  <!-- Start Kategori -->
+  <div>
     <h1 class="font-bold text-[40px]">
         Layanan Treatment
     </h1>
@@ -119,6 +123,105 @@
             </button>
           </div>
     </div>
+  </div>
+  <!-- End Kategori -->
+
+    <!-- Start Cards -->
+      <div class="pt-[24px] grid grid-cols-4 gap-[24px]">
+        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+          <img class="rounded-t-xl" src="/images/legBaby.png" alt="">
+          <div class="py-[16px] px-[24px]">
+            <h3 class="font-bold text-sm">
+              Precious Baby Massage
+            </h3>
+            <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+              Rp.130,000/40 menit
+            </h3>
+          </div>
+        </div>
+        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+          <img class="rounded-t-xl" src="/images/legBaby.png" alt="">
+          <div class="py-[16px] px-[24px]">
+            <h3 class="font-bold text-sm">
+              Precious Baby Massage
+            </h3>
+            <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+              Rp.130,000/40 menit
+            </h3>
+          </div>
+        </div>
+        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+          <img class="rounded-t-xl" src="/images/legBaby.png" alt="">
+          <div class="py-[16px] px-[24px]">
+            <h3 class="font-bold text-sm">
+              Precious Baby Massage
+            </h3>
+            <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+              Rp.130,000/40 menit
+            </h3>
+          </div>
+        </div>
+        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+          <img class="rounded-t-xl" src="/images/legBaby.png" alt="">
+          <div class="py-[16px] px-[24px]">
+            <h3 class="font-bold text-sm">
+              Precious Baby Massage
+            </h3>
+            <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+              Rp.130,000/40 menit
+            </h3>
+          </div>
+        </div>
+        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+          <img class="rounded-t-xl" src="/images/legBaby.png" alt="">
+          <div class="py-[16px] px-[24px]">
+            <h3 class="font-bold text-sm">
+              Precious Baby Massage
+            </h3>
+            <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+              Rp.130,000/40 menit
+            </h3>
+          </div>
+        </div>
+        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+          <img class="rounded-t-xl" src="/images/legBaby.png" alt="">
+          <div class="py-[16px] px-[24px]">
+            <h3 class="font-bold text-sm">
+              Precious Baby Massage
+            </h3>
+            <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+              Rp.130,000/40 menit
+            </h3>
+          </div>
+        </div>
+        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+          <img class="rounded-t-xl" src="/images/legBaby.png" alt="">
+          <div class="py-[16px] px-[24px]">
+            <h3 class="font-bold text-sm">
+              Precious Baby Massage
+            </h3>
+            <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+              Rp.130,000/40 menit
+            </h3>
+          </div>
+        </div>
+        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+          <img class="rounded-t-xl" src="/images/legBaby.png" alt="">
+          <div class="py-[16px] px-[24px]">
+            <h3 class="font-bold text-sm">
+              Precious Baby Massage
+            </h3>
+            <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+              Rp.130,000/40 menit
+            </h3>
+          </div>
+        </div>
+      </div>
+    <!-- End Cards -->
+    
 </div>
+
+
+
 
 <?= $this->endSection() ?>
