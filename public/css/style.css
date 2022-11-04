@@ -10,3 +10,7 @@ h2 span {
   background: #fff;
   padding: 0 10px;
 }
+
+* {
+  font-family: "Nunito", sans-serif;
+}

@@ -67,7 +67,7 @@
           </a>
           <a
           href="<?= url_to('user.register') ?>"
-            class="bg-pink-500 px-[16px] rounded-[8px] font-semibold text-white ml-2"
+            class="bg-pink-500 px-[16px] rounded-[8px] px-[16px] py-[6px] rounded-[8px] font-semibold text-white ml-2"
           >
             Daftar
           </a>

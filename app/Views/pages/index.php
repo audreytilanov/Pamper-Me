@@ -11,7 +11,7 @@
 
   <!-- Start Kategori -->
   <div>
-    <h1 class="font-bold text-[40px]">
+    <h1 class="font-bold text-[40px] font-n">
         Layanan Treatment
     </h1>
     <div class="pt-[24px]">
