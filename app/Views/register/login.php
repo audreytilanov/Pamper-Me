@@ -16,6 +16,7 @@
         </div>
         <h2 class="border-pink-500"></h2>
         <div class="flex">
+        <div class="flex">
           <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
           <div class="ml-2 font-semibold text-base text-pink-500">
             Verifikasi
