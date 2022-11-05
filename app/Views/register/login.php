@@ -1,4 +1,4 @@
-<?= $this->extend('layoutRegister/page_layout') ?>
+<?= $this->extend('layoutRegister/pageLayout') ?>
 
 <?= $this->section('content') ?>
 
@@ -6,29 +6,8 @@
   <div class="px-[80px]">
     <!-- Start Navbar & Logo -->
     <div class="pt-[32px]">
-      <img src="/images/logo.png" alt="" />
+      <a href="/"><img src="/images/logo.png" alt="" /></a>
       <div class="w-[480px] flex justify-between items-center mt-[32px]">
-        <!-- <div class="flex">
-          <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
-          <div class="text-pink-500 ml-2 font-semibold text-base">
-            Daftar akun
-          </div>
-        </div>
-        <h2 class="border-pink-500"></h2>
-        <div class="flex">
-        <div class="flex">
-          <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
-          <div class="ml-2 font-semibold text-base text-pink-500">
-            Verifikasi
-          </div>
-        </div>
-        <h2 class="border-gray-400"></h2>
-        <div class="flex">
-          <img class="w-[20px] h-[20px]" src="/icons/nonCheck.png" alt="" />
-          <div class="text-gray-400 ml-2 font-semibold text-base">
-            Masuk Akun
-          </div>
-        </div> -->
       </div>
     </div>
     <!-- End Navbar & Logo -->

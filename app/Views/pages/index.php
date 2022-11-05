@@ -1,4 +1,4 @@
-<?= $this->extend('layout/page_layout') ?>
+<?= $this->extend('layout/pageLayout') ?>
 
 <?= $this->section('content') ?>
 
@@ -13,10 +13,10 @@
 
   <!-- Start Menu Select -->
   <div class="flex justify-center">
-    <div
-      class="flex justify-center items-end flex-row p-[24px] absolute bottom-[50px] bg-white gap-[32px] rounded-lg"
-    >
-      <div class="flex flex-row justify-center items-end gap-[40px]">
+    <div class="flex justify-center items-end flex-row p-[24px] absolute bottom-[50px] bg-white gap-[32px] rounded-lg">
+      
+    <!-- Start Services -->
+    <div class="flex flex-row justify-center items-end gap-[40px]">
         <div class="flex flex-col justify-between flex-start h-[90px]">
           <h1 class="text-lg font-bold">Service</h1>
           <div class="flex justify-center">
@@ -35,9 +35,12 @@
           </div>
         </div>
       </div>
+      <!-- End Services -->
+
+      <!-- Start Tanggal -->
       <div class="flex flex-row justify-center items-end gap-[40px]">
         <div class="flex flex-col justify-between flex-start h-[90px]">
-          <h1 class="text-lg font-bold">Select Date</h1>
+          <h1 class="text-lg font-bold">Tanggal</h1>
           <div class="flex justify-center">
             <div class="flex items-center relative z-[2]">
               <div class="antialiased">
@@ -292,6 +295,9 @@
           </div>
         </div>
       </div>
+      <!-- End Tanggal -->
+
+      <!-- Start Jam -->
       <div class="flex flex-row justify-center items-end gap-[40px]">
         <div class="flex flex-col justify-between flex-start h-[90px]">
           <h1 class="text-lg font-bold">Waktu</h1>
@@ -328,11 +334,14 @@
           </div>
         </div>
       </div>
-      <a href="<?= url_to('user.register') ?>"
-            class="border-2 border-pink-500  bg-pink-500 px-[80px] py-[6px] rounded-[8px] font-semibold text-white text-base"
-          >
-            Cari
-          </a>
+      <!-- End Jam -->
+
+      <a
+        href="<?= url_to('user.register') ?>"
+        class="border-2 border-pink-500 bg-pink-500 px-[80px] py-[6px] rounded-[8px] font-semibold text-white text-base"
+      >
+        Cari
+      </a>
     </div>
   </div>
   <!-- End Menu Select -->
@@ -340,8 +349,11 @@
 <!-- End image baby -->
 
 <div class="px-[80px] py-[64px]">
+
   <!-- Start Kategori -->
   <div>
+
+    <!-- Start Layanan -->
     <h1 class="font-bold text-[40px]">Layanan Treatment</h1>
     <div class="pt-[24px]">
       <h1 class="font-bold text-[14px]">Cabang / Lokasi :</h1>
@@ -366,6 +378,9 @@
         </button>
       </div>
     </div>
+    <!-- End Layanan -->
+
+    <!-- Start Services -->
     <div class="pt-[24px]">
       <h1 class="font-bold text-[14px]">Services</h1>
       <div class="flex items-center justify-between w-[280px] pt-[10px]">
@@ -389,6 +404,9 @@
         </button>
       </div>
     </div>
+    <!-- End Services -->
+
+    <!-- Start Kategori -->
     <div class="pt-[24px]">
       <h1 class="font-bold text-[14px]">Kategori</h1>
       <div class="flex items-center justify-between w-[450px] pt-[10px]">
@@ -424,6 +442,8 @@
         </button>
       </div>
     </div>
+    <!-- End Start Kategori -->
+
   </div>
   <!-- End Kategori -->
 

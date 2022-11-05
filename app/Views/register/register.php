@@ -1,12 +1,13 @@
-<?= $this->extend('layoutRegister/page_layout') ?>
+<?= $this->extend('layoutRegister/pageLayout') ?>
 
 <?= $this->section('content') ?>
 
 <div class="grid gap-4 grid-cols-2">
   <div class="px-[80px]">
+
     <!-- Start Navbar & Logo -->
     <div class="pt-[32px]">
-      <img src="/images/logo.png" alt="" />
+      <a href="/"><img src="/images/logo.png" alt="" /></a>
       <div class="w-[480px] flex justify-between items-center mt-[32px]">
         <div class="flex">
           <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />

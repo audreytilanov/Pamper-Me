@@ -45,4 +45,8 @@ class Login extends BaseController
     public function dashboard(){
         return view('pages/dashboard');
     }
+
+    public function dashboardEdit(){
+        return view('pages/dashboardEdit');
+    }
 }

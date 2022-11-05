@@ -47,10 +47,16 @@ $routes->get('/register/verifikasi', 'Register::verifikasi', ['as' => 'user.acco
 $routes->get('/', 'Homepage::index');
 
 //Logged In
-
 $routes->group('user', ['filter' => 'auth'], static function ($routes) {
     $routes->get('dashboard', 'Login::dashboard');
 });
+
+// Loggin Test
+$routes->get('/dashboard', 'Login::dashboard');
+
+// Dashboard Edit
+$routes->get('/dashboard/edit', 'Login::dashboardEdit');
+
 
 /*
  * --------------------------------------------------------------------

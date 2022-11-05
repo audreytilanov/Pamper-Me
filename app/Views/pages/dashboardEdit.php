@@ -8,12 +8,20 @@
     <div class="grid grid-cols-2 gap-[24px]">
         <div class="flex flex-col items-start gap-[32px]">
             <div class="flex flex-col items-start gap-[8px]">
-                <h1 class="font-bold text-5xl mt-[50px]">Detail Akun</h1>
+                <h1 class="font-bold text-5xl mt-[50px]">Edit Akun</h1>
                 <p class="text-base ml-[4px]">Di sini kamu bisa mengatur detail akunmu.</p>
             </div>
             <div class="p-[40px] border border-zinc-900 w-full flex flex-col items-start gap-[32px] rounded-lg">
-                <div class="flex flex-col items-start gap-[40px]">
+                <div class="flex flex-col items-start gap-[8px]">
                     <img class="w-[190px] h-[190px] object-cover rounded-lg" src="/images/dashboardLogo.png" alt="">
+                    <div>
+                        <label class="flex flex-row gap-[8px] items-center px-[8px] py-[8px] bg-white text-blue rounded-md tracking-wide bg-yellow-400 cursor-pointer">
+                            <img src="/icons/image.svg" alt="">
+                            <span class="text-base leading-normal text-white">Ganti Gambar</span>
+                            <input type='file' class="hidden" />
+                        </label>
+                        
+                    </div>
                     <div class="flex flex-col items-start gap-[8px]">
                         <h1 class="text-2xl font-semibold">Kurt Cobain</h1>
                         <div class="flex flex-row items-center gap-[16px]">
@@ -45,7 +53,7 @@
                     <h3 class="w-full text-xl">Ubah password :</h3>
                     <div class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-xl">*********</div>
                 </div>
-                <a href="/dashboard/edit" class="border-2 border-pink-500  bg-pink-500 px-[40px] py-[8px] rounded-[8px] font-semibold text-white text-lg">
+                <a href="<?= url_to('user.register') ?>" class="border-2 border-pink-500  bg-pink-500 px-[40px] py-[8px] rounded-[8px] font-semibold text-white text-lg">
                     Edit Data Diri
                 </a>
             </div>
