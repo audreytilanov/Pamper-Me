@@ -27,6 +27,7 @@ class Login extends BaseController
                     'user_id_orangtua'       => $data['id_orangtua'],
                     'user_name'     => $data['nama_orangtua'],
                     'user_email'    => $data['email'],
+                    'no_whatsapp'    => $data['no_whatsapp'],
                     'status_pendaftaran' => $data['status_pendaftaran'],
                     'logged_in'     => TRUE
                 ];
@@ -43,10 +44,29 @@ class Login extends BaseController
     }
 
     public function dashboard(){
-        return view('pages/dashboard');
+        $session = session();
+        $model = new OrangtuaModel();
+        $data = $model->where('id_orangtua', $session->get('user_id_orangtua'))->first();
+        // var_dump($data);
+        // $data = $session->get('user_name');
+        return view('pages/dashboard', $data);
     }
 
     public function dashboardEdit(){
-        return view('pages/dashboardEdit');
+        $session = session();
+        $model = new OrangtuaModel();
+        $data = $model->where('id_orangtua', $session->get('user_id_orangtua'))->first();
+        return view('pages/dashboardEdit', $data);
+    }
+
+    public function update($id){
+        $data = new OrangtuaModel();
+        $data->update($id, [
+            'nama_orangtua'     => $this->request->getVar('nama_orangtua'),
+            'email'    => $this->request->getVar('email'),
+            'no_whatsapp'    => $this->request->getVar('no_whatsapp'),
+        ]);
+
+        return redirect()->to('/user/dashboard')->with('success', 'Data Berhasil Diperbaharui');
     }
 }

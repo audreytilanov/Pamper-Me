@@ -1,6 +1,7 @@
 <?= $this->extend('layout/pageLayoutLogin') ?>
 
 <?= $this->section('content') ?>
+<?php $session = session() ?>
 
 <!-- Start User Dashboard -->
 <div class="px-[80px] py-[64px]">
@@ -23,7 +24,7 @@
               alt=""
             />
             <div class="flex flex-col items-start gap-[8px]">
-              <h1 class="text-2xl font-semibold">Kurt Cobain</h1>
+              <h1 class="text-2xl font-semibold"><?= $nama_orangtua; ?></h1>
               <div class="flex flex-row items-center gap-[16px]">
                 <img class="" src="/icons/maps.svg" alt="" />
                 <p>Kab. Badung, Bali</p>
@@ -36,10 +37,10 @@
           <div
             class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
-            Kurt Cobain
+            <?= $nama_orangtua; ?>
           </div>
         </div>
-        <div class="flex flex-row items-start w-full items-center">
+        <!-- <div class="flex flex-row items-start w-full items-center">
           <h3 class="w-full text-base">Alamat :</h3>
           <div
             class="flex flex-row items-center gap-[16px] py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
@@ -47,21 +48,21 @@
             <img class="" src="/icons/maps.svg" alt="" />
             <p>Kab. Badung, Bali</p>
           </div>
-        </div>
+        </div> -->
         <div class="flex flex-row items-start w-full items-center">
           <h3 class="w-full text-base">Email :</h3>
           <div
             class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
-            kurt@gmail.com
+          <?= $email; ?>
           </div>
         </div>
         <div class="flex flex-row items-start w-full items-center">
-          <h3 class="w-full text-base">No WA :</h3>
+          <h3 class="w-full text-base">No Whatsapp :</h3>
           <div
             class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
-            0819219212929
+          <?= $no_whatsapp; ?>
           </div>
         </div>
         <div class="flex flex-row items-start w-full items-center">
@@ -73,7 +74,7 @@
           </div>
         </div>
         <a
-          href="/dashboard/edit"
+          href="<?= url_to('user.dashboard.edit') ?>"
           class="border-2 border-pink-500 bg-pink-500 px-[40px] py-[8px] rounded-[8px] font-semibold text-white text-base"
         >
           Edit Data Diri

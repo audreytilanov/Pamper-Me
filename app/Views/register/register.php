@@ -36,6 +36,7 @@
     <!-- Start Forms -->
     <div class="pt-[32px]">
       <form method="post" action="/register/save">
+      <?= csrf_field(); ?>
         <h1 class="font-bold text-3xl">Daftar Pamper Me</h1>
         <div class="py-[32px]">
           <div class="mb-4">

@@ -39,23 +39,26 @@ $routes->set404Override();
 // Register
 $routes->get('/register', 'Register::index', ['as' => 'user.register']);
 $routes->post('/register/save', 'Register::save', ['as' => 'user.register.save']);
-$routes->get('/login', 'Login::index', ['as' => 'user.login']);
 $routes->post('/login/auth', 'Login::authLogin', ['as' => 'user.login.auth']);
 $routes->get('/register/verifikasi', 'Register::verifikasi', ['as' => 'user.account.verifikasi']);
 
 // Homepage
 $routes->get('/', 'Homepage::index');
 
+$routes->group('', ['filter' => 'redirectlogin'], static function ($routes) {
+    // Dashboard User
+    $routes->get('/login', 'Login::index', ['as' => 'user.login']);
+}); 
+
 //Logged In
 $routes->group('user', ['filter' => 'auth'], static function ($routes) {
+    // Dashboard User
     $routes->get('dashboard', 'Login::dashboard');
+    $routes->get('dashboard/edit', 'Login::dashboardEdit', ['as' => 'user.dashboard.edit']);
+    $routes->add('dashboard/edit/(:segment)', 'Login::update/$1', ['as' => 'user.dashboard.update']);
+
 });
 
-// Loggin Test
-$routes->get('/dashboard', 'Login::dashboard');
-
-// Dashboard Edit
-$routes->get('/dashboard/edit', 'Login::dashboardEdit');
 
 
 /*

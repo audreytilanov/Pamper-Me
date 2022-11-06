@@ -27,10 +27,6 @@ class Register extends BaseController
             'email'         => 'required|min_length[6]|valid_email|is_unique[tb_orangtua.email]',
             'no_whatsapp'   => 'required|min_length[8]|max_length[14]|is_unique[tb_orangtua.no_whatsapp]',
             'password'      => 'required|min_length[6]'
-            // 'tgl_daftar'    => 'required',
-            // 'status_pendaftaran',
-            // 'link_foto',
-            // 'status_aktif'
         ];
          
         if($this->validate($rules)){
@@ -48,6 +44,5 @@ class Register extends BaseController
             $data['validation'] = $this->validator;
             return view('register/register', $data);
         }
-         
     }
 }
