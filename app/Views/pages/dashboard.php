@@ -32,49 +32,49 @@
           </div>
         </div>
         <div class="flex flex-row items-start w-full items-center">
-          <h3 class="w-full text-xl">Nama orang tua :</h3>
+          <h3 class="w-full text-base">Nama orang tua :</h3>
           <div
-            class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-xl"
+            class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
             Kurt Cobain
           </div>
         </div>
         <div class="flex flex-row items-start w-full items-center">
-          <h3 class="w-full text-xl">Alamat :</h3>
+          <h3 class="w-full text-base">Alamat :</h3>
           <div
-            class="flex flex-row items-center gap-[16px] py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-xl"
+            class="flex flex-row items-center gap-[16px] py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
             <img class="" src="/icons/maps.svg" alt="" />
             <p>Kab. Badung, Bali</p>
           </div>
         </div>
         <div class="flex flex-row items-start w-full items-center">
-          <h3 class="w-full text-xl">Email :</h3>
+          <h3 class="w-full text-base">Email :</h3>
           <div
-            class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-xl"
+            class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
             kurt@gmail.com
           </div>
         </div>
         <div class="flex flex-row items-start w-full items-center">
-          <h3 class="w-full text-xl">No WA :</h3>
+          <h3 class="w-full text-base">No WA :</h3>
           <div
-            class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-xl"
+            class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
             0819219212929
           </div>
         </div>
         <div class="flex flex-row items-start w-full items-center">
-          <h3 class="w-full text-xl">Ubah password :</h3>
+          <h3 class="w-full text-base">Ubah password :</h3>
           <div
-            class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-xl"
+            class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
             *********
           </div>
         </div>
         <a
           href="/dashboard/edit"
-          class="border-2 border-pink-500 bg-pink-500 px-[40px] py-[8px] rounded-[8px] font-semibold text-white text-lg"
+          class="border-2 border-pink-500 bg-pink-500 px-[40px] py-[8px] rounded-[8px] font-semibold text-white text-base"
         >
           Edit Data Diri
         </a>

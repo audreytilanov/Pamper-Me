@@ -1,5 +1,5 @@
 <!-- Navbar Start -->
-<header class="bg-[#ffffff] fixed w-full z-50">
+<header class="bg-[#ffffff] fixed w-full z-50 shadow-md">
   <div class="relative z-20 px-3 lg:px-[80px] lg:px-[80px] py-[16px]">
     <nav class="md:flex md:items-center md:justify-between">
       <div class="flex justify-between items-center">
