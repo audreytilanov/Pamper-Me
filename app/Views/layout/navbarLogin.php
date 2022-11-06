@@ -63,7 +63,7 @@
           href="<?= url_to('user.login') ?>"
             class=""
           >
-          <img class="rounded-full object-cover" src="/images/userLogin.png" alt="">
+          <img class="rounded-full object-cover w-[48px] h-[48px]" src="/images/dashboardLogo.png" alt="">
           </a>
         </div>
       </ul>
