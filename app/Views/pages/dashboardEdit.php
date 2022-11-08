@@ -56,7 +56,7 @@
               id="default-modal"
               data-modal-show="fasle"
               aria-hidden="fasle"
-              class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center"
+              class="hidden overflow-x-hidden overflow-y-auto z-50 fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center"
             >
               <div
                 class="relative w-full max-w-2xl px-4 h-full md:h-auto flex justify-center"
@@ -122,7 +122,7 @@
             <!-- End Modal -->
           </div>
         </div>
-        <form action="<?= base_url('user/dashboard/edit/'. $session->get('user_id')) ?>" method="POST">
+        <form class="w-full flex flex-col gap-[24px] items-start" action="<?= base_url('user/dashboard/edit/'. $session->get('user_id')) ?>" method="POST">
         <?= csrf_field(); ?>
           <div class="flex flex-row items-start w-full items-center">
             <h3 class="w-full text-base">Nama orang tua :</h3>
@@ -230,7 +230,5 @@
   </div>
 </div>
 <!-- End User Dashboard -->
-
-<script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
 
 <?= $this->endSection() ?>

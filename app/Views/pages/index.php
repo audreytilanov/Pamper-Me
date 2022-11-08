@@ -4,7 +4,7 @@
 
 <!-- Start image baby -->
 
-<div class="relative z-10">
+<div>
   <img
     class="h-screen w-full object-cover"
     src="/images/babyBanner.png"
@@ -13,10 +13,11 @@
 
   <!-- Start Menu Select -->
   <div class="flex justify-center">
-    <div class="flex justify-center items-end flex-row p-[24px] absolute bottom-[50px] bg-white gap-[32px] rounded-lg">
-      
-    <!-- Start Services -->
-    <div class="flex flex-row justify-center items-end gap-[40px]">
+    <div
+      class="flex justify-center items-end flex-row p-[24px] absolute bottom-[50px] bg-white gap-[32px] rounded-lg"
+    >
+      <!-- Start Services -->
+      <div class="flex flex-row justify-center items-end gap-[40px]">
         <div class="flex flex-col justify-between flex-start h-[90px]">
           <h1 class="text-lg font-bold">Service</h1>
           <div class="flex justify-center">
@@ -336,12 +337,84 @@
       </div>
       <!-- End Jam -->
 
-      <a
-        href="<?= url_to('user.register') ?>"
-        class="border-2 border-pink-500 bg-pink-500 px-[80px] py-[6px] rounded-[8px] font-semibold text-white text-base"
+      <!-- Start Cari -->
+      <button
+        class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+        type="button"
+        data-modal-toggle="default-modal"
       >
+        
         Cari
-      </a>
+      </button>
+
+      <!-- Start Modal -->
+      <div
+        id="default-modal"
+        data-modal-show="true"
+        aria-hidden="true"
+        class="hidden overflow-x-hidden overflow-y-auto z-50 fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center"
+      >
+        <div
+          class="relative w-full px-4 h-full md:h-auto flex justify-center"
+        >
+          <!-- Modal content -->
+          <div class="bg-white rounded-lg shadow relative w-full">
+            <!-- Modal header -->
+            <div class="flex items-start justify-between p-5 rounded-t">
+              <button
+                type="button"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-toggle="default-modal"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="p-6 space-y-6">
+              <h3
+                class="text-gray-900 text-base lg:text-2xl font-semibold text-center"
+              >
+                Silahkan Pilih Layanan
+              </h3>
+            </div>
+
+            <!-- Modal footer -->
+            <div
+              class="flex space-x-2 items-center justify-center p-6 rounded-b dark:border-gray-600"
+            >
+              <button
+                data-modal-toggle="default-modal"
+                type="button"
+                class="text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+              >
+                Iya, benar
+              </button>
+              <button
+                data-modal-toggle="default-modal"
+                type="button"
+                class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600"
+              >
+                Tidak, batal
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Modal -->
+      <!-- End cari -->
+
     </div>
   </div>
   <!-- End Menu Select -->
@@ -349,10 +422,8 @@
 <!-- End image baby -->
 
 <div class="px-[80px] py-[64px]">
-
   <!-- Start Kategori -->
   <div>
-
     <!-- Start Layanan -->
     <h1 class="font-bold text-[40px]">Layanan Treatment</h1>
     <div class="pt-[24px]">
@@ -443,7 +514,6 @@
       </div>
     </div>
     <!-- End Start Kategori -->
-
   </div>
   <!-- End Kategori -->
 
@@ -524,5 +594,8 @@
   </div>
   <!-- End Cards -->
 </div>
+
+<!-- Flowbite Tailwind -->
+<script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
 
 <?= $this->endSection() ?>
