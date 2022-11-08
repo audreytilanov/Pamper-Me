@@ -33,17 +33,17 @@
           </div>
           <div class="flex flex-row justify-start gap-[8px]">
             <label
-              class="flex flex-row gap-[8px] items-center text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-800 cursor-pointer"
+              class="flex flex-row gap-[4px] items-center text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-[8px] py-[8px] text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-800 cursor-pointer"
               type="button"
             >
               <img src="/icons/image.svg" alt="" />
-              <span class="text-base leading-normal text-white"
+              <span class="text-sm leading-normal text-zinc-900 font-semibold"
                 >Ganti Gambar</span
               >
               <input type="file" class="hidden" />
             </label>
             <button
-              class="flex flex-row gap-[8px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
               type="button"
               data-modal-toggle="default-modal"
             >

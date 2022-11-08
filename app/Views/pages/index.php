@@ -595,7 +595,5 @@
   <!-- End Cards -->
 </div>
 
-<!-- Flowbite Tailwind -->
-<script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
 
 <?= $this->endSection() ?>
