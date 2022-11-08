@@ -56,7 +56,6 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
     $routes->get('dashboard', 'Login::dashboard');
     $routes->get('dashboard/edit', 'Login::dashboardEdit', ['as' => 'user.dashboard.edit']);
     $routes->add('dashboard/edit/(:segment)', 'Login::update/$1', ['as' => 'user.dashboard.update']);
-
 });
 
 
