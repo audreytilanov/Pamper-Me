@@ -32,7 +32,7 @@
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
-            href=""
+            href="scan-barcode"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >Scan Barcode</a
           >
