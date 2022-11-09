@@ -20,8 +20,9 @@
           <div class="flex flex-row gap-[24px] items-center">
             <img
               class="w-[190px] h-[190px] object-cover rounded-lg"
-              src="/images/dashboardLogo.png"
-              alt=""
+              id="ajaxImgUpload" 
+              alt="Preview Image" 
+              src="https://via.placeholder.com/300"
             />
             <div class="flex flex-col items-start gap-[8px]">
               <h1 class="text-2xl font-semibold"><?= $nama_orangtua; ?></h1>
@@ -38,10 +39,23 @@
             >
               <img src="/icons/image.svg" alt="" />
               <span class="text-base leading-normal text-white"
-                >Ganti Gambar</span
-              >
-              <input type="file" class="hidden" />
-            </label>
+                >Ganti Gambar</span>
+                
+              <input type="file" class="hidden" id="finput" onchange="onFileUpload(this);" name="image" accept="image/*"/>
+              </label>
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+              <script>
+                  function onFileUpload(input, id) {
+                      id = id || '#ajaxImgUpload';
+                      if (input.files && input.files[0]) {
+                          var reader = new FileReader();
+                          reader.onload = function (e) {
+                              $(id).attr('src', e.target.result).width(300)
+                          };
+                          reader.readAsDataURL(input.files[0]);
+                      }
+                  }
+              </script>
             <button
               class="flex flex-row gap-[8px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
               type="button"
