@@ -34,7 +34,7 @@
           </div>
           <div class="flex flex-row justify-start gap-[8px]">
             <label
-              class="flex flex-row gap-[8px] items-center text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-800 cursor-pointer"
+              class="flex flex-row gap-[4px] items-center text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-[8px] py-[8px] text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-800 cursor-pointer"
               type="button"
             >
               <img src="/icons/image.svg" alt="" />
@@ -57,7 +57,7 @@
                   }
               </script>
             <button
-              class="flex flex-row gap-[8px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
               type="button"
               data-modal-toggle="default-modal"
             >
@@ -70,7 +70,7 @@
               id="default-modal"
               data-modal-show="fasle"
               aria-hidden="fasle"
-              class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center"
+              class="hidden overflow-x-hidden overflow-y-auto z-50 fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center"
             >
               <div
                 class="relative w-full max-w-2xl px-4 h-full md:h-auto flex justify-center"
@@ -136,7 +136,7 @@
             <!-- End Modal -->
           </div>
         </div>
-        <form action="<?= base_url('user/dashboard/edit/'. $session->get('user_id')) ?>" method="POST">
+        <form class="w-full flex flex-col gap-[24px] items-start" action="<?= base_url('user/dashboard/edit/'. $session->get('user_id')) ?>" method="POST">
         <?= csrf_field(); ?>
           <div class="flex flex-row items-start w-full items-center">
             <h3 class="w-full text-base">Nama orang tua :</h3>
@@ -244,7 +244,5 @@
   </div>
 </div>
 <!-- End User Dashboard -->
-
-<script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
 
 <?= $this->endSection() ?>

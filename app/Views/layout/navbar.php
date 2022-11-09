@@ -1,5 +1,5 @@
 <!-- Navbar Start -->
-<header class="bg-[#ffffff] fixed w-full z-50 shadow-md">
+<header class="bg-[#ffffff] fixed w-full z-40 shadow-md">
   <div class="relative z-20 px-3 lg:px-[80px] lg:px-[80px] py-[16px]">
     <nav class="md:flex md:items-center md:justify-between">
       <div class="flex justify-between items-center">
@@ -25,14 +25,14 @@
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
-            href=""
+            href="/data-anak"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >Data Anak</a
           >
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
-            href=""
+            href="scan-barcode"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >Scan Barcode</a
           >

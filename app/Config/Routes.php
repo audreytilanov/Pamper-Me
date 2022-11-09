@@ -45,6 +45,14 @@ $routes->get('/register/verifikasi', 'Register::verifikasi', ['as' => 'user.acco
 // Homepage
 $routes->get('/', 'Homepage::index');
 
+// Data Anak
+$routes->get('/data-anak', 'DataAnak::index');
+$routes->get('/data-anak/tambah', 'DataAnak::tambah');
+$routes->get('/data-anak/edit', 'DataAnak::edit');
+
+// Scan Barcode
+$routes->get('/scan-barcode', 'ScanBarcode::index');
+
 $routes->group('', ['filter' => 'redirectlogin'], static function ($routes) {
     // Dashboard User
     $routes->get('/login', 'Login::index', ['as' => 'user.login']);
