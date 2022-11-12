@@ -94,3 +94,8 @@ $routes->get('/keranjang', 'Keranjang::index');
 
 // lihat antrian
 $routes->get('/lihat-antrian', 'LihatAntrian::index');
+
+// lihat antrian
+$routes->get('/checkout', 'Checkout::index');
+$routes->get('/checkout/bayar', 'Checkout::bayar');
+$routes->get('/checkout/metode', 'Checkout::metode');
