@@ -347,12 +347,7 @@
       </button>
 
       <!-- Start Modal -->
-      <div
-        id="default-modal"
-        data-modal-show="fasle"
-        aria-hidden="fasle"
-        class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center"
-      >
+      <div id="default-modal" data-modal-show="fasle" aria-hidden="fasle" class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center" >
         <div class="relative h-full md:h-auto flex justify-center">
           <!-- Modal content -->
           <div class="bg-white rounded-lg shadow relative w-full top-[600px]">
@@ -392,7 +387,10 @@
                   <!-- Start Kelamin -->
                   <div class="flex flex-col flex-start w-[40%] gap-[8px]">
                     <div class="flex justify-center w-full">
-                      <div class="flex items-center relative z-[2] w-full">
+                      <div class="flex items-start flex-col relative z-[2] w-full gap-[8px]">
+                      <h3 class="font-bold text-2xl">
+                        Pilih nama anak :
+                      </h3>
                         <select
                           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                           aria-label="Default select example"
