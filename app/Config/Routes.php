@@ -63,6 +63,7 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
     $routes->post('data-anak/tambah', 'DataAnak::save', ['as' => 'user.anak.save']);
     $routes->get('data-anak/edit/(:segment)', 'DataAnak::edit/$1', ['as' => 'user.anak.edit']);
     $routes->post('data-anak/edit/(:segment)', 'DataAnak::update/$1', ['as' => 'user.dashboard.update']);
+    $routes->post('data-anak/delete/(:segment)', 'DataAnak::delete/$1', ['as' => 'user.dashboard.delete']);
 
 
     // Scan Barcode
