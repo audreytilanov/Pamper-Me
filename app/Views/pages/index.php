@@ -343,24 +343,16 @@
         type="button"
         data-modal-toggle="default-modal"
       >
-        
         Cari
       </button>
 
       <!-- Start Modal -->
-      <div
-        id="default-modal"
-        data-modal-show="true"
-        aria-hidden="true"
-        class="hidden overflow-x-hidden overflow-y-auto z-50 fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center"
-      >
-        <div
-          class="relative w-full px-4 h-full md:h-auto flex justify-center"
-        >
+      <div id="default-modal" data-modal-show="fasle" aria-hidden="fasle" class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center" >
+        <div class="relative h-full md:h-auto flex justify-center">
           <!-- Modal content -->
-          <div class="bg-white rounded-lg shadow relative w-full">
+          <div class="bg-white rounded-lg shadow relative w-full top-[600px]">
             <!-- Modal header -->
-            <div class="flex items-start justify-between p-5 rounded-t">
+            <div class="flex items-start justify-between px-5 pt-5 rounded-t">
               <button
                 type="button"
                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -384,37 +376,261 @@
             <!-- Modal body -->
             <div class="p-6 space-y-6">
               <h3
-                class="text-gray-900 text-base lg:text-2xl font-semibold text-center"
+                class="text-gray-900 text-base lg:text-2xl font-bold text-center"
               >
                 Silahkan Pilih Layanan
               </h3>
+
+              <!--  -->
+              <div class="flex flex-col gap-[40px] items-start">
+                <div class="flex flex-col gap-[40px] items-start w-full border-b-4 pb-[40px]">
+                  <!-- Start Kelamin -->
+                  <div class="flex flex-col flex-start w-[40%] gap-[8px]">
+                    <div class="flex justify-center w-full">
+                      <div class="flex items-start flex-col relative z-[2] w-full gap-[8px]">
+                      <h3 class="font-bold text-2xl">
+                        Pilih nama anak :
+                      </h3>
+                        <select
+                          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                          aria-label="Default select example"
+                        >
+                          <option selected>Pilih Nama Anak</option>
+                          <option value="1">Jack Hermanson</option>
+                          <option value="2">Khamzat</option>
+                        </select>
+                        <img
+                          class="absolute right-[20px]"
+                          src="/icons/down.svg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Kelamin -->
+
+                  <!-- Keranjang -->
+                  <div class="flex flex-col flex-start gap-[8px]">
+                    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                      <img
+                        class="rounded-t-xl"
+                        src="/images/legBaby.png"
+                        alt=""
+                      />
+                      <div class="py-[16px] px-[24px]">
+                        <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                        <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+                          Rp.130,000/40 menit
+                        </h3>
+                        <button
+                          class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                          type="button"
+                        >
+                          + Keranjang
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Keranjang -->
+
+                  <!-- Start Tanggal  -->
+                  <div class="flex flex-col flex-start gap-[8px]">
+                    <h1 class="text-xl font-bold">Tanggal :</h1>
+                    <div
+                      class="flex flex-col items-center gap-[4px] px-[16px] py-[8px] bg-pink-500 text-white rounded-md"
+                    >
+                      <h3
+                        class="flex flex-start flex-row px-[24px] py-[10px] bg-pink-600 font-bold rounded-md"
+                      >
+                        Okt
+                      </h3>
+                      <h3>Hari ini</h3>
+                      <h3>18</h3>
+                    </div>
+                  </div>
+                  <!-- End Tanggal -->
+
+                  <!-- Start Layanan  -->
+                  <div class="flex flex-col flex-start gap-[8px]">
+                    <h1 class="text-xl font-bold">Blissful Baby Swim :</h1>
+                    <div class="flex flex-row flex-start gap-[16px]">
+                      <button
+                        class="bg-red-500 text-white font-semibold hover:text-white py-2 px-4 border border-pink hover:border-transparent rounded-md"
+                      >
+                        12:00 - 13:00
+                      </button>
+                      <button
+                        class="bg-transparent hover:bg-pink-500 text-pink-dark font-semibold hover:text-white py-2 px-4 border border-pink hover:border-transparent rounded-md"
+                      >
+                        12:00 - 13:00
+                      </button>
+                      <button
+                        class="bg-transparent hover:bg-pink-500 text-pink-dark font-semibold hover:text-white py-2 px-4 border border-pink hover:border-transparent rounded-md"
+                      >
+                        12:00 - 13:00
+                      </button>
+                      <button
+                        class="bg-transparent hover:bg-pink-500 text-pink-dark font-semibold hover:text-white py-2 px-4 border border-pink hover:border-transparent rounded-md"
+                      >
+                        12:00 - 13:00
+                      </button>
+                      <button
+                        class="bg-transparent hover:bg-pink-500 text-pink-dark font-semibold hover:text-white py-2 px-4 border border-pink hover:border-transparent rounded-md"
+                      >
+                        12:00 - 13:00
+                      </button>
+                    </div>
+                  </div>
+                  <!-- End Layanan -->
+                </div>
+
+                <!-- Start Cards -->
+                <div>
+                  <h3 class="text-gray-900 text-base lg:text-2xl font-bold">
+                    Silahkan Pilih Layanan
+                  </h3>
+                  <div class="pt-[16px] grid grid-cols-3 gap-[24px]">
+                    <div class="flex flex-col flex-start gap-[8px]">
+                      <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                        <img
+                          class="rounded-t-xl"
+                          src="/images/legBaby.png"
+                          alt=""
+                        />
+                        <div class="py-[16px] px-[24px]">
+                          <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                          <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+                            Rp.130,000/40 menit
+                          </h3>
+                          <button
+                            class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                            type="button"
+                          >
+                            + Keranjang
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col flex-start gap-[8px]">
+                      <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                        <img
+                          class="rounded-t-xl"
+                          src="/images/legBaby.png"
+                          alt=""
+                        />
+                        <div class="py-[16px] px-[24px]">
+                          <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                          <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+                            Rp.130,000/40 menit
+                          </h3>
+                          <button
+                            class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                            type="button"
+                          >
+                            + Keranjang
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col flex-start gap-[8px]">
+                      <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                        <img
+                          class="rounded-t-xl"
+                          src="/images/legBaby.png"
+                          alt=""
+                        />
+                        <div class="py-[16px] px-[24px]">
+                          <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                          <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+                            Rp.130,000/40 menit
+                          </h3>
+                          <button
+                            class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                            type="button"
+                          >
+                            + Keranjang
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col flex-start gap-[8px]">
+                      <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                        <img
+                          class="rounded-t-xl"
+                          src="/images/legBaby.png"
+                          alt=""
+                        />
+                        <div class="py-[16px] px-[24px]">
+                          <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                          <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+                            Rp.130,000/40 menit
+                          </h3>
+                          <button
+                            class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                            type="button"
+                          >
+                            + Keranjang
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col flex-start gap-[8px]">
+                      <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                        <img
+                          class="rounded-t-xl"
+                          src="/images/legBaby.png"
+                          alt=""
+                        />
+                        <div class="py-[16px] px-[24px]">
+                          <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                          <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+                            Rp.130,000/40 menit
+                          </h3>
+                          <button
+                            class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                            type="button"
+                          >
+                            + Keranjang
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col flex-start gap-[8px]">
+                      <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                        <img
+                          class="rounded-t-xl"
+                          src="/images/legBaby.png"
+                          alt=""
+                        />
+                        <div class="py-[16px] px-[24px]">
+                          <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                          <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+                            Rp.130,000/40 menit
+                          </h3>
+                          <button
+                            class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                            type="button"
+                          >
+                            + Keranjang
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Cards -->
+              </div>
             </div>
 
             <!-- Modal footer -->
             <div
               class="flex space-x-2 items-center justify-center p-6 rounded-b dark:border-gray-600"
-            >
-              <button
-                data-modal-toggle="default-modal"
-                type="button"
-                class="text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
-              >
-                Iya, benar
-              </button>
-              <button
-                data-modal-toggle="default-modal"
-                type="button"
-                class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600"
-              >
-                Tidak, batal
-              </button>
-            </div>
+            ></div>
           </div>
         </div>
       </div>
       <!-- End Modal -->
       <!-- End cari -->
-
     </div>
   </div>
   <!-- End Menu Select -->
@@ -594,6 +810,5 @@
   </div>
   <!-- End Cards -->
 </div>
-
 
 <?= $this->endSection() ?>
