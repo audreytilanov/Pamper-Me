@@ -349,8 +349,8 @@
       <!-- Start Modal -->
       <div
         id="default-modal"
-        data-modal-show="true"
-        aria-hidden="true"
+        data-modal-show="fasle"
+        aria-hidden="fasle"
         class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center"
       >
         <div class="relative h-full md:h-auto flex justify-center">
