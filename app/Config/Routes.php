@@ -87,3 +87,9 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+
+// keranjang
+$routes->get('/keranjang', 'Keranjang::index');
+
+// lihat antrian
+$routes->get('/lihat-antrian', 'LihatAntrian::index');
