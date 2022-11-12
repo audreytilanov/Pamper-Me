@@ -25,13 +25,13 @@
               <select
                 class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                 aria-label="Default select example"
-              >
+              > 
                 <option selected>Silahkan pilih layanan</option>
                 <option value="1">Play Ground</option>
                 <option value="2">Spa</option>
                 <option value="3">Salon</option>
               </select>
-              <img class="absolute right-0" src="/icons/down.svg" alt="" />
+              <img class="absolute right-0 z-[3]" src="/icons/down.svg" alt="" />
             </div>
           </div>
         </div>

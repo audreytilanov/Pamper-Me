@@ -53,6 +53,9 @@ $routes->get('/data-anak/edit', 'DataAnak::edit');
 // Lihat Antrian
 $routes->get('/lihat-antrian', 'LihatAntrian::index');
 
+// Keranjang
+$routes->get('/keranjang', 'Keranjang::index');
+
 // Scan Barcode
 $routes->get('/scan-barcode', 'ScanBarcode::index');
 

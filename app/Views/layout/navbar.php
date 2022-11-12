@@ -11,7 +11,7 @@
       <ul class="md:flex bg-[#ffffff] md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
         <li class="mx-4 my-6 md:my-0">
           <a
-            href=""
+            href="/"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >Buat Reservasi</a
           >
@@ -39,7 +39,7 @@
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
-            href=""
+            href="/keranjang"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >Keranjang</a
           >
