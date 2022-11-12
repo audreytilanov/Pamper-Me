@@ -45,14 +45,6 @@ $routes->get('/register/verifikasi', 'Register::verifikasi', ['as' => 'user.acco
 // Homepage
 $routes->get('/', 'Homepage::index');
 
-// Data Anak
-$routes->get('/data-anak', 'DataAnak::index');
-$routes->get('/data-anak/tambah', 'DataAnak::tambah');
-$routes->get('/data-anak/edit', 'DataAnak::edit');
-
-// Scan Barcode
-$routes->get('/scan-barcode', 'ScanBarcode::index');
-
 $routes->group('', ['filter' => 'redirectlogin'], static function ($routes) {
     // Dashboard User
     $routes->get('/login', 'Login::index', ['as' => 'user.login']);
@@ -64,6 +56,17 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
     $routes->get('dashboard', 'Login::dashboard');
     $routes->get('dashboard/edit', 'Login::dashboardEdit', ['as' => 'user.dashboard.edit']);
     $routes->add('dashboard/edit/(:segment)', 'Login::update/$1', ['as' => 'user.dashboard.update']);
+
+    // Data Anak
+    $routes->get('data-anak', 'DataAnak::index', ['as' => 'user.anak.index']);
+    $routes->get('data-anak/tambah', 'DataAnak::tambah', ['as' => 'user.anak.add']);
+    $routes->post('data-anak/tambah', 'DataAnak::save', ['as' => 'user.anak.save']);
+    $routes->get('data-anak/edit/(:segment)', 'DataAnak::edit/$1', ['as' => 'user.anak.edit']);
+    $routes->post('data-anak/edit/(:segment)', 'DataAnak::update/$1', ['as' => 'user.dashboard.update']);
+
+
+    // Scan Barcode
+    $routes->get('/scan-barcode', 'ScanBarcode::index');
 });
 
 

@@ -12,6 +12,8 @@ if (version_compare(PHP_VERSION, $minPhpVersion, '<')) {
     exit($message);
 }
 
+require_once '../vendor/autoload.php';
+
 // Path to the front controller (this file)
 define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
 

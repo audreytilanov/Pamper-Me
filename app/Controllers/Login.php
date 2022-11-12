@@ -59,44 +59,44 @@ class Login extends BaseController
                 . '|max_dims[userfile,1024,768]',
             ],
         ];
-        if (! $this->validate($validationRule)) {
-            $data = ['errors' => $this->validator->getErrors()];
+        // if (! $this->validate($validationRule)) {
+        //     $data = ['errors' => $this->validator->getErrors()];
 
-            return view('upload_form', $data);
-        }
+        //     return view('upload_form', $data);
+        // }
 
-        $img = $this->request->getFile('userfile');
-        if (! $img->hasMoved()) {
-            $filepath = WRITEPATH . 'uploads/' . $img->store();
+        // $img = $this->request->getFile('userfile');
+        // if (! $img->hasMoved()) {
+        //     $filepath = WRITEPATH . 'uploads/' . $img->store();
 
-            $data = ['uploaded_flleinfo' => new File($filepath)];
+        //     $data = ['uploaded_flleinfo' => new File($filepath)];
 
-            // Inisiasi helper S3
-            $s3Client = new S3Client([
-                'version' => 'latest',
-                'region' => '',
-                'url' => '',
-                'use_path_style_endpoint' => true,
-                'endpoint' => 'https://s3.jagoanstorage.com',
-                'credentials' => [
-                    'key' => '{{access_key}}',
-                    'secret' => '{{secret_key}}'
-                ]
-            ]);
+        //     // Inisiasi helper S3
+        //     $s3Client = new S3Client([
+        //         'version' => 'latest',
+        //         'region' => '',
+        //         'url' => '',
+        //         'use_path_style_endpoint' => true,
+        //         'endpoint' => 'https://s3.jagoanstorage.com',
+        //         'credentials' => [
+        //             'key' => '{{access_key}}',
+        //             'secret' => '{{secret_key}}'
+        //         ]
+        //     ]);
 
-            $bucket = '{{nama_bucket_yang_kamu_buat}}';
-            $key = basename($filepath);
+        //     $bucket = '{{nama_bucket_yang_kamu_buat}}';
+        //     $key = basename($filepath);
 
-            try {
-                // Proses upload ke object storage dengan permission file public
-                $result = $s3Client->upload($bucket,$key,fopen($filepath, 'r'),'public-read');
-                $data = ['result' => $result->toArray()];
-                return view('upload_success', $data);
-            } catch (S3Exception $e) {
-                $data = ['errors' => $e->getMessage()];
-            }
+        //     try {
+        //         // Proses upload ke object storage dengan permission file public
+        //         $result = $s3Client->upload($bucket,$key,fopen($filepath, 'r'),'public-read');
+        //         $data = ['result' => $result->toArray()];
+        //         return view('upload_success', $data);
+        //     } catch (S3Exception $e) {
+        //         $data = ['errors' => $e->getMessage()];
+        //     }
 
-        }
+        // }
         $model = new OrangtuaModel();
         $data = $model->where('id_orangtua', $session->get('user_id_orangtua'))->first();
         // var_dump($data);
