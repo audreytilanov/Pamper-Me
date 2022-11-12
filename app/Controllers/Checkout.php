@@ -9,14 +9,14 @@ class Checkout extends BaseController
         return view('pages/checkout/checkout');
     }
 
+    public function metodeBayar()
+    {
+        return view('pages/checkout/metodeBayar');
+    }
+
     public function bayar()
     {
         return view('pages/checkout/bayar');
-    }
-
-    public function metode()
-    {
-        return view('pages/checkout/metode');
     }
 }
 

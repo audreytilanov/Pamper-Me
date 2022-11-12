@@ -97,5 +97,5 @@ $routes->get('/lihat-antrian', 'LihatAntrian::index');
 
 // lihat antrian
 $routes->get('/checkout', 'Checkout::index');
+$routes->get('/checkout/metode-bayar', 'Checkout::metodeBayar');
 $routes->get('/checkout/bayar', 'Checkout::bayar');
-$routes->get('/checkout/metode', 'Checkout::metode');

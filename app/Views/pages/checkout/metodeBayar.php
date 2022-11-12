@@ -44,7 +44,7 @@
             </div>
 
             <!-- Start VA -->
-            <a href="/checkout/metode" class="w-full">
+            <a href="/checkout/bayar" class="w-full">
               <div class="flex flex-row justify-between items-center w-full pb-[8px] border-b-2 text-zinc-500 hover:text-zinc-900">
                   <h3 class="font-bold">BCA Virtual Account</h3>
                   <div class="flex flew-row items-center gap-[16px]">
@@ -60,7 +60,7 @@
             <!-- End VA -->
 
             <!-- Start VA -->
-            <a href="/checkout/metode" class="w-full">
+            <a href="/checkout/bayar" class="w-full">
               <div class="flex flex-row justify-between items-center w-full pb-[8px] border-b-2 text-zinc-500 hover:text-zinc-900">
                   <h3 class="font-bold">Mandiri Virtual Account</h3>
                   <div class="flex flew-row items-center gap-[16px]">
@@ -76,7 +76,7 @@
             <!-- End VA -->
 
             <!-- Start VA -->
-            <a href="/checkout/metode" class="w-full">
+            <a href="/checkout/bayar" class="w-full">
               <div class="flex flex-row justify-between items-center w-full pb-[8px] border-b-2 text-zinc-500 hover:text-zinc-900">
                   <h3 class="font-bold">BNI Virtual Account</h3>
                   <div class="flex flew-row items-center gap-[16px]">
