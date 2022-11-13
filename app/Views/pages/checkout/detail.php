@@ -96,6 +96,77 @@
             </div>
           </div>
         </div>
+
+        <div
+          class="flex flex-col items-start px-[40px] py-[64px] rounded-lg drop-shadow-lg bg-white w-[759px] gap-[16px] border">
+          <h3 class="text-xl font-bold">Cara Pembayaran</h3>
+          <div class="flex flex-col items-start gap-[4px] w-full">
+            <section class="w-full">
+              <details class="mt-2 w-full">
+                <summary
+                  class="rounded-md py-2 px-4 w-full border-solid border-2 lg:text-base text-lg font-bold"
+                >
+                  ATM BCA
+                </summary>
+                <p
+                  class="py-2 px-4 border-solid border-2 rounded-md mt-2 lg:text-base text-sm text-zinc-500"
+                >
+                  Laboris qui labore cillum culpa in sunt quis sint veniam.
+                  Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
+                  minim velit nostrud pariatur culpa magna in aute.
+                </p>
+              </details>
+            </section>
+            <section class="w-full">
+              <details class="mt-2 w-full">
+                <summary
+                  class="rounded-md py-2 px-4 w-full border-solid border-2 lg:text-base text-lg font-bold"
+                >
+                m-BCA (BCA mobile)
+                </summary>
+                <p
+                  class="py-2 px-4 border-solid border-2 rounded-md mt-2 lg:text-base text-sm text-zinc-500"
+                >
+                  Laboris qui labore cillum culpa in sunt quis sint veniam.
+                  Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
+                  minim velit nostrud pariatur culpa magna in aute.
+                </p>
+              </details>
+            </section>
+            <section class="w-full">
+              <details class="mt-2 w-full">
+                <summary
+                  class="rounded-md py-2 px-4 w-full border-solid border-2 lg:text-base text-lg font-bold"
+                >
+                Internet Banking BCA
+                </summary>
+                <p
+                  class="py-2 px-4 border-solid border-2 rounded-md mt-2 lg:text-base text-sm text-zinc-500"
+                >
+                  Laboris qui labore cillum culpa in sunt quis sint veniam.
+                  Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
+                  minim velit nostrud pariatur culpa magna in aute.
+                </p>
+              </details>
+            </section>
+            <section class="w-full">
+              <details class="mt-2 w-full">
+                <summary
+                  class="rounded-md py-2 px-4 w-full border-solid border-2 lg:text-base text-lg font-bold"
+                >
+                Kantor Bank BCA
+                </summary>
+                <p
+                  class="py-2 px-4 border-solid border-2 rounded-md mt-2 lg:text-base text-sm text-zinc-500"
+                >
+                  Laboris qui labore cillum culpa in sunt quis sint veniam.
+                  Dolore ex aute deserunt esse ipsum elit aliqua. Aute quis
+                  minim velit nostrud pariatur culpa magna in aute.
+                </p>
+              </details>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
