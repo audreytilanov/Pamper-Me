@@ -65,7 +65,7 @@
             </div>
 
             <a
-              href=""
+              href="/checkout/detail"
               class="flex flex-row gap-[8px] items-center justify-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-base px-[80px] py-[12px] text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
             >
               Bayar

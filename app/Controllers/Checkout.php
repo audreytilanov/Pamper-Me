@@ -18,5 +18,10 @@ class Checkout extends BaseController
     {
         return view('pages/checkout/bayar');
     }
+
+    public function detail()
+    {
+        return view('pages/checkout/detail');
+    }
 }
 

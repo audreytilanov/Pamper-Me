@@ -98,8 +98,7 @@
 
       <!-- Start List Harga -->
       <div
-        class="flex items-start gap-[10px] py-[40px] px-[24px] drop-shadow-xl bg-white rounded-md"
-      >
+        class="flex items-start gap-[10px] py-[40px] px-[24px] drop-shadow-xl bg-white rounded-md">
         <div class="flex flex-col items-start gap-[24px]">
           <div
             class="flex flex-col items-start pb-[24px] gap-[24px] border-b-4"
