@@ -46,7 +46,7 @@
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
-            href=""
+            href="/my-order"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >My Order</a
           >
