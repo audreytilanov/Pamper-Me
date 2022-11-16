@@ -100,3 +100,6 @@ $routes->get('/checkout', 'Checkout::index');
 $routes->get('/checkout/metode-bayar', 'Checkout::metodeBayar');
 $routes->get('/checkout/bayar', 'Checkout::bayar');
 $routes->get('/checkout/detail', 'Checkout::detail');
+
+// myOrder
+$routes->get('/my-order/', 'MyOrder::index');
