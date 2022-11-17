@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\KategoriLayananModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
