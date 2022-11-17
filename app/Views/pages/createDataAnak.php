@@ -143,21 +143,15 @@
             >
               <div class="flex items-center relative z-[2] w-full py-2 px-3">
                 <div class="antialiased w-full">
-                  <div
-                    x-data="app()"
-                    x-init="[initDate(), getNoOfDays()]"
-                    x-cloak
-                  >
-                    <div class="w-full">
-                      <div class="relative">
-                        <input type="hidden" name="date" x-ref="date" />
-                        <div class="flex items-center w-full justify-between">
-                          <input
-                            required
-                            type="date"
-                            name="tanggal_lahir"
-                          />
-                        </div>
+                  <div class="w-full">
+                    <div class="relative">
+                      <input type="hidden" name="date" x-ref="date" />
+                      <div class="flex items-center w-full justify-between">
+                        <input
+                          required
+                          type="date"
+                          name="tanggal_lahir"
+                        />
                       </div>
                     </div>
                   </div>
