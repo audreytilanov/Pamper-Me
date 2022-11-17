@@ -249,8 +249,7 @@
           </div>
           <div class="w-full flex flex-col gap-[16px]">
             <div
-              class="flex items-center flex-row justify-between px-[16px] py-[10px] w-full bg-pink-100 border-2 border-pink-500 rounded-lg text-pink-500 font-bold text-sm"
-            >
+              class="flex items-center flex-row justify-between px-[16px] py-[10px] w-full bg-pink-100 border-2 border-pink-500 rounded-lg text-pink-500 font-bold text-sm">
               <p>Order Total</p>
               <p>Rp. 390,000</p>
             </div>

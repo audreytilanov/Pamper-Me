@@ -87,7 +87,7 @@
                   Ganti Metode Pembayaran
                 </a>
                 <a
-                  href=""
+                  href="/my-order"
                   class="border-2 border-pink-500 text-center bg-pink-500 px-[16px] py-[10px] rounded-[8px] font-semibold text-white ml-2 text-base w-full"
                 >
                   Lihat Daftar Pesanan

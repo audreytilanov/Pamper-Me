@@ -42,13 +42,13 @@
             </div>
             <!-- End Kelamin -->
           </div>
-          <a
-            href="/my-order/riwayat"
-            class="font-bold text-base text-pink-500 flex flex-row gap-[8px] items-center">
+          <div
+            class="font-bold text-base text-pink-500 flex flex-row gap-[8px] items-center"
+          >
             <img src="/icons/history.svg" alt="" />
             Riwayat pemesanan
           </div>
-          </a>
+        </div>
         <!-- End Filter -->
 
         <div class="flex flex-col items-start gap-[32px] w-full">
@@ -106,7 +106,8 @@
             </div>
             <div class="flex flex-row items-stretch gap-[8px]">
               <div
-                class="flex flex-row gap-[4px] items-center text-white bg-green-500 focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-[16px] py-[8px] text-center dark:focus:ring-green-600">
+                class="flex flex-row gap-[4px] items-center text-white bg-green-500 focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-[16px] py-[8px] text-center dark:focus:ring-green-600"
+              >
                 <svg
                   width="19"
                   height="19"
@@ -129,8 +130,6 @@
               <a
                 href="/my-order/lunas"
                 class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
-              
-                
               >
                 Details
               </a>
@@ -217,7 +216,6 @@
               <a
                 class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
                 href="/checkout/detail"
-                
               >
                 Details
               </a>
