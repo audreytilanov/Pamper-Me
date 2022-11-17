@@ -25,13 +25,43 @@
               <select
                 class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                 aria-label="Default select example"
-              > 
+              >
                 <option selected>Silahkan pilih layanan</option>
                 <option value="1">Play Ground</option>
                 <option value="2">Spa</option>
                 <option value="3">Salon</option>
               </select>
-              <img class="absolute right-0 z-[3]" src="/icons/down.svg" alt="" />
+              <img
+                class="absolute right-0 z-[3]"
+                src="/icons/down.svg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Services -->
+
+      <!-- Start Services -->
+      <div class="flex flex-row justify-center items-end gap-[40px]">
+        <div class="flex flex-col justify-between flex-start h-[90px]">
+          <h1 class="text-lg font-bold">Cabang</h1>
+          <div class="flex justify-center">
+            <div class="w-[200px] flex items-center relative z-[2]">
+              <select
+                class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
+                aria-label="Default select example"
+              >
+                <option selected>Silahkan pilih layanan</option>
+                <option value="1">Gianyar</option>
+                <option value="2">Renon</option>
+                <option value="3">Jimbaran</option>
+              </select>
+              <img
+                class="absolute right-0 z-[3]"
+                src="/icons/down.svg"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -345,9 +375,15 @@
       >
         Cari
       </button>
+      <!-- End Cari -->
 
       <!-- Start Modal -->
-      <div id="default-modal" data-modal-show="fasle" aria-hidden="fasle" class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center" >
+      <div
+        id="default-modal"
+        data-modal-show="fasle"
+        aria-hidden="fasle"
+        class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center"
+      >
         <div class="relative h-full md:h-auto flex justify-center">
           <!-- Modal content -->
           <div class="bg-white rounded-lg shadow relative w-full top-[600px]">
@@ -381,29 +417,32 @@
                 Silahkan Pilih Layanan
               </h3>
 
-              <!--  -->
+              <!-- start form  -->
               <div class="flex flex-col gap-[40px] items-start">
-                <div class="flex flex-col gap-[40px] items-start w-full border-b-4 pb-[40px]">
+                <div
+                  class="flex flex-col gap-[40px] items-start w-full border-b-4 pb-[40px]">
                   <!-- Start Kelamin -->
                   <div class="flex flex-col flex-start w-[40%] gap-[8px]">
                     <div class="flex justify-center w-full">
-                      <div class="flex items-start flex-col relative z-[2] w-full gap-[8px]">
-                      <h3 class="font-bold text-2xl">
-                        Pilih nama anak :
-                      </h3>
-                        <select
-                          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                          aria-label="Default select example"
+                      <div class="flex items-start flex-col w-full gap-[8px]"> 
+                        <h3 class="font-bold text-2xl">Pilih nama anak :</h3>
+                        <div
+                          class="w-full relative z-[2] flex items-center flex-row"
                         >
-                          <option selected>Pilih Nama Anak</option>
-                          <option value="1">Jack Hermanson</option>
-                          <option value="2">Khamzat</option>
-                        </select>
-                        <img
-                          class="absolute right-[20px]"
-                          src="/icons/down.svg"
-                          alt=""
-                        />
+                          <select
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            aria-label="Default select example"
+                          >
+                            <option selected>Pilih Nama Anak</option>
+                            <option value="1">Jack Hermanson</option>
+                            <option value="2">Khamzat</option>
+                          </select>
+                          <img
+                            class="absolute right-[20px] z-[2]"
+                            src="/icons/down.svg"
+                            alt=""
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -453,33 +492,51 @@
                   <!-- Start Layanan  -->
                   <div class="flex flex-col flex-start gap-[8px]">
                     <h1 class="text-xl font-bold">Blissful Baby Swim :</h1>
-                    <div class="flex flex-row flex-start gap-[16px]">
-                      <button
-                        class="bg-red-500 text-white font-semibold hover:text-white py-2 px-4 border border-pink hover:border-transparent rounded-md"
-                      >
-                        12:00 - 13:00
-                      </button>
-                      <button
-                        class="bg-transparent hover:bg-pink-500 text-pink-dark font-semibold hover:text-white py-2 px-4 border border-pink hover:border-transparent rounded-md"
-                      >
-                        12:00 - 13:00
-                      </button>
-                      <button
-                        class="bg-transparent hover:bg-pink-500 text-pink-dark font-semibold hover:text-white py-2 px-4 border border-pink hover:border-transparent rounded-md"
-                      >
-                        12:00 - 13:00
-                      </button>
-                      <button
-                        class="bg-transparent hover:bg-pink-500 text-pink-dark font-semibold hover:text-white py-2 px-4 border border-pink hover:border-transparent rounded-md"
-                      >
-                        12:00 - 13:00
-                      </button>
-                      <button
-                        class="bg-transparent hover:bg-pink-500 text-pink-dark font-semibold hover:text-white py-2 px-4 border border-pink hover:border-transparent rounded-md"
-                      >
-                        12:00 - 13:00
-                      </button>
-                    </div>
+                    <ul class="flex flex-row items-start gap-[8px]">
+                      <li class="relative">
+                        <input
+                          class="sr-only peer"
+                          type="radio"
+                          value="no"
+                          name="answer"
+                          id="test0"
+                        />
+                        <label
+                          class="flex py-2 px-4 bg-red-500 text-white border border-gray-300 rounded-lg"
+                          for="test0"
+                          >12:00 - 13:00</label
+                        >
+                      </li>
+                      <li class="relative">
+                        <input
+                          class="sr-only peer"
+                          type="radio"
+                          value="no"
+                          name="answer"
+                          id="test1"
+                        />
+                        <label
+                          class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+                          for="test1"
+                          >12:00 - 13:00</label
+                        >
+                      </li>
+
+                      <li class="relative">
+                        <input
+                          class="sr-only peer"
+                          type="radio"
+                          value="no"
+                          name="answer"
+                          id="test2"
+                        />
+                        <label
+                          class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+                          for="test2"
+                          >12:00 - 13:00</label
+                        >
+                      </li>
+                    </ul>
                   </div>
                   <!-- End Layanan -->
                 </div>
@@ -498,7 +555,9 @@
                           alt=""
                         />
                         <div class="py-[16px] px-[24px]">
-                          <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                          <h3 class="font-bold text-sm">
+                            Precious Baby Massage
+                          </h3>
                           <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
                             Rp.130,000/40 menit
                           </h3>
@@ -519,7 +578,9 @@
                           alt=""
                         />
                         <div class="py-[16px] px-[24px]">
-                          <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                          <h3 class="font-bold text-sm">
+                            Precious Baby Massage
+                          </h3>
                           <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
                             Rp.130,000/40 menit
                           </h3>
@@ -540,7 +601,9 @@
                           alt=""
                         />
                         <div class="py-[16px] px-[24px]">
-                          <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                          <h3 class="font-bold text-sm">
+                            Precious Baby Massage
+                          </h3>
                           <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
                             Rp.130,000/40 menit
                           </h3>
@@ -561,7 +624,9 @@
                           alt=""
                         />
                         <div class="py-[16px] px-[24px]">
-                          <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                          <h3 class="font-bold text-sm">
+                            Precious Baby Massage
+                          </h3>
                           <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
                             Rp.130,000/40 menit
                           </h3>
@@ -582,7 +647,9 @@
                           alt=""
                         />
                         <div class="py-[16px] px-[24px]">
-                          <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                          <h3 class="font-bold text-sm">
+                            Precious Baby Massage
+                          </h3>
                           <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
                             Rp.130,000/40 menit
                           </h3>
@@ -603,7 +670,9 @@
                           alt=""
                         />
                         <div class="py-[16px] px-[24px]">
-                          <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+                          <h3 class="font-bold text-sm">
+                            Precious Baby Massage
+                          </h3>
                           <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
                             Rp.130,000/40 menit
                           </h3>
@@ -620,6 +689,7 @@
                 </div>
                 <!-- End Cards -->
               </div>
+              <!-- End Form -->
             </div>
 
             <!-- Modal footer -->
