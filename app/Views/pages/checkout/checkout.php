@@ -254,6 +254,23 @@
               <p>Rp. 390,000</p>
             </div>
 
+            <div class="flex flex-col items-start gap-[8px]">
+              <div class="flex flex-row items-center gap-[8px]">
+                <img src="/icons/discount.svg" alt="">
+                <p class="text-pink-500 font-bold">Kupon</p>
+              </div>
+              <div class="flex flex-row items-stretch gap-[8px] w-full">
+                <input type="text" placeholder="CONTOH: PROMO10" class="w-full border px-5 rounded-lg">
+              <buttom
+              type="buttom"
+              href="/checkout/metode-bayar"
+              class="flex flex-row gap-[8px] items-center justify-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-[12px] text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800 text-sm"
+            >
+              Pakai
+</buttom>
+              </div>
+            </div>
+
             <a
               href="/checkout/metode-bayar"
               class="flex flex-row gap-[8px] items-center justify-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[16px] py-[12px] text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800 w-full text-sm"
