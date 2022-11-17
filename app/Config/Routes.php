@@ -103,3 +103,5 @@ $routes->get('/checkout/detail', 'Checkout::detail');
 
 // myOrder
 $routes->get('/my-order/', 'MyOrder::index');
+$routes->get('/my-order/lunas', 'MyOrder::detailLunas');
+$routes->get('/my-order/riwayat', 'MyOrder::riwayatPemesanan');
