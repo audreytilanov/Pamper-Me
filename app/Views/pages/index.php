@@ -99,7 +99,7 @@
       <!-- End Tanggal -->
 
       <!-- Start Jam -->
-      <div class="flex flex-row justify-center items-end gap-[40px]">
+      <!-- <div class="flex flex-row justify-center items-end gap-[40px]">
         <div class="flex flex-col justify-between flex-start h-[90px]">
           <h1 class="text-lg font-bold">Waktu</h1>
           <div class="flex justify-center">
@@ -134,7 +134,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- End Jam -->
 
       <!-- Start Cari -->
