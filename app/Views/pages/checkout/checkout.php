@@ -57,6 +57,7 @@
           <!-- End Select All -->
 
           <!-- Start Cards Keranjang -->
+          <?php foreach($data as $data):?>
           <div
             class="flex flex-row justify-between items-start pb-[32px] border-b-4 w-full">
             <div class="flex flex-row items-start gap-[24px]">
@@ -68,148 +69,43 @@
                 />
                 <div class="flex flex-col items-start gap-[16px]">
                   <div class="flex flex-col items-start gap-[16px]">
-                    <h3 class="font-bold text-xl">Precious Baby Massage</h3>
+                    <h3 class="font-bold text-xl"><?php echo $data['nama_produk'] ?> | Nama_Cabang</h3>
                   </div>
                   <div
                     class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
                   >
+                    <h3 class="font-bold text-lg text-pink-500">
+                      <?php echo $data['nama_anak'] ?>
+                    </h3>
+                    |
                     <img src="/icons/money.svg" alt="" />
                     <h3 class="font-bold text-lg text-pink-500">
-                      Rp.130,000/40 menit
+                      Rp. <?php echo number_format($data['harga'] , 0, ',', '.'); ?> / <?php echo $data['durasi'] ?> Menit
                     </h3>
                   </div>
                   <div class="grid grid-cols-2 gap-[10px]">
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
+                      <p class="text-xs"><?php echo $data['deskripsi_produk'] ?></p>
                     </div>
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
+                      <p class="text-xs"><?php echo $data['jam'] ?></p>
                     </div>
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
+                      <p class="text-xs"><?php echo $data['tanggal'] ?></p>
                     </div>
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
+                      <p class="text-xs"><?php echo $data['jenis_kelamin'] ?></p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="flex flex-row justify-between items-start pb-[32px] border-b-4 w-full">
-            <div class="flex flex-row items-start gap-[24px]">
-              <div class="flex flex-row items-start gap-[24px]">
-                <img
-                  class="w-[292.11px] h-[162.93px] object-cover rounded-md"
-                  src="/images/keranjangProduct.png"
-                  alt=""
-                />
-                <div class="flex flex-col items-start gap-[16px]">
-                  <div class="flex flex-col items-start gap-[16px]">
-                    <h3 class="font-bold text-xl">Precious Baby Massage</h3>
-                  </div>
-                  <div
-                    class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
-                  >
-                    <img src="/icons/money.svg" alt="" />
-                    <h3 class="font-bold text-lg text-pink-500">
-                      Rp.130,000/40 menit
-                    </h3>
-                  </div>
-                  <div class="grid grid-cols-2 gap-[10px]">
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex flex-row justify-between items-start pb-[32px] border-b-4 w-full">
-            <div class="flex flex-row items-start gap-[24px]">
-              <div class="flex flex-row items-start gap-[24px]">
-                <img
-                  class="w-[292.11px] h-[162.93px] object-cover rounded-md"
-                  src="/images/keranjangProduct.png"
-                  alt=""
-                />
-                <div class="flex flex-col items-start gap-[16px]">
-                  <div class="flex flex-col items-start gap-[16px]">
-                    <h3 class="font-bold text-xl">Precious Baby Massage</h3>
-                  </div>
-                  <div
-                    class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
-                  >
-                    <img src="/icons/money.svg" alt="" />
-                    <h3 class="font-bold text-lg text-pink-500">
-                      Rp.130,000/40 menit
-                    </h3>
-                  </div>
-                  <div class="grid grid-cols-2 gap-[10px]">
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php endforeach; ?>
           <!-- End Cards Keranjang -->
         </div>
       </div>
@@ -224,34 +120,28 @@
           >
             <h4 class="font-bold font-bold text-xl">Ringkasan pesanan</h4>
             <ul class="space-y-1 max-w-md list-disc list-inside">
-              <li class="flex items-center flex-row gap-[48px] text-sm">
-                <div class="flex flex-row items-center gap-[16px]">
-                  <img src="/icons/circle.svg" alt="" />
-                  <p>Precious Baby Massage</p>
-                </div>
-                <p>Rp. 130,000</p>
-              </li>
-              <li class="flex items-center flex-row gap-[48px] text-sm">
-                <div class="flex flex-row items-center gap-[16px]">
-                  <img src="/icons/circle.svg" alt="" />
-                  <p>Precious Baby Massage</p>
-                </div>
-                <p>Rp. 130,000</p>
-              </li>
-              <li class="flex items-center flex-row gap-[48px] text-sm">
-                <div class="flex flex-row items-center gap-[16px]">
-                  <img src="/icons/circle.svg" alt="" />
-                  <p>Precious Baby Massage</p>
-                </div>
-                <p>Rp. 130,000</p>
-              </li>
+              <?php 
+                $total = 0;
+                $id_reservasi = null;
+                foreach($list as $data):
+                  $id_reservasi = $data['id_reservasi'];
+                  $total += $data['harga'];
+                ?>
+                <li class="flex items-center flex-row gap-[48px] text-sm">
+                  <div class="flex flex-row items-center gap-[16px]">
+                    <img src="/icons/circle.svg" alt="" />
+                    <p><?php echo $data['nama_produk']; ?></p>
+                  </div>
+                  <p>Rp. <?php echo number_format($data['harga'] , 0, ',', '.'); ?></p>
+                </li>
+              <?php endforeach; ?>
             </ul>
           </div>
           <div class="w-full flex flex-col gap-[16px]">
             <div
               class="flex items-center flex-row justify-between px-[16px] py-[10px] w-full bg-pink-100 border-2 border-pink-500 rounded-lg text-pink-500 font-bold text-sm">
               <p>Order Total</p>
-              <p>Rp. 390,000</p>
+              <p>Rp. <?php echo number_format($total , 0, ',', '.'); ?></p>
             </div>
 
             <div class="flex flex-col items-start gap-[8px]">
@@ -272,7 +162,7 @@
             </div>
 
             <a
-              href="/checkout/metode-bayar"
+              href="/user/checkout/metode-bayar"
               class="flex flex-row gap-[8px] items-center justify-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[16px] py-[12px] text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800 w-full text-sm"
             >
               Checkout

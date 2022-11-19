@@ -1,7 +1,14 @@
 <?= $this->extend('layout/pageLayout') ?>
 
 <?= $this->section('content') ?>
-
+<script type="text/javascript">
+<?php if(!empty(session()->getFlashdata('jadwal'))){
+?>
+    $('#default-modal').modal('show');
+<?php 
+}
+?>
+</script>
 <!-- Start image baby -->
 
 <div>
@@ -16,6 +23,9 @@
     <div
       class="flex justify-center items-end flex-row p-[24px] absolute bottom-[50px] bg-white gap-[32px] rounded-lg"
     >
+    <form action="<?= base_url('/cari') ?>" method="get">
+    <?= csrf_field(); ?>
+
       <!-- Start Services -->
       <div class="flex flex-row justify-center items-end gap-[40px]">
         <div class="flex flex-col justify-between flex-start h-[90px]">
@@ -25,6 +35,7 @@
               <select
                 class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                 aria-label="Default select example"
+                name="kategori_layanan"
               >
                 <option selected>Silahkan pilih layanan</option>
                 <?php foreach($data as $data) :?>
@@ -52,6 +63,7 @@
               <select
                 class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                 aria-label="Default select example"
+                name="cabang"
               >
                 <option selected>Silahkan pilih Cabang</option>
                 <?php foreach($cabangData as $data) :?>
@@ -84,9 +96,8 @@
                   <input type="hidden" name="date" x-ref="date" />
                   <div class="flex items-center w-full justify-between">
                     <input
-                      required
                       type="date"
-                      name="tanggal_lahir"
+                      name="tanggal"
                     />
                   </div>
                 </div>
@@ -138,16 +149,27 @@
       <!-- End Jam -->
 
       <!-- Start Cari -->
+      <?php if(empty(session()->getFlashdata('jadwal'))): ?>
       <button
         class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
-        type="button"
+        type="submit"
         data-modal-toggle="default-modal"
       >
         Cari
       </button>
+      <?php else: ?>
+        <button
+        class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+        data-modal-toggle="default-modal"
+        type="cari"
+      >
+      Cari
+      </button>
+      <?php endif ?>
       <!-- End Cari -->
-
+    </form>
       <!-- Start Modal -->
+      <?php if (session()->getFlashdata('jadwal') !== NULL) : ?>
       <div
         id="default-modal"
         data-modal-show="fasle"
@@ -316,31 +338,36 @@
                   <h3 class="text-gray-900 text-base lg:text-2xl font-bold">
                     Silahkan Pilih Layanan
                   </h3>
-                  <div class="pt-[16px] grid grid-cols-3 gap-[24px]">
-                    <div class="flex flex-col flex-start gap-[8px]">
-                      <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-                        <img
-                          class="rounded-t-xl"
-                          src="/images/legBaby.png"
-                          alt=""
-                        />
-                        <div class="py-[16px] px-[24px]">
-                          <h3 class="font-bold text-sm">
-                            Precious Baby Massage
-                          </h3>
-                          <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-                            Rp.130,000/40 menit
-                          </h3>
-                          <button
-                            class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
-                            type="button"
-                          >
-                            + Keranjang
-                          </button>
+                  <?php foreach(session()->getFlashdata('jadwal') as $data) :?>
+                  <form action="" method="POST">
+                    <div class="pt-[16px] grid grid-cols-3 gap-[24px]">
+                      <div class="flex flex-col flex-start gap-[8px]">
+                        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                          <img
+                            class="rounded-t-xl"
+                            src="/images/legBaby.png"
+                            alt=""
+                          />
+                          <div class="py-[16px] px-[24px]">
+                            <h3 class="font-bold text-sm">
+                              Precious Baby Massage
+                            </h3>
+                            <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+                              Rp.130,000/40 menit
+                            </h3>
+                            <button
+                              class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                              type="button"
+                            >
+                              + Keranjang
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </form>
+                  <?php endforeach; ?>
+
                 </div>
                 <!-- End Cards -->
               </div>
@@ -355,6 +382,7 @@
         </div>
       </div>
       <!-- End Modal -->
+      <?php endif; ?>
       <!-- End cari -->
     </div>
   </div>

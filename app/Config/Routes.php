@@ -44,6 +44,7 @@ $routes->get('/register/verifikasi', 'Register::verifikasi', ['as' => 'user.acco
 
 // Homepage
 $routes->get('/', 'Homepage::index');
+$routes->get('/cari', 'Homepage::cari');
 
 $routes->group('', ['filter' => 'redirectlogin'], static function ($routes) {
     // Dashboard User
@@ -53,6 +54,7 @@ $routes->group('', ['filter' => 'redirectlogin'], static function ($routes) {
 //Logged In
 $routes->group('user', ['filter' => 'auth'], static function ($routes) {
     // Dashboard User
+
     $routes->get('dashboard', 'Login::dashboard');
     $routes->get('dashboard/edit', 'Login::dashboardEdit', ['as' => 'user.dashboard.edit']);
     $routes->add('dashboard/edit/(:segment)', 'Login::update/$1', ['as' => 'user.dashboard.update']);
@@ -68,6 +70,25 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
 
     // Scan Barcode
     $routes->get('/scan-barcode', 'ScanBarcode::index');
+
+    // keranjang
+    $routes->get('keranjang', 'Keranjang::index', ['as' => 'user.keranjang.index']);
+    $routes->post('keranjang/checkout/(:segment)', 'Keranjang::checkout/$1', ['as' => 'user.keranjang.checkout']);
+    $routes->get('keranjang/delete/(:segment)', 'Keranjang::delete/$1', ['as' => 'user.keranjang.delete']);
+
+    // lihat antrian
+    $routes->get('lihat-antrian', 'LihatAntrian::index', ['as' => 'user.antrian.index']);
+    $routes->get('lihat-antrian/cari', 'LihatAntrian::cari', ['as' => 'user.antrian.cari']);
+    $routes->post('lihat-antrian/tambah', 'LihatAntrian::tambah', ['as' => 'user.antrian.tambah']);
+
+    // lihat antrian
+    $routes->get('checkout', 'Checkout::index', ['as' => 'user.checkout.index']);
+    $routes->get('checkout/metode-bayar', 'Checkout::metodeBayar', ['as' => 'user.checkout.method']);
+    $routes->get('checkout/bayar', 'Checkout::bayar', ['as' => 'user.checkout.payment']);
+    $routes->get('checkout/detail', 'Checkout::detail', ['as' => 'user.checkout.detail']);
+
+    // myOrder
+    $routes->get('my-order', 'MyOrder::index', ['as' => 'user.myorder']);
 });
 
 
@@ -89,17 +110,17 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 
-// keranjang
-$routes->get('/keranjang', 'Keranjang::index');
+// // keranjang
+// $routes->get('/keranjang', 'Keranjang::index');
 
-// lihat antrian
-$routes->get('/lihat-antrian', 'LihatAntrian::index');
+// // lihat antrian
+// $routes->get('/lihat-antrian', 'LihatAntrian::index');
 
-// lihat antrian
-$routes->get('/checkout', 'Checkout::index');
-$routes->get('/checkout/metode-bayar', 'Checkout::metodeBayar');
-$routes->get('/checkout/bayar', 'Checkout::bayar');
-$routes->get('/checkout/detail', 'Checkout::detail');
+// // lihat antrian
+// $routes->get('/checkout', 'Checkout::index');
+// $routes->get('/checkout/metode-bayar', 'Checkout::metodeBayar');
+// $routes->get('/checkout/bayar', 'Checkout::bayar');
+// $routes->get('/checkout/detail', 'Checkout::detail');
 
-// myOrder
-$routes->get('/my-order', 'MyOrder::index');
+// // myOrder
+// $routes->get('/my-order', 'MyOrder::index');

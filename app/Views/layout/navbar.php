@@ -9,16 +9,16 @@
         </span>
       </div>
       <ul class="md:flex bg-[#ffffff] md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
-        <li class="mx-4 my-6 md:my-0">
+      <li class="mx-4 my-6 md:my-0">
           <a
-            href="/"
+            href=""
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >Buat Reservasi</a
           >
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
-            href="/lihat-antrian"
+          href="<?= url_to('user.antrian.index') ?>"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >Lihat Antrian</a
           >
@@ -32,21 +32,21 @@
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
-            href="scan-barcode"
+            href=""
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >Scan Barcode</a
           >
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
-            href="/keranjang"
+            href="<?= url_to('user.keranjang.index') ?>"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >Keranjang</a
           >
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
-            href="/my-order"
+            href="<?= url_to('user.myorder') ?>"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >My Order</a
           >
@@ -84,7 +84,7 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 ></script>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">
   function Menu(e) {
     let list = document.querySelector("ul");

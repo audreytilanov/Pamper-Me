@@ -18,7 +18,7 @@
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
-            href=""
+            href="<?= url_to('user.antrian.index') ?>"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >Lihat Antrian</a
           >
@@ -39,14 +39,14 @@
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
-            href=""
+            href="<?= url_to('user.keranjang.index') ?>"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >Keranjang</a
           >
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
-            href=""
+            href="<?= url_to('user.myorder') ?>"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
             >My Order</a
           >
@@ -78,7 +78,7 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 ></script>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">
   function Menu(e) {
     let list = document.querySelector("ul");
