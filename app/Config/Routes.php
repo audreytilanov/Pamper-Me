@@ -89,6 +89,10 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
 
     // myOrder
     $routes->get('my-order', 'MyOrder::index', ['as' => 'user.myorder']);
+
+    // logout
+    $routes->get('logout', 'Login::logout',['as' => 'user.logout']);
+
 });
 
 

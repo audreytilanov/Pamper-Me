@@ -121,4 +121,26 @@ class Login extends BaseController
 
         return redirect()->to('/user/dashboard')->with('success', 'Data Berhasil Diperbaharui');
     }
+
+    public function logout(){
+        $session = session();
+        // $ses_data = [
+        //     'user_id'       => $data['id_reg'],
+        //     'user_id_orangtua'       => $data['id_orangtua'],
+        //     'user_name'     => $data['nama_orangtua'],
+        //     'user_email'    => $data['email'],
+        //     'no_whatsapp'    => $data['no_whatsapp'],
+        //     'status_pendaftaran' => $data['status_pendaftaran'],
+        //     'logged_in'     => TRUE
+        // ];
+        $session->remove('user_id');
+		$session->remove('user_id_orangtua');
+		$session->remove('user_name');
+		$session->remove('user_email');
+		$session->remove('no_whatsapp');
+		$session->remove('status_pendaftaran');
+		$session->remove('logged_in');
+        $session->stop();
+        return redirect()->to('/login');
+    }
 }

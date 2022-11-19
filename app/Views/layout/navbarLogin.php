@@ -81,6 +81,12 @@
           >
           <img class="rounded-full object-cover w-[48px] h-[48px]" src="/images/dashboardLogo.png" alt="">
           </a>
+          <a
+          href="<?= url_to('user.logout') ?>"
+            class="border-2 border-pink-500  bg-pink-500 px-[16px] py-[6px] rounded-[8px] font-semibold text-white ml-2 text-base"
+          >
+            logout
+          </a>
         </div>
         <?php endif;?>
       </ul>
