@@ -23,7 +23,7 @@
     <div
       class="flex justify-center items-end flex-row p-[24px] absolute bottom-[50px] bg-white gap-[32px] rounded-lg"
     >
-    <form action="<?= base_url('/cari') ?>" method="get">
+    <!-- <form action="<?= base_url('/cari') ?>" method="get"> -->
     <?= csrf_field(); ?>
 
       <!-- Start Services -->
@@ -149,7 +149,7 @@
       <!-- End Jam -->
 
       <!-- Start Cari -->
-      <?php if(empty(session()->getFlashdata('jadwal'))): ?>
+      <?php /*if(empty(session()->getFlashdata('jadwal'))):*/ ?>
       <button
         class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
         type="submit"
@@ -157,19 +157,19 @@
       >
         Cari
       </button>
-      <?php else: ?>
-        <button
+      <?php //else:// ?>
+        <!-- <button
         class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
         data-modal-toggle="default-modal"
         type="cari"
       >
       Cari
-      </button>
-      <?php endif ?>
+      </button> -->
+      <?php //endif// ?>
       <!-- End Cari -->
-    </form>
+    <!-- </form> -->
       <!-- Start Modal -->
-      <?php if (session()->getFlashdata('jadwal') !== NULL) : ?>
+      <?php //if (session()->getFlashdata('jadwal') !== NULL) :// ?>
       <div
         id="default-modal"
         data-modal-show="fasle"
@@ -338,7 +338,7 @@
                   <h3 class="text-gray-900 text-base lg:text-2xl font-bold">
                     Silahkan Pilih Layanan
                   </h3>
-                  <?php foreach(session()->getFlashdata('jadwal') as $data) :?>
+                  <?php //foreach(session()->getFlashdata('jadwal') as $data) :?>
                   <form action="" method="POST">
                     <div class="pt-[16px] grid grid-cols-3 gap-[24px]">
                       <div class="flex flex-col flex-start gap-[8px]">
@@ -366,7 +366,7 @@
                       </div>
                     </div>
                   </form>
-                  <?php endforeach; ?>
+                  <?php //endforeach; ?>
 
                 </div>
                 <!-- End Cards -->
@@ -382,7 +382,7 @@
         </div>
       </div>
       <!-- End Modal -->
-      <?php endif; ?>
+      <?php //endif;// ?>
       <!-- End cari -->
     </div>
   </div>
