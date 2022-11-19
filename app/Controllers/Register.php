@@ -29,9 +29,10 @@ class Register extends BaseController
             'password'      => 'required|min_length[6]'
         ];
          
-        if($this->validate($rules)){
+        // if($this->validate($rules)){
             $model = new OrangtuaModel();
             $data = [
+                'id_orangtua' => password_hash($this->request->getVar('nama_orangtua'), PASSWORD_DEFAULT),
                 'nama_orangtua'     => $this->request->getVar('nama_orangtua'),
                 'email'    => $this->request->getVar('email'),
                 'no_whatsapp'    => $this->request->getVar('no_whatsapp'),
@@ -39,10 +40,10 @@ class Register extends BaseController
                 'status_aktif' => 1
             ];
             $model->save($data);
-            return redirect()->to('/register/verifikasi');
-        }else{
+            return redirect()->to('/login');
+        // }else{
             $data['validation'] = $this->validator;
             return view('register/register', $data);
-        }
+        // }
     }
 }
