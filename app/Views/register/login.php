@@ -53,7 +53,7 @@
               class="w-full bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
-              Membuat Akun
+              Masuk
             </button>
           </div>
           <div class="flex justify-center mt-4 text-gray-400">
