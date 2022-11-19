@@ -58,6 +58,22 @@
             >Voucher</a
           >
         </li>
+        <?php if(empty(session())) :?>
+        <div class="flex items-center">
+          <a 
+          href="<?= url_to('user.login') ?>"
+            class="border-2 border-pink-500 px-[16px] py-[6px] rounded-[8px] font-semibold text-base"
+          >
+            Masuk
+          </a>
+          <a
+          href="<?= url_to('user.register') ?>"
+            class="border-2 border-pink-500  bg-pink-500 px-[16px] py-[6px] rounded-[8px] font-semibold text-white ml-2 text-base"
+          >
+            Daftar
+          </a>
+        </div>
+        <?php else: ?>
         <div class="flex items-center ml-4 my-6 md:my-0">
           <a 
           href="<?= url_to('user.login') ?>"
@@ -66,6 +82,7 @@
           <img class="rounded-full object-cover w-[48px] h-[48px]" src="/images/dashboardLogo.png" alt="">
           </a>
         </div>
+        <?php endif;?>
       </ul>
     </nav>
   </div>

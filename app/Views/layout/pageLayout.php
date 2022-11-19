@@ -36,7 +36,7 @@
     ></script>
   </head>
   <body class="text-[#18181B]">
-    <?= $this->include('layout/navbar') ?>
+    <?= $this->include('layout/navbarLogin') ?>
     <?= $this->renderSection('content') ?>
     <?= $this->include('layout/footer') ?>
 
