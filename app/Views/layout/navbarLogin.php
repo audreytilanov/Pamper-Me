@@ -58,7 +58,7 @@
             >Voucher</a
           >
         </li>
-        <?php if(empty(session())) :?>
+        <?php if(empty($nama_orangtua)) :?>
         <div class="flex items-center">
           <a 
           href="<?= url_to('user.login') ?>"
