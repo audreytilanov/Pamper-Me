@@ -5,7 +5,7 @@
   <!-- Start column 1 -->
   <div class="flex-col flex gap-[24px] items-start">
     <a href="/"><img src="/images/footerLogo.png" alt="" /></a>
-    <p class="text-base text-white font-regular">
+    <p class="xl:text-base text-xs text-white font-regular">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s, when an unknown printer took a galley. Lorem Ipsum is simply dummy
@@ -24,25 +24,25 @@
   <div class="xl:justify-self-end">
     <h1 class="font-bold text-[24px] text-white">Information</h1>
     <div class="mt-[24px] flex flex-col gap-[16px] items-start">
-      <a href="#our_services" class="text-base text-white block font-regular"
+      <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
         >Buat Reservasi</a
       >
-      <a href="#our_services" class="text-base text-white block font-regular"
+      <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
         >Lihat Antrian</a
       >
-      <a href="#our_services" class="text-base text-white block font-regular"
+      <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
         >Data Anak</a
       >
-      <a href="#our_services" class="text-base text-white block font-regular"
+      <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
         >Scan Barcode</a
       >
-      <a href="#our_services" class="text-base text-white block font-regular"
+      <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
         >Keranjang</a
       >
-      <a href="#our_services" class="text-base text-white block font-regular"
+      <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
         >My Order</a
       >
-      <a href="#our_services" class="text-base text-white block font-regular"
+      <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
         >Voucher</a
       > 
     </div>
@@ -53,7 +53,7 @@
   <!-- Start column 3 -->
   <div class="xl:justify-self-end">
     <h1 class="font-bold text-[24px] text-white">Ada Pertanyaan</h1>
-    <a href="/" class="border-2 border-white px-[16px] py-[6px] rounded-[8px] font-regular text-base inline-block mt-[24px] text-white" >
+    <a href="/" class="border-2 border-white px-[16px] py-[6px] rounded-[8px] font-regular xl:text-base text-xs inline-block mt-[24px] text-white" >
       Kontak kami
     </a>
   </div>
