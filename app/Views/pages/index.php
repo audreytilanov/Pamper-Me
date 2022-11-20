@@ -23,13 +23,13 @@
               <select
                 class="px-2 form-select appearance-none block w-full py-1.5 xl:text-base text-xs font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                 aria-label="Default select example"
-                name="kategori_layanan"
+                name="layanan"
               >
                 <option selected>Silahkan pilih layanan</option>
                 <?php foreach($data as $data) :?>
 
-                <option value="<?php echo $data['id_kategori_layanan']; ?>">
-                  <?php echo $data['nama_kategori']; ?>
+                <option value="<?php echo $data['id_layanan']; ?>">
+                  <?php echo $data['nama_layanan']; ?>
                 </option>
                 <?php endforeach; ?>
               </select>
@@ -151,8 +151,8 @@
     </form>
       <!-- Start Modal -->
       <?php //if (session()->getFlashdata('jadwal') !== NULL) :// ?>
-    <?php if(!empty(session()->getFlashdata('produk'))): ?>
-    <?php foreach(session()->getFlashdata('produk') as $produk) :?>
+    <?php if(!empty(session()->getFlashdata('modal'))): ?>
+    <?php foreach(session()->getFlashdata('modal') as $produk) :?>
       <div
         id="default-modal<?php echo $produk['id_produk'] ?>"
         data-modal-show="false"
@@ -256,8 +256,8 @@
                       <h1 class="text-xl font-bold">Pilih Jadwal Jam :</h1>
                       <ul class="flex flex-row items-start gap-[8px]">
                       <?php 
-                      if(!empty(session()->getFlashdata('jadwal'))):
-                      foreach(session()->getFlashdata('jadwal') as $jadwal) :?>
+                      if(!empty(session()->getFlashdata('modal'))):
+                      foreach(session()->getFlashdata('modal') as $jadwal) :?>
                         <li class="relative">
                           <input
                             class="sr-only peer"
@@ -275,6 +275,31 @@
                         <?php endforeach; endif; ?>
                       </ul>
                     </div>
+
+                    <div class="flex flex-col flex-start gap-[8px]">
+                      <h1 class="text-xl font-bold">Pilih Jadwal Jam :</h1>
+                      <ul class="flex flex-row items-start gap-[8px]">
+                      <?php 
+                      if(!empty(session()->getFlashdata('group'))):
+                      foreach(session()->getFlashdata('group') as $jadwal) :?>
+                        <li class="relative">
+                          <input
+                            class="sr-only peer"
+                            type="radio"
+                            value="<?php echo $jadwal['id_kategori_layanan'] ?>"
+                            name="id_kategori_layanan"
+                            id="kat<?php echo $jadwal['id_kategori_layanan'] ?>"
+                          />
+                          <label
+                            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+                            for="kat<?php echo $jadwal['id_kategori_layanan'] ?>"
+                            ><?php echo $jadwal['nama_kategori'] ?></label
+                          >
+                        </li>
+                        <?php endforeach; endif; ?>
+                      </ul>
+                    </div>
+
                     <button
                       class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
                       type="submit"
@@ -322,8 +347,8 @@
 <div class="xl:px-[80px] xl:py-[64px] p-[24px]">
   <!-- Start Cards -->
   <?php 
-  if(!empty(session()->getFlashdata('produk'))):
-  foreach(session()->getFlashdata('produk') as $data) :?>
+  if(!empty(session()->getFlashdata('group'))):
+  foreach(session()->getFlashdata('group') as $data) :?>
   <div class="pt-[24px] grid grid-cols-4 gap-[24px]">
     <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
       <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
