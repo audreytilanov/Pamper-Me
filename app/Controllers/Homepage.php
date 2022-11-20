@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\AnakModel;
 use App\Models\CabangModel;
 use App\Models\ProdukModel;
 use App\Models\JadwalProdukModel;
@@ -41,7 +42,7 @@ class Homepage extends BaseController
         // dd($data);
 
         foreach($data as $key=>$item){
-            $waktu = $jadwal->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'left')->where('tb_jadwal_produk.id_produk', $data[$key]['id_produk'])->findAll();
+            $waktu = $jadwal->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'left')->where('tb_jadwal_produk.id_produk', $data[$key]['id_produk'])->where('tb_jadwal_produk.tanggal', $tanggal  )->findAll();
             
 
             // $dataFix[] = array_push();
@@ -67,9 +68,22 @@ class Homepage extends BaseController
 
 
         }
+        if(!empty($datas)){
+            $session->setFlashdata('jadwal', $datas);
+        }
 
-        $session->setFlashdata('jadwal', $datas);
-        $session->setFlashdata('produk', $data);
+        if(!empty($data)){
+            $session->setFlashdata('produk', $data);
+        }
+
+        if(!empty($session->get('user_id_orangtua'))){
+            $session = session();
+            $model = new AnakModel();
+            $anak = $model->where('id_orangtua', $session->get('user_id_orangtua'))->findAll();
+            // dd($res);
+            $session->setFlashdata('anak', $anak);
+
+        }
 
         return redirect()->to('/');
 

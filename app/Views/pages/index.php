@@ -1,15 +1,6 @@
 <?= $this->extend('layout/pageLayout') ?>
 
 <?= $this->section('content') ?>
-<script type="text/javascript">
-<?php if(!empty(session()->getFlashdata('jadwal'))){
-?>
-    $('#default-modal').modal('show');
-<?php 
-}
-?>
-</script>
-<!-- Start image baby -->
 
 <div>
   <img
@@ -23,7 +14,7 @@
     <div
       class="flex justify-center items-end flex-row p-[24px] absolute bottom-[50px] bg-white gap-[32px] rounded-lg"
     >
-    <!-- <form action="<?= base_url('/cari') ?>" method="get"> -->
+    <form action="<?= base_url('/cari') ?>" method="get">
     <?= csrf_field(); ?>
 
       <!-- Start Services -->
@@ -153,7 +144,6 @@
       <button
         class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
         type="submit"
-        data-modal-toggle="default-modal"
       >
         Cari
       </button>
@@ -167,13 +157,15 @@
       </button> -->
       <?php //endif// ?>
       <!-- End Cari -->
-    <!-- </form> -->
+    </form>
       <!-- Start Modal -->
       <?php //if (session()->getFlashdata('jadwal') !== NULL) :// ?>
+    <?php if(!empty(session()->getFlashdata('produk'))): ?>
+    <?php foreach(session()->getFlashdata('produk') as $produk) :?>
       <div
-        id="default-modal"
-        data-modal-show="fasle"
-        aria-hidden="fasle"
+        id="default-modal<?php echo $produk['id_produk'] ?>"
+        data-modal-show="false"
+        aria-hidden="false"
         class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center"
       >
         <div class="relative h-full md:h-auto flex justify-center">
@@ -184,7 +176,7 @@
               <button
                 type="button"
                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                data-modal-toggle="default-modal"
+                data-modal-toggle="default-modal<?php echo $produk['id_produk'] ?>"
               >
                 <svg
                   class="w-5 h-5"
@@ -210,168 +202,119 @@
               </h3>
 
               <!-- start form  -->
-              <div class="flex flex-col gap-[40px] items-start">
-                <div
-                  class="flex flex-col gap-[40px] items-start w-full border-b-4 pb-[40px]">
-                  <!-- Start Kelamin -->
-                  <div class="flex flex-col flex-start w-[40%] gap-[8px]">
-                    <div class="flex justify-center w-full">
-                      <div class="flex items-start flex-col w-full gap-[8px]"> 
-                        <h3 class="font-bold text-2xl">Pilih nama anak :</h3>
-                        <div
-                          class="w-full relative z-[2] flex items-center flex-row"
-                        >
-                          <select
-                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            aria-label="Default select example"
+              
+              <form action="<?= base_url('user/lihat-antrian/tambah/') ?>" method="POST">
+                <input type="hidden" value="<?php echo $produk['id_produk'] ?>" name="id_produk">
+                <input type="hidden" value="<?php echo $produk['harga'] ?>" name="harga">
+                
+                <div class="flex flex-col gap-[40px] items-start">
+                  <div
+                    class="flex flex-col gap-[40px] items-start w-full border-b-4 pb-[40px]">
+                    <!-- Start Kelamin -->
+                    <div class="flex flex-col flex-start w-[40%] gap-[8px]">
+                      <div class="flex justify-center w-full">
+                        <div class="flex items-start flex-col w-full gap-[8px]"> 
+                          <h3 class="font-bold text-2xl">Pilih nama anak :</h3>
+                          <div
+                            class="w-full relative z-[2] flex items-center flex-row"
                           >
-                            <option selected>Pilih Nama Anak</option>
-                            <option value="1">Jack Hermanson</option>
-                            <option value="2">Khamzat</option>
-                          </select>
-                          <img
-                            class="absolute right-[20px] z-[2]"
-                            src="/icons/down.svg"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Kelamin -->
-
-                  <!-- Keranjang -->
-                  <div class="flex flex-col flex-start gap-[8px]">
-                    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-                      <img
-                        class="rounded-t-xl"
-                        src="/images/legBaby.png"
-                        alt=""
-                      />
-                      <div class="py-[16px] px-[24px]">
-                        <h3 class="font-bold text-sm">Precious Baby Massage</h3>
-                        <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-                          Rp.130,000/40 menit
-                        </h3>
-                        <button
-                          class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
-                          type="button"
-                        >
-                          + Keranjang
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Keranjang -->
-
-                  <!-- Start Tanggal  -->
-                  <div class="flex flex-col flex-start gap-[8px]">
-                    <h1 class="text-xl font-bold">Tanggal :</h1>
-                    <div
-                      class="flex flex-col items-center gap-[4px] px-[16px] py-[8px] bg-pink-500 text-white rounded-md"
-                    >
-                      <h3
-                        class="flex flex-start flex-row px-[24px] py-[10px] bg-pink-600 font-bold rounded-md"
-                      >
-                        Okt
-                      </h3>
-                      <h3>Hari ini</h3>
-                      <h3>18</h3>
-                    </div>
-                  </div>
-                  <!-- End Tanggal -->
-
-                  <!-- Start Layanan  -->
-                  <div class="flex flex-col flex-start gap-[8px]">
-                    <h1 class="text-xl font-bold">Blissful Baby Swim :</h1>
-                    <ul class="flex flex-row items-start gap-[8px]">
-                      <li class="relative">
-                        <input
-                          class="sr-only peer"
-                          type="radio"
-                          value="no"
-                          name="answer"
-                          id="test0"
-                        />
-                        <label
-                          class="flex py-2 px-4 bg-red-500 text-white border border-gray-300 rounded-lg"
-                          for="test0"
-                          >12:00 - 13:00</label
-                        >
-                      </li>
-                      <li class="relative">
-                        <input
-                          class="sr-only peer"
-                          type="radio"
-                          value="no"
-                          name="answer"
-                          id="test1"
-                        />
-                        <label
-                          class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
-                          for="test1"
-                          >12:00 - 13:00</label
-                        >
-                      </li>
-
-                      <li class="relative">
-                        <input
-                          class="sr-only peer"
-                          type="radio"
-                          value="no"
-                          name="answer"
-                          id="test2"
-                        />
-                        <label
-                          class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
-                          for="test2"
-                          >12:00 - 13:00</label
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- End Layanan -->
-                </div>
-
-                <!-- Start Cards -->
-                <div>
-                  <h3 class="text-gray-900 text-base lg:text-2xl font-bold">
-                    Silahkan Pilih Layanan
-                  </h3>
-                  <?php //foreach(session()->getFlashdata('jadwal') as $data) :?>
-                  <form action="" method="POST">
-                    <div class="pt-[16px] grid grid-cols-3 gap-[24px]">
-                      <div class="flex flex-col flex-start gap-[8px]">
-                        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-                          <img
-                            class="rounded-t-xl"
-                            src="/images/legBaby.png"
-                            alt=""
-                          />
-                          <div class="py-[16px] px-[24px]">
-                            <h3 class="font-bold text-sm">
-                              Precious Baby Massage
-                            </h3>
-                            <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-                              Rp.130,000/40 menit
-                            </h3>
-                            <button
-                              class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
-                              type="button"
+                            <select
+                              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                              aria-label="Default select example"
+                              name="anak"
                             >
-                              + Keranjang
-                            </button>
+                              <?php 
+                              if(!empty(session()->getFlashdata('anak'))): ?>
+                              <option selected>Pilih Nama Anak</option>
+                              <?php foreach(session()->getFlashdata('anak') as $anak) :?>
+                                <option value="<?php echo $anak['id_anak']?> "><?php echo $anak['nama_anak']?> </option>
+                              <?php endforeach;
+                              else: ?>
+                              <option selected>Tambah Data Anak Terlebih Dahulu</option>
+                              <?php endif; ?>
+                            </select>
+                            <img
+                              class="absolute right-[20px] z-[2]"
+                              src="/icons/down.svg"
+                              alt=""
+                            />
                           </div>
                         </div>
                       </div>
                     </div>
-                  </form>
-                  <?php //endforeach; ?>
+                    <!-- End Kelamin -->
+                    <!-- Start Tanggal  -->
+                    <!-- <div class="flex flex-col flex-start gap-[8px]">
+                      <h1 class="text-xl font-bold">Tanggal :</h1>
+                      <div
+                        class="flex flex-col items-center gap-[4px] px-[16px] py-[8px] bg-pink-500 text-white rounded-md"
+                      >
+                        <h3
+                          class="flex flex-start flex-row px-[24px] py-[10px] bg-pink-600 font-bold rounded-md"
+                        >
+                          Okt
+                        </h3>
+                        <h3>Hari ini</h3>
+                        <h3>18</h3>
+                      </div>
+                    </div> -->
+                    <!-- End Tanggal -->
 
+                    <!-- Start Layanan  -->
+                    <div class="flex flex-col flex-start gap-[8px]">
+                      <h1 class="text-xl font-bold">Pilih Jadwal Jam :</h1>
+                      <ul class="flex flex-row items-start gap-[8px]">
+                      <?php 
+                      if(!empty(session()->getFlashdata('jadwal'))):
+                      foreach(session()->getFlashdata('jadwal') as $jadwal) :?>
+                        <li class="relative">
+                          <input
+                            class="sr-only peer"
+                            type="radio"
+                            value="<?php echo $jadwal['id_jadwal_produk'] ?>"
+                            name="id_jadwal"
+                            id="jam<?php echo $jadwal['id_jadwal_produk'] ?>"
+                          />
+                          <label
+                            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+                            for="jam<?php echo $jadwal['id_jadwal_produk'] ?>"
+                            ><?php echo $jadwal['jam'] ?></label
+                          >
+                        </li>
+                        <?php endforeach; endif; ?>
+                      </ul>
+                    </div>
+                    <button
+                      class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                      type="submit"
+                    >
+                      + Keranjang
+                    </button>
+                    <!-- End Layanan -->
+                  </div>
+
+                  <!-- Start Cards -->
+                  <div>
+                    <h3 class="text-gray-900 text-base lg:text-2xl font-bold">
+                      <!-- Silahkan Pilih Layanan -->
+                    </h3>
+                    <?php //foreach(session()->getFlashdata('jadwal') as $data) :?>
+                    <div class="pt-[16px] grid grid-cols-3 gap-[24px]">
+                      <div class="flex flex-col flex-start gap-[8px]">
+                        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                          
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <?php //endforeach; ?>
+
+                  </div>
+                  <!-- End Cards -->
                 </div>
-                <!-- End Cards -->
-              </div>
               <!-- End Form -->
+              </form>
+
             </div>
 
             <!-- Modal footer -->
@@ -382,7 +325,7 @@
         </div>
       </div>
       <!-- End Modal -->
-      <?php //endif;// ?>
+      <?php endforeach; endif;?>
       <!-- End cari -->
     </div>
   </div>
@@ -392,80 +335,33 @@
 
 <div class="px-[80px] py-[64px]">
   <!-- Start Cards -->
+  <?php 
+  if(!empty(session()->getFlashdata('produk'))):
+  foreach(session()->getFlashdata('produk') as $data) :?>
   <div class="pt-[24px] grid grid-cols-4 gap-[24px]">
     <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
       <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
       <div class="py-[16px] px-[24px]">
-        <h3 class="font-bold text-sm">Precious Baby Massage</h3>
+        <h3 class="font-bold text-sm"><?php echo $data['nama_produk'] ?></h3>
         <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-          Rp.130,000/40 menit
+          <p><?php echo $data['deskripsi_produk'] ?></p>
+          <p>Rp. <?php echo number_format($data['harga'] , 0, ',', '.'); ?> / <?php echo $data['durasi'] ?> Menit</p>
+
         </h3>
-      </div>
-    </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
-      <div class="py-[16px] px-[24px]">
-        <h3 class="font-bold text-sm">Precious Baby Massage</h3>
-        <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-          Rp.130,000/40 menit
-        </h3>
-      </div>
-    </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
-      <div class="py-[16px] px-[24px]">
-        <h3 class="font-bold text-sm">Precious Baby Massage</h3>
-        <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-          Rp.130,000/40 menit
-        </h3>
-      </div>
-    </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
-      <div class="py-[16px] px-[24px]">
-        <h3 class="font-bold text-sm">Precious Baby Massage</h3>
-        <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-          Rp.130,000/40 menit
-        </h3>
-      </div>
-    </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
-      <div class="py-[16px] px-[24px]">
-        <h3 class="font-bold text-sm">Precious Baby Massage</h3>
-        <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-          Rp.130,000/40 menit
-        </h3>
-      </div>
-    </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
-      <div class="py-[16px] px-[24px]">
-        <h3 class="font-bold text-sm">Precious Baby Massage</h3>
-        <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-          Rp.130,000/40 menit
-        </h3>
-      </div>
-    </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
-      <div class="py-[16px] px-[24px]">
-        <h3 class="font-bold text-sm">Precious Baby Massage</h3>
-        <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-          Rp.130,000/40 menit
-        </h3>
-      </div>
-    </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
-      <div class="py-[16px] px-[24px]">
-        <h3 class="font-bold text-sm">Precious Baby Massage</h3>
-        <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-          Rp.130,000/40 menit
-        </h3>
+        <button
+        class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+        type="submit"
+        data-modal-toggle="default-modal<?php echo $data['id_produk'] ?>"
+      >
+        Detail Produk
+      </button>
       </div>
     </div>
   </div>
+  <?php 
+  endforeach;
+  endif;
+  ?>
   <!-- End Cards -->
 </div>
 

@@ -90,7 +90,7 @@ class LihatAntrian extends BaseController
         $dataRes = $resModel->where('id_orangtua', $session->get('user_id_orangtua'))->where('status','draft')->first();
         if(empty($dataRes)){
             $data = [
-                'tanggal'     => $session->get('tanggal'),
+                'tanggal'     => time(),
                 'id_orangtua'     => $session->get('user_id_orangtua'),
                 // 'subtotal_biaya'    => $this->request->getVar('tanggal_lahir'),
                 // 'total_biaya'    => $this->request->getVar('tanggal_lahir'),
@@ -121,7 +121,7 @@ class LihatAntrian extends BaseController
         };
 
         
-        return redirect()->to('/user/lihat-antrian');
+        return redirect()->to('/user/keranjang');
     }
 
 }

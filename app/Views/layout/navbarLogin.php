@@ -58,7 +58,10 @@
             >Voucher</a
           >
         </li>
-        <?php if(empty($nama_orangtua)) :?>
+        <?php 
+        
+        $session = session();
+        if(empty($session->get('user_id_orangtua'))) :?>
         <div class="flex items-center">
           <a 
           href="<?= url_to('user.login') ?>"

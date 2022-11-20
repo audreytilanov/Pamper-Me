@@ -19,13 +19,11 @@ class Checkout extends BaseController
             ->join('tb_jadwal_produk', 'tb_jadwal_produk.id_jadwal_produk = tb_reservasi_detail.id_jadwal_produk')
             ->join('tb_produk', 'tb_produk.id_produk = tb_reservasi_detail.id_produk')
             ->join('tb_anak', 'tb_anak.id_anak = tb_reservasi_detail.id_anak')
-            ->where('tb_reservasi_detail.id_reservasi', $data['id_reservasi'])->findAll();
+            ->where('tb_reservasi.id_orangtua', $session->get('user_id_orangtua'))->findAll();
             $res = [
                 'data' => $detail,
                 'list' => $detail
             ];
-            
-    
             return view('pages/checkout/checkout', $res);
         }
 
