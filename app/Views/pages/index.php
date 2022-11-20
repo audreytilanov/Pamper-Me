@@ -10,35 +10,33 @@
   />
 
   <!-- Start Menu Select -->
-  <div class="flex justify-center">
+  <div class="flex justify-center w-full p-[24px] xl:p-[0px]">
     <div
-      class="flex justify-center items-end flex-row p-[24px] absolute bottom-[50px] bg-white gap-[32px] rounded-lg"
+      class="flex justify-center xl:items-end items-start xl:flex-row flex-col xl:p-[24px] py-[24px] xl:absolute bottom-[50px] bg-white gap-[32px] rounded-lg w-full xl:w-max"
     >
     <form action="<?= base_url('/cari') ?>" method="get">
     <?= csrf_field(); ?>
 
       <!-- Start Services -->
-      <div class="flex flex-row justify-center items-end gap-[40px]">
-        <div class="flex flex-col justify-between flex-start h-[90px]">
+      <div class="flex flex-row justify-center items-end gap-[40px] w-full">
+        <div class="flex flex-col justify-between flex-start xl:h-[90px] h-[65px] w-full">
           <h1 class="text-lg font-bold">Service</h1>
           <div class="flex justify-center">
-            <div class="w-[200px] flex items-center relative z-[2]">
+            <div class="xl:w-[200px] flex items-center relative w-full">
               <select
-                class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
+                class="px-2 form-select appearance-none block w-full py-1.5 xl:text-base text-xs font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                 aria-label="Default select example"
                 name="kategori_layanan"
               >
                 <option selected>Silahkan pilih layanan</option>
                 <?php foreach($data as $data) :?>
 
-                <option value="<?php echo $data['id_kategori_layanan']; ?>"><?php echo $data['nama_kategori']; ?></option>
+                <option value="<?php echo $data['id_kategori_layanan']; ?>">
+                  <?php echo $data['nama_kategori']; ?>
+                </option>
                 <?php endforeach; ?>
               </select>
-              <img
-                class="absolute right-0 z-[3]"
-                src="/icons/down.svg"
-                alt=""
-              />
+              <img class="absolute right-0" src="/icons/down.svg" alt="" />
             </div>
           </div>
         </div>
@@ -46,28 +44,26 @@
       <!-- End Services -->
 
       <!-- Start Services -->
-      <div class="flex flex-row justify-center items-end gap-[40px]">
-        <div class="flex flex-col justify-between flex-start h-[90px]">
+      <div class="flex flex-row justify-center items-end gap-[40px] w-full">
+        <div class="flex flex-col justify-between flex-start xl:h-[90px] h-[65px] w-full">
           <h1 class="text-lg font-bold">Cabang</h1>
           <div class="flex justify-center">
-            <div class="w-[200px] flex items-center relative z-[2]">
+            <div class="xl:w-[200px] flex items-center relative w-full">
               <select
-                class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
+                class="px-2 form-select appearance-none block w-full py-1.5 xl:text-base text-xs font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                 aria-label="Default select example"
                 name="cabang"
               >
                 <option selected>Silahkan pilih Cabang</option>
                 <?php foreach($cabangData as $data) :?>
 
-                <option value="<?php echo $data['id_cabang']; ?>"><?php echo $data['nama_cabang']; ?></option>
+                <option value="<?php echo $data['id_cabang']; ?>">
+                  <?php echo $data['nama_cabang']; ?>
+                </option>
 
                 <?php endforeach; ?>
               </select>
-              <img
-                class="absolute right-0 z-[3]"
-                src="/icons/down.svg"
-                alt=""
-              />
+              <img class="absolute right-0" src="/icons/down.svg" alt="" />
             </div>
           </div>
         </div>
@@ -75,26 +71,24 @@
       <!-- End Services -->
 
       <!-- Start Tanggal -->
-      <div class="flex flex-row justify-between flex-start w-full">
-        <h1 class="w-full text-base">Tanggal :</h1>
+      <div class="flex flex-col justify-between flex-start xl:h-[90px] h-[65px] w-full">
+        <h1 class="text-lg font-bold">Tanggal :</h1>
         <div
-          class="flex justify-start shadow appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="flex justify-start w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
-          <div class="flex items-center relative z-[2] w-full py-2 px-3">
-            <div class="antialiased w-full">
-              <div class="w-full">
-                <div class="relative">
-                  <input type="hidden" name="date" x-ref="date" />
-                  <div class="flex items-center w-full justify-between">
-                    <input
-                      type="date"
-                      name="tanggal"
-                    />
-                  </div>
+          <div class="antialiased w-full">
+            <div class="w-full">
+              <div class="relative">
+                <input type="hidden" name="date" x-ref="date" />
+                <div class="flex items-center w-full justify-between">
+                  <input
+                    class="px-2 form-select appearance-none block w-full py-1.5 xl:text-base text-xs font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
+                    type="date"
+                    name="tanggal"
+                  />
                 </div>
               </div>
             </div>
-            <!-- <img class="absolute right-0" src="/icons/down.svg" alt="" /> -->
           </div>
         </div>
       </div>
@@ -109,7 +103,7 @@
               <select
                 name=""
                 id=""
-                class="form-select appearance-none block py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none px-2"
+                class="form-select appearance-none block py-1.5 xl:text-base text-xs font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none px-2"
               >
                 <option value="01">01</option>
                 <option value="02">02</option>
@@ -119,7 +113,7 @@
               <select
                 name=""
                 id=""
-                class="form-select appearance-none block py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none px-2"
+                class="form-select appearance-none block py-1.5 xl:text-base text-xs font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none px-2"
               >
                 <option value="00">00</option>
                 <option value="01">01</option>
@@ -127,7 +121,7 @@
               <select
                 name=""
                 id=""
-                class="form-select appearance-none block py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none px-2 w-[70px]"
+                class="form-select appearance-none block py-1.5 xl:text-base text-xs font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none px-2 w-[70px]"
               >
                 <option value="AM">AM</option>
                 <option value="PM">PM</option>
@@ -148,7 +142,7 @@
         Cari
       </button>
       <?php //else:// ?>
-        <!-- <button
+      <!-- <button
         class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
         data-modal-toggle="default-modal"
         type="cari"
@@ -316,11 +310,6 @@
               </form>
 
             </div>
-
-            <!-- Modal footer -->
-            <div
-              class="flex space-x-2 items-center justify-center p-6 rounded-b dark:border-gray-600"
-            ></div>
           </div>
         </div>
       </div>
@@ -333,7 +322,7 @@
 </div>
 <!-- End image baby -->
 
-<div class="px-[80px] py-[64px]">
+<div class="xl:px-[80px] xl:py-[64px] p-[24px]">
   <!-- Start Cards -->
   <?php 
   if(!empty(session()->getFlashdata('produk'))):
@@ -363,6 +352,45 @@
   endif;
   ?>
   <!-- End Cards -->
+
+  <script>
+    var openmodal = document.querySelectorAll(".modal-open");
+    for (var i = 0; i < openmodal.length; i++) {
+      openmodal[i].addEventListener("click", function (event) {
+        event.preventDefault();
+        toggleModal();
+      });
+    }
+
+    const overlay = document.querySelector(".modal-overlay");
+    overlay.addEventListener("click", toggleModal);
+
+    var closemodal = document.querySelectorAll(".modal-close");
+    for (var i = 0; i < closemodal.length; i++) {
+      closemodal[i].addEventListener("click", toggleModal);
+    }
+
+    document.onkeydown = function (evt) {
+      evt = evt || window.event;
+      var isEscape = false;
+      if ("key" in evt) {
+        isEscape = evt.key === "Escape" || evt.key === "Esc";
+      } else {
+        isEscape = evt.keyCode === 27;
+      }
+      if (isEscape && document.body.classList.contains("modal-active")) {
+        toggleModal();
+      }
+    };
+
+    function toggleModal() {
+      const body = document.querySelector("body");
+      const modal = document.querySelector(".modal");
+      modal.classList.toggle("opacity-0");
+      modal.classList.toggle("pointer-events-none");
+      body.classList.toggle("modal-active");
+    }
+  </script>
 </div>
 
 <?= $this->endSection() ?>
