@@ -74,7 +74,7 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
     // keranjang
     $routes->get('keranjang', 'Keranjang::index', ['as' => 'user.keranjang.index']);
     $routes->post('keranjang/checkout/(:segment)', 'Keranjang::checkout/$1', ['as' => 'user.keranjang.checkout']);
-    $routes->get('keranjang/delete/(:segment)', 'Keranjang::delete/$1', ['as' => 'user.keranjang.delete']);
+    $routes->post('keranjang/delete/(:segment)', 'Keranjang::delete/$1', ['as' => 'user.keranjang.delete']);
 
     // lihat antrian
     $routes->get('lihat-antrian', 'LihatAntrian::index', ['as' => 'user.antrian.index']);

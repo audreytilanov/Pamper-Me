@@ -16,7 +16,7 @@
             class="flex flex-row justify-between items-center w-full pb-[24px] border-b-4 mt-[32px]"
           >
             <div class="flex items-center">
-              <input
+              <!-- <input
                 id="default-checkbox"
                 type="checkbox"
                 value=""
@@ -24,16 +24,16 @@
               />
               <label for="default-checkbox" class="ml-2 text-base font-semibold"
                 >Pilih Semua</label
-              >
+              > -->
             </div>
-            <button
+            <!-- <button
               class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
               type="button"
               data-modal-toggle="default-modal"
             >
               <img src="/icons/trash.svg" alt="" />
               Hapus
-            </button>
+            </button> -->
           </div>
           <!-- End Select All -->
 
@@ -58,7 +58,7 @@
                 />
                 <div class="flex flex-col items-start gap-[16px]">
                   <div class="flex flex-col items-start gap-[16px]">
-                    <h3 class="font-bold text-xl"><?php echo $data['nama_produk'] ?> | Nama_Cabang</h3>
+                    <h3 class="font-bold text-xl"><?php echo $data['nama_produk'] ?> | <?php echo $data['nama_cabang'] ?></h3>
                   </div>
                   <div
                     class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
@@ -94,14 +94,17 @@
               </div>
             </div>
             <div>
+              <form action="<?= base_url('user/keranjang/delete/'. $data['id']) ?>" method="POST">
+              <?= csrf_field(); ?>
 
-              <button
-                class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 post_delete_btn"
-                type="submit"
-              >
-                <img src="/icons/trash.svg" alt="" />
-                Hapus
-              </button>
+                <button
+                  class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 post_delete_btn"
+                  type="submit"
+                >
+                  <img src="/icons/trash.svg" alt="" />
+                  Hapus
+                </button>
+              </form>
             </div>
           </div>
           <?php endforeach; ?>
@@ -156,41 +159,4 @@
   </div>
   <!-- End lihat antrian -->
 </div>
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
-  $(document).delegate('.post_delete_btn', 'click', function(e) {
-        e.preventDefault();
-        const id = $(this).attr('id');
-        Swal.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            $.ajax({
-              url: '<?= base_url('user/checkout/delete') ?>/' + id,
-              method: 'get',
-              success: function(response) {
-                Swal.fire(
-                  'Deleted!',
-                  response.message,
-                  'success'
-                )
-                fetchAllPosts();
-              }
-            });
-          }
-        })
-      });
-</script>
 <?= $this->endSection() ?>
