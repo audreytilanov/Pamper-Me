@@ -227,7 +227,7 @@
     <?php if (session()->getFlashdata('jadwal') !== NULL) : ?>
     <?php foreach(session()->getFlashdata('jadwal') as $data) :?>    
     <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
+      <img class="rounded-t-xl" src="<?php echo $data['link_gambar'] ?>" alt="" />
       <div class="py-[16px] px-[24px]">
         <h3 class="font-bold text-sm"><?php echo $data['nama_produk'] ?> | <?php echo $data['nama_cabang'] ?></h3>
         <h3 class="font-bold text-sm text-pink-500 mt-[24px]">

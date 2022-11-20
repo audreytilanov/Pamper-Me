@@ -59,7 +59,7 @@
               <div class="flex flex-row items-start gap-[24px]">
                 <img
                   class="w-[292.11px] h-[162.93px] object-cover rounded-md"
-                  src="/images/keranjangProduct.png"
+                  src="<?php echo $data['link_gambar'] ?>"
                   alt=""
                 />
                 <!-- sa -->

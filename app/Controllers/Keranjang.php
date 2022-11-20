@@ -34,13 +34,15 @@ class Keranjang extends BaseController
         
                 return view('pages/keranjang/keranjang', $res);
             }
+            return redirect()->to('/user/lihat-antrian')->with('success', 'Data Berhasil Diperbaharui');
 
-        return redirect()->to('/user/data-anak')->with('success', 'Data Berhasil Diperbaharui');
 
+
+        }else{
+            return redirect()->to('/user/data-anak')->with('success', 'Data Berhasil Diperbaharui');
         }
         
 
-        return redirect()->to('/user/lihat-antrian')->with('success', 'Data Berhasil Diperbaharui');
         
     }
 
