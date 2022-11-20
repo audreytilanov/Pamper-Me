@@ -9,5 +9,6 @@ class KategoriLayananModel extends Model{
     protected $allowedFields = [
         'nama_kategori',
         'status_aktif',
+        'id_layanan',
     ];
 }
