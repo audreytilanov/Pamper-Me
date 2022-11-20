@@ -2,30 +2,30 @@
 
 <?= $this->section('content') ?>
 
-<div class="grid gap-4 grid-cols-2">
-  <div class="px-[80px]">
+<div class="xl:grid xl:gap-4 xl:grid-cols-2">
+  <div class="xl:px-[80px] px-[24px] w-full">
 
     <!-- Start Navbar & Logo -->
     <div class="pt-[32px]">
       <a href="/"><img src="/images/logo.png" alt="" /></a>
-      <div class="w-[480px] flex justify-between items-center mt-[32px]">
-        <div class="flex">
+      <div class="gap-[16px] flex items-center flex-row mt-[32px]">
+        <div class="flex flex-col md:flex-row items-center gap-[4px]">
           <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
-          <div class="text-pink-500 ml-2 font-semibold text-base">
+          <div class="text-pink-500 xl:ml-2 font-semibold xl:text-base text-xs text-center xl:text-left">
             Daftar akun
           </div>
         </div>
         <h2 class="border-gray-400"></h2>
-        <div class="flex">
+        <div class="flex flex-col md:flex-row items-center gap-[4px]">
           <img class="w-[20px] h-[20px]" src="/icons/nonCheck.png" alt="" />
-          <div class="text-gray-400 ml-2 font-semibold text-base">
+          <div class="text-gray-400 xl:ml-2 font-semibold xl:text-base xl:text-left text-center text-xs">
             Verifikasi
           </div>
         </div>
         <h2 class="border-gray-400"></h2>
-        <div class="flex">
+        <div class="flex flex-col md:flex-row items-center gap-[4px]">
           <img class="w-[20px] h-[20px]" src="/icons/nonCheck.png" alt="" />
-          <div class="text-gray-400 ml-2 font-semibold text-base">
+          <div class="text-gray-400 xl:ml-2 font-semibold xl:text-base xl:text-left text-center text-xs">
             Masuk Akun
           </div>
         </div>
@@ -115,7 +115,7 @@
     </div>
     <!-- End Forms  -->
   </div>
-  <div>
+  <div class="hidden xl:block">
     <img class="h-screen fixed" src="/images/baby.png" alt="" />
   </div>
 </div>
