@@ -11,10 +11,7 @@
 
   <!-- Start Menu Select -->
   <div class="flex justify-center w-full p-[24px] xl:p-[0px]">
-    <div
-      class="flex justify-center xl:items-end items-start xl:flex-row flex-col xl:p-[24px] py-[24px] xl:absolute bottom-[50px] bg-white gap-[32px] rounded-lg w-full xl:w-max"
-    >
-    <form action="<?= base_url('/cari') ?>" method="get">
+    <form action="<?= base_url('/cari') ?>" method="get" class="flex justify-center xl:items-end items-start xl:flex-row flex-col xl:p-[24px] py-[24px] xl:absolute bottom-[50px] bg-white gap-[32px] rounded-lg w-full xl:w-max">
     <?= csrf_field(); ?>
 
       <!-- Start Services -->
