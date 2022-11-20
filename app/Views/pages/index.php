@@ -157,11 +157,11 @@
         id="default-modal<?php echo $produk['id_produk'] ?>"
         data-modal-show="false"
         aria-hidden="false"
-        class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center"
+        class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center h-full items-center"
       >
-        <div class="relative h-full md:h-auto flex justify-center">
+        <div class="modal-container fixed h-full z-50 overflow-y-auto w-full flex justify-center xl:p-[100px] p-[16px]">
           <!-- Modal content -->
-          <div class="bg-white rounded-lg shadow relative w-full top-[600px]">
+          <div class="bg-white rounded-lg shadow relative">
             <!-- Modal header -->
             <div class="flex items-start justify-between px-5 pt-5 rounded-t">
               <button
@@ -185,7 +185,7 @@
             </div>
 
             <!-- Modal body -->
-            <div class="p-6 space-y-6">
+            <div class="p-6 space-y-6 bg-white">
               <h3
                 class="text-gray-900 text-base lg:text-2xl font-bold text-center"
               >
@@ -202,15 +202,15 @@
                   <div
                     class="flex flex-col gap-[40px] items-start w-full border-b-4 pb-[40px]">
                     <!-- Start Kelamin -->
-                    <div class="flex flex-col flex-start w-[40%] gap-[8px]">
+                    <div class="flex flex-col flex-start gap-[8px] w-full">
                       <div class="flex justify-center w-full">
-                        <div class="flex items-start flex-col w-full gap-[8px]"> 
-                          <h3 class="font-bold text-2xl">Pilih nama anak :</h3>
+                        <div class="flex items-start flex-col w-full gap-[8px] w-full"> 
+                          <h3 class="font-bold xl:text-2xl text-base">Pilih nama anak :</h3>
                           <div
-                            class="w-full relative z-[2] flex items-center flex-row"
+                            class="w-full xl:w-[400px] relative z-[2] flex items-center flex-row"
                           >
                             <select
-                              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline xl:text-base text-xs"
                               aria-label="Default select example"
                               name="anak"
                             >
@@ -225,7 +225,7 @@
                               <?php endif; ?>
                             </select>
                             <img
-                              class="absolute right-[20px] z-[2]"
+                              class="absolute right-[10px] z-[2]"
                               src="/icons/down.svg"
                               alt=""
                             />
@@ -235,8 +235,8 @@
                     </div>
                     <!-- End Kelamin -->
                     <!-- Start Tanggal  -->
-                    <!-- <div class="flex flex-col flex-start gap-[8px]">
-                      <h1 class="text-xl font-bold">Tanggal :</h1>
+                    <div class="flex flex-col flex-start gap-[8px]">
+                      <h1 class="xl:text-xl font-bold">Tanggal :</h1>
                       <div
                         class="flex flex-col items-center gap-[4px] px-[16px] py-[8px] bg-pink-500 text-white rounded-md"
                       >
@@ -248,12 +248,12 @@
                         <h3>Hari ini</h3>
                         <h3>18</h3>
                       </div>
-                    </div> -->
+                    </div>
                     <!-- End Tanggal -->
 
                     <!-- Start Layanan  -->
                     <div class="flex flex-col flex-start gap-[8px]">
-                      <h1 class="text-xl font-bold">Pilih Jadwal Jam :</h1>
+                      <h1 class="xl:text-xl font-bold">Pilih Jadwal Jam :</h1>
                       <ul class="flex flex-row items-start gap-[8px]">
                       <?php 
                       if(!empty(session()->getFlashdata('jadwal'))):
@@ -319,75 +319,37 @@
 </div>
 <!-- End image baby -->
 
-<div class="xl:px-[80px] xl:py-[64px] p-[24px]">
-  <!-- Start Cards -->
-  <?php 
-  if(!empty(session()->getFlashdata('produk'))):
-  foreach(session()->getFlashdata('produk') as $data) :?>
-  <div class="pt-[24px] grid grid-cols-4 gap-[24px]">
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
-      <div class="py-[16px] px-[24px]">
-        <h3 class="font-bold text-sm"><?php echo $data['nama_produk'] ?></h3>
-        <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-          <p><?php echo $data['deskripsi_produk'] ?></p>
-          <p>Rp. <?php echo number_format($data['harga'] , 0, ',', '.'); ?> / <?php echo $data['durasi'] ?> Menit</p>
+  <div class="xl:px-[80px] xl:py-[64px] p-[24px]">
+    <!-- Start Cards -->
+    <div class="pt-[24px] grid xl:grid-cols-4 gap-[24px]">
+      <?php 
+      if(!empty(session()->getFlashdata('produk'))):
+      foreach(session()->getFlashdata('produk') as $data) :?>
+        <div class="w-full bg-white rounded-xl shadow-lg">
+          <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
+          <div class="py-[16px] px-[24px]">
+            <h3 class="font-bold text-sm"><?php echo $data['nama_produk'] ?></h3>
+            <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+              <p><?php echo $data['deskripsi_produk'] ?></p>
+              <p>Rp. <?php echo number_format($data['harga'] , 0, ',', '.'); ?> / <?php echo $data['durasi'] ?> Menit</p>
 
-        </h3>
-        <button
-        class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
-        type="submit"
-        data-modal-toggle="default-modal<?php echo $data['id_produk'] ?>"
-      >
-        Detail Produk
-      </button>
-      </div>
-    </div>
-  </div>
-  <?php 
-  endforeach;
-  endif;
-  ?>
+            </h3>
+            <button
+            class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+            type="submit"
+            data-modal-toggle="default-modal<?php echo $data['id_produk'] ?>"
+          >
+            Detail Produk
+          </button>
+          </div>
+        </div>
+      <?php 
+      endforeach;
+      endif;
+      ?>
+    </div">
   <!-- End Cards -->
-
-  <script>
-    var openmodal = document.querySelectorAll(".modal-open");
-    for (var i = 0; i < openmodal.length; i++) {
-      openmodal[i].addEventListener("click", function (event) {
-        event.preventDefault();
-        toggleModal();
-      });
-    }
-
-    const overlay = document.querySelector(".modal-overlay");
-    overlay.addEventListener("click", toggleModal);
-
-    var closemodal = document.querySelectorAll(".modal-close");
-    for (var i = 0; i < closemodal.length; i++) {
-      closemodal[i].addEventListener("click", toggleModal);
-    }
-
-    document.onkeydown = function (evt) {
-      evt = evt || window.event;
-      var isEscape = false;
-      if ("key" in evt) {
-        isEscape = evt.key === "Escape" || evt.key === "Esc";
-      } else {
-        isEscape = evt.keyCode === 27;
-      }
-      if (isEscape && document.body.classList.contains("modal-active")) {
-        toggleModal();
-      }
-    };
-
-    function toggleModal() {
-      const body = document.querySelector("body");
-      const modal = document.querySelector(".modal");
-      modal.classList.toggle("opacity-0");
-      modal.classList.toggle("pointer-events-none");
-      body.classList.toggle("modal-active");
-    }
-  </script>
+  </div>
 </div>
 
 <?= $this->endSection() ?>
