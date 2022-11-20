@@ -48,9 +48,48 @@ class Homepage extends BaseController
         $group = $jadwal->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')
             ->join('tb_kategori_layanan', 'tb_produk.id_kategori_layanan = tb_kategori_layanan.id_kategori_layanan', 'inner')
             ->join('tb_layanan', 'tb_kategori_layanan.id_layanan = tb_layanan.id_layanan', 'inner')
-            ->where('tb_produk.id_cabang', $cabang)->where('tb_kategori_layanan.id_layanan', $id_layanan)->where('tb_jadwal_produk.tanggal', $tanggal)->groupBy('tb_produk.nama_produk')->findAll();
+            ->where('tb_produk.id_cabang', $cabang)->where('tb_kategori_layanan.id_layanan', $id_layanan)->where('tb_jadwal_produk.tanggal', $tanggal)->groupBy('tb_produk.id_produk')->findAll();
 
-        // dd($modal);
+        // dd($group[0]);
+
+        foreach($group as $key=>$item){
+            $waktu[$key] = $jadwal->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')
+            ->join('tb_kategori_layanan', 'tb_produk.id_kategori_layanan = tb_kategori_layanan.id_kategori_layanan', 'inner')
+            ->join('tb_layanan', 'tb_kategori_layanan.id_layanan = tb_layanan.id_layanan', 'inner')
+            ->where('tb_produk.id_cabang', $cabang)->where('tb_kategori_layanan.id_layanan', $id_layanan)->where('tb_jadwal_produk.tanggal', $tanggal)->where('tb_produk.id_produk', $group[$key]['id_produk'])->findAll();
+
+            // $cat[$key] = $jadwal->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')
+            // ->join('tb_kategori_layanan', 'tb_produk.id_kategori_layanan = tb_kategori_layanan.id_kategori_layanan', 'inner')
+            // ->join('tb_layanan', 'tb_kategori_layanan.id_layanan = tb_layanan.id_layanan', 'inner')
+            // ->where('tb_produk.id_cabang', $cabang)->where('tb_kategori_layanan.id_layanan', $id_layanan)->where('tb_jadwal_produk.tanggal', $tanggal)->where('tb_produk.id_kategori_layanan', $group[$key]['id_kategori_layanan'])->findAll();
+            
+
+            // $dataFix[] = array_push();
+            // $dataArray[$key] = $waktu;
+
+
+            // foreach($waktu as $keys=>$item){
+            // //     array_push($a,);
+            //     // $a = 0;
+            // // dd($waktu[$keys]['jam']);
+            //     $item[$keys]['nama_produk']  = $waktu[$keys]['nama_produk'];
+            //     $item[$keys]['deskripsi_produk']  = $waktu[$keys]['deskripsi_produk'];
+            //     $item[$keys]['durasi']  = $waktu[$keys]['durasi'];
+            //     $item[$keys]['harga']  = $waktu[$keys]['harga'];
+            //     $item[$keys]['jam'] = $waktu[$keys]['jam'];
+            //     $item[$keys]['ketersediaan']  = $waktu[$keys]['ketersediaan'];
+            //     $item[$keys]['status_aktif']  = $waktu[$keys]['status_aktif'];
+            //     $item[$keys]['tanggal']  = $waktu[$keys]['tanggal'];
+            //     $datas[] = $item;
+            // }
+
+        }
+        // dd($cat);
+
+        if(!empty($waktu)){
+            $session->setFlashdata('jadwal', $waktu);
+        }
+
         if(!empty($modal)){
             $session->setFlashdata('modal', $modal);
         }
@@ -74,38 +113,13 @@ class Homepage extends BaseController
 
 }
 /*
-
-
-        foreach($data as $key=>$item){
-            $waktu = $jadwal->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')
+$waktu = $jadwal->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')
             ->join('tb_kategori_layanan', 'tb_produk.id_kategori_layanan = tb_kategori_layanan.id_kategori_layanan', 'inner')
-            ->join('tb_layanan', 'tb_kategori_layanan.id_layanan = tb_layanan.tb_kategori_layanan', 'inner')
-            ->where('tb_jadwal_produk.id_produk', $data[$key]['id_produk'])->where('tb_jadwal_produk.tanggal', $tanggal  )->findAll();
-            
-
-            // $dataFix[] = array_push();
-            // dd($waktu);
-
-            foreach($waktu as $keys=>$item){
-            //     array_push($a,);
-            // dd($waktu[$keys]['jam']);
-                $item[$keys]['nama_produk']  = $waktu[$keys]['nama_produk'];
-                $item[$keys]['deskripsi_produk']  = $waktu[$keys]['deskripsi_produk'];
-                $item[$keys]['durasi']  = $waktu[$keys]['durasi'];
-                $item[$keys]['harga']  = $waktu[$keys]['harga'];
-                $item[$keys]['jam'] = $waktu[$keys]['jam'];
-                $item[$keys]['ketersediaan']  = $waktu[$keys]['ketersediaan'];
-                $item[$keys]['status_aktif']  = $waktu[$keys]['status_aktif'];
-                $item[$keys]['tanggal']  = $waktu[$keys]['tanggal'];
-                $datas[] = $item;
-
-            }
-            // dd($datas);
-
-            
+            ->join('tb_layanan', 'tb_kategori_layanan.id_layanan = tb_layanan.id_layanan', 'inner')
+            ->where('tb_produk.id_cabang', $cabang)->where('tb_kategori_layanan.id_layanan', $id_layanan)->where('tb_jadwal_produk.tanggal', $tanggal)->where('tb_produk.id_produk', $modal[$key]['id_produk'])->findAll();
 
 
-        }
+        
         if(!empty($datas)){
             $session->setFlashdata('jadwal', $datas);
         }
