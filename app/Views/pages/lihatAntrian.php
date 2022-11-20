@@ -32,7 +32,7 @@
                             required
                             type="date"
                             name="tanggal"
-                            value=""
+                            value="<?php echo date('2022-11-17'); ?>"
                           />
                         </div>
                       </div>
@@ -165,6 +165,9 @@
           <input
             class="sr-only peer"
             type="radio"
+            <?php if($cabang['id_cabang'] == 1): ?>
+              checked
+            <?php endif; ?>
             value="<?php echo $cabang['id_cabang'] ?>"
             name="cabang"
             id="test<?php echo $cabang['id_cabang'] ?>"
@@ -191,6 +194,9 @@
             class="sr-only peer"
             type="radio"
             value="<?php echo $layanan['id_kategori_layanan'] ?>"
+            <?php if($layanan['id_kategori_layanan'] == 1): ?>
+              checked
+            <?php endif; ?>
             name="layanan"
             id="layanan<?php echo $layanan['id_kategori_layanan'] ?>"
           />
