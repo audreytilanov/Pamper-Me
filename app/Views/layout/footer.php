@@ -1,6 +1,6 @@
 <!-- Footer start -->
 <footer class="bg-pink-500">
-  <div class="lg:px-[80px] py-[64px] mx-auto grid gap-4 grid-cols-3">
+  <div class="lg:px-[80px] py-[64px] mx-auto grid gap-4 xl:grid-cols-3 p-[24px]">
 
   <!-- Start column 1 -->
   <div class="flex-col flex gap-[24px] items-start">
@@ -21,7 +21,7 @@
   <!-- End column 1 -->
 
   <!-- Start column 2 -->
-  <div class="justify-self-end">
+  <div class="xl:justify-self-end">
     <h1 class="font-bold text-[24px] text-white">Information</h1>
     <div class="mt-[24px] flex flex-col gap-[16px] items-start">
       <a href="#our_services" class="text-base text-white block font-regular"
@@ -51,7 +51,7 @@
   <!-- End column 2 -->
 
   <!-- Start column 3 -->
-  <div class="justify-self-end">
+  <div class="xl:justify-self-end">
     <h1 class="font-bold text-[24px] text-white">Ada Pertanyaan</h1>
     <a href="/" class="border-2 border-white px-[16px] py-[6px] rounded-[8px] font-regular text-base inline-block mt-[24px] text-white" >
       Kontak kami

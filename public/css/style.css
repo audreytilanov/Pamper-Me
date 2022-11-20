@@ -20,3 +20,14 @@ h2 span {
   background-repeat: no-repeat;
   background-color: black;
 }
+
+.modal {
+  transition: opacity 0.25s ease;
+}
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
+.opacity-95 {
+  opacity: 0.95;
+}

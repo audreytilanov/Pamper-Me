@@ -19,19 +19,19 @@
   />
 
   <!-- Start Menu Select -->
-  <div class="flex justify-center">
+  <div class="flex justify-center w-full p-[24px] xl:p-[0px]">
     <div
-      class="flex justify-center items-end flex-row p-[24px] absolute bottom-[50px] bg-white gap-[32px] rounded-lg"
+      class="flex justify-center xl:items-end items-start xl:flex-row flex-col xl:p-[24px] py-[24px] xl:absolute bottom-[50px] bg-white gap-[32px] rounded-lg w-full xl:w-max"
     >
     <!-- <form action="<?= base_url('/cari') ?>" method="get"> -->
     <?= csrf_field(); ?>
 
       <!-- Start Services -->
-      <div class="flex flex-row justify-center items-end gap-[40px]">
-        <div class="flex flex-col justify-between flex-start h-[90px]">
+      <div class="flex flex-row justify-center items-end gap-[40px] w-full">
+        <div class="flex flex-col justify-between flex-start h-[90px] w-full">
           <h1 class="text-lg font-bold">Service</h1>
           <div class="flex justify-center">
-            <div class="w-[200px] flex items-center relative z-[2]">
+            <div class="xl:w-[200px] flex items-center relative z-[2] w-full">
               <select
                 class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                 aria-label="Default select example"
@@ -55,11 +55,11 @@
       <!-- End Services -->
 
       <!-- Start Services -->
-      <div class="flex flex-row justify-center items-end gap-[40px]">
-        <div class="flex flex-col justify-between flex-start h-[90px]">
+      <div class="flex flex-row justify-center items-end gap-[40px] w-full">
+        <div class="flex flex-col justify-between flex-start h-[90px] w-full">
           <h1 class="text-lg font-bold">Cabang</h1>
           <div class="flex justify-center">
-            <div class="w-[200px] flex items-center relative z-[2]">
+            <div class="xl:w-[200px] flex items-center relative z-[2] w-full">
               <select
                 class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                 aria-label="Default select example"
@@ -84,18 +84,18 @@
       <!-- End Services -->
 
       <!-- Start Tanggal -->
-      <div class="flex flex-row justify-between flex-start w-full">
-        <h1 class="w-full text-base">Tanggal :</h1>
+      <div class="flex flex-col justify-between flex-start h-[90px] w-full">
+        <h1 class="text-lg font-bold">Tanggal :</h1>
         <div
-          class="flex justify-start shadow appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="flex justify-start w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
-          <div class="flex items-center relative z-[2] w-full py-2 px-3">
-            <div class="antialiased w-full">
+        <div class="antialiased w-full">
               <div class="w-full">
                 <div class="relative">
                   <input type="hidden" name="date" x-ref="date" />
                   <div class="flex items-center w-full justify-between">
                     <input
+                    class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                       type="date"
                       name="tanggal"
                     />
@@ -103,8 +103,6 @@
                 </div>
               </div>
             </div>
-            <!-- <img class="absolute right-0" src="/icons/down.svg" alt="" /> -->
-          </div>
         </div>
       </div>
       <!-- End Tanggal -->
@@ -151,7 +149,7 @@
       <!-- Start Cari -->
       <?php /*if(empty(session()->getFlashdata('jadwal'))):*/ ?>
       <button
-        class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+        class="text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800 w-full xl:w-max"
         type="submit"
         data-modal-toggle="default-modal"
       >
@@ -178,7 +176,7 @@
       >
         <div class="relative h-full md:h-auto flex justify-center">
           <!-- Modal content -->
-          <div class="bg-white rounded-lg shadow relative w-full top-[600px]">
+          <div class="bg-white rounded-lg shadow relative w-full">
             <!-- Modal header -->
             <div class="flex items-start justify-between px-5 pt-5 rounded-t">
               <button
@@ -242,7 +240,7 @@
 
                   <!-- Keranjang -->
                   <div class="flex flex-col flex-start gap-[8px]">
-                    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                    <div class="bg-white rounded-xl shadow-lg">
                       <img
                         class="rounded-t-xl"
                         src="/images/legBaby.png"
@@ -342,7 +340,7 @@
                   <form action="" method="POST">
                     <div class="pt-[16px] grid grid-cols-3 gap-[24px]">
                       <div class="flex flex-col flex-start gap-[8px]">
-                        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                        <div class="bg-white rounded-xl shadow-lg">
                           <img
                             class="rounded-t-xl"
                             src="/images/legBaby.png"
@@ -390,11 +388,11 @@
 </div>
 <!-- End image baby -->
 
-<div class="px-[80px] py-[64px]">
+<div class="xl:px-[80px] xl:py-[64px] p-[24px]">
   <!-- Start Cards -->
-  <div class="pt-[24px] grid grid-cols-4 gap-[24px]">
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
+  <div class="pt-[24px] grid xl:grid-cols-4 gap-[24px]">
+    <div class="bg-white rounded-xl shadow-lg">
+      <img class="rounded-t-xl h-[164px] w-full object-cover" src="/images/legBaby.png" alt="" />
       <div class="py-[16px] px-[24px]">
         <h3 class="font-bold text-sm">Precious Baby Massage</h3>
         <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
@@ -402,8 +400,8 @@
         </h3>
       </div>
     </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
+    <div class="bg-white rounded-xl shadow-lg">
+      <img class="rounded-t-xl h-[164px] w-full object-cover" src="/images/legBaby.png" alt="" />
       <div class="py-[16px] px-[24px]">
         <h3 class="font-bold text-sm">Precious Baby Massage</h3>
         <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
@@ -411,8 +409,8 @@
         </h3>
       </div>
     </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
+    <div class="bg-white rounded-xl shadow-lg">
+      <img class="rounded-t-xl h-[164px] w-full object-cover" src="/images/legBaby.png" alt="" />
       <div class="py-[16px] px-[24px]">
         <h3 class="font-bold text-sm">Precious Baby Massage</h3>
         <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
@@ -420,8 +418,8 @@
         </h3>
       </div>
     </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
+    <div class="bg-white rounded-xl shadow-lg">
+      <img class="rounded-t-xl h-[164px] w-full object-cover" src="/images/legBaby.png" alt="" />
       <div class="py-[16px] px-[24px]">
         <h3 class="font-bold text-sm">Precious Baby Massage</h3>
         <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
@@ -429,8 +427,8 @@
         </h3>
       </div>
     </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
+    <div class="bg-white rounded-xl shadow-lg">
+      <img class="rounded-t-xl h-[164px] w-full object-cover" src="/images/legBaby.png" alt="" />
       <div class="py-[16px] px-[24px]">
         <h3 class="font-bold text-sm">Precious Baby Massage</h3>
         <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
@@ -438,8 +436,8 @@
         </h3>
       </div>
     </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
+    <div class="bg-white rounded-xl shadow-lg">
+      <img class="rounded-t-xl h-[164px] w-full object-cover" src="/images/legBaby.png" alt="" />
       <div class="py-[16px] px-[24px]">
         <h3 class="font-bold text-sm">Precious Baby Massage</h3>
         <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
@@ -447,8 +445,8 @@
         </h3>
       </div>
     </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
+    <div class="bg-white rounded-xl shadow-lg">
+      <img class="rounded-t-xl h-[164px] w-full object-cover" src="/images/legBaby.png" alt="" />
       <div class="py-[16px] px-[24px]">
         <h3 class="font-bold text-sm">Precious Baby Massage</h3>
         <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
@@ -456,8 +454,8 @@
         </h3>
       </div>
     </div>
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
-      <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
+    <div class="bg-white rounded-xl shadow-lg">
+      <img class="rounded-t-xl h-[164px] w-full object-cover" src="/images/legBaby.png" alt="" />
       <div class="py-[16px] px-[24px]">
         <h3 class="font-bold text-sm">Precious Baby Massage</h3>
         <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
@@ -467,6 +465,49 @@
     </div>
   </div>
   <!-- End Cards -->
+
+
+<script>
+  var openmodal = document.querySelectorAll('.modal-open')
+  for (var i = 0; i < openmodal.length; i++) {
+    openmodal[i].addEventListener('click', function(event){
+  	event.preventDefault()
+  	toggleModal()
+    })
+  }
+  
+  const overlay = document.querySelector('.modal-overlay')
+  overlay.addEventListener('click', toggleModal)
+  
+  var closemodal = document.querySelectorAll('.modal-close')
+  for (var i = 0; i < closemodal.length; i++) {
+    closemodal[i].addEventListener('click', toggleModal)
+  }
+  
+  document.onkeydown = function(evt) {
+    evt = evt || window.event
+    var isEscape = false
+    if ("key" in evt) {
+  	isEscape = (evt.key === "Escape" || evt.key === "Esc")
+    } else {
+  	isEscape = (evt.keyCode === 27)
+    }
+    if (isEscape && document.body.classList.contains('modal-active')) {
+  	toggleModal()
+    }
+  };
+  
+  
+  function toggleModal () {
+    const body = document.querySelector('body')
+    const modal = document.querySelector('.modal')
+    modal.classList.toggle('opacity-0')
+    modal.classList.toggle('pointer-events-none')
+    body.classList.toggle('modal-active')
+  }
+  
+   
+</script>
 </div>
 
 <?= $this->endSection() ?>
