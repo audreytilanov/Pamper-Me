@@ -3,10 +3,10 @@
 <?= $this->section('content') ?>
 
 <!-- Start lihat antrian -->
-<div class="px-[80px] py-[64px] flex flex-col items-center gap-[40px]">
-  <div class="mt-[64px] flex flex-col items-start gap-[40px] px-[80px] w-full">
+<div class="xl:px-[80px] px-[25px] py-[64px] flex flex-col items-center gap-[40px]">
+  <div class="mt-[64px] flex flex-col items-start gap-[40px] w-full">
     <div class="w-full text-center">
-      <h3 class="text-5xl font-bold">Lihat Antrian</h3>
+      <h3 class="xl:text-5xl text-2xl font-bold">Lihat Antrian</h3>
     </div>
     <!-- Start Tanggal  -->
     <form class="w-full flex flex-col gap-[24px] items-start" action="<?= base_url('user/lihat-antrian/cari') ?>" method="GET">
@@ -156,9 +156,9 @@
 
     <!-- Start Cabang -->
     <div class="flex items-start flex-col gap-[16px]">
-      <h3 class="text-2xl font-bold">Cabang / Lokasi</h3>
+      <h3 class="xl:text-2xl font-bold text-xl">Cabang / Lokasi</h3>
 
-      <ul class="flex flex-row items-start gap-[8px]">
+      <ul class="flex flex-row items-start gap-[8px] flex-wrap">
       <?php foreach($cabangData as $cabang): ?>
 
         <li class="relative">
@@ -184,9 +184,9 @@
     <!-- End Cabang -->
     <!-- Start Services -->
     <div class="flex items-start flex-col gap-[16px]">
-      <h3 class="text-2xl font-bold">Layanan</h3>
+      <h3 class="xl:text-2xl font-bold text-xl">Layanan</h3>
 
-      <ul class="flex flex-row items-start gap-[8px]">
+      <ul class="flex flex-row items-start gap-[8px] flex-wrap">
       <?php foreach($data as $layanan): ?>
 
         <li class="relative">
@@ -214,7 +214,7 @@
     <div class="w-full justify-center flex">
      <!-- Start Cari -->
      <button
-        class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[128px] py-3 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+        class="text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm xl:px-[128px] w-full py-3 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
         type="submit">
         Cari Data
       </button>
@@ -223,9 +223,9 @@
   </div>
   </form>
     <!-- Start Cards -->
+    <div class="pt-[24px] grid xl:grid-cols-4 gap-[24px]">
     <?php if (session()->getFlashdata('jadwal') !== NULL) : ?>
-    <?php foreach(session()->getFlashdata('jadwal') as $data) :?>
-    <div class="pt-[24px] grid grid-cols-4 gap-[24px]">
+    <?php foreach(session()->getFlashdata('jadwal') as $data) :?>    
     <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
       <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
       <div class="py-[16px] px-[24px]">
@@ -269,8 +269,8 @@
         </form>
       </div>
     </div>
-  </div>
   <?php endforeach; endif;?>
+  </div>
   <!-- End Cards -->
 </div>
 <!-- End lihat antrian -->

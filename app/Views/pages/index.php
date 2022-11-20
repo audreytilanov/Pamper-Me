@@ -161,7 +161,7 @@
       >
         <div class="modal-container fixed h-full z-50 overflow-y-auto w-full flex justify-center xl:p-[100px] p-[16px]">
           <!-- Modal content -->
-          <div class="bg-white rounded-lg shadow relative">
+          <div class="bg-white rounded-lg shadow relative xl:w-[1052px] w-[280px] sm:w-full">
             <!-- Modal header -->
             <div class="flex items-start justify-between px-5 pt-5 rounded-t">
               <button
@@ -254,7 +254,7 @@
                     <!-- Start Layanan  -->
                     <div class="flex flex-col flex-start gap-[8px]">
                       <h1 class="xl:text-xl font-bold">Pilih Jadwal Jam :</h1>
-                      <ul class="flex flex-row items-start gap-[8px]">
+                      <ul class="flex flex-row items-start gap-[8px] flex-wrap">
                       <?php 
                       if(!empty(session()->getFlashdata('modal'))):
                       foreach(session()->getFlashdata('modal') as $jadwal) :?>
@@ -317,7 +317,7 @@
                     <?php //foreach(session()->getFlashdata('jadwal') as $data) :?>
                     <div class="pt-[16px] grid grid-cols-3 gap-[24px]">
                       <div class="flex flex-col flex-start gap-[8px]">
-                        <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                        <div class="w-full bg-white rounded-xl shadow-lg">
                           
                           </div>
                         </div>
@@ -338,7 +338,7 @@
       <!-- End Modal -->
       <?php endforeach; endif;?>
       <!-- End cari -->
-    </div>
+  </div>
   </div>
   <!-- End Menu Select -->
 </div>
@@ -350,8 +350,7 @@
   <?php 
   if(!empty(session()->getFlashdata('group'))):
   foreach(session()->getFlashdata('group') as $data) :?>
-  <div class="pt-[24px] grid grid-cols-4 gap-[24px]">
-    <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+    <div class="w-full bg-white rounded-xl shadow-lg">
       <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
       <div class="py-[16px] px-[24px]">
         <h3 class="font-bold text-sm"><?php echo $data['nama_produk'] ?></h3>
@@ -374,7 +373,6 @@
       endif;
       ?>
     </div>
-  </div>
   <!-- End Cards -->
   </div>
 </div>
