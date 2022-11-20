@@ -335,7 +335,7 @@
                     </h3>
                     <?php //foreach(session()->getFlashdata('jadwal') as $data):?>
                     <form action="" method="POST">
-                      <div class="pt-[16px] grid grid-cols-3 gap-[24px]">
+                      <div class="pt-[16px] grid xl:grid-cols-3 gap-[24px]">
                         <div class="flex flex-col flex-start gap-[8px]">
                           <div class="bg-white rounded-xl shadow-lg">
                             <img
