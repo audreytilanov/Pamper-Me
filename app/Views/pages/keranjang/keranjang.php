@@ -3,9 +3,15 @@
 <?= $this->section('content') ?>
 
 <div class="px-[80px] py-[64px] flex flex-col items-start gap-[32px]">
+
   <!-- Start lihat antrian -->
   <div class="mt-[64px] flex flex-col items-start justify-between w-full">
-    <div class="flex flex-row items-start justify-between gap-[40px]">
+    <div class="flex flex-row gap-[4px]">
+    <img src="/icons/left.svg" alt="">
+  <a href="/" class="text-pink-500 font-bold">Kembali Ke Menu Pencarian</a>
+    </div>
+  
+    <div class="flex flex-row items-start justify-between gap-[40px] mt-[32px]">
       <div>
         <div class="w-full">
           <h3 class="text-4xl font-bold">List keranjang kamu</h3>
