@@ -126,5 +126,5 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 // $routes->get('/checkout/bayar', 'Checkout::bayar');
 // $routes->get('/checkout/detail', 'Checkout::detail');
 
-// // myOrder
-// $routes->get('/my-order', 'MyOrder::index');
+// Admin
+$routes->get('/admin/tambah-services', 'Admin::tambahServices');
