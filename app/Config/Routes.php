@@ -128,3 +128,9 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 
 // Admin
 $routes->get('/admin/tambah-services', 'Admin::tambahServices');
+
+// Riwayat Pemesanan
+$routes->get('/my-order/riwayat', 'MyOrder::riwayatPemesanan');
+$routes->get('/my-order/detail-order', 'MyOrder::detailOrder');
+
+

@@ -4,7 +4,6 @@
 
 <div class="px-[80px] py-[64px] flex flex-col items-start gap-[32px]">
   
-  
   <div class="mt-[64px] flex flex-col items-start justify-between w-full">
 
     <!-- Start Timeline  -->

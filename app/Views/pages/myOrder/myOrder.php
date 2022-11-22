@@ -127,7 +127,7 @@
                 <span class="mt-[3px]"> Sudah Lunas </span>
               </div>
               <a
-                href="/my-order/lunas"
+                href="/my-order/detail-order"
                 class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
               
                 

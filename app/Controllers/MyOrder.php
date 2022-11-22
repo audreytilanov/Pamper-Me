@@ -9,9 +9,9 @@ class MyOrder extends BaseController
         return view('pages/myOrder/myOrder');
     }
 
-    public function detailLunas()
+    public function detailOrder()
     {
-        return view('pages/myOrder/detailLunas');
+        return view('pages/myOrder/detailOrder');
     }
 
     public function riwayatPemesanan()
