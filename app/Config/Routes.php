@@ -133,4 +133,8 @@ $routes->get('/admin/tambah-services', 'Admin::tambahServices');
 $routes->get('/my-order/riwayat', 'MyOrder::riwayatPemesanan');
 $routes->get('/my-order/detail-order', 'MyOrder::detailOrder');
 
+$routes->get('/vouchers/', 'Vouchers::index');
+
+$routes->get('/vouchers/detail', 'Vouchers::detail');
+
 
