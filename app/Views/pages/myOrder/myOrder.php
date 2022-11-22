@@ -54,7 +54,7 @@
         <div class="flex flex-col items-start gap-[32px] w-full">
           <!-- Start Cards Keranjang -->
           <div
-            class="flex flex-row justify-between items-start pb-[32px] border-b-4 w-full"
+            class="flex flex-row justify-between items-screth  pb-[32px] border-b-4 w-full "
           >
             <div class="flex flex-row items-start gap-[24px]">
               <div class="flex flex-row items-start gap-[24px]">
@@ -104,45 +104,124 @@
                 </div>
               </div>
             </div>
-            <div class="flex flex-row items-stretch gap-[8px]">
-              <div
-                class="flex flex-row gap-[4px] items-center text-white bg-green-500 focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-[16px] py-[8px] text-center dark:focus:ring-green-600">
-                <svg
-                  width="19"
-                  height="19"
-                  viewBox="0 0 19 19"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.5568 1.57422C5.21713 1.57422 1.68652 5.10483 1.68652 9.4445C1.68652 13.7842 5.21713 17.3148 9.5568 17.3148C13.8965 17.3148 17.4271 13.7842 17.4271 9.4445C17.4271 5.10483 13.8965 1.57422 9.5568 1.57422ZM9.5568 15.7407C6.08522 15.7407 3.26058 12.9161 3.26058 9.4445C3.26058 5.97292 6.08522 3.14827 9.5568 3.14827C13.0284 3.14827 15.853 5.97292 15.853 9.4445C15.853 12.9161 13.0284 15.7407 9.5568 15.7407Z"
-                    fill="#ffffff"
-                  />
-                  <path
-                    d="M7.98121 10.6939L6.17183 8.88764L5.06055 10.0021L7.98278 12.918L13.2606 7.6402L12.1477 6.52734L7.98121 10.6939Z"
-                    fill="#ffffff"
-                  />
-                </svg>
-
-                <span class="mt-[3px]"> Sudah Lunas </span>
-              </div>
-              <a
-                href="/my-order/detail-order"
-                class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
-              
+            <div class="flex flex-col items-end justify-between">
+              <div class="flex flex-row items-stretch gap-[8px]">
+                <div
+                  class="flex flex-row gap-[4px] items-center text-white bg-green-500 focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-[16px] py-[8px] text-center dark:focus:ring-green-600">
+                  <svg
+                    width="19"
+                    height="19"
+                    viewBox="0 0 19 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.5568 1.57422C5.21713 1.57422 1.68652 5.10483 1.68652 9.4445C1.68652 13.7842 5.21713 17.3148 9.5568 17.3148C13.8965 17.3148 17.4271 13.7842 17.4271 9.4445C17.4271 5.10483 13.8965 1.57422 9.5568 1.57422ZM9.5568 15.7407C6.08522 15.7407 3.26058 12.9161 3.26058 9.4445C3.26058 5.97292 6.08522 3.14827 9.5568 3.14827C13.0284 3.14827 15.853 5.97292 15.853 9.4445C15.853 12.9161 13.0284 15.7407 9.5568 15.7407Z"
+                      fill="#ffffff"
+                    />
+                    <path
+                      d="M7.98121 10.6939L6.17183 8.88764L5.06055 10.0021L7.98278 12.918L13.2606 7.6402L12.1477 6.52734L7.98121 10.6939Z"
+                      fill="#ffffff"
+                    />
+                  </svg>
+  
+                  <span class="mt-[3px]"> Sudah Lunas </span>
+                </div>
+                <a
+                  href="/my-order/detail-order"
+                  class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
                 
-              >
-                Details
-              </a>
+                  
+                >
+                  Details
+                </a>
+              </div>
+              <button
+            class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+            type="button"
+            data-modal-toggle="default-modal">
+            <img src="/icons/cancel.svg" alt="" />
+            Cancel Pesanan
+          </button>
+
+          <!-- Start Modal -->
+          <div
+            id="default-modal"
+            data-modal-show="fasle"
+            aria-hidden="fasle"
+            class="hidden overflow-x-hidden overflow-y-auto z-50 fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+            <div
+              class="relative w-full max-w-2xl px-4 h-full md:h-auto flex justify-center"
+            >
+              <!-- Modal content -->
+              <div class="bg-white rounded-lg shadow relative w-[500px]">
+                <!-- Modal header -->
+                <div class="flex items-start justify-between p-5 rounded-t">
+                  <button
+                    type="button"
+                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    data-modal-toggle="default-modal"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="flex justify-center items-center">
+                  <img src="/icons/warning.svg" alt="" />
+                </div>
+                <div class="p-6 space-y-6">
+                  <h3
+                    class="text-gray-900 text-base lg:text-2xl font-semibold text-center"
+                  >
+                    Apakah benar anda ingin menghapus Data Anak Anda?
+                  </h3>
+                </div>
+
+                <!-- Modal footer -->
+                <div
+                  class="flex space-x-2 items-center justify-center p-6 rounded-b dark:border-gray-600"
+                >
+                  <button
+                    data-modal-toggle="default-modal"
+                    type="button"
+                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                  >
+                    Iya, benar
+                  </button>
+                  <button
+                    data-modal-toggle="default-modal"
+                    type="button"
+                    class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600"
+                  >
+                    Tidak, batal
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Modal -->
             </div>
           </div>
           <!-- End Cards Keranjang -->
         </div>
 
+
         <div class="flex flex-col items-start gap-[32px] w-full">
           <!-- Start Cards Keranjang -->
           <div
-            class="flex flex-row justify-between items-start pb-[32px] border-b-4 w-full"
+            class="flex flex-row justify-between items-screth pb-[32px] border-b-4 w-full"
           >
             <div class="flex flex-row items-start gap-[24px]">
               <div class="flex flex-row items-start gap-[24px]">
@@ -192,35 +271,112 @@
                 </div>
               </div>
             </div>
-            <div class="flex flex-row items-stretch gap-[8px]">
-              <div
-                class="flex flex-row gap-[4px] items-center text-white bg-yellow-400 focus:ring-4 focus:ring-yellow-300 font-medium rounded-md text-sm px-[16px] py-[8px] text-center dark:focus:ring-yellow-600"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 25 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            <div class="flex flex-col items-end justify-between">
+              <div class="flex flex-row items-stretch gap-[8px]">
+                <div
+                  class="flex flex-row gap-[4px] items-center text-white bg-yellow-400 focus:ring-4 focus:ring-yellow-300 font-medium rounded-md text-sm px-[16px] py-[8px] text-center dark:focus:ring-yellow-600"
                 >
-                  <path
-                    d="M12.5627 2.99512C7.04874 2.99512 2.56274 7.48112 2.56274 12.9951C2.56274 18.5091 7.04874 22.9951 12.5627 22.9951C18.0767 22.9951 22.5627 18.5091 22.5627 12.9951C22.5627 7.48112 18.0767 2.99512 12.5627 2.99512ZM12.5627 20.9951C8.15174 20.9951 4.56274 17.4061 4.56274 12.9951C4.56274 8.58412 8.15174 4.99512 12.5627 4.99512C16.9737 4.99512 20.5627 8.58412 20.5627 12.9951C20.5627 17.4061 16.9737 20.9951 12.5627 20.9951Z"
-                    fill="#ffffff"
-                  />
-                  <path
-                    d="M13.5627 7.99512H11.5627V13.4091L14.8557 16.7021L16.2697 15.2881L13.5627 12.5811V7.99512Z"
-                    fill="#ffffff"
-                  />
-                </svg>
-                <span class="mt-[3px]"> Pending </span>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.5627 2.99512C7.04874 2.99512 2.56274 7.48112 2.56274 12.9951C2.56274 18.5091 7.04874 22.9951 12.5627 22.9951C18.0767 22.9951 22.5627 18.5091 22.5627 12.9951C22.5627 7.48112 18.0767 2.99512 12.5627 2.99512ZM12.5627 20.9951C8.15174 20.9951 4.56274 17.4061 4.56274 12.9951C4.56274 8.58412 8.15174 4.99512 12.5627 4.99512C16.9737 4.99512 20.5627 8.58412 20.5627 12.9951C20.5627 17.4061 16.9737 20.9951 12.5627 20.9951Z"
+                      fill="#ffffff"
+                    />
+                    <path
+                      d="M13.5627 7.99512H11.5627V13.4091L14.8557 16.7021L16.2697 15.2881L13.5627 12.5811V7.99512Z"
+                      fill="#ffffff"
+                    />
+                  </svg>
+                  <span class="mt-[3px]"> Pending </span>
+                </div>
+                <a
+                  class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
+                  href="/checkout/detail"
+                  
+                >
+                  Details
+                </a>
               </div>
-              <a
-                class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
-                href="/checkout/detail"
-                
+              <button
+              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+              type="button"
+              data-modal-toggle="id1">
+              <img src="/icons/cancel.svg" alt="" />
+              Cancel Pesanan
+            </button>
+            <!-- Start Modal -->
+            <div
+              id="id1"
+              data-modal-show="fasle"
+              aria-hidden="fasle"
+              class="hidden overflow-x-hidden overflow-y-auto z-50 fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+              <div
+                class="relative w-full max-w-2xl px-4 h-full md:h-auto flex justify-center"
               >
-                Details
-              </a>
+                <!-- Modal content -->
+                <div class="bg-white rounded-lg shadow relative w-[500px]">
+                  <!-- Modal header -->
+                  <div class="flex items-start justify-between p-5 rounded-t">
+                    <button
+                      type="button"
+                      class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                      data-modal-toggle="id1"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="flex justify-center items-center">
+                    <img src="/icons/warning.svg" alt="" />
+                  </div>
+                  <div class="p-6 space-y-6">
+                    <h3
+                      class="text-gray-900 text-base lg:text-2xl font-semibold text-center"
+                    >
+                      Apakah benar anda ingin menghapus Data Anak Anda? ID 1
+                    </h3>
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div
+                    class="flex space-x-2 items-center justify-center p-6 rounded-b dark:border-gray-600"
+                  >
+                    <button
+                      data-modal-toggle="id1"
+                      type="button"
+                      class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                    >
+                      Iya, benar
+                    </button>
+                    <button
+                      data-modal-toggle="id1"
+                      type="button"
+                      class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600"
+                    >
+                      Tidak, batal
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Modal -->
             </div>
           </div>
           <!-- End Cards Keranjang -->
