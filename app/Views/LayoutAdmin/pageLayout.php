@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Tables - Azzara Bootstrap 4 Admin Dashboard</title>
+    <title>Admin</title>
     <meta
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
       name="viewport"
@@ -487,22 +487,22 @@
       <!-- End Custom template -->
     </div>
     <!--   Core JS Files   -->
-    <script src="/js/core/jquery.3.2.1.min.js"></script>
-    <script src="/js/core/popper.min.js"></script>
-    <script src="/js/core/bootstrap.min.js"></script>
+    <script src="<?php echo base_url('js/core/jquery.3.2.1.min.js')?>"></script>
+    <script src="<?php echo base_url('js/core/popper.min.js')?>"></script>
+    <script src="<?php echo base_url('js/core/bootstrap.min.js')?>"></script>
     <!-- jQuery UI -->
-    <script src="/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script src="/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+    <script src="<?php echo base_url('js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')?>"></script>
+    <script src="<?php echo base_url('js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')?>"></script>
     <!-- Bootstrap Toggle -->
-    <script src="/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+    <script src="<?php echo base_url('js/plugin/bootstrap-toggle/bootstrap-toggle.min.js')?>"></script>
     <!-- jQuery Scrollbar -->
-    <script src="/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="<?php echo base_url('js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')?>"></script>
     <!-- Datatables -->
-    <script src="/js/plugin/datatables/datatables.min.js"></script>
+    <script src="<?php echo base_url('js/plugin/datatables/datatables.min.js')?>"></script>
     <!-- Azzara JS -->
-    <script src="/js/ready.min.js"></script>
+    <script src="<?php echo base_url('js/ready.min.js')?>"></script>
     <!-- Azzara DEMO methods, don't include it in your project! -->
-    <script src="/js/setting-demo.js"></script>
+    <script src="<?php echo base_url('js/setting-demo.js')?>"></script>
     <script>
       $(document).ready(function () {
         $("#basic-datatables").DataTable({});
