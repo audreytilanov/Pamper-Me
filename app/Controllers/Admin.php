@@ -142,9 +142,9 @@ class Admin extends BaseController
     public function jadwalIndex()
     {
         $page = "jadwal";
-        $model = new ProdukModel();
+        $model = new JadwalProdukModel();
         // dd($produk);
-        $data = $model->findAll();
+        $data = $model->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')->groupBy('tb_produk.id_produk')->findAll();
         // dd($data);
         $res = [
             // 'data' => $data,
