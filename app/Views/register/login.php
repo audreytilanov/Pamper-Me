@@ -65,7 +65,7 @@
     <!-- End Forms  -->
   </div>
   <div>
-    <img class="h-screen fixed" src="/images/baby.png" alt="" />
+    <img class="h-screen fixed hidden xl:block" src="/images/baby.png" alt="" />
   </div>
 </div>
 

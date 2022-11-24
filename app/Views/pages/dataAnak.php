@@ -48,8 +48,7 @@
           <button
             class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
             type="button"
-            data-modal-toggle="default-modal"
-          >
+            data-modal-toggle="default-modal">
             <img src="/icons/trash.svg" alt="" />
             Hapus Data Anak
           </button>
@@ -59,8 +58,7 @@
             id="default-modal"
             data-modal-show="fasle"
             aria-hidden="fasle"
-            class="hidden overflow-x-hidden overflow-y-auto z-50 fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center"
-          >
+            class="hidden overflow-x-hidden overflow-y-auto z-50 fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
             <div
               class="relative w-full max-w-2xl px-4 h-full md:h-auto flex justify-center"
             >

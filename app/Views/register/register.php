@@ -108,7 +108,7 @@
             </button>
           </div>
           <div class="flex justify-center mt-4 text-gray-400">
-            Sudah punya akun? <span> <a href="login" class="text-blue-500 font-semibold"> Masuk</a> </span> 
+            Sudah punya akun? <span> <a href="login" class="text-blue-500 font-semibold ml-[4px]"> Masuk</a> </span> 
           </div>
         </div>
       </form>
