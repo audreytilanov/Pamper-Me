@@ -144,7 +144,7 @@ class Admin extends BaseController
         $page = "jadwal";
         $model = new ProdukModel();
         // dd($produk);
-        $data = $model->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')->groupBy('tb_produk.id_produk')->findAll();
+        $data = $model->findAll();
         // dd($data);
         $res = [
             // 'data' => $data,
