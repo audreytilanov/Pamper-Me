@@ -143,16 +143,13 @@ class Admin extends BaseController
     {
         $page = "jadwal";
         $model = new ProdukModel();
-        $produk = $model
-        ->findAll();
         // dd($produk);
-        // dd($produk);
-        // $data = $model->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')->groupBy('tb_produk.id_produk')->findAll();
+        $data = $model->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')->groupBy('tb_produk.id_produk')->findAll();
         // dd($data);
         $res = [
             // 'data' => $data,
             'page' => $page,
-            'produk' => $produk,
+            'produk' => $data,
         ];
 
         return view('pages/admin/jadwal/index', $res);
