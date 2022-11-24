@@ -143,9 +143,8 @@ class Admin extends BaseController
     {
         $page = "jadwal";
         $model = new ProdukModel();
-        $produk = $model->join('tb_cabang', 'tb_produk.id_cabang = Tb_cabang.id_cabang', 'inner')
-        ->join('tb_kategori_layanan', 'tb_kategori_layanan.id_kategori_layanan = tb_produk.id_kategori_layanan', 'inner')
-        ->findAll();
+        $produk = $model->join('tb_cabang', 'tb_produk.id_cabang = tb_cabang.id_cabang', 'inner')
+        ->join('tb_kategori_layanan', 'tb_kategori_layanan.id_kategori_layanan = tb_produk.id_kategori_layanan', 'inner')->groupBy('tb_produk.id_produk')->findAll();
         // dd($produk);
         // $data = $model->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')->groupBy('tb_produk.id_produk')->findAll();
         // dd($data);
