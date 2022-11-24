@@ -126,14 +126,38 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 // $routes->get('/checkout/bayar', 'Checkout::bayar');
 // $routes->get('/checkout/detail', 'Checkout::detail');
 
-// Admin
-$routes->get('/admin/tambah-services', 'Admin::tambahServices');
+$routes->group('admin', static function ($routes) {
+    // Admin
+    // Orangtua
+    $routes->get('orangtua', 'Admin::orangtuaIndex',['as' => 'admin.orangtua']);
+    $routes->post('orangtua/tambah', 'Admin::orangtuaTambah',['as' => 'admin.orangtua.tambah']);
+    $routes->get('orangtua/edit/(:segment)', 'Admin::orangtuaEdit/$1', ['as' => 'admin.orangtua.edit']);
+    $routes->post('orangtua/edit/(:segment)', 'Admin::orangtuaUpdate/$1',['as' => 'admin.orangtua.update']);
+
+    // Anak
+    $routes->get('anak/(:segment)', 'Admin::anakIndex/$1',['as' => 'admin.anak']);
+    $routes->post('anak/tambah', 'Admin::anakTambah',['as' => 'admin.anak.tambah']);
+    $routes->get('anak/edit/(:segment)', 'Admin::anakEdit/$1', ['as' => 'admin.anak.edit']);
+    $routes->post('anak/edit/(:segment)', 'Admin::anakUpdate/$1',['as' => 'admin.anak.update']);
+
+    // Jadwal
+    $routes->get('jadwal', 'Admin::jadwalIndex',['as' => 'admin.jadwal']);
+    $routes->get('jadwal/detail/(:segment)', 'Admin::jadwalDetail/$1', ['as' => 'admin.jadwal.detail']);
+
+    $routes->post('jadwal/tambah', 'Admin::jadwalTambah',['as' => 'admin.jadwal.tambah']);
+    $routes->get('jadwal/edit/(:segment)', 'Admin::jadwalEdit/$1', ['as' => 'admin.jadwal.edit']);
+    $routes->post('jadwal/edit/(:segment)', 'Admin::jadwalUpdate/$1',['as' => 'admin.jadwal.jadwal']);
+
+});
+
+
+
 
 // Riwayat Pemesanan
 $routes->get('/my-order/riwayat', 'MyOrder::riwayatPemesanan');
 $routes->get('/my-order/detail-order', 'MyOrder::detailOrder');
 
-$routes->get('/vouchers/', 'Vouchers::index');
+$routes->get('/vouchers', 'Vouchers::index');
 
 $routes->get('/vouchers/detail', 'Vouchers::detail');
 
