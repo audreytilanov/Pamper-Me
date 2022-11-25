@@ -3,17 +3,17 @@
 <?= $this->section('content') ?>
 
 <!-- Start User Dashboard -->
-<div class="px-[80px] py-[64px]">
-  <div class="grid grid-cols-2 gap-[24px]">
+<div class="px-[24px] xl:px-[80px] py-[64px]">
+  <div class="grid xl:grid-cols-2 gap-[24px]">
     <div class="flex flex-col items-start gap-[32px]">
       <div class="flex flex-col items-start gap-[8px]">
-        <h1 class="font-bold text-4xl mt-[50px]">Tambah Data Diri Anak</h1>
+        <h1 class="font-bold xl:text-5xl xl:mt-[50px] mt-[40px] text-2xl">Tambah Data Diri Anak</h1>
         <p class="text-base ml-[4px]">
           Halaman ini dapat menambahkan data diri dari anak.
         </p>
       </div>
       <div
-        class="p-[40px] border border-zinc-900 w-full flex flex-col items-start gap-[32px] rounded-lg"
+        class="xl:p-[40px] p-[16px] border border-zinc-900 w-full flex flex-col items-start gap-[32px] rounded-lg"
       >
         <div class="flex flex-col items-start gap-[8px]">
           <div class="flex flex-row gap-[24px] items-center">
@@ -28,18 +28,18 @@
               class="flex flex-row gap-[4px] items-center text-white bg-blue-400 hover:bg-blue-500 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-[8px] py-[8px] text-center dark:bg-blue-400 dark:hover:bg-blue-500 dark:focus:ring-blue-800 cursor-pointer"
               type="button"
             >
-              <img src="/icons/image.svg" alt="" />
-              <span class="text-sm leading-normal text-zinc-900 font-semibold"
+              <img class="hidden xl:block" src="/icons/image.svg" alt="" />
+              <span class="xl:text-sm text-xs leading-normal text-zinc-900 font-semibold"
                 >Tambah Gambar</span
               >
               <input type="file" class="hidden" />
             </label>
             <button
-              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg xl:text-sm text-xs px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
               type="button"
               data-modal-toggle="default-modal"
             >
-              <img src="/icons/trash.svg" alt="" />
+              <img class="hidden xl:block" src="/icons/trash.svg" alt="" />
               Remove Image
             </button>
 
@@ -120,7 +120,7 @@
           method="POST"
         >
         <?= csrf_field(); ?>
-          <div class="flex flex-row items-start w-full items-center">
+          <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
             <h3 class="w-full text-base">Nama Anak :</h3>
             <div class="w-full">
               <input
@@ -136,7 +136,7 @@
           </div>
 
           <!-- Start Tanggal -->
-          <div class="flex flex-row justify-between flex-start w-full">
+          <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
             <h1 class="w-full text-base">Tanggal Lahir :</h1>
             <div
               class="flex justify-start shadow appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -163,8 +163,8 @@
           <!-- End Tanggal -->
 
           <!-- Start Kelamin -->
-          <div class="flex flex-row justify-between flex-start w-full">
-            <div class="flex flex-row justify-between flex-start w-full">
+          <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
+            <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
               <h1 class="text-base w-full">Kelamin :</h1>
               <div class="flex justify-center w-full">
                 <div class="flex items-center relative z-[2] w-full">
