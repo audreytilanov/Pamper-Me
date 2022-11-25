@@ -6,6 +6,7 @@ use Aws\S3\S3Client;
 use CodeIgniter\Files\File;
 use App\Models\OrangtuaModel;
 use Aws\S3\Exception\S3Exception;
+use PDO;
 
 class Login extends BaseController
 {
@@ -21,8 +22,7 @@ class Login extends BaseController
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
         $data = $model->where('email', $email)->first();
-        var_dump($data);
-        if($data){
+        if($data['status_pendaftaran'] == 1){
             $pass = $data['password'];
             $verify_pass = password_verify($password, $pass);
             if($verify_pass){
@@ -41,6 +41,37 @@ class Login extends BaseController
                 $session->setFlashdata('msg', 'Password yang dimasukkan salah!');
                 return redirect()->to('/login');
             }
+        }elseif($data['status_pendaftaran'] == 0){
+            $modelUpdate = new OrangtuaModel();
+
+            $userkey = '85fcf56b4387';
+            $passkey = '28d6e0822ba452db2096d1f5';
+            $telepon = $data['no_whatsapp'];
+            $message = 'Hi John Doe, have a nice day.';
+            $url = 'https://console.zenziva.net/wareguler/api/sendWA/';
+            $curlHandle = curl_init();
+            curl_setopt($curlHandle, CURLOPT_URL, $url);
+            curl_setopt($curlHandle, CURLOPT_HEADER, 0);
+            curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, 2);
+            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($curlHandle, CURLOPT_TIMEOUT,30);
+            curl_setopt($curlHandle, CURLOPT_POST, 1);
+            curl_setopt($curlHandle, CURLOPT_POSTFIELDS, array(
+                'userkey' => $userkey,
+                'passkey' => $passkey,
+                'to' => $telepon,
+                'message' => $message
+            ));
+            $results = json_decode(curl_exec($curlHandle), true);
+            dd($results);
+            if(!empty($results['status'])){
+                $modelUpdate->update($data['id_orangtua'], [
+                    'status_pendaftaran'     => $results['status'],
+                ]);
+            }
+            curl_close($curlHandle);
+            return redirect()->to('/user/dashboard');
         }else{
             $session->setFlashdata('msg', 'Email Tidak Ditemukan');
             return redirect()->to('/login');
