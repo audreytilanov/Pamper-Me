@@ -147,6 +147,13 @@ $routes->group('admin', static function ($routes) {
     $routes->post('jadwal/tambah', 'Admin::jadwalTambah',['as' => 'admin.jadwal.tambah']);
     $routes->get('jadwal/edit/(:segment)', 'Admin::jadwalEdit/$1', ['as' => 'admin.jadwal.edit']);
     $routes->post('jadwal/edit/(:segment)', 'Admin::jadwalUpdate/$1',['as' => 'admin.jadwal.jadwal']);
+    $routes->post('jadwal/delete/(:segment)', 'Admin::jadwalDelete/$1',['as' => 'admin.jadwal.delete']);
+
+    // Produk
+    $routes->get('produk', 'Admin::produkIndex',['as' => 'admin.produk']);
+    $routes->post('produk/tambah', 'Admin::produkTambah',['as' => 'admin.produk.tambah']);
+    $routes->get('produk/edit/(:segment)', 'Admin::produkEdit/$1', ['as' => 'admin.produk.edit']);
+    $routes->post('produk/edit/(:segment)', 'Admin::produkUpdate/$1',['as' => 'admin.produk.update']);
 
 });
 

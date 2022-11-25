@@ -65,13 +65,6 @@
                                     <label for="ketersediaan">Ketersediaan</label>
                                     <input type="number" class="form-control" id="ketersediaan" placeholder="Masukkan Ketersediaan" name="ketersediaan" value="<?php echo $ketersediaan ?>">
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Status Aktif</label>
-                                    <select class="form-control" id="exampleFormControlSelect1" name="status_aktif">
-                                        <option value="1"<?php if($status_aktif == 1){ echo "selected";}; ?>>Aktif</option>
-                                        <option value="0" <?php if($status_aktif == 0){ echo "selected";}; ?>>Nonaktif</option>
-                                    </select>
-                                </div>
                             </div>
                             <div class="card-action">
                                 <button type="submit" class="btn btn-success">Submit</button>

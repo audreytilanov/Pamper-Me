@@ -14,5 +14,6 @@ class ProdukModel extends Model{
         'id_cabang',
         'status_aktif',
         'harga',
+        'link_gambar',
     ];
 }
