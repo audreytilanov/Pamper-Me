@@ -88,6 +88,7 @@ class Homepage extends BaseController
 
         if(!empty($waktu)){
             $session->setFlashdata('jadwal', $waktu);
+            // dd($waktu);
         }
 
         if(!empty($modal)){
@@ -96,6 +97,7 @@ class Homepage extends BaseController
 
         if(!empty($modal)){
             $session->setFlashdata('group', $group);
+            // dd($group);
         }
 
         if(!empty($session->get('user_id_orangtua'))){
