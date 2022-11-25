@@ -8,7 +8,7 @@
   <div class="grid xl:grid-cols-2 gap-[24px]">
     <div class="flex flex-col items-start gap-[32px]">
       <div class="flex flex-col items-start gap-[8px]">
-        <h1 class="font-bold xl:text-5xl xl:mt-[50px] mt-[40px] text-3xl]">Detail Akun</h1>
+        <h1 class="font-bold xl:text-5xl xl:mt-[50px] mt-[40px] text-2xl">Detail Akun</h1>
         <p class="text-base ml-[4px]">
           Di sini kamu bisa mengatur detail akunmu.
         </p>
