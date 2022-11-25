@@ -129,3 +129,5 @@ nb-configuration.xml
 
 catatan.txt
 
+app/Config/Database.php
+app/Config/App.php
