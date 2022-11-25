@@ -4,20 +4,20 @@
 <?php $session = session() ?>
 
 <!-- Start User Dashboard -->
-<div class="px-[80px] py-[64px]">
-  <div class="grid grid-cols-2 gap-[24px]">
+<div class="px-[24px] xl:px-[80px] py-[64px]">
+  <div class="grid xl:grid-cols-2 gap-[24px]">
     <div class="flex flex-col items-start gap-[32px]">
       <div class="flex flex-col items-start gap-[8px]">
-        <h1 class="font-bold text-5xl mt-[50px]">Edit Akun</h1>
+        <h1 class="font-bold xl:text-5xl xl:mt-[50px] mt-[40px] text-2xl">Edit Akun</h1>
         <p class="text-base ml-[4px]">
           Di sini kamu bisa mengatur detail akunmu.
         </p>
       </div>
       <div
-        class="p-[40px] border border-zinc-900 w-full flex flex-col items-start gap-[32px] rounded-lg"
+        class="xl:p-[40px] p-[16px] border border-zinc-900 w-full flex flex-col items-start gap-[32px] rounded-lg"
       >
         <div class="flex flex-col items-start gap-[8px]">
-          <div class="flex flex-row gap-[24px] items-center">
+          <div class="xl:flex flex-row gap-[24px] items-center">
             <img
               class="w-[190px] h-[190px] object-cover rounded-lg"
               id="ajaxImgUpload" 
@@ -37,8 +37,14 @@
               class="flex flex-row gap-[4px] items-center text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-[8px] py-[8px] text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-800 cursor-pointer"
               type="button"
             >
-              <img src="/icons/image.svg" alt="" />
-              <span class="text-base leading-normal text-white"
+              <div class="hidden xl:block">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.87402 11.375C8.70245 11.375 9.37402 10.7034 9.37402 9.875C9.37402 9.04657 8.70245 8.375 7.87402 8.375C7.0456 8.375 6.37402 9.04657 6.37402 9.875C6.37402 10.7034 7.0456 11.375 7.87402 11.375Z" fill="#ffffff"/>
+                  <path d="M10.874 14.375L9.37402 12.375L6.37402 16.375H18.374L13.874 10.375L10.874 14.375Z" fill="#ffffff"/>
+                  <path d="M20.374 4.375H4.37402C3.27102 4.375 2.37402 5.272 2.37402 6.375V18.375C2.37402 19.478 3.27102 20.375 4.37402 20.375H20.374C21.477 20.375 22.374 19.478 22.374 18.375V6.375C22.374 5.272 21.477 4.375 20.374 4.375ZM4.37402 18.375V6.375H20.374L20.376 18.375H4.37402V18.375Z" fill="#ffffff"/>
+                </svg>
+              </div>
+              <span class="md:text-sm leading-normal text-white text-xs"
                 >Ganti Gambar</span>
                 
               <input type="file" class="hidden" id="finput" onchange="onFileUpload(this);" name="image" accept="image/*"/>
@@ -57,11 +63,11 @@
                   }
               </script>
             <button
-              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg md:text-s text-xs px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
               type="button"
               data-modal-toggle="default-modal"
             >
-              <img src="/icons/trash.svg" alt="" />
+              <img class="hidden xl:block" src="/icons/trash.svg" alt="" />
               Remove Image
             </button>
 
@@ -138,7 +144,7 @@
         </div>
         <form class="w-full flex flex-col gap-[24px] items-start" action="<?= base_url('user/dashboard/edit/'. $session->get('user_id')) ?>" method="POST">
         <?= csrf_field(); ?>
-          <div class="flex flex-row items-start w-full items-center">
+          <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
             <h3 class="w-full text-base">Nama orang tua :</h3>
             <div class="w-full">
               <input
@@ -150,7 +156,7 @@
               />
             </div>
           </div>
-          <!-- <div class="flex flex-row items-start w-full items-center">
+          <!-- <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
             <h3 class="w-full text-base">Alamat :</h3>
             <div class="w-full">
               <input
@@ -162,7 +168,7 @@
               />
             </div>
           </div> -->
-          <div class="flex flex-row items-start w-full items-center">
+          <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
             <h3 class="w-full text-base">Email :</h3>
             <div class="w-full">
               <input
@@ -174,7 +180,7 @@
               />
             </div>
           </div>
-          <div class="flex flex-row items-start w-full items-center">
+          <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
             <h3 class="w-full text-base">No WA :</h3>
             <div class="w-full">
               <input
@@ -186,7 +192,7 @@
               />
             </div>
           </div>
-          <!-- <div class="flex flex-row items-start w-full items-center">
+          <!-- <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
             <h3 class="w-full text-base">Ubah password :</h3>
             <div class="w-full">
               <div class="py-2" x-data="{ show: true }">
