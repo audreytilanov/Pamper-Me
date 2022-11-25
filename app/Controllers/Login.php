@@ -64,7 +64,6 @@ class Login extends BaseController
                 'message' => $message
             ));
             $results = json_decode(curl_exec($curlHandle), true);
-            dd($results);
             if(!empty($results['status'])){
                 $modelUpdate->update($data['id_orangtua'], [
                     'status_pendaftaran'     => $results['status'],
