@@ -42,35 +42,7 @@ class Login extends BaseController
                 return redirect()->to('/login');
             }
         }elseif($data['status_pendaftaran'] == 0){
-            $modelUpdate = new OrangtuaModel();
-
-            $userkey = '85fcf56b4387';
-            $passkey = '28d6e0822ba452db2096d1f5';
-            $telepon = $data['no_whatsapp'];
-            $message = 'Hi John Doe, have a nice day.';
-            $url = 'https://console.zenziva.net/wareguler/api/sendWA/';
-            $curlHandle = curl_init();
-            curl_setopt($curlHandle, CURLOPT_URL, $url);
-            curl_setopt($curlHandle, CURLOPT_HEADER, 0);
-            curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, 2);
-            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($curlHandle, CURLOPT_TIMEOUT,30);
-            curl_setopt($curlHandle, CURLOPT_POST, 1);
-            curl_setopt($curlHandle, CURLOPT_POSTFIELDS, array(
-                'userkey' => $userkey,
-                'passkey' => $passkey,
-                'to' => $telepon,
-                'message' => $message
-            ));
-            $results = json_decode(curl_exec($curlHandle), true);
-            if(!empty($results['status'])){
-                $modelUpdate->update($data['id_orangtua'], [
-                    'status_pendaftaran'     => $results['status'],
-                ]);
-            }
-            curl_close($curlHandle);
-            return redirect()->to('/user/dashboard');
+            return view('register/verifikasi');
         }else{
             $session->setFlashdata('msg', 'Email Tidak Ditemukan');
             return redirect()->to('/login');
@@ -172,5 +144,16 @@ class Login extends BaseController
 		$session->remove('logged_in');
         $session->stop();
         return redirect()->to('/login');
+    }
+
+    public function verifikasiWhatsapp($id){
+        $modelUpdate = new OrangtuaModel();
+        $data = $modelUpdate->where('id_orangtua', $id)->first();
+
+        $modelUpdate->update($data['id_reg'], [
+            'status_pendaftaran'     => 1,
+        ]);
+
+        return redirect()->to('/login')->with('success', 'AKun Berhasil Diverifikasi');;
     }
 }

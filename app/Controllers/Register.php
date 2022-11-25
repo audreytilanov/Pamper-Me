@@ -32,7 +32,7 @@ class Register extends BaseController
         // if($this->validate($rules)){
             $model = new OrangtuaModel();
             $data = [
-                'id_orangtua' => password_hash($this->request->getVar('nama_orangtua'), PASSWORD_DEFAULT),
+                'id_orangtua' => hash ( "sha256", $this->request->getVar('nama_orangtua') ),
                 'nama_orangtua'     => $this->request->getVar('nama_orangtua'),
                 'email'    => $this->request->getVar('email'),
                 'no_whatsapp'    => $this->request->getVar('no_whatsapp'),
@@ -40,10 +40,28 @@ class Register extends BaseController
                 'status_aktif' => 1
             ];
             $model->save($data);
-            return redirect()->to('/login');
-        // }else{
+            $userkey = '85fcf56b4387';
+            $passkey = '28d6e0822ba452db2096d1f5';
+            $telepon = $data['no_whatsapp'];
+            $message = 'Terima kasih telah mendaftar di Pamper Me. Silahkann klik link berikut untuk memverifikasi akun anda : https://baligroupbooking.com//login/verifikasi/'. $data['id_orangtua'];
+            $url = 'https://console.zenziva.net/wareguler/api/sendWA/';
+            $curlHandle = curl_init();
+            curl_setopt($curlHandle, CURLOPT_URL, $url);
+            curl_setopt($curlHandle, CURLOPT_HEADER, 0);
+            curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, 2);
+            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($curlHandle, CURLOPT_TIMEOUT,30);
+            curl_setopt($curlHandle, CURLOPT_POST, 1);
+            curl_setopt($curlHandle, CURLOPT_POSTFIELDS, array(
+                'userkey' => $userkey,
+                'passkey' => $passkey,
+                'to' => $telepon,
+                'message' => $message
+            ));
+            $results = json_decode(curl_exec($curlHandle), true);
+            curl_close($curlHandle);
             $data['validation'] = $this->validator;
-            return view('register/register', $data);
-        // }
+            return view('register/verifikasi', $data);
     }
 }
