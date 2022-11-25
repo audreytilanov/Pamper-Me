@@ -150,9 +150,9 @@
       <!-- End Cari -->
     </form>
       <!-- Start Modal -->
-      <?php //if (session()->getFlashdata('jadwal') !== NULL) :// ?>
     <?php if(!empty(session()->getFlashdata('modal'))): ?>
-    <?php foreach(session()->getFlashdata('modal') as $produk) : $a = 0;?>
+    <?php foreach(session()->getFlashdata('group') as $key=>$produk) : 
+      ?>
       <div
         id="default-modal<?php echo $produk['id_produk'] ?>"
         data-modal-show="false"
@@ -257,7 +257,7 @@
                       <ul class="flex flex-row items-start gap-[8px] flex-wrap">
                       <?php 
                       if(!empty(session()->getFlashdata('modal'))):
-                      foreach(session()->getFlashdata('jadwal')[$a] as $jadwal) :?>
+                      foreach(session()->getFlashdata('jadwal')[$key] as $jadwal) :?>
                         <li class="relative">
                           <input
                             class="sr-only peer"
@@ -272,12 +272,12 @@
                             ><?php echo $jadwal['jam'] ?></label
                           >
                         </li>
-                        <?php $a++; endforeach; endif; ?>
+                        <?php endforeach; endif; ?>
                       </ul>
                     </div>
 
                     <div class="flex flex-col flex-start gap-[8px]">
-                      <h1 class="text-xl font-bold">Pilih Jadwal Jam :</h1>
+                      <h1 class="text-xl font-bold">Pilih Kategori Anak :</h1>
                       <ul class="flex flex-row items-start gap-[8px]">
                       <?php 
                       if(!empty(session()->getFlashdata('group'))):
@@ -286,14 +286,14 @@
                           <input
                             class="sr-only peer"
                             type="radio"
-                            value="<?php echo session()->getFlashdata('group')[$a]['id_kategori_layanan'] ?>"
+                            value="<?php echo session()->getFlashdata('group')[$key]['id_kategori_layanan'] ?>"
                             name="id_kategori_layanan"
-                            id="kat<?php echo session()->getFlashdata('group')[$a]['id_kategori_layanan'] ?>"
+                            id="kat<?php echo session()->getFlashdata('group')[$key]['id_kategori_layanan'] ?>"
                           />
                           <label
                             class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
-                            for="kat<?php echo session()->getFlashdata('group')[$a]['id_kategori_layanan'] ?>"
-                            ><?php echo session()->getFlashdata('group')[$a]['nama_kategori'] ?></label
+                            for="kat<?php echo session()->getFlashdata('group')[$key]['id_kategori_layanan'] ?>"
+                            ><?php echo session()->getFlashdata('group')[$key]['nama_kategori'] ?></label
                           >
                         </li>
                         <?php endif; ?>
@@ -335,10 +335,11 @@
           </div>
         </div>
       </div>
+    </div>
+
       <!-- End Modal -->
-      <?php $a++; endforeach; endif;?>
+      <?php endforeach; endif;?>
       <!-- End cari -->
-  </div>
   </div>
   <!-- End Menu Select -->
 </div>

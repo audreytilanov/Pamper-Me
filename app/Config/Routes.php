@@ -40,6 +40,7 @@ $routes->set404Override();
 $routes->get('/register', 'Register::index', ['as' => 'user.register']);
 $routes->post('/register/save', 'Register::save', ['as' => 'user.register.save']);
 $routes->post('/login/auth', 'Login::authLogin', ['as' => 'user.login.auth']);
+$routes->get('/login/verifikasi/(:segment)', 'Login::verifikasiWhatsapp/$1', ['as' => 'user.login.verifikasi']);
 $routes->get('/register/verifikasi', 'Register::verifikasi', ['as' => 'user.account.verifikasi']);
 
 // Homepage

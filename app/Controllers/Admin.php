@@ -37,7 +37,7 @@ class Admin extends BaseController
         // if($this->validate($rules)){
             $model = new OrangtuaModel();
             $data = [
-                'id_orangtua' => password_hash($this->request->getVar('nama_orangtua'), PASSWORD_DEFAULT),
+                'id_orangtua' => hash ( "sha256", $this->request->getVar('nama_orangtua') ),
                 'nama_orangtua'     => $this->request->getVar('nama_orangtua'),
                 'email'    => $this->request->getVar('email'),
                 'no_whatsapp'    => $this->request->getVar('no_whatsapp'),
