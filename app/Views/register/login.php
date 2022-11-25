@@ -2,8 +2,8 @@
 
 <?= $this->section('content') ?>
 
-<div class="grid gap-4 grid-cols-2">
-  <div class="px-[80px]">
+<div class="xl:grid xl:gap-4 xl:grid-cols-2">
+  <div class="xl:px-[80px] px-[24px] w-full">
     <!-- Start Navbar & Logo -->
     <div class="pt-[32px]">
       <a href="/"><img src="/images/logo.png" alt="" /></a>
@@ -57,7 +57,7 @@
             </button>
           </div>
           <div class="flex justify-center mt-4 text-gray-400">
-            Belum punya akun? <span> <a href="/register" class="text-blue-500 font-semibold">Daftar</a> </span> 
+            Belum punya akun? <span> <a href="/register" class="text-blue-500 font-semibold ml-[4px]">Daftar</a> </span> 
           </div>
         </div>
       </form>
@@ -65,7 +65,7 @@
     <!-- End Forms  -->
   </div>
   <div>
-    <img class="h-screen fixed" src="/images/baby.png" alt="" />
+    <img class="h-screen fixed hidden xl:block" src="/images/baby.png" alt="" />
   </div>
 </div>
 
