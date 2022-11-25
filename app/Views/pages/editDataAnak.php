@@ -28,18 +28,18 @@
               class="flex flex-row gap-[4px] items-center text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-800 cursor-pointer"
               type="button"
             >
-              <img src="/icons/image.svg" alt="" />
-              <span class="text-base leading-normal text-zinc-900 font-semibold"
+              <img class="hidden xl:black" src="/icons/image.svg" alt="" />
+              <span class="xl:text-sm text-xs leading-normal text-zinc-900 font-semibold"
                 >Edit Gambar</span
               >
               <input type="file" class="hidden" />
             </label>
             <button
-              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md xl:text-sm text-xs px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
               type="button"
               data-modal-toggle="default-modal"
             >
-              <img src="/icons/trash.svg" alt="" />
+              <img class="hidden xl:black" src="/icons/trash.svg" alt="" />
               Remove Image
             </button>
 

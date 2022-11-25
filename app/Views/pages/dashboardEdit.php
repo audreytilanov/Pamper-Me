@@ -37,7 +37,13 @@
               class="flex flex-row gap-[4px] items-center text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-[8px] py-[8px] text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-800 cursor-pointer"
               type="button"
             >
-              <img class="hidden xl:block" src="/icons/image.svg" alt="" />
+              <div class="hidden xl:block">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.87402 11.375C8.70245 11.375 9.37402 10.7034 9.37402 9.875C9.37402 9.04657 8.70245 8.375 7.87402 8.375C7.0456 8.375 6.37402 9.04657 6.37402 9.875C6.37402 10.7034 7.0456 11.375 7.87402 11.375Z" fill="#ffffff"/>
+                  <path d="M10.874 14.375L9.37402 12.375L6.37402 16.375H18.374L13.874 10.375L10.874 14.375Z" fill="#ffffff"/>
+                  <path d="M20.374 4.375H4.37402C3.27102 4.375 2.37402 5.272 2.37402 6.375V18.375C2.37402 19.478 3.27102 20.375 4.37402 20.375H20.374C21.477 20.375 22.374 19.478 22.374 18.375V6.375C22.374 5.272 21.477 4.375 20.374 4.375ZM4.37402 18.375V6.375H20.374L20.376 18.375H4.37402V18.375Z" fill="#ffffff"/>
+                </svg>
+              </div>
               <span class="md:text-sm leading-normal text-white text-xs"
                 >Ganti Gambar</span>
                 
