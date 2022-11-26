@@ -13,19 +13,25 @@ class Homepage extends BaseController
 {
     public function index()
     {
-        
-        $model = new LayananModel();
-        $cabang = new CabangModel();
-        $data = $model->findAll();
-        $cabangData = $cabang->findAll();
-        // var_dump($data[0]["id_orangtua"]);
-        $res = [
-            'data' => $data,
-            'cabangData' => $cabangData,
-            // 'nama_anak' => '',
-        ];
-        
-        return view('pages/index', $res);
+        $session = session();
+
+        if(!empty($session->get('user_id_orangtua'))){
+            $model = new LayananModel();
+            $cabang = new CabangModel();
+            $data = $model->findAll();
+            $cabangData = $cabang->findAll();
+            // var_dump($data[0]["id_orangtua"]);
+            $res = [
+                'data' => $data,
+                'cabangData' => $cabangData,
+                // 'nama_anak' => '',
+            ];
+            
+            return view('pages/index', $res);
+        }else{
+            return redirect()->to('/login');
+
+        }
     }
 
     public function cari(){

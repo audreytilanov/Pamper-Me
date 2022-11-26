@@ -9,6 +9,9 @@
         </span>
       </div>
       <ul class="lg:flex bg-[#ffffff] lg:items-center z-[-1] lg:z-auto lg:static absolute w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+        <?php 
+        $session = session();
+        if(!empty($session->get('user_id_orangtua'))) : ?>
         <li class="mx-4 my-6 lg:my-0">
           <a
             href=""
@@ -58,9 +61,9 @@
             >Voucher</a
           >
         </li>
+        <?php endif; ?>
         <?php 
         
-        $session = session();
         if(empty($session->get('user_id_orangtua'))) :?>
         <div class="flex items-center">
           <a 
