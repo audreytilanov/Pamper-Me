@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="px-[80px] py-[64px] flex flex-col items-start gap-[32px]">
+<div class="flex flex-col items-start gap-[32px] px-[24px] xl:px-[80px] py-[64px]">
 
   <!-- Start lihat antrian -->
   <div class="mt-[64px] flex flex-col items-start justify-between w-full">
@@ -11,10 +11,10 @@
   <a href="/" class="text-pink-500 font-bold">Kembali Ke Menu Pencarian</a>
     </div>
   
-    <div class="flex flex-row items-start justify-between gap-[40px] mt-[32px]">
-      <div>
+    <div class="flex xl:flex-row flex-col items-start justify-between gap-[40px] mt-[32px] w-full">
+      <div class="xl:w-[80%] w-full">
         <div class="w-full">
-          <h3 class="text-4xl font-bold">List keranjang kamu</h3>
+          <h3 class="xl:text-4xl text-2xl font-bold">List keranjang kamu</h3>
         </div>
         <div class="flex flex-col items-start gap-[32px] w-full">
           <!-- Start Select All -->
@@ -46,8 +46,8 @@
           <!-- Start Cards Keranjang -->
           <?php foreach($data as $data):?>
           <div
-            class="flex flex-row justify-between items-start pb-[32px] border-b-4 w-full">
-            <div class="flex flex-row items-start gap-[24px]">
+            class="flex md:flex-row flex-col justify-between items-end md:items-start pb-[32px] border-b-4 w-full gap-[24px]">
+            <div class="flex flex-row items-start gap-[24px] w-full md:w-max">
               <div class="flex items-center">
                 <input
                   id="default-checkbox"
@@ -56,7 +56,7 @@
                   class="accent-pink-500 w-4 h-4 text-pink-600 bg-gray-100 rounded border-gray-300 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
               </div>
-              <div class="flex flex-row items-start gap-[24px]">
+              <div class="flex xl:flex-row items-start gap-[24px] flex-col">
                 <img
                   class="w-[292.11px] h-[162.93px] object-cover rounded-md"
                   src="<?php echo $data['link_gambar'] ?>"
@@ -68,16 +68,20 @@
                     <h3 class="font-bold text-xl"><?php echo $data['nama_produk'] ?> | <?php echo $data['nama_cabang'] ?></h3>
                   </div>
                   <div
-                    class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
+                    class="flex xl:flex-row xl:items-center gap-[8px] border-b-4 pb-[16px] flex-col items-start"
                   >
-                    <h3 class="font-bold text-lg text-pink-500">
+                    <h3 class="font-bold xl:text-lg text-sm text-pink-500">
                       <?php echo $data['nama_anak'] ?>
                     </h3>
-                    |
-                    <img src="/icons/money.svg" alt="" />
-                    <h3 class="font-bold text-lg text-pink-500">
-                      Rp. <?php echo number_format($data['harga'] , 0, ',', '.'); ?> / <?php echo $data['durasi'] ?> Menit
-                    </h3>
+                    <span class="hidden xl:block">
+                      |
+                    </span>
+                    <div class="flex items-center gap-[8px]">
+                      <img src="/icons/money.svg" alt="" />
+                      <h3 class="font-bold xl:text-lg text-sm text-pink-500">
+                        Rp. <?php echo number_format($data['harga'] , 0, ',', '.'); ?> / <?php echo $data['durasi'] ?> Menit
+                      </h3>
+                    </div>
                   </div>
                   <div class="grid grid-cols-2 gap-[10px]">
                     <div class="flex flex-row items-center gap-[4px]">
@@ -121,14 +125,14 @@
 
       <!-- Start List Harga -->
       <div
-        class="flex items-start gap-[10px] py-[40px] px-[24px] drop-shadow-xl bg-white rounded-md"
+        class="flex items-start gap-[10px] py-[40px] px-[24px] drop-shadow-xl bg-white rounded-md xl:w-[400px] w-full"
       >
-        <div class="flex flex-col items-start gap-[24px]">
+        <div class="flex flex-col items-start gap-[24px] w-full">
           <div
-            class="flex flex-col items-start pb-[24px] gap-[24px] border-b-4"
+            class="flex flex-col items-start pb-[24px] gap-[24px] border-b-4 w-full"
           >
             <h4 class="font-bold font-bold text-xl">Ringkasan pesanan</h4>
-            <ul class="space-y-1 max-w-md list-disc list-inside">
+            <ul class="space-y-1 max-w-md list-disc list-inside w-full">
               <?php 
                 $total = 0;
                 $id_reservasi = null;
@@ -136,7 +140,7 @@
                   $id_reservasi = $data['id_reservasi'];
                   $total += $data['harga'];
                 ?>
-                <li class="flex items-center flex-row gap-[48px] text-sm">
+                <li class="flex items-center flex-row text-sm justify-between">
                   <div class="flex flex-row items-center gap-[16px]">
                     <img src="/icons/circle.svg" alt="" />
                     <p><?php echo $data['nama_produk']; ?></p>
