@@ -32,7 +32,7 @@
       </div>
   <!-- End Timeline -->
 
-    <div class="flex xl:flex-row flex-col items-start justify-between gap-[40px] mt-[32px] w-full">
+    <div class="flex xl:flex-row flex-col items-start justify-between gap-[40px] mt-[32px]">
       <div class="xl:w-[748.344px]">
         <div class="w-full">
           <h3 class="xl:text-4xl text-2xl font-bold">Checkout</h3>
