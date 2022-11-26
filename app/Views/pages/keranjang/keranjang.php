@@ -86,7 +86,7 @@
                   <div class="grid grid-cols-2 gap-[10px]">
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs"><?php echo $data['deskripsi_produk'] ?></p>
+                      <p class="text-xs"><?php echo $data['nama_kategori'] ?></p>
                     </div>
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />

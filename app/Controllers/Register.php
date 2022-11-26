@@ -43,7 +43,7 @@ class Register extends BaseController
             $userkey = '85fcf56b4387';
             $passkey = '28d6e0822ba452db2096d1f5';
             $telepon = $data['no_whatsapp'];
-            $message = 'Terima kasih telah mendaftar di Pamper Me. Silahkann klik link berikut untuk memverifikasi akun anda : https://baligroupbooking.com/login/verifikasi/'. $data['id_orangtua'];
+            $message = 'Terima kasih telah mendaftar di Pamper Me. Silahkann klik link berikut untuk memverifikasi akun anda : https://baligroupbooking.com/login/verifikasi/'. $data['id_orangtua']. '  Balas "Ya" Jika Link Tidak Aktif';
             $url = 'https://console.zenziva.net/wareguler/api/sendWA/';
             $curlHandle = curl_init();
             curl_setopt($curlHandle, CURLOPT_URL, $url);

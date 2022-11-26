@@ -26,8 +26,6 @@ class Checkout extends BaseController
             ];
             return view('pages/checkout/checkout', $res);
         }
-
-
         // return view('pages/checkout/checkout', $res);
     }
 

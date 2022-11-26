@@ -25,13 +25,14 @@ class Keranjang extends BaseController
                 ->join('tb_produk', 'tb_produk.id_produk = tb_reservasi_detail.id_produk')
                 ->join('tb_anak', 'tb_anak.id_anak = tb_reservasi_detail.id_anak')
                 ->join('tb_cabang', 'tb_cabang.id_cabang = tb_produk.id_cabang')
+                ->join('tb_kategori_layanan', 'tb_kategori_layanan.id_kategori_layanan = tb_produk.id_kategori_layanan')
                 ->where('tb_reservasi_detail.id_reservasi', $data['id_reservasi'])->findAll();
                 $res = [
                     'data' => $detail,
                     'list' => $detail
                 ];
+                // dd($detail);
                 
-        
                 return view('pages/keranjang/keranjang', $res);
             }
             return redirect()->to('/user/lihat-antrian')->with('success', 'Data Berhasil Diperbaharui');
