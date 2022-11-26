@@ -276,7 +276,7 @@
                       </ul>
                     </div>
 
-                    <div class="flex flex-col flex-start gap-[8px]">
+                    <?php /*<div class="flex flex-col flex-start gap-[8px]">
                       <h1 class="text-xl font-bold">Pilih Kategori Anak :</h1>
                       <ul class="flex flex-row items-start gap-[8px]">
                       <?php 
@@ -299,6 +299,7 @@
                         <?php endif; ?>
                       </ul>
                     </div>
+                    */ ?>
 
                     <button
                       class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
