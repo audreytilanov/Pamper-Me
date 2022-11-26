@@ -64,12 +64,12 @@
               <div class="flex flex-row items-start gap-[24px]">
                 <img
                   class="w-[292.11px] h-[162.93px] object-cover rounded-md"
-                  src="/images/keranjangProduct.png"
+                  src="<?= $data['link_gambar'] ?>"
                   alt=""
                 />
                 <div class="flex flex-col items-start gap-[16px]">
                   <div class="flex flex-col items-start gap-[16px]">
-                    <h3 class="font-bold text-xl"><?php echo $data['nama_produk'] ?> | Nama_Cabang</h3>
+                    <h3 class="font-bold text-xl"><?php echo $data['nama_produk'] ?> | <?= $data['nama_cabang'] ?></h3>
                   </div>
                   <div
                     class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
@@ -86,7 +86,7 @@
                   <div class="grid grid-cols-2 gap-[10px]">
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs"><?php echo $data['deskripsi_produk'] ?></p>
+                      <p class="text-xs"><?php echo $data['nama_kategori'] ?></p>
                     </div>
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
