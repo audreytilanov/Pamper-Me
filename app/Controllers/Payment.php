@@ -10,13 +10,13 @@ class Payment extends BaseController
     public function index()
     {
         // Set your Merchant Server Key
-        Config::$serverKey = 'SB-Mid-server-gOaU9kOMYmLgAH5ngsvmdPpx';
+        \Midtrans\Config::$serverKey = 'SB-Mid-server-gOaU9kOMYmLgAH5ngsvmdPpx';
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        Config::$isProduction = false;
+        \Midtrans\Config::$isProduction = false;
         // Set sanitization on (default)
-        Config::$isSanitized = true;
+        \Midtrans\Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
-        Config::$is3ds = true;
+        \Midtrans\Config::$is3ds = true;
 
         $params = array(
             'transaction_details' => array(
