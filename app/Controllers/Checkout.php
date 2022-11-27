@@ -51,7 +51,7 @@ class Checkout extends BaseController
              )
          );
          
-         $snapToken = Snap::getSnapToken($params);
+         $snapToken = \Midtrans\Snap::getSnapToken($params);
  
          $data = [
              'snap' => $snapToken
