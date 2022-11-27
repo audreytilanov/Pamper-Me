@@ -400,6 +400,11 @@
                         <span class="sub-item">Jadwal</span>
                       </a>
                     </li>
+                    <li <?php if($page == "produk"){ echo "class='active'";};?>>
+                      <a href="<?= url_to('admin.produk') ?>">
+                        <span class="sub-item">Produk</span>
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </li>

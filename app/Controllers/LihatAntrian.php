@@ -90,7 +90,7 @@ class LihatAntrian extends BaseController
         $dataRes = $resModel->where('id_orangtua', $session->get('user_id_orangtua'))->where('status','draft')->first();
         if(empty($dataRes)){
             $data = [
-                'tanggal'     => time(),
+                // 'tanggal'     => time(),
                 'id_orangtua'     => $session->get('user_id_orangtua'),
                 // 'subtotal_biaya'    => $this->request->getVar('tanggal_lahir'),
                 // 'total_biaya'    => $this->request->getVar('tanggal_lahir'),
@@ -99,6 +99,7 @@ class LihatAntrian extends BaseController
             $resModel->save($data);
 
             $lastId = $resModel->where('id_orangtua', $session->get('user_id_orangtua'))->where('status','draft')->first();
+            // dd($data);
             $model = new ReservasiDetailModel();
             $data = [
                 'id_reservasi'     => $lastId['id_reservasi'],
