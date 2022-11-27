@@ -57,7 +57,7 @@ class Checkout extends BaseController
              'snap' => $snapToken
          ];
  
-         return view('payment/pay', $data);
+         return view('pages/payment/pay', $data);
     }
 
     public function bayar()
