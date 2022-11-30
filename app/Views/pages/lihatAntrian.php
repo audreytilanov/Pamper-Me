@@ -3,11 +3,153 @@
 <?= $this->section('content') ?>
 
 <!-- Start lihat antrian -->
-<div class="xl:px-[80px] px-[25px] py-[64px] flex flex-col items-center gap-[40px]">
+<div class="xl:w-[980px] px-[25px] py-[64px] flex flex-col items-center gap-[40px] mx-auto">
   <div class="mt-[64px] flex flex-col items-start gap-[40px] w-full">
     <div class="w-full text-center">
       <h3 class="xl:text-5xl text-2xl font-bold">Lihat Antrian</h3>
     </div>
+    <ul class="flex flex-start gap-[16px] w-full overflow-x-auto">
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            name="cabang"
+            id="test"
+          />
+          <label
+            class="flex bg-gray-100 border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent peer-checked:bg-pink-500 peer-checked:text-white"
+            for="test"
+            ><div class="flex flex-col items-center gap-[4px] px-[16px] py-[8px] rounded-md">
+              <h3 class="flex flex-start flex-row px-[24px] py-[10px] font-bold rounded-md bg-gray-500/30">
+                Okt
+              </h3>
+              <h3>Hari ini</h3>
+              <h3>18</h3>
+            </div>
+          </label>
+        </li>  
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            name="cabang"
+            id="test2"
+          />
+          <label
+            class="flex bg-gray-100 border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent peer-checked:bg-pink-500 peer-checked:text-white"
+            for="test2"
+            ><div class="flex flex-col items-center gap-[4px] px-[16px] py-[8px] rounded-md">
+              <h3 class="flex flex-start flex-row px-[24px] py-[10px] font-bold rounded-md bg-gray-500/30">
+                Okt
+              </h3>
+              <h3>Hari ini</h3>
+              <h3>18</h3>
+            </div>
+          </label>
+        </li>
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            name="cabang"
+            id="test3"
+          />
+          <label
+            class="flex bg-gray-100 border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent peer-checked:bg-pink-500 peer-checked:text-white"
+            for="test3"
+            ><div class="flex flex-col items-center gap-[4px] px-[16px] py-[8px] rounded-md">
+              <h3 class="flex flex-start flex-row px-[24px] py-[10px] font-bold rounded-md bg-gray-500/30">
+                Okt
+              </h3>
+              <h3>Hari ini</h3>
+              <h3>18</h3>
+            </div>
+          </label>
+        </li>
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            name="cabang"
+            id="test4"
+          />
+          <label
+            class="flex bg-gray-100 border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent peer-checked:bg-pink-500 peer-checked:text-white"
+            for="test4"
+            ><div class="flex flex-col items-center gap-[4px] px-[16px] py-[8px] rounded-md">
+              <h3 class="flex flex-start flex-row px-[24px] py-[10px] font-bold rounded-md bg-gray-500/30">
+                Okt
+              </h3>
+              <h3>Hari ini</h3>
+              <h3>18</h3>
+            </div>
+          </label>
+        </li>
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            name="cabang"
+            id="test6"
+          />
+          <label
+            class="flex bg-gray-100 border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent peer-checked:bg-pink-500 peer-checked:text-white"
+            for="test6"
+            ><div class="flex flex-col items-center gap-[4px] px-[16px] py-[8px] rounded-md">
+              <h3 class="flex flex-start flex-row px-[24px] py-[10px] font-bold rounded-md bg-gray-500/30">
+                Okt
+              </h3>
+              <h3>Hari ini</h3>
+              <h3>18</h3>
+            </div>
+          </label>
+        </li>
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            name="cabang"
+            id="test7"
+          />
+          <label
+            class="flex bg-gray-100 border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent peer-checked:bg-pink-500 peer-checked:text-white"
+            for="test7"
+            ><div class="flex flex-col items-center gap-[4px] px-[16px] py-[8px] rounded-md">
+              <h3 class="flex flex-start flex-row px-[24px] py-[10px] font-bold rounded-md bg-gray-500/30">
+                Okt
+              </h3>
+              <h3>Hari ini</h3>
+              <h3>18</h3>
+            </div>
+          </label>
+        </li>        
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            name="cabang"
+            id="test8"
+          />
+          <label
+            class="flex bg-gray-100 border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent peer-checked:bg-pink-500 peer-checked:text-white"
+            for="test8"
+            ><div class="flex flex-col items-center gap-[4px] px-[16px] py-[8px] rounded-md">
+              <h3 class="flex flex-start flex-row px-[24px] py-[10px] font-bold rounded-md bg-gray-500/30">
+                Okt
+              </h3>
+              <h3>Hari ini</h3>
+              <h3>18</h3>
+            </div>
+          </label>
+        </li>
+      </ul>
     <!-- Start Tanggal  -->
     <form class="w-full flex flex-col gap-[24px] items-start" action="<?= base_url('user/lihat-antrian/cari') ?>" method="GET">
     <div class="flex flex-start flex-col gap-[16px]">
@@ -29,6 +171,7 @@
                         <input type="hidden" name="date" x-ref="date" />
                         <div class="flex items-center w-full justify-between">
                           <input
+                            class="px-2 form-select appearance-none block w-full py-1.5 xl:text-base text-xs font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                             required
                             type="date"
                             name="tanggal"
@@ -211,6 +354,357 @@
     </div>
     <!-- End Services -->
 
+    <!-- Start Blissful Baby Swim : -->
+    <div class="flex items-start flex-col gap-[16px]">
+      <h3 class="xl:text-2xl font-bold text-xl">Blissful Baby Swim :</h3>
+      <ul class="flex flex-row items-start gap-[8px] flex-wrap">
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam1"
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+            for="jam1"
+            >13:00 - 13:15 </label
+          >
+        </li>
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam2"
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+            for="jam2"
+            >13:00 - 13:15 </label
+          >
+        </li>  
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam3"
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+            for="jam3"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam5"
+            disabled
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent disabled:bg-red-500"
+            for="jam5"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam5"
+            disabled
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent disabled:bg-red-500"
+            for="jam5"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam5"
+            disabled
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent disabled:bg-red-500"
+            for="jam5"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam5"
+            disabled
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent disabled:bg-red-500"
+            for="jam5"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+      </ul>
+    </div>
+    <!-- End Blissful Baby Swim : -->
+
+    <!-- Start Bubbly Baby Bath : -->
+    <div class="flex items-start flex-col gap-[16px]">
+      <h3 class="xl:text-2xl font-bold text-xl">Bubbly Baby Bath :</h3>
+      <ul class="flex flex-row items-start gap-[8px] flex-wrap">
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam1"
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+            for="jam1"
+            >13:00 - 13:15 </label
+          >
+        </li>
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam2"
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+            for="jam2"
+            >13:00 - 13:15 </label
+          >
+        </li>  
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam3"
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+            for="jam3"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam5"
+            disabled
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent disabled:bg-red-500"
+            for="jam5"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam5"
+            disabled
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent disabled:bg-red-500"
+            for="jam5"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam5"
+            disabled
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent disabled:bg-red-500"
+            for="jam5"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam5"
+            disabled
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent disabled:bg-red-500"
+            for="jam5"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+      </ul>
+    </div>
+    <!-- End Bubbly Baby Bath : -->
+
+    <!-- Start Precious Baby Massage : -->
+    <div class="flex items-start flex-col gap-[16px]">
+      <h3 class="xl:text-2xl font-bold text-xl">Precious Baby Massage :</h3>
+      <ul class="flex flex-row items-start gap-[8px] flex-wrap">
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam1"
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+            for="jam1"
+            >13:00 - 13:15 </label
+          >
+        </li>
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam2"
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+            for="jam2"
+            >13:00 - 13:15 </label
+          >
+        </li>  
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam3"
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+            for="jam3"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam5"
+            disabled
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent disabled:bg-red-500"
+            for="jam5"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam5"
+            disabled
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent disabled:bg-red-500"
+            for="jam5"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam5"
+            disabled
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent disabled:bg-red-500"
+            for="jam5"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+        <li class="relative">
+          <input
+            class="sr-only peer"
+            type="radio"
+            value=""
+            checked
+            name="layanan"
+            id="jam5"
+            disabled
+          />
+          <label
+            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent disabled:bg-red-500"
+            for="jam5"
+            >13:00 - 13:15 </label
+          >
+        </li> 
+      </ul>
+    </div>
+    <!-- End Precious Baby Massage : -->
+
     <div class="w-full justify-center flex">
      <!-- Start Cari -->
      <button
@@ -223,7 +717,7 @@
   </div>
   </form>
     <!-- Start Cards -->
-    <div class="pt-[24px] grid xl:grid-cols-4 gap-[24px]">
+    <div class="pt-[24px] grid xl:grid-cols-3 gap-[24px]">
     <?php if (session()->getFlashdata('jadwal') !== NULL) : ?>
     <?php foreach(session()->getFlashdata('jadwal') as $data) :?>    
     <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
@@ -240,7 +734,7 @@
         <input type="hidden" value="<?php echo $data['id_jadwal_produk'] ?>" name="id_jadwal">
         <input type="hidden" value="<?php echo $data['id_produk'] ?>" name="id_produk">
         <input type="hidden" value="<?php echo $data['harga'] ?>" name="harga">
-        <div class="flex justify-center">
+        <div class="flex justify-start">
             <div class="w-[200px] flex items-center relative z-[2]">
               <select
                 class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
