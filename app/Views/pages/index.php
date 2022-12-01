@@ -81,6 +81,7 @@
                   <input
                     class="px-2 form-select appearance-none block w-full py-1.5 xl:text-base text-xs font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                     type="date"
+                    id="txtDate"
                     name="tanggal"
                   />
                 </div>
@@ -272,6 +273,21 @@
                             ><?php echo $jadwal['jam'] ?></label
                           >
                         </li>
+                        <li class="relative">
+                          <input
+                            class="sr-only peer"
+                            type="radio"
+                            value=""
+                            name="layanan"
+                            id="jam5"
+                            disabled
+                          />
+                          <label
+                            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+                            for="jam5"
+                            >13:00 - 13:15 </label
+                          >
+                        </li> 
                         <?php endforeach; endif; ?>
                       </ul>
                     </div>
@@ -378,5 +394,23 @@
   <!-- End Cards -->
   </div>
 </div>
+
+<script>
+  $(function(){
+    var dtToday = new Date();
+    
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    
+    var maxDate = year + '-' + month + '-' + day;
+    
+    $('#txtDate').attr('min', maxDate);
+});
+</script>
 
 <?= $this->endSection() ?>
