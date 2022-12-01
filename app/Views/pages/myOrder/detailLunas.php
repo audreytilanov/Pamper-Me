@@ -11,60 +11,59 @@
         <!-- Start Alamat  -->
         <div class="flex flex-col flex start py-[32px] px-[40px] gap-[32px] bg-white shadow-lg rounded-lg border">
                 <div class="flex flex-col items-start pb-[24px] gap-[24px] border-b-2">
-                    <h4 class="text-xl font-bold">Alamat treatment</h4>
+                    <h4 class="text-xl font-bold">Detail Reservasi</h4>
                     <div class="flex flex-col gap-[4px] items-start">
-                        <p class="">Pamper Me Bali (Renon)</p>
-                        <p class="">0812-3892-9999</p>
-                        <p class="text-zinc-500">Jl. Tukad Unda IV No.11, Panjer, Denpasar Selatan, Kota Denpasar, Bali 80234</p>
+                        <p class="">Pamper Me Bali</p>
+                        <p class="">ID : <?= $dataRes['id_transaksi_pembayaran'] ?></p>
+                        <p class="">Order ID : <?= $dataRes['order_id'] ?></p>
+                        <p>Rp. <?php echo number_format($dataRes['total_biaya'] , 0, ',', '.'); ?></p>
+                        <p><?= $dataRes['metode_pembayaran'] ?> / <?= $dataRes['bank'] ?> / <?= $dataRes['va_number_cc'] ?></p>
+                        <p class=""><?= $dataRes['transaction_time'] ?></p>
+                        <p class=""> Status Pembayaran : <?= $dataRes['status_pembayaran'] ?></p>
+                        <p class=""><a href="<?= $dataRes['pdf_url'] ?>">Download PDF</a></p>
                     </div>
                 </div>
-
+                <?php foreach($data as $datas): ?>
                 <div class="flex flex-row items-start gap-[24px]">
-                <img
-                  class="w-[292.11px] h-[162.93px] object-cover rounded-md"
-                  src="/images/keranjangProduct.png"
-                  alt=""
-                />
-                <div class="flex flex-col items-start gap-[16px]">
+                  <img
+                    class="w-[292.11px] h-[162.93px] object-cover rounded-md"
+                    src="/images/keranjangProduct.png"
+                    alt=""
+                  />
                   <div class="flex flex-col items-start gap-[16px]">
-                    <h3 class="font-bold text-xl">Precious Baby Massage</h3>
-                  </div>
-                  <div
-                    class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
-                  >
-                    <img src="/icons/money.svg" alt="" />
-                    <h3 class="font-bold text-lg text-pink-500">
-                      Rp.130,000/40 menit
-                    </h3>
-                  </div>
-                  <div class="grid grid-cols-2 gap-[10px]">
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
+                    <div class="flex flex-col items-start gap-[16px]">
+                      <h3 class="font-bold text-xl"><?= $datas['nama_produk'] ?> (<?= $datas['nama_cabang'] ?>)</h3>
+                      <h3 class="font-bold text-xl"><?= $datas['nama_anak'] ?></h3>
                     </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
+                    <div
+                      class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
+                    >
+                      <img src="/icons/money.svg" alt="" />
+                      <h3 class="font-bold text-lg text-pink-500">
+                      Rp. <?php echo number_format($datas['harga'] , 0, ',', '.'); ?> / <?= $datas['durasi'] ?> Menit
+                      </h3>
                     </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
+                    <div class="grid grid-cols-2 gap-[10px]">
+                      <div class="flex flex-row items-center gap-[4px]">
+                        <img src="/icons/checkBox.svg" alt="" />
+                        <p class="text-xs"><?= $datas['nama_kategori'] ?></p>
+                      </div>
+                      <div class="flex flex-row items-center gap-[4px]">
+                        <img src="/icons/checkBox.svg" alt="" />
+                        <p class="text-xs"><?= $datas['jam'] ?></p>
+                      </div>
+                      <div class="flex flex-row items-center gap-[4px]">
+                        <img src="/icons/checkBox.svg" alt="" />
+                        <p class="text-xs"><?= $datas['tanggal'] ?></p>
+                      </div>
+                      <div class="flex flex-row items-center gap-[4px]">
+                        <img src="/icons/checkBox.svg" alt="" />
+                        <p class="text-xs"><?= $datas['jenis_kelamin'] ?></p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+                <?php endforeach; ?>
         </div>
         <!-- End Alamat -->
 

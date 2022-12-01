@@ -50,6 +50,7 @@
           </div>
         </div>
         <!-- End Filter -->
+        <?php foreach($data as $datas): ?>
 
         <div class="flex flex-col items-start gap-[32px] w-full">
           <!-- Start Cards Keranjang -->
@@ -65,40 +66,40 @@
                 />
                 <div class="flex flex-col items-start gap-[16px]">
                   <div class="flex flex-col items-start gap-[16px]">
-                    <h3 class="font-bold text-xl">Precious Baby Massage</h3>
+                    <h3 class="font-bold text-xl"><?= $datas['tanggal'] ?></h3>
                   </div>
                   <div
                     class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
                   >
                     <img src="/icons/money.svg" alt="" />
                     <h3 class="font-bold text-lg text-pink-500">
-                      Rp.130,000/40 menit
+                    Rp. <?php echo number_format($datas['total_biaya'] , 0, ',', '.'); ?>
                     </h3>
                   </div>
                   <div class="grid grid-cols-2 gap-[10px]">
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
+                      <p class="text-xs">Order ID : <?= $datas['order_id'] ?></p>
                     </div>
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
+                      <p class="text-xs">Metode : <?= $datas['metode_pembayaran'] ?></p>
                     </div>
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
+                      <p class="text-xs">Status Reservasi : <?= $datas['status'] ?></p>
                     </div>
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
+                      <p class="text-xs">Virtual Acc Number : <?= $datas['va_number_cc'] ?></p>
                     </div>
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
+                      <p class="text-xs">Bank : <?= $datas['bank'] ?></p>
                     </div>
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
+                      <p class="text-xs"><a href="<?= $datas['pdf_url'] ?>">Download</a></p>
                     </div>
                   </div>
                 </div>
@@ -109,142 +110,13 @@
                 href="/my-order/detail-order"
                 class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
               >
-                Sudah Dipesan
+                <?= $datas['status_pembayaran']; ?>
               </a>
             </div>
           </div>
           <!-- End Cards Keranjang -->
         </div>
-
-        <div class="flex flex-col items-start gap-[32px] w-full">
-          <!-- Start Cards Keranjang -->
-          <div
-            class="flex flex-row justify-between items-start pb-[32px] border-b-4 w-full"
-          >
-            <div class="flex flex-row items-start gap-[24px]">
-              <div class="flex flex-row items-start gap-[24px]">
-                <img
-                  class="w-[292.11px] h-[162.93px] object-cover rounded-md"
-                  src="/images/keranjangProduct.png"
-                  alt=""
-                />
-                <div class="flex flex-col items-start gap-[16px]">
-                  <div class="flex flex-col items-start gap-[16px]">
-                    <h3 class="font-bold text-xl">Precious Baby Massage</h3>
-                  </div>
-                  <div
-                    class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
-                  >
-                    <img src="/icons/money.svg" alt="" />
-                    <h3 class="font-bold text-lg text-pink-500">
-                      Rp.130,000/40 menit
-                    </h3>
-                  </div>
-                  <div class="grid grid-cols-2 gap-[10px]">
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="flex flex-row items-stretch gap-[8px]">
-              <a
-                class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
-                href="/my-order/detail-order"
-              >
-              Expired
-              </a>
-            </div>
-          </div>
-          <!-- End Cards Keranjang -->
-        </div>
-
-        <div class="flex flex-col items-start gap-[32px] w-full">
-          <!-- Start Cards Keranjang -->
-          <div
-            class="flex flex-row justify-between items-start pb-[32px] border-b-4 w-full"
-          >
-            <div class="flex flex-row items-start gap-[24px]">
-              <div class="flex flex-row items-start gap-[24px]">
-                <img
-                  class="w-[292.11px] h-[162.93px] object-cover rounded-md"
-                  src="/images/keranjangProduct.png"
-                  alt=""
-                />
-                <div class="flex flex-col items-start gap-[16px]">
-                  <div class="flex flex-col items-start gap-[16px]">
-                    <h3 class="font-bold text-xl">Precious Baby Massage</h3>
-                  </div>
-                  <div
-                    class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
-                  >
-                    <img src="/icons/money.svg" alt="" />
-                    <h3 class="font-bold text-lg text-pink-500">
-                      Rp.130,000/40 menit
-                    </h3>
-                  </div>
-                  <div class="grid grid-cols-2 gap-[10px]">
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="flex flex-row items-stretch gap-[8px]">
-              <a
-                class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
-                href="/my-order/detail-order"
-              >
-              Cancel
-              </a>
-            </div>
-          </div>
-          <!-- End Cards Keranjang -->
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>

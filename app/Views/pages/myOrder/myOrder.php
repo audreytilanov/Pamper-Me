@@ -43,7 +43,7 @@
             <!-- End Kelamin -->
           </div>
           <a
-            href="/my-order/riwayat"
+            href="<?= base_url('user/my-order/riwayat/') ?>"
             class="font-bold text-base text-pink-500 flex flex-row gap-[8px] items-center">
             <img src="/icons/history.svg" alt="" />
             Riwayat pemesanan
@@ -114,10 +114,8 @@
                   <span class="mt-[3px]"> <?= $datas['status_pembayaran'] ?> </span>
                 </div>
                 <a
-                  href="<?= url_to('user.myorder.detail') ?>"
+                  href="<?= base_url('user/my-order/detail-order/'. $datas['id_reservasi']) ?>"
                   class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
-                
-                  
                 >
                   Details
                 </a>
