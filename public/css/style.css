@@ -31,3 +31,8 @@ body.modal-active {
 .opacity-95 {
   opacity: 0.95;
 }
+
+input[type="radio"][disabled] + label {
+  background-color: #dc2626;
+  color: white;
+}

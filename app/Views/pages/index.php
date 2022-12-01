@@ -199,8 +199,7 @@
                 <input type="hidden" value="<?php echo $produk['harga'] ?>" name="harga">
                 
                 <div class="flex flex-col gap-[40px] items-start">
-                  <div
-                    class="flex flex-col gap-[40px] items-start w-full border-b-4 pb-[40px]">
+                  <div class="flex flex-col gap-[40px] items-start w-full border-b-4 pb-[40px]">
                     <!-- Start Kelamin -->
                     <div class="flex flex-col flex-start gap-[8px] w-full">
                       <div class="flex justify-center w-full">
@@ -272,6 +271,21 @@
                             ><?php echo $jadwal['jam'] ?></label
                           >
                         </li>
+                        <li class="relative">
+                          <input
+                            class="sr-only peer"
+                            type="radio"
+                            value=""
+                            name="layanan"
+                            id="jam5"
+                            disabled
+                          />
+                          <label
+                            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
+                            for="jam5"
+                            >13:00 - 13:15 </label
+                          >
+                        </li> 
                         <?php endforeach; endif; ?>
                       </ul>
                     </div>
@@ -301,49 +315,90 @@
                     </div>
                     */ ?>
 
-                    <button
-                      class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
-                      type="submit"
-                    >
-                      + Keranjang
-                    </button>
-                    <!-- End Layanan -->
-                  </div>
-
-                  <!-- Start Cards -->
-                  <div>
-                    <h3 class="text-gray-900 text-base lg:text-2xl font-bold">
-                      <!-- Silahkan Pilih Layanan -->
-                    </h3>
-                    <?php //foreach(session()->getFlashdata('jadwal') as $data) :?>
-                    <div class="pt-[16px] grid grid-cols-3 gap-[24px]">
-                      <div class="flex flex-col flex-start gap-[8px]">
-                        <div class="w-full bg-white rounded-xl shadow-lg">
-                          
-                          </div>
+                    <!-- Start Layanan -->
+                    <div class="flex flex-col flex-start gap-[8px]">
+                      <h1 class="xl:text-xl font-bold">Masukkan ke keranjang</h1>
+                      <div class="w-[292.11px] bg-white rounded-xl shadow-lg">
+                        <img class="rounded-t-xl" src="/images/legBaby.png" alt="" />
+                        <div class="py-[16px] px-[24px]">
+                          <h3 class="font-bold text-sm">Blissful Baby Swim | Renon</h3>
+                          <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+                            00:13:00 | 2022-11-21
+                          </h3>
+                          <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+                          115000 / 15 Menit
+                          </h3>
+                          <form action="" method="POST">
+                          <input type="hidden" value="" name="id_jadwal">
+                          <input type="hidden" value="" name="id_produk">
+                          <input type="hidden" value="" name="harga">
+                          <!-- <div class="flex justify-start">
+                              <div class="w-[200px] flex items-center relative z-[2]">
+                                <select
+                                  class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
+                                  aria-label="Default select example"
+                                  name="anak"
+                                >
+                                  <option selected>Silahkan pilih Anak</option>
+                                  Joko
+  
+                                  <option>Joko</option>
+                                  
+                                </select>
+                                <img
+                                  class="absolute right-0 z-[3]"
+                                  src="/icons/down.svg"
+                                  alt=""
+                                />
+                              </div>
+                            </div> -->
+                          <button
+                            class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+                            type="submit"
+                          >
+                            + Keranjang
+                          </button>
+                          </form>
                         </div>
                       </div>
                     </div>
-                    <?php //endforeach; ?>
+                    <!-- End Layanan -->
+                  </div>
+
+                        <!-- Start Cards -->
+                        <div>
+                          <h3 class="text-gray-900 text-base lg:text-2xl font-bold">
+                            <!-- Silahkan Pilih Layanan -->
+                          </h3>
+                          <?php //foreach(session()->getFlashdata('jadwal') as $data) :?>
+                          <div class="pt-[16px] grid grid-cols-3 gap-[24px]">
+                            <div class="flex flex-col flex-start gap-[8px]">
+                              <div class="w-full bg-white rounded-xl shadow-lg">
+                                
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <?php //endforeach; ?>
+
+                        </div>
+                        <!-- End Cards -->
+                      </div>
+                    <!-- End Form -->
+                    </form>
 
                   </div>
-                  <!-- End Cards -->
                 </div>
-              <!-- End Form -->
-              </form>
-
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
 
-      <!-- End Modal -->
-      <?php endforeach; endif;?>
-      <!-- End cari -->
-  </div>
-  <!-- End Menu Select -->
-</div>
+            <!-- End Modal -->
+            <?php endforeach; endif;?>
+            <!-- End cari -->
+        </div>
+        <!-- End Menu Select -->
+      </div>
 <!-- End image baby -->
 
 <div class="xl:px-[80px] xl:py-[64px] p-[24px]">
