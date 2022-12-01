@@ -50,7 +50,7 @@
           </div>
           </a>
         <!-- End Filter -->
-
+        <?php foreach($data as $datas): ?>
         <div class="flex flex-col items-start gap-[32px] w-full">
           <!-- Start Cards Keranjang -->
           <div
@@ -65,40 +65,26 @@
                 />
                 <div class="flex flex-col items-start gap-[16px]">
                   <div class="flex flex-col items-start gap-[16px]">
-                    <h3 class="font-bold text-xl">Precious Baby Massage</h3>
+                    <h3 class="font-bold text-xl"><?= $datas['transaction_time'] ?></h3>
+                    <h3 class="font-bold text-xl">ID: <?= $datas['id_transaksi_pembayaran'] ?></h3>
                   </div>
                   <div
                     class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
                   >
                     <img src="/icons/money.svg" alt="" />
                     <h3 class="font-bold text-lg text-pink-500">
-                      Rp.130,000/40 menit
+                    Rp. <?php echo number_format($datas['total_biaya'] , 0, ',', '.'); ?> / <?= $datas['metode_pembayaran'] ?><br>
+                    <?= $datas['bank']?> : <?= $datas['va_number_cc'] ?>
                     </h3>
                   </div>
                   <div class="grid grid-cols-2 gap-[10px]">
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
+                      <p class="text-xs">Order ID : <?= $datas['order_id'] ?></p>
                     </div>
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
+                      <p class="text-xs">Bank : <?= $datas['bank'] ?></p>
                     </div>
                   </div>
                 </div>
@@ -107,7 +93,7 @@
             <div class="flex flex-col items-end justify-between">
               <div class="flex flex-row items-stretch gap-[8px]">
                 <div
-                  class="flex flex-row gap-[4px] items-center text-white bg-green-500 focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-[16px] py-[8px] text-center dark:focus:ring-green-600">
+                  class="flex flex-row gap-[4px] items-center text-white <?php if($datas['status_pembayaran'] == "pending"){echo "bg-yellow-500";}else{echo "bg-green-500";}; ?> focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-[16px] py-[8px] text-center dark:focus:ring-green-600">
                   <svg
                     width="19"
                     height="19"
@@ -125,10 +111,10 @@
                     />
                   </svg>
   
-                  <span class="mt-[3px]"> Sudah Lunas </span>
+                  <span class="mt-[3px]"> <?= $datas['status_pembayaran'] ?> </span>
                 </div>
                 <a
-                  href="/my-order/detail-order"
+                  href="<?= url_to('user.myorder.detail') ?>"
                   class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
                 
                   
@@ -136,13 +122,13 @@
                   Details
                 </a>
               </div>
-              <button
+          <!-- <button
             class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
             type="button"
             data-modal-toggle="default-modal">
             <img src="/icons/cancel.svg" alt="" />
             Cancel Pesanan
-          </button>
+          </button> -->
 
           <!-- Start Modal -->
           <div
@@ -216,171 +202,7 @@
           </div>
           <!-- End Cards Keranjang -->
         </div>
-
-
-        <div class="flex flex-col items-start gap-[32px] w-full">
-          <!-- Start Cards Keranjang -->
-          <div
-            class="flex flex-row justify-between items-screth pb-[32px] border-b-4 w-full"
-          >
-            <div class="flex flex-row items-start gap-[24px]">
-              <div class="flex flex-row items-start gap-[24px]">
-                <img
-                  class="w-[292.11px] h-[162.93px] object-cover rounded-md"
-                  src="/images/keranjangProduct.png"
-                  alt=""
-                />
-                <div class="flex flex-col items-start gap-[16px]">
-                  <div class="flex flex-col items-start gap-[16px]">
-                    <h3 class="font-bold text-xl">Precious Baby Massage</h3>
-                  </div>
-                  <div
-                    class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
-                  >
-                    <img src="/icons/money.svg" alt="" />
-                    <h3 class="font-bold text-lg text-pink-500">
-                      Rp.130,000/40 menit
-                    </h3>
-                  </div>
-                  <div class="grid grid-cols-2 gap-[10px]">
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">baby yoga</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">blissful baby swim</p>
-                    </div>
-                    <div class="flex flex-row items-center gap-[4px]">
-                      <img src="/icons/checkBox.svg" alt="" />
-                      <p class="text-xs">precious baby massage</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="flex flex-col items-end justify-between">
-              <div class="flex flex-row items-stretch gap-[8px]">
-                <div
-                  class="flex flex-row gap-[4px] items-center text-white bg-yellow-400 focus:ring-4 focus:ring-yellow-300 font-medium rounded-md text-sm px-[16px] py-[8px] text-center dark:focus:ring-yellow-600"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 25 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12.5627 2.99512C7.04874 2.99512 2.56274 7.48112 2.56274 12.9951C2.56274 18.5091 7.04874 22.9951 12.5627 22.9951C18.0767 22.9951 22.5627 18.5091 22.5627 12.9951C22.5627 7.48112 18.0767 2.99512 12.5627 2.99512ZM12.5627 20.9951C8.15174 20.9951 4.56274 17.4061 4.56274 12.9951C4.56274 8.58412 8.15174 4.99512 12.5627 4.99512C16.9737 4.99512 20.5627 8.58412 20.5627 12.9951C20.5627 17.4061 16.9737 20.9951 12.5627 20.9951Z"
-                      fill="#ffffff"
-                    />
-                    <path
-                      d="M13.5627 7.99512H11.5627V13.4091L14.8557 16.7021L16.2697 15.2881L13.5627 12.5811V7.99512Z"
-                      fill="#ffffff"
-                    />
-                  </svg>
-                  <span class="mt-[3px]"> Pending </span>
-                </div>
-                <a
-                  class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
-                  href="/checkout/detail"
-                  
-                >
-                  Details
-                </a>
-              </div>
-              <button
-              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-              type="button"
-              data-modal-toggle="id1">
-              <img src="/icons/cancel.svg" alt="" />
-              Cancel Pesanan
-            </button>
-            <!-- Start Modal -->
-            <div
-              id="id1"
-              data-modal-show="fasle"
-              aria-hidden="fasle"
-              class="hidden overflow-x-hidden overflow-y-auto z-50 fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
-              <div
-                class="relative w-full max-w-2xl px-4 h-full md:h-auto flex justify-center"
-              >
-                <!-- Modal content -->
-                <div class="bg-white rounded-lg shadow relative w-[500px]">
-                  <!-- Modal header -->
-                  <div class="flex items-start justify-between p-5 rounded-t">
-                    <button
-                      type="button"
-                      class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                      data-modal-toggle="id1"
-                    >
-                      <svg
-                        class="w-5 h-5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
-
-                  <!-- Modal body -->
-                  <div class="flex justify-center items-center">
-                    <img src="/icons/warning.svg" alt="" />
-                  </div>
-                  <div class="p-6 space-y-6">
-                    <h3
-                      class="text-gray-900 text-base lg:text-2xl font-semibold text-center"
-                    >
-                      Apakah benar anda ingin menghapus Data Anak Anda? ID 1
-                    </h3>
-                  </div>
-
-                  <!-- Modal footer -->
-                  <div
-                    class="flex space-x-2 items-center justify-center p-6 rounded-b dark:border-gray-600"
-                  >
-                    <button
-                      data-modal-toggle="id1"
-                      type="button"
-                      class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-                    >
-                      Iya, benar
-                    </button>
-                    <button
-                      data-modal-toggle="id1"
-                      type="button"
-                      class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600"
-                    >
-                      Tidak, batal
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End Modal -->
-            </div>
-          </div>
-          <!-- End Cards Keranjang -->
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>

@@ -8,27 +8,27 @@
 
     <!-- Start Timeline  -->
     <div class="flex justify-between items-center mt-[32px] gap-[16px]">
-        <div class="flex flex-col md:flex-row items-center gap-[4px]">
-          <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
-          <div class="text-pink-500 xl:ml-2 font-semibold xl:text-base text-xs text-center xl:text-left">
-            Pesan
-          </div>
-        </div>
-        <h2 class="border-pink-500"></h2>
-        <div class="flex flex-col md:flex-row items-center gap-[4px]">
-          <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
-          <div class="text-pink-500 xl:ml-2 font-semibold xl:text-base text-xs text-center xl:text-left">
-            Bayar
-          </div>
-        </div>
-        <h2 class="border-gray-400"></h2>
-        <div class="flex flex-col md:flex-row items-center gap-[4px]">
-          <img class="w-[20px] h-[20px]" src="/icons/nonCheck.png" alt="" />
-          <div class="text-gray-400 xl:ml-2 font-semibold xl:text-base text-xs text-center xl:text-left">
-            Selesai
-          </div>
+      <div class="flex flex-col md:flex-row items-center gap-[4px]">
+        <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
+        <div class="text-pink-500 xl:ml-2 font-semibold xl:text-base text-xs text-center xl:text-left">
+          Pesan
         </div>
       </div>
+      <h2 class="border-pink-500"></h2>
+      <div class="flex flex-col md:flex-row items-center gap-[4px]">
+        <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
+        <div class="text-pink-500 xl:ml-2 font-semibold xl:text-base text-xs text-center xl:text-left">
+          Bayar
+        </div>
+      </div>
+      <h2 class="border-gray-400"></h2>
+      <div class="flex flex-col md:flex-row items-center gap-[4px]">
+        <img class="w-[20px] h-[20px]" src="/icons/nonCheck.png" alt="" />
+        <div class="text-gray-400 xl:ml-2 font-semibold xl:text-base text-xs text-center xl:text-left">
+          Selesai
+        </div>
+      </div>
+    </div>
   <!-- End Timeline -->
 
     <div class="flex xl:flex-row flex-col items-start justify-between gap-[40px] mt-[32px] w-full xl:w-max">
@@ -43,9 +43,9 @@
             </div>
 
             <!-- Start VA -->
-            <a href="/checkout/bayar" class="w-full">
+            <button id="pay-button" class="w-full">
               <div class="flex xl:flex-row flex-col justify-between xl:items-center w-full pb-[8px] border-b-2 text-zinc-500 hover:text-zinc-900">
-                  <h3 class="font-bold text-sm xl:text-base">BCA Virtual Account</h3>
+                  <h3 class="font-bold text-sm xl:text-base">Bayar Sekarang !</h3>
                   <div class="flex flew-row items-center gap-[16px] justify-between xl:justify-start">
   
                     <!-- Start Icon bank -->
@@ -55,46 +55,13 @@
                     <img src="/icons/right.svg" alt="">
                   </div>
               </div>
-            </a>
+            </button>
             <!-- End VA -->
-
-            <!-- Start VA -->
-            <a href="/checkout/bayar" class="w-full">
-              <div class="flex xl:flex-row flex-col justify-between xl:items-center w-full pb-[8px] border-b-2 text-zinc-500 hover:text-zinc-900">
-                  <h3 class="font-bold text-sm xl:text-base">Mandiri Virtual Account</h3>
-                  <div class="flex flew-row items-center gap-[16px] justify-between xl:justify-start">
-  
-                    <!-- Start Icon bank -->
-                    <img src="/images/mandiri.png" alt="">
-                    <!-- End Icon bank -->
-  
-                    <img src="/icons/right.svg" alt="">
-                  </div>
-              </div>
-            </a>
-            <!-- End VA -->
-
-            <!-- Start VA -->
-            <a href="/checkout/bayar" class="w-full">
-              <div class="flex xl:flex-row flex-col justify-between xl:items-center w-full pb-[8px] border-b-2 text-zinc-500 hover:text-zinc-900">
-                  <h3 class="font-bold text-sm xl:text-base">BNI Virtual Account</h3>
-                  <div class="flex flew-row items-center gap-[16px] justify-between xl:justify-start">
-  
-                    <!-- Start Icon bank -->
-                    <img src="/images/bni.png" alt="">
-                    <!-- End Icon bank -->
-  
-                    <img src="/icons/right.svg" alt="">
-                  </div>
-              </div>
-            </a>
-            <!-- End VA -->
-
         </div>
-
+        <pre><div id="result-json">JSON result will appear here after payment:<br></div></pre> 
+        
 
       </div>
-
       <!-- Start List Harga -->
       <div
         class="flex items-start gap-[10px] py-[40px] px-[24px] drop-shadow-xl bg-white rounded-md xl:w-max w-full">
@@ -104,28 +71,23 @@
           >
             <h4 class="font-bold font-bold text-xl">Ringkasan pesanan</h4>
             <ul class="space-y-1 max-w-md list-disc list-inside">
+              <?php 
+              $total = 0;
+              $id_reservasi = null;
+              foreach($list as $data):
+                $id_reservasi = $data['id_reservasi'];
+                $total += $data['harga'];
+              ?>
               <li class="flex items-center flex-row gap-[48px] text-sm">
                 <div class="flex flex-row items-center gap-[16px]">
                   <img src="/icons/circle.svg" alt="" />
-                  <p>Precious Baby Massage</p>
-                </div>
-                <p>Rp. 130,000</p>
+                  <p><?php echo $data['nama_produk']; ?></p>
+                  </div>
+                  <p>Rp. <?php echo number_format($data['harga'] , 0, ',', '.'); ?></p>
               </li>
-              <li class="flex items-center flex-row gap-[48px] text-sm">
-                <div class="flex flex-row items-center gap-[16px]">
-                  <img src="/icons/circle.svg" alt="" />
-                  <p>Precious Baby Massage</p>
-                </div>
-                <p>Rp. 130,000</p>
-              </li>
-              <li class="flex items-center flex-row gap-[48px] text-sm">
-                <div class="flex flex-row items-center gap-[16px]">
-                  <img src="/icons/circle.svg" alt="" />
-                  <p>Precious Baby Massage</p>
-                </div>
-                <p>Rp. 130,000</p>
-              </li>
+              <?php endforeach; ?>
             </ul>
+            
           </div>
           <div class="flex flex-col items-start gap-[12px] w-full">
             <h4 class="font-bold font-bold text-xl">Detail Harga</h4>
@@ -134,15 +96,107 @@
                 class="flex items-center flex-row justify-between px-[16px] py-[10px] w-full bg-pink-100 border-2 border-pink-500 rounded-lg text-pink-500 font-bold text-sm"
             >
                 <p>Order Total</p>
-                <p>Rp. 390,000</p>
+                <p>Rp. <?php echo number_format($total , 0, ',', '.'); ?></p>
             </div>
+            
             </div>
           </div>
+          
         </div>
       </div>
       <!-- End List Harga -->
+      
     </div>
   </div>
-  
 </div>
+<form action="<?= base_url('user/checkout/setPayment/') ?>" method="post" id="formPayment">
+  <input class="form-control" name="id_reservasi" type="text" id="id_reservasi" value="<?php echo $reservasi['id_reservasi'] ?>">
+  <input class="form-control" name="total_biaya" type="text" id="total_biaya" value="">
+  <input class="form-control" name="subtotal_biaya" type="text" id="subtotal_biaya" value="<?php echo $total ?>">
+  <input class="form-control" name="metode_pembayaran" type="text" id="metode_pembayaran" value="">
+  <input class="form-control" name="status_pembayaran" type="text" id="status_pembayaran" value="">
+  <input class="form-control" name="id_transaksi_pembayaran" type="text" id="id_transaksi_pembayaran" value="">
+  <input class="form-control" name="order_id" type="text" id="order_id" value="">
+  <input class="form-control" name="pdf_url" type="text" id="pdf_url" value="">
+  <input class="form-control" name="transaction_time" type="text" id="transaction_time" value="">
+  <input class="form-control" name="va_number_cc" type="text" id="va_number_cc" value="">
+  <input class="form-control" name="bank" type="text" id="bank" value="">
+</form>
+<!-- TODO: Remove ".sandbox" from script src URL for production environment. Also input your client key in "data-client-key" -->
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-fXDPGxClV73P3gpl"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+  document.getElementById('pay-button').onclick = function(){
+    // SnapToken acquired from previous step
+    snap.pay('<?=$snap?>', {
+      // Optional
+      onSuccess: function(result){
+        document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+        let dataResult = JSON.stringify(result, null, 2);
+        let dataObj = JSON.parse(dataResult);
+        document.getElementById("total_biaya").value = dataObj.gross_amount;
+        document.getElementById("metode_pembayaran").value = dataObj.payment_type;
+        document.getElementById("status_pembayaran").value = dataObj.transaction_status;
+        document.getElementById("id_transaksi_pembayaran").value = dataObj.transaction_id;
+        document.getElementById("order_id").value = dataObj.order_id;
+        document.getElementById("pdf_url").value = dataObj.pdf_url;
+        document.getElementById("transaction_time").value = dataObj.transaction_time;
+        if(dataObj.payment_type == "credit_card"){
+          document.getElementById("va_number_cc").value = dataObj.masked_card;
+          document.getElementById("bank").value = dataObj.bank;
+        }else{
+          document.getElementById("va_number_cc").value = dataObj[0].va_number;
+          document.getElementById("bank").value = dataObj[0].bank;
+        }
+        document.getElementById("formPayment").submit();
+      },
+      // Optional
+      onPending: function(result){
+        document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+        let dataResult = JSON.stringify(result, null, 2);
+        let dataObj = JSON.parse(dataResult);
+        document.getElementById("total_biaya").value = dataObj.gross_amount;
+        document.getElementById("metode_pembayaran").value = dataObj.payment_type;
+        document.getElementById("status_pembayaran").value = dataObj.transaction_status;
+        document.getElementById("id_transaksi_pembayaran").value = dataObj.transaction_id;
+        document.getElementById("order_id").value = dataObj.order_id;
+        document.getElementById("pdf_url").value = dataObj.pdf_url;
+        document.getElementById("transaction_time").value = dataObj.transaction_time;
+        console.log(dataObj.va_numbers[0].va_number);
+        if(dataObj.payment_type == "credit_card"){
+          document.getElementById("va_number_cc").value = dataObj.masked_card;
+          document.getElementById("bank").value = dataObj.bank;
+        }else{
+          document.getElementById("va_number_cc").value = dataObj.va_numbers[0].va_number;
+          document.getElementById("bank").value = dataObj.va_numbers[0].bank;
+        }
+        document.getElementById("formPayment").submit();
+      },
+      // Optional
+      onError: function(result){
+        document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+      }
+    });
+  };
+</script>
+<script>
+  // $('#pay-button').click(function(e){
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "test.html",
+  //     data: {
+  //       ''
+  //     }, 
+  //     dataType : "json",
+  //     success: function(response){
+  //       if(response.error){
+  //         console.log(response.error);
+  //       }else{
+          
+  //       }
+  //     }
+  //   });
+  // });
+  
+</script>
 <?= $this->endSection() ?>

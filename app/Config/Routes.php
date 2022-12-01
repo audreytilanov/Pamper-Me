@@ -85,11 +85,19 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
     // lihat antrian
     $routes->get('checkout', 'Checkout::index', ['as' => 'user.checkout.index']);
     $routes->get('checkout/metode-bayar', 'Checkout::metodeBayar', ['as' => 'user.checkout.method']);
+    $routes->post('checkout/setPayment', 'Checkout::setPayment', ['as' => 'user.checkout.setPayment']);
     $routes->get('checkout/bayar', 'Checkout::bayar', ['as' => 'user.checkout.payment']);
     $routes->get('checkout/detail', 'Checkout::detail', ['as' => 'user.checkout.detail']);
 
     // myOrder
     $routes->get('my-order', 'MyOrder::index', ['as' => 'user.myorder']);
+    $routes->get('/my-order/riwayat', 'MyOrder::riwayatPemesanan');
+    $routes->get('/my-order/detail-order', 'MyOrder::detailOrder', ['as' => 'user.myorder.detail']);
+
+    //Discount
+    $routes->get('/vouchers', 'Vouchers::index');
+
+    $routes->get('/vouchers/detail', 'Vouchers::detail');
 
     // logout
     $routes->get('logout', 'Login::logout',['as' => 'user.logout']);
@@ -162,11 +170,6 @@ $routes->group('admin', static function ($routes) {
 
 
 // Riwayat Pemesanan
-$routes->get('/my-order/riwayat', 'MyOrder::riwayatPemesanan');
-$routes->get('/my-order/detail-order', 'MyOrder::detailOrder');
 
-$routes->get('/vouchers', 'Vouchers::index');
-
-$routes->get('/vouchers/detail', 'Vouchers::detail');
 
 

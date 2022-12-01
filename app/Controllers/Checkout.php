@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\OrangtuaModel;
 use Midtrans\Snap;
 use Midtrans\Config;
 use App\Models\ReservasiModel;
@@ -14,7 +15,7 @@ class Checkout extends BaseController
         $session = session();
         $model = new ReservasiModel();
         $modelDetail = new ReservasiDetailModel();
-        $data = $model->where('id_orangtua', $session->get('user_id_orangtua'))->where('status', 'not paid')->first();
+        $data = $model->where('id_orangtua', $session->get('user_id_orangtua'))->where('status', 'checkout')->first();
         // var_dump($data[0]["id_orangtua"]);
         if(!empty($data)){
             $detail = $modelDetail->join('tb_reservasi', 'tb_reservasi.id_reservasi = tb_reservasi_detail.id_reservasi')
@@ -43,21 +44,85 @@ class Checkout extends BaseController
          \Midtrans\Config::$isSanitized = true;
          // Set 3DS transaction for credit card to true
          \Midtrans\Config::$is3ds = true;
- 
-         $params = array(
-             'transaction_details' => array(
-                 'order_id' => rand(),
-                 'gross_amount' => 10000,
-             )
-         );
-         
-         $snapToken = \Midtrans\Snap::getSnapToken($params);
- 
-         $data = [
-             'snap' => $snapToken
-         ];
- 
-         return view('pages/payment/pay', $data);
+
+        $session = session();
+        $model = new ReservasiModel();
+        $modelDetail = new ReservasiDetailModel();
+        $modelOrangtua = new OrangtuaModel();
+        $data = $model->where('id_orangtua', $session->get('user_id_orangtua'))->where('status', 'checkout')->first();
+
+        $dataUser = $modelOrangtua->where('id_orangtua', $session->get('user_id_orangtua'))->first();
+         // Populate items
+        
+
+        
+        if(!empty($data)){
+            $detail = $modelDetail->join('tb_reservasi', 'tb_reservasi.id_reservasi = tb_reservasi_detail.id_reservasi')
+            ->join('tb_jadwal_produk', 'tb_jadwal_produk.id_jadwal_produk = tb_reservasi_detail.id_jadwal_produk')
+            ->join('tb_produk', 'tb_produk.id_produk = tb_reservasi_detail.id_produk')
+            ->join('tb_cabang', 'tb_cabang.id_cabang = tb_produk.id_cabang')
+            ->join('tb_anak', 'tb_anak.id_anak = tb_reservasi_detail.id_anak')
+            ->join('tb_kategori_layanan', 'tb_kategori_layanan.id_kategori_layanan = tb_produk.id_kategori_layanan')
+            ->where('tb_reservasi.id_orangtua', $session->get('user_id_orangtua'))->findAll();
+            $itemTransaksi = [];
+            $totalHarga = 0;
+            foreach($detail as $datas){
+                $itemTransaksi[] = [
+                    'id'       => $datas['id'],
+                    'price'    => $datas['harga'],
+                    'quantity' => 1,
+                    'name'     => $datas['nama_produk']
+                ];
+                $totalHarga += $datas['harga'];
+            }
+            $customer_details = array(
+                'first_name'       => $dataUser['nama_orangtua'],
+                'email'            => $dataUser['email'],
+                'phone'            => $dataUser['no_whatsapp'],
+            );
+    
+            $params = array(
+                'transaction_details' => array(
+                    'order_id' => rand(),
+                    'gross_amount' => $totalHarga,
+                ),
+                'item_details'        => $itemTransaksi,
+                'customer_details'    => $customer_details
+            );
+            
+            $snapToken = \Midtrans\Snap::getSnapToken($params);
+            
+            $res = [
+                'data' => $detail,
+                'list' => $detail,
+                'reservasi' => $data,
+                'snap' => $snapToken
+            ];
+            return view('pages/checkout/metodeBayar', $res);            
+        }else{
+            return redirect()->to('/user/checkout');
+        }
+    }
+
+    public function setPayment(){
+        helper(['form']);
+        $id = $this->request->getVar('id_reservasi');
+        $data = new ReservasiModel();
+        $data->update($id, [
+            'subtotal_biaya'     => $this->request->getVar('subtotal_biaya'),
+            'total_biaya'    => $this->request->getVar('total_biaya'),
+            'metode_pembayaran'    => $this->request->getVar('metode_pembayaran'),
+            'status_pembayaran'    => $this->request->getVar('status_pembayaran'),
+            'id_transaksi_pembayaran'    => $this->request->getVar('id_transaksi_pembayaran'),
+            'status'    => "payment",
+            'order_id'    => $this->request->getVar('order_id'),
+            'pdf_url'    => $this->request->getVar('pdf_url'),
+            'transaction_time'    => $this->request->getVar('transaction_time'),
+            'va_number_cc'    => $this->request->getVar('va_number_cc'),
+            'bank'    => $this->request->getVar('bank'),
+        ]);
+
+        return redirect()->to('/user/my-order')->with('success', 'Data Berhasil Diperbaharui');
     }
 
     public function bayar()

@@ -16,6 +16,11 @@ class ReservasiModel extends Model{
         'metode_pembayaran',
         'status_pembayaran',
         'id_transaksi_pembayaran',
-        'status'
+        'status',
+        'order_id',
+        'pdf_url',
+        'transaction_time',
+        'va_number_cc',
+        'bank',
     ];
 }

@@ -18,7 +18,7 @@ class Keranjang extends BaseController
             $model = new ReservasiModel();
             $modelDetail = new ReservasiDetailModel();
             $data = $model->where('id_orangtua', $session->get('user_id_orangtua'))->where('status', 'draft')->first();
-            $dataNP = $model->where('id_orangtua', $session->get('user_id_orangtua'))->where('status', 'not paid')->first();
+            $dataNP = $model->where('id_orangtua', $session->get('user_id_orangtua'))->where('status', 'checkout')->first();
             // var_dump($data[0]["id_orangtua"]);
             if(!empty($data)){
                 $detail = $modelDetail->join('tb_reservasi', 'tb_reservasi.id_reservasi = tb_reservasi_detail.id_reservasi')
@@ -52,7 +52,7 @@ class Keranjang extends BaseController
         $data = new ReservasiModel();
 
         $data->update($id, [
-            'status'    => 'not paid',
+            'status'    => 'checkout',
         ]);
 
         return redirect()->to('/user/checkout')->with('success', 'Data Berhasil Diperbaharui');

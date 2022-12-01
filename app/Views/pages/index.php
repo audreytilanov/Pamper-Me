@@ -213,10 +213,10 @@
                               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline xl:text-base text-xs"
                               aria-label="Default select example"
                               name="anak"
+                              required
                             >
                               <?php 
                               if(!empty(session()->getFlashdata('anak'))): ?>
-                              <option selected>Pilih Nama Anak</option>
                               <?php foreach(session()->getFlashdata('anak') as $anak) :?>
                                 <option value="<?php echo $anak['id_anak']?> "><?php echo $anak['nama_anak']?> </option>
                               <?php endforeach;
