@@ -27,7 +27,7 @@ class Notifications extends BaseController
         $data = new ReservasiModel();
         if($status->transaction_status == "settlement"){
             $data->update($id, [
-                'status_pembayaran'    => $status['transaction_status'],
+                'status_pembayaran'    => $status->transaction_status,
             ]);
         }
         return redirect()->to('/user/my-order');
