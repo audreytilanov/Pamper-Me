@@ -123,7 +123,7 @@
   <input class="form-control" name="bank" type="text" id="bank" value="">
 </form>
 <!-- TODO: Remove ".sandbox" from script src URL for production environment. Also input your client key in "data-client-key" -->
-<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-fXDPGxClV73P3gpl"></script>
+<script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-4QnmmMaHcwiYjWcx"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
   document.getElementById('pay-button').onclick = function(){

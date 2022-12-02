@@ -24,7 +24,8 @@ class Checkout extends BaseController
             ->join('tb_cabang', 'tb_cabang.id_cabang = tb_produk.id_cabang')
             ->join('tb_anak', 'tb_anak.id_anak = tb_reservasi_detail.id_anak')
             ->join('tb_kategori_layanan', 'tb_kategori_layanan.id_kategori_layanan = tb_produk.id_kategori_layanan')
-            ->where('tb_reservasi.id_orangtua', $session->get('user_id_orangtua'))->findAll();
+            ->where('tb_reservasi.id_orangtua', $session->get('user_id_orangtua'))
+            ->where('tb_reservasi.id_reservasi', $data['id_reservasi'])->findAll();
             $res = [
                 'data' => $detail,
                 'list' => $detail
@@ -37,7 +38,7 @@ class Checkout extends BaseController
     public function metodeBayar()
     {
          // Set your Merchant Server Key
-         \Midtrans\Config::$serverKey = 'SB-Mid-server-gOaU9kOMYmLgAH5ngsvmdPpx';
+         \Midtrans\Config::$serverKey = 'SB-Mid-server-3wPaoPW6wHCsFdiUicIvhpVf';
          // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
          \Midtrans\Config::$isProduction = false;
          // Set sanitization on (default)
