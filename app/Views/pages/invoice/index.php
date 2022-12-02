@@ -106,6 +106,17 @@
                       <td class="px-6 py-4 text-sm text-gray-500">Rp 115.000</td>
                       <td class="px-6 py-4">Rp 115.000</td>
                     </tr>
+                    <tr>
+                        <th colspan="3"></th>
+                        <td class="text-sm font-bold px-6 py-2"><b>Tax Rate</b></td>
+                        <td class="text-sm font-bold px-6 py-2"><b>$1.50%</b></td>
+                    </tr>
+                    <!--end tr-->
+                    <tr class="text-white bg-gray-800">
+                        <th colspan="3"></th>
+                        <td class="text-sm font-bold px-6 py-2"><b>Total</b></td>
+                        <td class="text-sm font-bold px-6 py-2"><b>$999.0</b></td>
+                    </tr>
                     <!--end tr-->
                   </tbody>
                 </table>
