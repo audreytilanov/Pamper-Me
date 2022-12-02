@@ -102,6 +102,7 @@ class Homepage extends BaseController
         }
 
         if(!empty($modal)){
+            
             $session->setFlashdata('group', $group);
             // dd($group);
         }
