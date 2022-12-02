@@ -21,7 +21,7 @@ class Notifications extends BaseController
         \Midtrans\Config::$is3ds = true;
 
         $status = \Midtrans\Transaction::status($id);
-        // var_dump($status[]);
+        dd($status);
 
         $data = new ReservasiModel();
         if($status['transaction_status'] == "settlement"){
