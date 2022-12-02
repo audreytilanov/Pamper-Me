@@ -6,8 +6,9 @@ use DateTime;
 use App\Models\ReservasiModel;
 use Midtrans\Snap;
 use Midtrans\Config;
+use Midtrans\Notification;
 
-class Notification extends BaseController
+class Notifications extends BaseController
 {
    public function index(){
     // require_once(dirname(__FILE__) . '/Midtrans.php');

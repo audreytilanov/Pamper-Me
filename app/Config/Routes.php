@@ -92,7 +92,7 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
     // myOrder
     $routes->get('my-order', 'MyOrder::index', ['as' => 'user.myorder']);
     $routes->get('my-order/riwayat', 'MyOrder::riwayatPemesanan');
-    $routes->get('my-order/notification', 'Notification::index');
+    $routes->get('my-order/notification', 'Notifications::index');
     $routes->get('my-order/detail-order/(:segment)', 'MyOrder::detailOrder/$1', ['as' => 'user.myorder.detail']);
 
     //Discount
