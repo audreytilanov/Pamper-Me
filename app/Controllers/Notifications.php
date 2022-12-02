@@ -26,7 +26,8 @@ class Notifications extends BaseController
 
         $data = new ReservasiModel();
         if($status->transaction_status == "settlement"){
-            $data->update($id, [
+            $dataUser = $data->where('order_id', $id)->first();
+            $data->update($dataUser['id_reservasi'], [
                 'status_pembayaran'    => $status->transaction_status,
             ]);
         }
