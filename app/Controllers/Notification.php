@@ -4,11 +4,13 @@ namespace App\Controllers;
 
 use DateTime;
 use App\Models\ReservasiModel;
+use Midtrans\Snap;
+use Midtrans\Config;
 
 class Notification extends BaseController
 {
    public function index(){
-    require_once(dirname(__FILE__) . '/Midtrans.php');
+    // require_once(dirname(__FILE__) . '/Midtrans.php');
     \Midtrans\Config::$isProduction = false;
     \Midtrans\Config::$serverKey = 'SB-Mid-server-3wPaoPW6wHCsFdiUicIvhpVf';
     $notif = new \Midtrans\Notification();
