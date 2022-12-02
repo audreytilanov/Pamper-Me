@@ -12,9 +12,9 @@ class Notifications extends BaseController
 {
    public function index(){
     // require_once(dirname(__FILE__) . '/Midtrans.php');
-    \Midtrans\Config::$isProduction = false;
-    \Midtrans\Config::$serverKey = 'SB-Mid-server-3wPaoPW6wHCsFdiUicIvhpVf';
-    $notif = new \Midtrans\Notification();
+    Config::$isProduction = false;
+    Config::$serverKey = 'SB-Mid-server-3wPaoPW6wHCsFdiUicIvhpVf';
+    $notif = new Notification();
      
     $transaction = $notif->transaction_status;
     $type = $notif->payment_type;
