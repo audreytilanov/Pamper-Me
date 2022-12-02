@@ -119,6 +119,12 @@
                 >
                   Details
                 </a>
+                <a
+                  href="<?= base_url('user/my-order/notification/'. $datas['order_id']) ?>"
+                  class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
+                >
+                  Cek Notif
+                </a>
               </div>
           <!-- <button
             class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
