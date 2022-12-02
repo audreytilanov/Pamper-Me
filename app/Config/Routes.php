@@ -96,9 +96,9 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
     $routes->get('my-order/detail-order/(:segment)', 'MyOrder::detailOrder/$1', ['as' => 'user.myorder.detail']);
 
     //Discount
-    $routes->get('/vouchers', 'Vouchers::index');
+    $routes->get('vouchers', 'Vouchers::index');
 
-    $routes->get('/vouchers/detail', 'Vouchers::detail');
+    $routes->get('vouchers/detail', 'Vouchers::detail');
 
     // logout
     $routes->get('logout', 'Login::logout',['as' => 'user.logout']);
@@ -165,12 +165,16 @@ $routes->group('admin', static function ($routes) {
     $routes->get('produk/edit/(:segment)', 'Admin::produkEdit/$1', ['as' => 'admin.produk.edit']);
     $routes->post('produk/edit/(:segment)', 'Admin::produkUpdate/$1',['as' => 'admin.produk.update']);
 
+    // reservasi
+    $routes->get('reservasi', 'AdminReservasi::reservasiIndex',['as' => 'admin.reservasi']);
+    $routes->post('reservasi/tambah', 'AdminReservasi::reservasiTambah',['as' => 'admin.reservasi.tambah']);
+    $routes->get('reservasi/edit/(:segment)', 'AdminReservasi::reservasiEdit/$1', ['as' => 'admin.reservasi.edit']);
+    $routes->post('reservasi/edit/(:segment)', 'AdminReservasi::reservasiUpdate/$1',['as' => 'admin.reservasi.update']);
+
 });
 
 
-
-
-// Riwayat Pemesanan
+    // Riwayat Pemesanan
 
 
 

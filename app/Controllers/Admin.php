@@ -246,6 +246,8 @@ class Admin extends BaseController
         return redirect()->to('/admin/jadwal/detail/'.$this->request->getVar('id_produk'))->with('success', 'Data Berhasil Diperbaharui');
     }
 
+
+    // Master Data Produk
     public function produkIndex(){
         $model = new ProdukModel();
         $data = $model->join('tb_kategori_layanan', 'tb_produk.id_kategori_layanan = tb_kategori_layanan.id_kategori_layanan', 'inner')

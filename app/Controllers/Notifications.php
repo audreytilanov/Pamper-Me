@@ -22,7 +22,7 @@ class Notifications extends BaseController
 
         $status = \Midtrans\Transaction::status($id);
         // $transaction = json_decode($status, "true");
-        // dd($status->transaction_status == "settlement");
+        dd($status);
 
         $data = new ReservasiModel();
         if($status->transaction_status == "settlement"){
