@@ -22,14 +22,14 @@ class Notifications extends BaseController
 
         $status = \Midtrans\Transaction::status($id);
         // $transaction = json_decode($status, "true");
-        dd($status->transaction_status);
+        // dd($status->transaction_status);
 
         $data = new ReservasiModel();
-        if($status['transaction_status'] == "settlement"){
+        if($status->transaction_status == "settlement"){
             $data->update($id, [
                 'status_pembayaran'    => $status['transaction_status'],
             ]);
         }
-        
+        return redirect()->to('/user/my-order');
     }
 }
