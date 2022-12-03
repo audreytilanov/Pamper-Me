@@ -49,7 +49,7 @@
                   <div class="flex flew-row items-center gap-[16px] justify-between xl:justify-start">
   
                     <!-- Start Icon bank -->
-                    <img src="/images/bca.png" alt="">
+                    <!-- <img src="/images/bca.png" alt=""> -->
                     <!-- End Icon bank -->
   
                     <img src="/icons/right.svg" alt="">
