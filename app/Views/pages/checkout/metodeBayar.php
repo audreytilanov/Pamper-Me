@@ -58,7 +58,7 @@
             </button>
             <!-- End VA -->
         </div>
-        <pre><div id="result-json">JSON result will appear here after payment:<br></div></pre> 
+        <!-- <pre><div id="result-json">JSON result will appear here after payment:<br></div></pre>  -->
         
 
       </div>
@@ -110,17 +110,17 @@
   </div>
 </div>
 <form action="<?= base_url('user/checkout/setPayment/') ?>" method="post" id="formPayment">
-  <input class="form-control" name="id_reservasi" type="text" id="id_reservasi" value="<?php echo $reservasi['id_reservasi'] ?>">
-  <input class="form-control" name="total_biaya" type="text" id="total_biaya" value="">
-  <input class="form-control" name="subtotal_biaya" type="text" id="subtotal_biaya" value="<?php echo $total ?>">
-  <input class="form-control" name="metode_pembayaran" type="text" id="metode_pembayaran" value="">
-  <input class="form-control" name="status_pembayaran" type="text" id="status_pembayaran" value="">
-  <input class="form-control" name="id_transaksi_pembayaran" type="text" id="id_transaksi_pembayaran" value="">
-  <input class="form-control" name="order_id" type="text" id="order_id" value="">
-  <input class="form-control" name="pdf_url" type="text" id="pdf_url" value="">
-  <input class="form-control" name="transaction_time" type="text" id="transaction_time" value="">
-  <input class="form-control" name="va_number_cc" type="text" id="va_number_cc" value="">
-  <input class="form-control" name="bank" type="text" id="bank" value="">
+  <input class="form-control" name="id_reservasi" type="hidden" id="id_reservasi" value="<?php echo $reservasi['id_reservasi'] ?>">
+  <input class="form-control" name="total_biaya" type="hidden" id="total_biaya" value="">
+  <input class="form-control" name="subtotal_biaya" type="hidden" id="subtotal_biaya" value="<?php echo $total ?>">
+  <input class="form-control" name="metode_pembayaran" type="hidden" id="metode_pembayaran" value="">
+  <input class="form-control" name="status_pembayaran" type="hidden" id="status_pembayaran" value="">
+  <input class="form-control" name="id_transaksi_pembayaran" type="hidden" id="id_transaksi_pembayaran" value="">
+  <input class="form-control" name="order_id" type="hidden" id="order_id" value="">
+  <input class="form-control" name="pdf_url" type="hidden" id="pdf_url" value="">
+  <input class="form-control" name="transaction_time" type="hidden" id="transaction_time" value="">
+  <input class="form-control" name="va_number_cc" type="hidden" id="va_number_cc" value="">
+  <input class="form-control" name="bank" type="hidden" id="bank" value="">
 </form>
 <!-- TODO: Remove ".sandbox" from script src URL for production environment. Also input your client key in "data-client-key" -->
 <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-4QnmmMaHcwiYjWcx"></script>
