@@ -90,7 +90,13 @@ class Homepage extends BaseController
             // }
 
         }
+        $id_layanan = $this->request->getVar('layanan');
+        $cabang = $this->request->getVar('cabang');
+        $tanggal = $this->request->getVar('tanggal');
         // dd($cat);
+        $session->setFlashdata('id_layanan', $id_layanan);
+        $session->setFlashdata('cabang', $cabang);
+        $session->setFlashdata('tanggal', $tanggal);
 
         if(!empty($waktu)){
             $session->setFlashdata('jadwal', $waktu);

@@ -92,28 +92,23 @@
                             <div class="card-body">
                             <div class="form-group form-group-default">
                                 <div class="form-group form-group-default">
-                                <label>Metode Reservasi</label>
-                                <input
-                                    id="addName"
-                                    type="text"
-                                    disabled
-                                    value="offline"
-                                    name="nama_produk"
-                                    class="form-control"
-                                    placeholder="Masukkan Nama Produk"
-                                    required
-                                />
+                                <label for="exampleDataList" class="form-label">Produk</label>
+                                <input class="form-control" name="id_produk" list="datalistOptions2" id="exampleDataList" placeholder="Cari Produk...">
+                                <datalist id="datalistOptions2">
+                                    <?php foreach($dataProduk as $produk): ?>
+                                        <option value="<?= $produk['id_produk'] ?>"><?= $produk['nama_produk'] ?></option>
+                                    <?php endforeach; ?>
+                                </datalist>
                                 </div>
                                 <div class="form-group form-group-default">
-                                <label>Tanggal</label>
+                                <label>Tanggal Reservasi</label>
                                 <input
                                     id="addName"
                                     type="date"
                                     value="<?php echo date('Y-m-d'); ?>"
-                                    disabled
                                     name="nama_produk"
                                     class="form-control"
-                                    placeholder="Masukkan Nama Produk"
+                                    placeholder="Masukkan Tanggal"
                                     required
                                 />
                                 </div>
@@ -127,6 +122,25 @@
             </div>
         </div>
     </div>
+</div>
+<div class="table-responsive">
+    <table id="add-row" class="display table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Nama Produk</th>
+            <th>Tanggal</th>
+            <th style="width: 10%">Action</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th>Nama Barang</th>
+            <th>Tanggal</th>
+        </tr>
+        </tfoot>
+        <tbody>
+        </tbody>
+    </table>
 </div>
 
 <?= $this->endSection() ?>

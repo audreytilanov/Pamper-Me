@@ -33,6 +33,9 @@ class AdminReservasi extends BaseController
         $modelCabang = new CabangModel();
         $dataCabang = $modelCabang->findAll();
 
+        $modelProduk = new ProdukModel();
+        $dataProduk = $modelProduk->findAll();
+
         $modelOrtu = new OrangtuaModel();
         $dataOrtu = $modelOrtu->findAll();
 
@@ -42,6 +45,7 @@ class AdminReservasi extends BaseController
             'dataKategori' => $dataKategori,
             'dataCabang' => $dataCabang,
             'dataOrtu' => $dataOrtu,
+            'dataProduk' => $dataProduk,
         ];
         return view('pages/admin/reservasi/add', $res);
         

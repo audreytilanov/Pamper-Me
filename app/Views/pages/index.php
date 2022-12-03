@@ -28,7 +28,11 @@
                 <option selected>Silahkan pilih layanan</option>
                 <?php foreach($data as $data) :?>
 
-                <option value="<?php echo $data['id_layanan']; ?>">
+                <option <?php
+                if(!empty(session()->getFlashdata('id_layanan')) && session()->getFlashdata('id_layanan') == $data['id_layanan']){
+                  echo "selected";
+                }
+                ?> value="<?php echo $data['id_layanan']; ?>">
                   <?php echo $data['nama_layanan']; ?>
                 </option>
                 <?php endforeach; ?>
@@ -54,7 +58,13 @@
                 <option selected>Silahkan pilih Cabang</option>
                 <?php foreach($cabangData as $data) :?>
 
-                <option value="<?php echo $data['id_cabang']; ?>">
+                <option <?php 
+                // dd(session()->getFlashdata('cabang'));
+                if(!empty(session()->getFlashdata('cabang')) && session()->getFlashdata('cabang') == $data['id_cabang']){
+                  echo "selected";
+                }
+                
+                ?> value="<?php echo $data['id_cabang']; ?>">
                   <?php echo $data['nama_cabang']; ?>
                 </option>
 
@@ -82,6 +92,11 @@
                     class="px-2 form-select appearance-none block w-full py-1.5 xl:text-base text-xs font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                     type="date"
                     id="txtDate"
+                    value="<?php
+                    if(!empty(session()->getFlashdata('tanggal'))){
+                      echo session()->getFlashdata('tanggal');
+                    }
+                    ?>"
                     name="tanggal"
                   />
                 </div>

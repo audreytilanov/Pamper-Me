@@ -231,6 +231,7 @@ class Admin extends BaseController
             'jam'     => $this->request->getVar('jam'),
             'ketersediaan'    => $this->request->getVar('ketersediaan'),
             'tanggal'    => $this->request->getVar('tanggal'),
+            'status_aktif'    => $this->request->getVar('status_aktif'),
         ]);
 
         return redirect()->to('/admin/jadwal/detail/'.$this->request->getVar('id_produk'))->with('success', 'Data Berhasil Diperbaharui');
@@ -253,6 +254,9 @@ class Admin extends BaseController
         $data = $model->join('tb_kategori_layanan', 'tb_produk.id_kategori_layanan = tb_kategori_layanan.id_kategori_layanan', 'inner')
         ->join('tb_cabang', 'tb_cabang.id_cabang = tb_produk.id_cabang', 'inner')
         ->findAll();
+
+        $modelKategori = new KategoriLayananModel();
+        $dataKategori = $modelKategori->findAll();
 
         $modelKategori = new KategoriLayananModel();
         $dataKategori = $modelKategori->findAll();
