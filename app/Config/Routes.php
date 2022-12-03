@@ -131,7 +131,7 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 // $routes->get('/lihat-antrian', 'LihatAntrian::index');
 
 // // lihat antrian
-// $routes->get('/checkout', 'Checkout::index');
+$routes->get('/invoice', 'Invoice::index');
 // $routes->get('/checkout/metode-bayar', 'Checkout::metodeBayar');
 // $routes->get('/checkout/bayar', 'Checkout::bayar');
 // $routes->get('/checkout/detail', 'Checkout::detail');

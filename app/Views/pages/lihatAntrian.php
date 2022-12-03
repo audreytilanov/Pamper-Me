@@ -175,6 +175,7 @@
                             required
                             type="date"
                             name="tanggal"
+                            id="txtDateAntrian"
                             value="<?php echo date('2022-11-17'); ?>"
                           />
                         </div>
@@ -768,5 +769,23 @@
   <!-- End Cards -->
 </div>
 <!-- End lihat antrian -->
+
+<script>
+  $(function(){
+    var dtToday = new Date();
+    
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    
+    var maxDate = year + '-' + month + '-' + day;
+    
+    $('#txtDateAntrian').attr('min', maxDate);
+});
+</script>
 
 <?= $this->endSection() ?>
