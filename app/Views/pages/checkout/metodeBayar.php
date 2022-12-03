@@ -58,7 +58,7 @@
             </button>
             <!-- End VA -->
         </div>
-        <!-- <pre><div id="result-json">JSON result will appear here after payment:<br></div></pre>  -->
+        <!-- <pre><div>JSON result will appear here after payment:<br></div></pre>  -->
         
 
       </div>
@@ -66,29 +66,15 @@
       <div
         class="flex items-start gap-[10px] py-[40px] px-[24px] drop-shadow-xl bg-white rounded-md xl:w-max w-full">
         <div class="flex flex-col items-start gap-[24px] w-full">
-          <div
-            class="flex flex-col items-start pb-[24px] gap-[24px] border-b-4 w-full"
-          >
-            <h4 class="font-bold font-bold text-xl">Ringkasan pesanan</h4>
-            <ul class="space-y-1 max-w-md list-disc list-inside">
-              <?php 
-              $total = 0;
-              $id_reservasi = null;
-              foreach($list as $data):
-                $id_reservasi = $data['id_reservasi'];
-                $total += $data['harga'];
-              ?>
-              <li class="flex items-center flex-row gap-[48px] text-sm">
-                <div class="flex flex-row items-center gap-[16px]">
-                  <img src="/icons/circle.svg" alt="" />
-                  <p><?php echo $data['nama_produk']; ?></p>
-                  </div>
-                  <p>Rp. <?php echo number_format($data['harga'] , 0, ',', '.'); ?></p>
-              </li>
-              <?php endforeach; ?>
-            </ul>
+          <?php 
+          $total = 0;
+          $id_reservasi = null;
+          foreach($list as $data):
+            $id_reservasi = $data['id_reservasi'];
+            $total += $data['harga'];
+          ?>
+          <?php endforeach; ?>
             
-          </div>
           <div class="flex flex-col items-start gap-[12px] w-full">
             <h4 class="font-bold font-bold text-xl">Detail Harga</h4>
             <div class="w-full flex flex-col gap-[16px]">
@@ -131,7 +117,7 @@
     snap.pay('<?=$snap?>', {
       // Optional
       onSuccess: function(result){
-        document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+        // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
         let dataResult = JSON.stringify(result, null, 2);
         let dataObj = JSON.parse(dataResult);
         document.getElementById("total_biaya").value = dataObj.gross_amount;
@@ -152,7 +138,7 @@
       },
       // Optional
       onPending: function(result){
-        document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+        // document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
         let dataResult = JSON.stringify(result, null, 2);
         let dataObj = JSON.parse(dataResult);
         document.getElementById("total_biaya").value = dataObj.gross_amount;
