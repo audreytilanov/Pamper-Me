@@ -259,10 +259,8 @@
                         <h3
                           class="flex flex-start flex-row px-[24px] py-[10px] bg-pink-600 font-bold rounded-md"
                         >
-                          Okt
+                          <?php echo session()->getFlashdata('tanggal'); ?>
                         </h3>
-                        <h3>Hari ini</h3>
-                        <h3>18</h3>
                       </div>
                     </div>
                     <!-- End Tanggal -->
@@ -297,11 +295,6 @@
                             id="jam5"
                             disabled
                           />
-                          <label
-                            class="flex py-2 px-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-pink-500 peer-checked:ring-2 peer-checked:border-transparent"
-                            for="jam5"
-                            >13:00 - 13:15 </label
-                          >
                         </li> 
                         <?php endforeach; endif; ?>
                       </ul>
