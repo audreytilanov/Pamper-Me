@@ -105,6 +105,13 @@ class AdminReservasi extends BaseController
         
     }
 
+    public function produkTambah(){
+        $produk = $this->request->getVar('id_produk');
+        $produkModel = new ProdukModel();
+        $produkData = $produkModel->find($produk);
+        dd($produkData);
+    }
+
     public function reservasiTambah(){
         helper(['form']);
 

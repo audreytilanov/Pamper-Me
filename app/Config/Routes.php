@@ -168,6 +168,7 @@ $routes->group('admin', static function ($routes) {
     // reservasi
     $routes->get('reservasi', 'AdminReservasi::reservasiIndex',['as' => 'admin.reservasi']);
     $routes->get('reservasi/add', 'AdminReservasi::reservasiAddIndex',['as' => 'admin.reservasi.add']);
+    $routes->get('reservasi/produktambah', 'AdminReservasi::produkTambah',['as' => 'admin.reservasi.produktambah']);
     $routes->get('reservasi/cari/(:segment)', 'AdminReservasi::reservasiLast/$1',['as' => 'admin.reservasi.add.last']);
     $routes->post('reservasi/cariOrtu', 'AdminReservasi::reservasiCariOrtu',['as' => 'admin.reservasi.cari']);
     $routes->post('reservasi/tambah', 'AdminReservasi::reservasiTambah',['as' => 'admin.reservasi.tambah']);

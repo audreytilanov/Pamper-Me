@@ -62,7 +62,7 @@ class Homepage extends BaseController
             $waktu[$key] = $jadwal->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')
             ->join('tb_kategori_layanan', 'tb_produk.id_kategori_layanan = tb_kategori_layanan.id_kategori_layanan', 'inner')
             ->join('tb_layanan', 'tb_kategori_layanan.id_layanan = tb_layanan.id_layanan', 'inner')
-            ->where('tb_produk.id_cabang', $cabang)->where('tb_kategori_layanan.id_layanan', $id_layanan)->where('tb_jadwal_produk.tanggal', $tanggal)->where('tb_produk.id_produk', $group[$key]['id_produk'])->findAll();
+            ->where('tb_produk.id_cabang', $cabang)->where('tb_jadwal_produk.status_aktif', 1)->where('tb_kategori_layanan.id_layanan', $id_layanan)->where('tb_jadwal_produk.tanggal', $tanggal)->where('tb_produk.id_produk', $group[$key]['id_produk'])->findAll();
 
             // $cat[$key] = $jadwal->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')
             // ->join('tb_kategori_layanan', 'tb_produk.id_kategori_layanan = tb_kategori_layanan.id_kategori_layanan', 'inner')

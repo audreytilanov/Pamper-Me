@@ -84,11 +84,11 @@
                                 </datalist>
                                 <?php } ?>
                             </div>
-                            <button type="submit" class="btn btn-success">Submit</button>
+                            <!-- <button type="submit" class="btn btn-success">Submit</button> -->
                         </form>
                         </div>
                         
-                        <form action="<?= base_url('admin/reservasi/tambah/') ?>" method="POST">
+                        <form action="<?= base_url('admin/reservasi/produktambah/') ?>" method="get">
                             <div class="card-body">
                             <div class="form-group form-group-default">
                                 <div class="form-group form-group-default">
