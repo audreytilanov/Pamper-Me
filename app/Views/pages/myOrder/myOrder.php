@@ -119,6 +119,13 @@
                 >
                   Details
                 </a>
+
+                <a
+                  href="<?= base_url('user/my-order/invoice/'. $datas['id_reservasi']) ?>"
+                  class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
+                >
+                  Receipt
+                </a>
                 
                 <form action="<?= base_url('user/my-order/notification/'. $datas['order_id']) ?>" method="POST">
                   <button

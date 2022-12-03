@@ -65,16 +65,17 @@
               <div>
                 <h6 class="font-bold">
                   Tanggal Order :
-                  <span class="text-sm font-medium"> 12/12/2022</span>
+                  <span class="text-sm font-medium"> <?= $dataRes['tanggal'] ?></span>
                 </h6>
                 <h6 class="font-bold">
-                  Order ID : <span class="text-sm font-medium"> 12/12/2022</span>
+                  Order ID : <span class="text-sm font-medium"> <?= $dataRes['order_id'] ?></span>
                 </h6>
               </div>
               <div class="w-40">
                 <address class="text-sm">
                   <span class="font-bold"> Ditagih ke : </span>
-                  Fran's Wahyu Virgawan P: (123) 456-7890
+                  <?= $dataOrtu['nama_orangtua'] ?>: <?= $dataOrtu['no_whatsapp'] ?><br>
+                  VA :<?= $dataRes['va_number_cc'] ?>: <?= $dataRes['bank'] ?>
                 </address>
               </div>
             </div>
@@ -85,37 +86,45 @@
                     <tr>
                       <th class="px-4 py-2 text-xs text-gray-500">#</th>
                       <th class="px-4 py-2 text-xs text-gray-500">
-                        Product Name
+                        Nama Produk
                       </th>
-                      <th class="px-4 py-2 text-xs text-gray-500">Quantity</th>
-                      <th class="px-4 py-2 text-xs text-gray-500">Rate</th>
-                      <th class="px-4 py-2 text-xs text-gray-500">Subtotal</th>
+                      <th class="px-4 py-2 text-xs text-gray-500">Lokasi</th>
+                      <th class="px-4 py-2 text-xs text-gray-500">Qty</th>
+                      <th class="px-4 py-2 text-xs text-gray-500">Harga</th>
                     </tr>
                   </thead>
                   <tbody class="bg-white">
+                    <?php 
+                    $total = 0;
+                    foreach($data as $datas): 
+                      $total += $datas['harga'];
+                    ?>
                     <tr class="whitespace-nowrap">
                       <td class="px-6 py-4 text-sm text-gray-500">1</td>
                       <td class="px-6 py-4">
                         <div class="text-sm text-gray-900">
-                          Blissful Baby Swim
+                          <?= $datas['nama_produk'] ?>
                         </div>
+                      </td>
+                      <td class="px-6 py-4">
+                        <div class="text-sm text-gray-500"><?= $datas['nama_cabang'] ?></div>
                       </td>
                       <td class="px-6 py-4">
                         <div class="text-sm text-gray-500">1</div>
                       </td>
-                      <td class="px-6 py-4 text-sm text-gray-500">Rp 115.000</td>
-                      <td class="px-6 py-4">Rp 115.000</td>
+                      <td class="px-6 py-4 text-sm text-gray-500">Rp. <?= number_format($datas['harga'] , 0, ',', '.'); ?></td>
                     </tr>
-                    <tr>
+                    <?php endforeach; ?>
+                    <!-- <tr>
                         <th colspan="3"></th>
                         <td class="text-sm font-bold px-6 py-2"><b>Tax Rate</b></td>
                         <td class="text-sm font-bold px-6 py-2"><b>$1.50%</b></td>
-                    </tr>
+                    </tr> -->
                     <!--end tr-->
                     <tr class="text-white bg-gray-800">
                         <th colspan="3"></th>
                         <td class="text-sm font-bold px-6 py-2"><b>Total</b></td>
-                        <td class="text-sm font-bold px-6 py-2"><b>$999.0</b></td>
+                        <td class="text-sm font-bold px-6 py-2"><b>Rp. <?= number_format($total , 0, ',', '.'); ?></b></td>
                     </tr>
                     <!--end tr-->
                   </tbody>
