@@ -2,36 +2,103 @@
 
 namespace App\Controllers;
 
+use App\Models\AnakModel;
 use DateTime;
 use App\Models\CabangModel;
 use App\Models\ProdukModel;
 use App\Models\KategoriLayananModel;
+use App\Models\OrangtuaModel;
+use App\Models\ReservasiModel;
 
 class AdminReservasi extends BaseController
 {
-public function reservasiIndex(){
-        $model = new ProdukModel();
-        $data = $model->join('tb_kategori_layanan', 'tb_produk.id_kategori_layanan = tb_kategori_layanan.id_kategori_layanan', 'inner')
-        ->join('tb_cabang', 'tb_cabang.id_cabang = tb_produk.id_cabang', 'inner')
-        ->findAll();
+    public function reservasiIndex(){
+        $model = new ReservasiModel();
+        $data = $model->findAll();
 
+        $page = "reservasi";
+        $res = [
+            'data' => $data,
+            'page' => $page,
+        ];
+        // dd($res);
+
+        return view('pages/admin/reservasi/index', $res);
+    }
+
+    public function reservasiAddIndex(){
         $modelKategori = new KategoriLayananModel();
         $dataKategori = $modelKategori->findAll();
 
         $modelCabang = new CabangModel();
         $dataCabang = $modelCabang->findAll();
-        // var_dump($data[0]["id_orangtua"]);
-        $page = "produk";
+
+        $modelOrtu = new OrangtuaModel();
+        $dataOrtu = $modelOrtu->findAll();
+
+        $page = "reservasi";
         $res = [
-            'data' => $data,
+            'page' => $page,
             'dataKategori' => $dataKategori,
             'dataCabang' => $dataCabang,
-            'page' => $page,
-            // 'nama_anak' => '',
+            'dataOrtu' => $dataOrtu,
         ];
-        // dd($res);
+        return view('pages/admin/reservasi/add', $res);
+        
+    }
 
-        return view('pages/admin/produk/index', $res);
+    public function reservasiCariOrtu(){
+        helper(['form']);
+
+        $modelOrtu = new OrangtuaModel();
+        $dataOrtu = $modelOrtu->where('id_reg', $this->request->getVar('id_reg'))->first();
+
+        $modelAnak = new AnakModel();
+        $dataAnak = $modelAnak->where('id_orangtua', $dataOrtu['id_orangtua'])->first();
+
+        if(empty($dataAnak)){
+            return redirect()->to('/admin/orangtua/');
+        }
+
+        $model = new ReservasiModel();
+        $data = [
+            'tanggal' => date('Y-m-d H:i:s'),
+            'id_orangtua' => $dataOrtu['id_orangtua'],
+            'metode_transaksi' => "offline",
+        ];
+
+        $model->save($data);
+
+        $lastID = $model->insertID();
+        return redirect()->to('/admin/reservasi/cari/'. $lastID);
+    }
+
+    public function reservasiLast($id){
+        // $modelKategori = new KategoriLayananModel();
+        // $dataKategori = $modelKategori->findAll();
+
+        // $modelCabang = new CabangModel();
+        // $dataCabang = $modelCabang->findAll();
+
+        $modelReservasi = new ReservasiModel();
+        $dataReservasi = $modelReservasi->where('id_reservasi', $id)->first();
+
+        $modelAnak = new AnakModel();
+        $dataAnak = $modelAnak->where('id_orangtua', $dataReservasi['id_orangtua'])->findAll();
+
+        $modelOrtu = new OrangtuaModel();
+        $dataOrtu = $modelOrtu->where('id_orangtua', $dataReservasi['id_orangtua'])->first();
+
+        $page = "reservasi";
+        $res = [
+            'page' => $page,
+            // 'dataKategori' => $dataKategori,
+            // 'dataCabang' => $dataCabang,
+            'dataAnak' => $dataAnak,
+            'dataOrtu' => $dataOrtu,
+        ];
+        return view('pages/admin/reservasi/add', $res);
+        
     }
 
     public function reservasiTambah(){

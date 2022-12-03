@@ -148,7 +148,7 @@
           document.getElementById("va_number_cc").value = dataObj[0].va_number;
           document.getElementById("bank").value = dataObj[0].bank;
         }
-        document.getElementById("formPayment").submit();
+        // document.getElementById("formPayment").submit();
       },
       // Optional
       onPending: function(result){
@@ -170,7 +170,7 @@
           document.getElementById("va_number_cc").value = dataObj.va_numbers[0].va_number;
           document.getElementById("bank").value = dataObj.va_numbers[0].bank;
         }
-        document.getElementById("formPayment").submit();
+        // document.getElementById("formPayment").submit();
       },
       // Optional
       onError: function(result){
