@@ -21,7 +21,7 @@
               <div class="flex flex-row justify-between flex-start w-full">
                 <div class="flex justify-center w-full">
                   <div class="flex items-center relative z-[2] w-full">
-                    <select
+                    <!-- <select
                       required
                       name="jenis_kelamin"
                       class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
@@ -35,7 +35,7 @@
                       class="absolute right-[20px]"
                       src="/icons/down.svg"
                       alt=""
-                    />
+                    /> -->
                   </div>
                 </div>
               </div>
