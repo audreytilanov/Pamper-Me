@@ -8,7 +8,7 @@
     <div class="w-full text-center">
       <h3 class="xl:text-5xl text-2xl font-bold">Lihat Antrian</h3>
     </div>
-    <ul class="flex flex-start gap-[16px] w-full overflow-x-auto">
+    <!-- <ul class="flex flex-start gap-[16px] w-full overflow-x-auto">
         <li class="relative">
           <input
             class="sr-only peer"
@@ -149,7 +149,7 @@
             </div>
           </label>
         </li>
-      </ul>
+      </ul> -->
     <!-- Start Tanggal  -->
     <form class="w-full flex flex-col gap-[24px] items-start" action="<?= base_url('user/lihat-antrian/cari') ?>" method="GET">
     <div class="flex flex-start flex-col gap-[16px]">
@@ -356,7 +356,7 @@
     <!-- End Services -->
 
     <!-- Start Blissful Baby Swim : -->
-    <div class="flex items-start flex-col gap-[16px]">
+    <!-- <div class="flex items-start flex-col gap-[16px]">
       <h3 class="xl:text-2xl font-bold text-xl">Blissful Baby Swim :</h3>
       <ul class="flex flex-row items-start gap-[8px] flex-wrap">
         <li class="relative">
@@ -469,11 +469,11 @@
           >
         </li> 
       </ul>
-    </div>
+    </div> -->
     <!-- End Blissful Baby Swim : -->
 
     <!-- Start Bubbly Baby Bath : -->
-    <div class="flex items-start flex-col gap-[16px]">
+    <!-- <div class="flex items-start flex-col gap-[16px]">
       <h3 class="xl:text-2xl font-bold text-xl">Bubbly Baby Bath :</h3>
       <ul class="flex flex-row items-start gap-[8px] flex-wrap">
         <li class="relative">
@@ -586,11 +586,11 @@
           >
         </li> 
       </ul>
-    </div>
+    </div> -->
     <!-- End Bubbly Baby Bath : -->
 
     <!-- Start Precious Baby Massage : -->
-    <div class="flex items-start flex-col gap-[16px]">
+    <!-- <div class="flex items-start flex-col gap-[16px]">
       <h3 class="xl:text-2xl font-bold text-xl">Precious Baby Massage :</h3>
       <ul class="flex flex-row items-start gap-[8px] flex-wrap">
         <li class="relative">
@@ -703,7 +703,7 @@
           >
         </li> 
       </ul>
-    </div>
+    </div> -->
     <!-- End Precious Baby Massage : -->
 
     <div class="w-full justify-center flex">
