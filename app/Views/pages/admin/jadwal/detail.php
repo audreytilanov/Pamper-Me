@@ -141,6 +141,7 @@
               <th>Jam</th>
               <th>Ketersediaan</th>
               <th>Tanggal</th>
+              <th>Status aktif</th>
               <th style="width: 10%">Action</th>
             </tr>
           </thead>
@@ -149,6 +150,7 @@
               <th>Jam</th>
               <th>Ketersediaan</th>
               <th>Tanggal</th>
+              <th>Status aktif</th>
               <th>Action</th>
             </tr>
           </tfoot>
@@ -158,6 +160,15 @@
               <td><?php echo $data['jam'] ?></td>
               <td><?php echo $data['ketersediaan'] ?></td>
               <td><?php echo $data['tanggal'] ?></td>
+              <td>
+                <?php 
+                if($data['status_aktif'] == 1){
+                  echo "Aktif";
+                }else if($data['status_aktif'] == 0){
+                  echo "Nonaktif";
+                };
+                ?>
+              </td>
               <td>
                 <div class="form-button-action">
                   <a

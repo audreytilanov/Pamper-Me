@@ -161,7 +161,7 @@ class Admin extends BaseController
     public function jadwalDetail($id){
         $page = "jadwal";
         $model = new JadwalProdukModel();
-        $data = $model->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'inner')->where('tb_jadwal_produk.id_produk', $id)->findAll();
+        $data = $model->where('id_produk', $id)->findAll();
 
         $produkModel = new ProdukModel();
         $produk = $produkModel->where('id_produk', $id)->first();
@@ -225,7 +225,7 @@ class Admin extends BaseController
 
         // $produkMOdel = new ProdukModel();
         // $produk = $produkMOdel->where('id_produk', $this->request->getVar('id_orangtua'))->first();
-
+        // dd($this->request->getVar('status_aktif'));
         $data = new JadwalProdukModel();
         $data->update($id, [
             'jam'     => $this->request->getVar('jam'),
