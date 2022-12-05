@@ -167,13 +167,23 @@ $routes->group('admin', static function ($routes) {
 
     // reservasi
     $routes->get('reservasi', 'AdminReservasi::reservasiIndex',['as' => 'admin.reservasi']);
-    $routes->get('reservasi/add', 'AdminReservasi::reservasiAddIndex',['as' => 'admin.reservasi.add']);
-    $routes->get('reservasi/produktambah', 'AdminReservasi::produkTambah',['as' => 'admin.reservasi.produktambah']);
-    $routes->get('reservasi/cari/(:segment)', 'AdminReservasi::reservasiLast/$1',['as' => 'admin.reservasi.add.last']);
-    $routes->post('reservasi/cariOrtu', 'AdminReservasi::reservasiCariOrtu',['as' => 'admin.reservasi.cari']);
-    $routes->post('reservasi/tambah', 'AdminReservasi::reservasiTambah',['as' => 'admin.reservasi.tambah']);
-    $routes->get('reservasi/edit/(:segment)', 'AdminReservasi::reservasiEdit/$1', ['as' => 'admin.reservasi.edit']);
-    $routes->post('reservasi/edit/(:segment)', 'AdminReservasi::reservasiUpdate/$1',['as' => 'admin.reservasi.update']);
+    $routes->get('reservasi/tambah', 'AdminReservasi::reservasiTambah',['as' => 'admin.reservasi.tambah']);
+
+    // cariReservasi
+    $routes->get('reservasi/cari/ortu', 'AdminReservasi::reservasiCariOrtu',['as' => 'admin.reservasi.cariOrtu']);
+    $routes->get('reservasi/cari/ortuInput', 'AdminReservasi::reservasiOrtuInput',['as' => 'admin.reservasi.ortuInput']);
+    
+    $routes->post('reservasi/cari/anakInput', 'AdminReservasi::reservasiAnakInput',['as' => 'admin.reservasi.anakInput']);
+    $routes->post('reservasi/cari/layananInput', 'AdminReservasi::reservasiLayananInput',['as' => 'admin.reservasi.layananInput']);
+    $routes->post('reservasi/cari/kategoriInput', 'AdminReservasi::reservasiKategoriInput',['as' => 'admin.reservasi.kategoriInput']);
+
+    $routes->post('reservasi/cari/produkInput', 'AdminReservasi::reservasiProdukInput',['as' => 'admin.reservasi.produkInput']);
+    $routes->post('reservasi/cari/jamInput', 'AdminReservasi::reservasiJamInput',['as' => 'admin.reservasi.jamInput']);
+
+    $routes->post('reservasi/simpanSementara', 'AdminReservasi::reservasiSimpanSementara',['as' => 'admin.reservasi.simpanSementara']);
+    $routes->post('reservasi/hapusDetail', 'AdminReservasi::reservasiHapusDetail',['as' => 'admin.reservasi.hapusDetail']);
+
+    $routes->post('reservasi/selesai', 'AdminReservasi::selesai',['as' => 'admin.reservasi.selesai']);
 
 });
 

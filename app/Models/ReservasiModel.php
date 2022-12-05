@@ -22,5 +22,6 @@ class ReservasiModel extends Model{
         'transaction_time',
         'va_number_cc',
         'bank',
+        'metode_reservasi'
     ];
 }

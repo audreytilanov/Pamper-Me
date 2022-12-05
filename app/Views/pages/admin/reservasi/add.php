@@ -75,13 +75,8 @@
                                     />
                                     </div>
                                 <?php }else{ ?>
-                                <label for="exampleDataList" class="form-label">Orangtua</label>
-                                <input class="form-control" name="id_reg" list="datalistOptions" id="exampleDataList" placeholder="Cari orang tua...">
-                                <datalist id="datalistOptions">
-                                    <?php foreach($dataOrtu as $ortu): ?>
-                                        <option value="<?= $ortu['id_reg'] ?>"><?= $ortu['nama_orangtua'] ?></option>
-                                    <?php endforeach; ?>
-                                </datalist>
+                                
+                                
                                 <?php } ?>
                             </div>
                             <!-- <button type="submit" class="btn btn-success">Submit</button> -->
@@ -91,6 +86,17 @@
                         <form action="<?= base_url('admin/reservasi/produktambah/') ?>" method="get">
                             <div class="card-body">
                             <div class="form-group form-group-default">
+                                
+                                <div class="form-group form-group-default">
+                                <label for="exampleDataList" class="form-label">Orangtua</label>
+                                <input class="form-control" name="id_reg" list="datalistOptions" id="exampleDataList" placeholder="Cari orang tua...">
+                                <datalist id="datalistOptions">
+                                    <?php foreach($dataOrtu as $ortu): ?>
+                                        <option value="<?= $ortu['id_reg'] ?>"><?= $ortu['nama_orangtua'] ?></option>
+                                    <?php endforeach; ?>
+                                </datalist>
+                                </div>
+
                                 <div class="form-group form-group-default">
                                 <label for="exampleDataList" class="form-label">Produk</label>
                                 <input class="form-control" name="id_produk" list="datalistOptions2" id="exampleDataList" placeholder="Cari Produk...">
@@ -100,13 +106,33 @@
                                     <?php endforeach; ?>
                                 </datalist>
                                 </div>
+
+                                <div class="form-group form-group-default">
+                                <label for="exampleDataList" class="form-label">Layanan</label>
+                                <input class="form-control" name="id_layanan" list="datalistOptions4" id="exampleDataList" placeholder="Cari layanan untuk...">
+                                <datalist id="datalistOptions4">
+                                    <?php foreach($dataLayanan as $layanan): ?>
+                                        <option value="<?= $layanan['id_kategori_layanan'] ?>"><?= $layanan['nama_kategori'] ?></option>
+                                    <?php endforeach; ?>
+                                </datalist>
+                                </div>
+
+                                <div class="form-group form-group-default">
+                                <label for="exampleDataList" class="form-label">Cabang</label>
+                                <input class="form-control" name="id_cabang" list="datalistOptions3" id="exampleDataList" placeholder="Cari Cabang...">
+                                <datalist id="datalistOptions3">
+                                    <?php foreach($dataCabang as $produk): ?>
+                                        <option value="<?= $produk['id_cabang'] ?>"><?= $produk['nama_cabang'] ?></option>
+                                    <?php endforeach; ?>
+                                </datalist>
+                                </div>
                                 <div class="form-group form-group-default">
                                 <label>Tanggal Reservasi</label>
                                 <input
                                     id="addName"
                                     type="date"
                                     value="<?php echo date('Y-m-d'); ?>"
-                                    name="nama_produk"
+                                    name="tanggal"
                                     class="form-control"
                                     placeholder="Masukkan Tanggal"
                                     required
@@ -128,19 +154,53 @@
         <thead>
         <tr>
             <th>Nama Produk</th>
-            <th>Tanggal</th>
+            <th>Durasi</th>
+            <th>Cabang</th>
             <th style="width: 10%">Action</th>
         </tr>
         </thead>
         <tfoot>
         <tr>
-            <th>Nama Barang</th>
-            <th>Tanggal</th>
+            <th>Nama Produk</th>
+            <th>Durasi</th>
+            <th>Cabang</th>
         </tr>
         </tfoot>
         <tbody>
+            <?php if(!empty($dataProduks)) {?>
+            <tr>
+                <td>
+                    <?= $dataProduks['nama_produk'] ?>
+                </td>
+                <td>
+                    <?= $tanggal ?>
+                </td>
+            </tr>
+
+            <?php }?>
         </tbody>
     </table>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<script>
+    function dataPelanggan(){
+        $.ajax({
+            url:"<?= site_url('pelanggan/get') ?>",
+            data: "json",
+            dataType: "dataType",
+            success: function (response){
+                $('.viewdata').html(response.data)
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + "\n" + xhr.responseText + "\n" +thrownError);  
+            }
+        })
+    }
+
+$(document).ready(function(){
+    dataPelanggan();
+})
+</script>
 
 <?= $this->endSection() ?>

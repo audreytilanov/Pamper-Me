@@ -10,7 +10,7 @@
         <h4 class="card-title">Master Data Reservasi</h4>
         <a
           class="btn btn-primary btn-round ml-auto"
-          href="<?= url_to('admin.reservasi.add') ?>"
+          href="<?= url_to('admin.reservasi.tambah') ?>"
         >
           <i class="fa fa-plus"></i>
           Tambah Reservasi
