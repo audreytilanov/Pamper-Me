@@ -7,7 +7,7 @@
     <div class="card-body">
         <div class="form-row">
 
-        <div class="form-group form-group-default col-md-3">
+        <div class="form-group form-group-default col-md-6">
             <label for="exampleFormControlSelect1">Cari Orangtua</label>
             <select class="form-control selectForm id_orangtua" name="id_orangtua" id="id_orangtua" onChange="getAnak()">
                 <option value="">Pilih Data Orangtua</option>
@@ -17,7 +17,7 @@
             </select>
         </div>
 
-        <div class="form-group form-group-default anakShow col-md-3">
+        <div class="form-group form-group-default anakShow col-md-6">
             <label for="exampleFormControlSelect1">Cari Anak</label>
             <select class="form-control selectForm id_anak" autocomplete="off" list="anak" name="id_anak" id="anak" onChange="getLayanan()">
 
@@ -54,7 +54,9 @@
             <select class="form-control selectForm id_jam" autocomplete="off" list="jam" name="id_jam" id="jam" onChange="">
             </select>
         </div>
-        <button type="submit" class="btn btn-success buttonShow" id="submitButton" onclick="submitForm()">Submit</button>
+        <div class="form-group form-group-default col-md-12">
+            <button type="submit" class="btn btn-success buttonShow" id="submitButton" onclick="submitForm()">Submit</button>
+        </div>
     </div>
     </div>
 </form>

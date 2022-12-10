@@ -85,6 +85,7 @@ danger-color : #f3545d
 
 -------------------------------------------------------------------*/
 /* 	 Background Body */
+
 body {
   background: #f9fbfd; }
   body[data-background-color="bg1"] {
