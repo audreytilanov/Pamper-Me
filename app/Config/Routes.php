@@ -170,6 +170,7 @@ $routes->group('admin', static function ($routes) {
 
     // reservasi
     $routes->get('reservasi', 'AdminReservasi::reservasiIndex',['as' => 'admin.reservasi']);
+    $routes->get('reservasi/detail/(:segment)', 'AdminReservasi::reservasiDetail/$1',['as' => 'admin.reservasi.detail']);
     $routes->get('reservasi/tambah', 'AdminReservasi::reservasiTambah',['as' => 'admin.reservasi.tambah']);
 
     // cariReservasi

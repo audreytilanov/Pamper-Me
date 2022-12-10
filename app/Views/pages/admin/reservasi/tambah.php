@@ -158,6 +158,7 @@
             success:function(response){
                 $('.jamShow').css('display', 'block')
                 $('.tanggalShow').css('display', 'block')
+                $('.buttonShow').css('display', 'block')
                 var len = response.length;
                 $("#jam").empty();
                 for( var i = 0; i<len; i++){

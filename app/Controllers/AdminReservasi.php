@@ -238,6 +238,19 @@ class AdminReservasi extends BaseController
         // }
     }
 
+    public function reservasiDetail($id){
+        $page = "reservasi";
+        $model = new ReservasiDetailModel();
+        $data = $model->where('id_reseravsi', $id)->findAll();
+
+        $res = [
+            'data' => $data,
+            'page' => $page,
+        ];
+
+        return view('pages/admin/reservasi/detail', $res);
+    }
+
     
 }
 
