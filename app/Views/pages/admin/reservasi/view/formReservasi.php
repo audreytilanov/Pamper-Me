@@ -9,7 +9,7 @@
 
         <div class="form-group form-group-default col-md-3">
             <label for="exampleFormControlSelect1">Cari Orangtua</label>
-            <select class="form-control selectForm" name="id_orangtua" id="id_orangtua" onChange="getAnak()">
+            <select class="form-control selectForm id_orangtua" name="id_orangtua" id="id_orangtua" onChange="getAnak()">
                 <option value="">Pilih Data Orangtua</option>
                 <?php foreach($data as $datas) : ?>
                 <option value="<?= $datas['id_orangtua'] ?>"><?= $datas['nama_orangtua'] ?></option>
@@ -19,7 +19,7 @@
 
         <div class="form-group form-group-default anakShow col-md-3" style="display: none;">
             <label for="exampleFormControlSelect1">Cari Anak</label>
-            <select class="form-control selectForm" autocomplete="off" list="anak" name="id_anak" id="anak" onChange="getLayanan()">
+            <select class="form-control selectForm id_anak" autocomplete="off" list="anak" name="id_anak" id="anak" onChange="getLayanan()">
 
             </select>
         </div>

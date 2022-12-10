@@ -60,7 +60,7 @@ class AdminReservasi extends BaseController
                 'data' => $data,
                 'page' => $page,
             ];
-
+            // dd($data);
             $msg = [
                 'data' => view('pages/admin/reservasi/view/detailReservasi', $res)
             ];
@@ -158,6 +158,9 @@ class AdminReservasi extends BaseController
 
             $produkModel = new ProdukModel();
             $produk = $produkModel->where('id_produk', $this->request->getVar('id_produk'))->first();
+            // dd($produk);
+            // echo json_encode($produk);
+
             
             // if($this->validate($rules)){
             // dd($this->request->getVar('tanggal_lahir'));

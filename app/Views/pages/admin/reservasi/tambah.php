@@ -37,6 +37,7 @@
             data: "data",
             dataType: "json",
             success: function (response){
+                console.log(response.data);
                 $('.viewData').html(response.data)
             },
             error: function(xhr, ajaxOptions, thrownError) {
@@ -181,9 +182,9 @@
 
     function submitForm(){
         var formData = {
-            id_anak: $("#id_anak").val(),
-            id_jam: $("#id_jam").val(),
-            id_produk: $("#id_produk").val(),
+            id_anak: $(".id_anak").val(),
+            id_jam: $(".id_jam").val(),
+            id_produk: $(".id_produk").val(),
         };
 
         $.ajax({
