@@ -107,6 +107,7 @@ class LihatAntrian extends BaseController
                 'id_produk'    => $this->request->getVar('id_produk'),
                 'id_anak'    => $this->request->getVar('anak'),
                 'harga' => $this->request->getVar('harga'),
+                'qr_code' => hash ( "sha256", $this->request->getVar('nama_orangtua'). $this->request->getVar('id_reservasi') . $this->request->getVar('id_anak'))
             ];
             $model->save($data);
         }else{
@@ -117,6 +118,7 @@ class LihatAntrian extends BaseController
                 'id_produk'    => $this->request->getVar('id_produk'),
                 'id_anak'    => $this->request->getVar('anak'),
                 'harga' => $this->request->getVar('harga'),
+                'qr_code' => hash ( "sha256", $this->request->getVar('nama_orangtua'). $this->request->getVar('id_reservasi') . $this->request->getVar('id_anak'))
             ];
             $model->save($data);
         };

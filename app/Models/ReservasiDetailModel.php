@@ -12,5 +12,7 @@ class ReservasiDetailModel extends Model{
         'id_produk',
         'id_anak',
         'harga',
+        'qr_code',
+        'time_scan'
     ];
 }

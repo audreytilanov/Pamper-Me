@@ -70,7 +70,7 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
 
 
     // Scan Barcode
-    $routes->get('/scan-barcode', 'ScanBarcode::index');
+    $routes->get('scan-barcode/(:segment)', 'ScanBarcode::index/$1');
 
     // keranjang
     $routes->get('keranjang', 'Keranjang::index', ['as' => 'user.keranjang.index']);
@@ -138,6 +138,9 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 
 $routes->group('admin', static function ($routes) {
     // Admin
+
+    // Barcode Update Scan
+    $routes->get('barcode/scan/(:segment)', 'Admin::scanBarcode/$1',['as' => 'admin.barcode.scan']);
     // Orangtua
     $routes->get('orangtua', 'Admin::orangtuaIndex',['as' => 'admin.orangtua']);
     $routes->post('orangtua/tambah', 'Admin::orangtuaTambah',['as' => 'admin.orangtua.tambah']);

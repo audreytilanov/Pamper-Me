@@ -12,6 +12,7 @@
         <div class="flex flex-col flex start py-[32px] px-[40px] gap-[32px] bg-white shadow-lg rounded-lg border">
                 <div class="flex flex-col items-start pb-[24px] gap-[24px] border-b-2">
                     <h4 class="text-xl font-bold">Detail Reservasi</h4>
+                    
                     <div class="flex flex-col gap-[4px] items-start">
                         <p class="">Pamper Me Bali</p>
                         <p class="">ID : <?= $dataRes['id_transaksi_pembayaran'] ?></p>
@@ -34,6 +35,21 @@
                     <div class="flex flex-col items-start gap-[16px]">
                       <h3 class="font-bold text-xl"><?= $datas['nama_produk'] ?> (<?= $datas['nama_cabang'] ?>)</h3>
                       <h3 class="font-bold text-xl"><?= $datas['nama_anak'] ?></h3>
+                      <?php if($datas['time_scan'] == null && $dataRes['status_pembayaran'] == "settlement"): ?>
+                      <a
+                        href="<?= base_url('user/scan-barcode/'. $datas['id']) ?>"
+                        class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
+                      >
+                        Scan Barcode
+                      </a>
+                      <?php elseif($datas['time_scan'] != null && $dataRes['status_pembayaran'] == "settlement"): ?>
+                        <a
+                        href="javascript:void(0)"
+                        class="flex flex-row gap-[4px] border-2 items-center border-green-400 hover:bg-green-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
+                      >
+                        Barcode Telah di Scan
+                      </a>
+                      <?php endif; ?>
                     </div>
                     <div
                       class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"

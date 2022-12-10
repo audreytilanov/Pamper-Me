@@ -9,6 +9,7 @@ use App\Models\ProdukModel;
 use App\Models\OrangtuaModel;
 use App\Models\JadwalProdukModel;
 use App\Models\KategoriLayananModel;
+use App\Models\ReservasiDetailModel;
 
 class Admin extends BaseController
 {
@@ -331,5 +332,21 @@ class Admin extends BaseController
         ]);
 
         return redirect()->to('/admin/produk/')->with('success', 'Data Berhasil Diperbaharui');
+    }
+
+    public function scanBarcode($id){
+        $detailModel = new ReservasiDetailModel();
+        $datas = $detailModel->where('qr_code', $id)->first();
+        // dd($id);
+
+        date_default_timezone_set('Asia/Hong_Kong');
+        $date = date('Y/m/d H:i:s');
+
+        $detailModel->update($datas['id'], [
+            'time_scan' => $date
+        ]);
+
+        return redirect()->to('/admin/reservasi/')->with('success', 'Data Berhasil Diperbaharui');
+
     }
 }
