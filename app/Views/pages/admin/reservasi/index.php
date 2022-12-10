@@ -95,7 +95,7 @@
                   >
                     <i class="fa fa-edit"></i>
                   </a>
-                  <button
+                  <!-- <button
                     type="button"
                     data-toggle="tooltip"
                     title=""
@@ -103,7 +103,7 @@
                     data-original-title="Remove"
                   >
                     <i class="fa fa-times"></i>
-                  </button>
+                  </button> -->
                 </div>
               </td>
             </tr>

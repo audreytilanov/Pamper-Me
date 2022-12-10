@@ -7,14 +7,7 @@
   <div class="card">
     <div class="card-header">
       <div class="d-flex align-items-center">
-        <h4 class="card-title">Master Data Reservasi</h4>
-        <a
-          class="btn btn-primary btn-round ml-auto"
-          href="<?= url_to('admin.reservasi.tambah') ?>"
-        >
-          <i class="fa fa-plus"></i>
-          Tambah Reservasi
-        </a>
+        <h4 class="card-title">Master Detail Reservasi</h4>
       </div>
     </div>
     <div class="card-body">
@@ -29,14 +22,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header no-bd">
-              <h5 class="modal-title">
-                <span class="fw-mediumbold"> Tambah |</span>
-                <span class="fw-light"> Data Reservasi</span>
-              </h5>
-              <button
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
+              
             </div>
           </div>
         </div>
@@ -46,66 +32,36 @@
         <table id="add-row" class="display table table-striped table-hover">
           <thead>
             <tr>
-              <th>Tanggal</th>
-              <th>Metode Reservasi</th>
-              <th>Total Biaya</th>
-              <th>Metode Pembayaran</th>
-              <th>Status Pembayaran</th>
-              <th>Status Reservasi</th>
-              <th>ID Order</th>
-              <th>VA Number</th>
-              <th>Bank</th>
-              <th style="width: 10%">Action</th>
+                <th>Nama Orangtua</th>
+                <th>Nama Anak</th>
+                <th>Kategori Anak</th>
+                <th>Nama Produk</th>
+                <th>Tanggal</th>
+                <th>Jam</th>
+                <th>QrCode Time</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-              <th>Tanggal</th>
-              <th>Metode Reservasi</th>
-              <th>Total Biaya</th>
-              <th>Metode Pembayaran</th>
-              <th>Status Pembayaran</th>
-              <th>Status Reservasi</th>
-              <th>ID Order</th>
-              <th>VA Number</th>
-              <th>Bank</th>
-              <th>Action</th>
+                <th>Nama Orangtua</th>
+                <th>Nama Anak</th>
+                <th>Kategori Anak</th>
+                <th>Nama Produk</th>
+                <th>Tanggal</th>
+                <th>Jam</th>
+                <th>QrCode Time</th>
             </tr>
           </tfoot>
           <tbody>
           <?php foreach($data as $data) : ?>
             <tr>
+              <td><?php echo $data['nama_orangtua'] ?></td>
+              <td><?php echo $data['nama_anak'] ?></td>
+              <td><?php echo $data['nama_kategori'] ?></td>
+              <td><?php echo $data['nama_produk'] ?> Menit</td>
               <td><?php echo $data['tanggal'] ?></td>
-              <td><?php echo $data['metode_reservasi'] ?></td>
-              <td><?php echo $data['total_biaya'] ?></td>
-              <td><?php echo $data['metode_pembayaran'] ?> Menit</td>
-              <td><?php echo $data['status_pembayaran'] ?></td>
-              <td><?php echo $data['status'] ?></td>
-              <td><?php echo $data['order_id'] ?></td>
-              <td><?php echo $data['va_number_cc'] ?></td>
-              <td><?php echo $data['bank'] ?></td>
-              <td>
-                <div class="form-button-action">
-                  <a
-                    href="<?= base_url('admin/reservasi/detail/'. $data['id_reservasi']) ?>"
-                    data-toggle="tooltip"
-                    title=""
-                    class="btn btn-link btn-primary btn-lg"
-                    data-original-title="Detail Reservasi"
-                  >
-                    <i class="fa fa-edit"></i>
-                  </a>
-                  <button
-                    type="button"
-                    data-toggle="tooltip"
-                    title=""
-                    class="btn btn-link btn-danger"
-                    data-original-title="Remove"
-                  >
-                    <i class="fa fa-times"></i>
-                  </button>
-                </div>
-              </td>
+              <td><?php echo $data['jam'] ?></td>
+              <td><?php echo $data['time_scan'] ?></td>
             </tr>
             <?php endforeach; ?>
           </tbody>

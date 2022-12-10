@@ -70,6 +70,7 @@
             dataType: 'json',
             success:function(response){
                 $('.anakShow').css('display', 'block')
+                $('#id_orangtua').prop('readonly', true);
                 var len = response.length;
                 $("#anak").empty();
                 for( var i = 0; i<len; i++){
@@ -92,6 +93,7 @@
                 var len = response.length;
                 $('.layananShow').css('display', 'block')
                 $("#layanan").empty();
+                $('#id_anak').prop('readonly', true);
                 for( var i = 0; i<len; i++){
                     var id = response[i]['id_layanan'];
                     var name = response[i]['nama_layanan'];
