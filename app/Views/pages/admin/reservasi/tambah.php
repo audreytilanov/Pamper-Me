@@ -198,6 +198,11 @@
             }
         }).done(function (data) {
             console.log(data);
+            $("#jam").empty();
+            $("#produk").empty();
+            $("#kategori").empty();
+            $("#layanan").empty();
+            alert('Data Berhasil Dimasukkan');
         });
         event.preventDefault();
         dataDetail();
@@ -214,6 +219,7 @@
                 console.log(xhr.status + "\n" + xhr.responseText + "\n" +thrownError);  
             }
         }).done(function (data) {
+            alert('Data Berhasil Dihapus');
             console.log(data);
         });
         event.preventDefault();
