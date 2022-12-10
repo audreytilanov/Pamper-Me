@@ -30,8 +30,6 @@
 </div>
 <!-- End Tambah Services -->
 
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
 <script>
     function dataDetail(){
         $.ajax({
@@ -73,6 +71,8 @@
                 $('#id_orangtua').prop('readonly', true);
                 var len = response.length;
                 $("#anak").empty();
+                $("#anak").append("<option value=''>Pilih Anak</option>");
+
                 for( var i = 0; i<len; i++){
                     var id = response[i]['id_anak'];
                     var name = response[i]['nama_anak'];
@@ -94,6 +94,7 @@
                 $('.layananShow').css('display', 'block')
                 $("#layanan").empty();
                 $('#id_anak').prop('readonly', true);
+                $("#layanan").append("<option value=''>Pilih Layanan</option>");
                 for( var i = 0; i<len; i++){
                     var id = response[i]['id_layanan'];
                     var name = response[i]['nama_layanan'];
@@ -106,7 +107,8 @@
     }
 
     function getKategori(){
-        var layanan = $('#id_layanan').val();
+        var layanan = $('.id_layanan').val();
+        console.log(layanan);
         $.ajax({
             url: "<?= base_url('admin/reservasi/cari/kategoriInput') ?>",
             type: 'post',
@@ -116,6 +118,8 @@
                 $('.kategoriShow').css('display', 'block')
                 var len = response.length;
                 $("#kategori").empty();
+                $("#kategori").append("<option value=''>Pilih Kategori</option>");
+                console.log(response);
                 for( var i = 0; i<len; i++){
                     var id = response[i]['id_kategori_layanan'];
                     var name = response[i]['nama_kategori'];
@@ -126,7 +130,7 @@
     }
 
     function getProduk(){
-        var kategori = $('#id_kategori').val();
+        var kategori = $('.id_kategori').val();
         $.ajax({
             url: "<?= base_url('admin/reservasi/cari/produkInput') ?>",
             type: 'post',
@@ -136,6 +140,8 @@
                 $('.produkShow').css('display', 'block')
                 var len = response.length;
                 $("#produk").empty();
+                $("#produk").append("<option value=''>Pilih Produk</option>");
+
                 for( var i = 0; i<len; i++){
                     var id = response[i]['id_produk'];
                     var name = response[i]['nama_produk'];
@@ -150,7 +156,7 @@
     }
 
     function getJam(){
-        var produk = $('#id_produk').val();
+        var produk = $('.id_produk').val();
         var tanggal = $('#id_tanggal').val();
         $.ajax({
             url: "<?= base_url('admin/reservasi/cari/jamInput') ?>",
@@ -163,6 +169,7 @@
                 $('.buttonShow').css('display', 'block')
                 var len = response.length;
                 $("#jam").empty();
+                $("#jam").append("<option value=''>Pilih Jam</option>");
                 for( var i = 0; i<len; i++){
                     var id = response[i]['id_jadwal_produk'];
                     var name = response[i]['jam'];
@@ -226,12 +233,6 @@
         dataDetail();
     }
     
-
-$(document).ready(function(){
-    
-    dataDetail();
-    inputOrangtua();
-})
 </script>
 
 <?= $this->endSection() ?>
