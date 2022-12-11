@@ -104,6 +104,15 @@
                   >
                     <i class="fa fa-times"></i>
                   </button> -->
+                  <a
+                    href="<?= base_url('admin/my-order/invoice/'. $data['id_reservasi']) ?>"
+                    data-toggle="tooltip"
+                    title=""
+                    class="btn btn-link btn-primary btn-lg"
+                    data-original-title="Cetak Receipt"
+                  >
+                  <i class="fa fa-print"></i>
+                  </a>
                 </div>
               </td>
             </tr>

@@ -34,6 +34,29 @@
     <link rel="stylesheet" href="/css/azzara.min.css" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="/css/demo.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        // In your Javascript (external .js resource or <script> tag)
+      $(document).ready(function() {
+          dataDetail();
+          inputOrangtua();
+          $('#id_tanggal').val(new Date().toDateInputValue());
+      });
+    </script>
+    <style>
+      .select2-selection__rendered {
+          line-height: 50px !important;
+      }
+      .select2-container .select2-selection--single {
+          height: 50px !important;
+      }
+      .select2-selection__arrow {
+          height: 50px !important;
+      }
+    </style>
   </head>
   <body>
     <div class="wrapper">
@@ -499,7 +522,6 @@
       <!-- End Custom template -->
     </div>
     <!--   Core JS Files   -->
-    <script src="<?php echo base_url('js/core/jquery.3.2.1.min.js')?>"></script>
     <script src="<?php echo base_url('js/core/popper.min.js')?>"></script>
     <script src="<?php echo base_url('js/core/bootstrap.min.js')?>"></script>
     <!-- jQuery UI -->

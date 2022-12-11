@@ -189,6 +189,9 @@ $routes->group('admin', static function ($routes) {
 
     $routes->post('reservasi/selesai', 'AdminReservasi::selesai',['as' => 'admin.reservasi.selesai']);
 
+    $routes->get('my-order/invoice/(:segment)', 'Invoice::admin/$1');
+
+
 });
 
 
