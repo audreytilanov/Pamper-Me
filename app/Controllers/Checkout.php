@@ -109,6 +109,8 @@ class Checkout extends BaseController
         helper(['form']);
         $id = $this->request->getVar('id_reservasi');
         $data = new ReservasiModel();
+        helper(['text']);
+        $random = random_string('alnum', 10);
         $data->update($id, [
             'subtotal_biaya'     => $this->request->getVar('subtotal_biaya'),
             'total_biaya'    => $this->request->getVar('total_biaya'),
@@ -121,6 +123,7 @@ class Checkout extends BaseController
             'transaction_time'    => $this->request->getVar('transaction_time'),
             'va_number_cc'    => $this->request->getVar('va_number_cc'),
             'bank'    => $this->request->getVar('bank'),
+            'no_receipt'    => $random,
         ]);
 
         return redirect()->to('/user/my-order')->with('success', 'Data Berhasil Diperbaharui');

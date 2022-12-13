@@ -219,7 +219,8 @@ class AdminReservasi extends BaseController
 
             date_default_timezone_set('Asia/Hong_Kong');
             $date = date('Y/m/d H:i:s');
-
+            helper(['text']);
+            $random = random_string('alnum', 10);
             $data = [
                 'tanggal' => $date,
                 'id_orangtua' => $anak['id_orangtua'],
@@ -227,6 +228,7 @@ class AdminReservasi extends BaseController
                 'status' => "payment",
                 'transaction_time' => $date,
                 'metode_reservasi' => "offline",
+                'no_receipt' => $random,
             ];
             $reservasiModel->save($data);
 

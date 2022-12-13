@@ -139,6 +139,9 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 $routes->group('admin', static function ($routes) {
     // Admin
 
+    $routes->get('login', 'Admin::login',['as' => 'admin.login']);
+
+
     // Barcode Update Scan
     $routes->get('barcode/scan/(:segment)', 'Admin::scanBarcode/$1',['as' => 'admin.barcode.scan']);
     // Orangtua
@@ -191,6 +194,13 @@ $routes->group('admin', static function ($routes) {
 
     $routes->get('my-order/invoice/(:segment)', 'Invoice::admin/$1');
 
+
+    // Operator
+    $routes->get('operator', 'Admin::operatorIndex',['as' => 'admin.operator']);
+    $routes->post('operator/tambah', 'Admin::operatorTambah',['as' => 'admin.operator.tambah']);
+    $routes->get('operator/edit/(:segment)', 'Admin::operatorEdit/$1', ['as' => 'admin.operator.edit']);
+    $routes->post('operator/edit/(:segment)', 'Admin::operatorUpdate/$1',['as' => 'admin.operator.update']);
+    $routes->post('operator/delete/(:segment)', 'Admin::operatorDelete/$1',['as' => 'admin.operator.delete']);
 
 });
 

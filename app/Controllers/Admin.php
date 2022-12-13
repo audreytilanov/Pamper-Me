@@ -6,6 +6,7 @@ use DateTime;
 use App\Models\AnakModel;
 use App\Models\CabangModel;
 use App\Models\ProdukModel;
+use App\Models\OperatorModel;
 use App\Models\OrangtuaModel;
 use App\Models\JadwalProdukModel;
 use App\Models\KategoriLayananModel;
@@ -13,6 +14,14 @@ use App\Models\ReservasiDetailModel;
 
 class Admin extends BaseController
 {
+    public function login(){
+        $page = "login";
+        $res = [
+            'page' => $page,
+        ];
+        return view('pages/admin/login', $res);
+    }
+
     // Masterdata Orangtua
     public function orangtuaIndex()
     {
@@ -348,5 +357,72 @@ class Admin extends BaseController
 
         return redirect()->to('/admin/reservasi/')->with('success', 'Data Berhasil Diperbaharui');
 
+    }
+
+    public function operatorIndex(){
+        $model = new OperatorModel();
+        $data = $model->findAll();
+        // var_dump($data[0]["id_orangtua"]);
+        $page = "operator";
+        $res = [
+            'data' => $data,
+            'page' => $page,
+            // 'nama_anak' => '',
+        ];
+        // dd($res);
+        helper(['text']);
+        dd(random_string('alnum', 16));
+
+        return view('pages/admin/operator/index', $res);
+    }
+
+    public function operatorTambah(){
+        helper(['form']);
+
+        $model = new OperatorModel();
+        $data = [
+            'nama'     => $this->request->getVar('nama'),
+            'email'    => $this->request->getVar('email'),
+            'password'    => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+            'tipe_akses'    => $this->request->getVar('tipe_akses'),
+        ];
+        $model->save($data);
+        return redirect()->to('/admin/operator/');
+    }
+
+    public function operatorEdit($id){
+        $model = new OperatorModel();
+        $page = "operator";
+
+        $data = $model->where('id_operator', $id)->first();
+        $res = [
+            'data' => $data,
+            'page' => $page,
+            // 'nama_anak' => '',
+        ];
+        // dd($res);
+        return view('pages/admin/operator/edit', $res);
+    }
+
+    public function operatorUpdate($id){
+        helper(['form']);
+        $datas = new OperatorModel();
+        $datas->update($id, [
+            'nama'     => $this->request->getVar('nama'),
+            'email'    => $this->request->getVar('email'),
+            'password'    => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+            'tipe_akses'    => $this->request->getVar('tipe_akses'),
+        ]);
+
+        return redirect()->to('/admin/operator/')->with('success', 'Data Berhasil Diperbaharui');
+    }
+
+    public function operatorDelete($id){
+        helper(['form']);
+        $postModel = new OperatorModel();
+        $post = $postModel->find($id);
+        $postModel->delete($id);
+
+        return redirect()->to('/admin/operator/')->with('success', 'Data Berhasil Diperbaharui');
     }
 }

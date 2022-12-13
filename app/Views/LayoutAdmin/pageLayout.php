@@ -431,9 +431,16 @@
                   </ul>
                 </div>
               </li>
+              <li class="nav-item <?php if($page == "operator"){ echo "active";};?> submenu">
+                <a href="<?= url_to('admin.operator') ?>">
+                  <i class="fas fa-user"></i>
+                  <p>Operator</p>
+                  <span class="caret"></span>
+                </a>
+              </li>
               <li class="nav-item <?php if($page == "reservasi"){ echo "active";};?> submenu">
                 <a href="<?= url_to('admin.reservasi') ?>">
-                  <i class="fas fa-table"></i>
+                  <i class="fas fa-book"></i>
                   <p>Reservasi</p>
                   <span class="caret"></span>
                 </a>
