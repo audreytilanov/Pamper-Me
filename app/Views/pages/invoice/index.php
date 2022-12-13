@@ -35,30 +35,6 @@
                 </svg>
                 <span class="text-sm"> www.pamperme.com </span>
               </div>
-              <div class="border-l-2 border-pink-200"></div>
-              <div class="flex flex-col p-2 w-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6 text-pink-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-                <span class="text-sm"> Lokasi pemesanan </span>
-              </div>
             </div>
             <div class="w-full h-0.5 bg-pink-500"></div>
             <div class="flex flex-col gap-[16px] p-4">
@@ -75,14 +51,13 @@
                 <address class="text-sm">
                   <span class="font-bold"> Ditagih ke : </span>
                   <?= $dataOrtu['nama_orangtua'] ?>: <?= $dataOrtu['no_whatsapp'] ?><br>
-                  VA :<?= $dataRes['va_number_cc'] ?>: <?= $dataRes['bank'] ?>
                 </address>
               </div>
             </div>
-            <div class="flex justify-center p-4">
-              <div class="border-b border-gray-200 shadow">
-                <table class="">
-                  <thead class="bg-gray-50">
+            <div class="flex justify-center p-4 w-full text-center">
+              <div class="border-b border-gray-200 shadow w-full">
+                <table class="w-full">
+                  <thead class="bg-gray-50 w-full">
                     <tr>
                       <th class="px-4 py-2 text-xs text-gray-500">#</th>
                       <th class="px-4 py-2 text-xs text-gray-500">
@@ -90,7 +65,7 @@
                       </th>
                       <th class="px-4 py-2 text-xs text-gray-500">Lokasi</th>
                       <th class="px-4 py-2 text-xs text-gray-500">Qty</th>
-                      <th class="px-4 py-2 text-xs text-gray-500">Harga</th>
+                      <th class="px-4 py-2 text-xs text-gray-500 text-end">Harga</th>
                     </tr>
                   </thead>
                   <tbody class="bg-white">
@@ -112,7 +87,7 @@
                       <td class="px-6 py-4">
                         <div class="text-sm text-gray-500">1</div>
                       </td>
-                      <td class="px-6 py-4 text-sm text-gray-500">Rp. <?= number_format($datas['harga'] , 0, ',', '.'); ?></td>
+                      <td class="px-6 py-4 text-sm text-gray-500 text-end">Rp. <?= number_format($datas['harga'] , 0, ',', '.'); ?></td>
                     </tr>
                     <?php endforeach; ?>
                     <!-- <tr>
@@ -124,7 +99,7 @@
                     <tr class="text-white bg-gray-800">
                         <th colspan="3"></th>
                         <td class="text-sm font-bold px-6 py-2"><b>Total</b></td>
-                        <td class="text-sm font-bold px-6 py-2"><b>Rp. <?= number_format($total , 0, ',', '.'); ?></b></td>
+                        <td class="text-sm font-bold px-6 py-2 text-end"><b>Rp. <?= number_format($total , 0, ',', '.'); ?></b></td>
                     </tr>
                     <!--end tr-->
                   </tbody>
@@ -157,10 +132,6 @@
                     available.
                   </li>
                 </ul>
-              </div>
-              <div class="p-4">
-                <h3>Signature</h3>
-                <div class="text-4xl italic text-pink-500">AAA</div>
               </div>
             </div>
             <div class="w-full h-0.5 bg-pink-500"></div>
