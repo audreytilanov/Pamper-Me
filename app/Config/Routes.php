@@ -222,4 +222,4 @@ $routes->group('admin',['filter' => 'adminauth'], static function ($routes) {
     // Riwayat Pemesanan
 
 
-
+$routes->get('/spin', 'Spin::index');
