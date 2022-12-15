@@ -46,6 +46,9 @@
                 <h6 class="font-bold">
                   Order ID : <span class="text-sm font-medium"> <?= $dataRes['order_id'] ?></span>
                 </h6>
+                <h6 class="font-bold">
+                  Receipt ID : <span class="text-sm font-medium"> <?= $dataRes['no_receipt'] ?></span>
+                </h6>
               </div>
               <div class="w-40">
                 <address class="text-sm">

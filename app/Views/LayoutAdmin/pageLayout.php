@@ -445,6 +445,13 @@
                   <span class="caret"></span>
                 </a>
               </li>
+              <li class="nav-item <?php if($page == "diskon"){ echo "active";};?> submenu">
+                <a href="<?= url_to('admin.diskon') ?>">
+                  <i class="fas fa-book"></i>
+                  <p>Diskon</p>
+                  <span class="caret"></span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

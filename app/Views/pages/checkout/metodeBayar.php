@@ -84,6 +84,12 @@
                 <p>Order Total</p>
                 <p>Rp. <?php echo number_format($total , 0, ',', '.'); ?></p>
             </div>
+            <div
+                class="flex items-center flex-row justify-between px-[16px] py-[10px] w-full bg-pink-100 border-2 border-pink-500 rounded-lg text-pink-500 font-bold text-sm"
+            >
+                <p>Diskon</p>
+                <p>Rp. <?php echo number_format($data['nominal_diskon'] , 0, ',', '.'); ?></p>
+            </div>
             
             </div>
           </div>

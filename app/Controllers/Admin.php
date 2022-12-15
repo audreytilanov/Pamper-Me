@@ -5,6 +5,7 @@ namespace App\Controllers;
 use DateTime;
 use App\Models\AnakModel;
 use App\Models\CabangModel;
+use App\Models\DiskonModel;
 use App\Models\ProdukModel;
 use App\Models\OperatorModel;
 use App\Models\OrangtuaModel;
@@ -20,6 +21,34 @@ class Admin extends BaseController
             'page' => $page,
         ];
         return view('pages/admin/login', $res);
+    }
+
+    public function authLogin(){
+        $session = session();
+        $model = new OperatorModel();
+        $email = $this->request->getVar('username');
+        $password = $this->request->getVar('password');
+        $data = $model->where('email', $email)->first();
+        // dd($data);
+        if($data['tipe_akses'] != null){
+            $pass = $data['password'];
+            $verify_pass = password_verify($password, $pass);
+            if($verify_pass){
+                $ses_data = [
+                    'nama'       => $data['nama'],
+                    'email'    => $data['email'],
+                    'admin_logged_in'     => TRUE
+                ];
+                $session->set($ses_data);
+                return redirect()->to('/admin/orangtua');
+            }else{
+                $session->setFlashdata('msg', 'Password yang dimasukkan salah!');
+                return redirect()->to('/admin/login');
+            }
+        }else{
+            $session->setFlashdata('msg', 'Email Tidak Ditemukan');
+            return redirect()->to('/admin/login');
+        }
     }
 
     // Masterdata Orangtua
@@ -371,7 +400,6 @@ class Admin extends BaseController
         ];
         // dd($res);
         helper(['text']);
-        dd(random_string('alnum', 16));
 
         return view('pages/admin/operator/index', $res);
     }
@@ -424,5 +452,75 @@ class Admin extends BaseController
         $postModel->delete($id);
 
         return redirect()->to('/admin/operator/')->with('success', 'Data Berhasil Diperbaharui');
+    }
+
+    public function diskonIndex(){
+        $model = new DiskonModel();
+        $data = $model->findAll();
+        // var_dump($data[0]["id_orangtua"]);
+        $page = "diskon";
+        $res = [
+            'data' => $data,
+            'page' => $page,
+            // 'nama_anak' => '',
+        ];
+        // dd($res);
+        helper(['text']);
+
+        return view('pages/admin/diskon/index', $res);
+    }
+
+    public function diskonTambah(){
+        helper(['form']);
+
+        $model = new DiskonModel();
+        $data = [
+            'kode_diskon'     => $this->request->getVar('kode_diskon'),
+            'deskripsi'    => $this->request->getVar('deskripsi'),
+            'tipe_diskon'    => $this->request->getVar('tipe_diskon'),
+            'nominal'    => $this->request->getVar('nominal'),
+            'tanggal_mulai'    => $this->request->getVar('tanggal_mulai'),
+            'tanggal_berakhir'    => $this->request->getVar('tanggal_berakhir'),
+        ];
+        $model->save($data);
+        return redirect()->to('/admin/diskon/');
+    }
+
+    public function diskonEdit($id){
+        $model = new DiskonModel();
+        $page = "diskon";
+
+        $data = $model->where('id_diskon', $id)->first();
+        $res = [
+            'data' => $data,
+            'page' => $page,
+            // 'nama_anak' => '',
+        ];
+        // dd($res);
+        return view('pages/admin/diskon/edit', $res);
+    }
+
+    public function diskonUpdate($id){
+        helper(['form']);
+        $datas = new DiskonModel();
+        $datas->update($id, [
+            'kode_diskon'     => $this->request->getVar('kode_diskon'),
+            'deskripsi'    => $this->request->getVar('deskripsi'),
+            'tipe_diskon'    => $this->request->getVar('tipe_diskon'),
+            'nominal'    => $this->request->getVar('nominal'),
+            'tanggal_mulai'    => $this->request->getVar('tanggal_mulai'),
+            'tanggal_berakhir'    => $this->request->getVar('tanggal_berakhir'),
+        ]);
+
+        return redirect()->to('/admin/diskon/')->with('success', 'Data Berhasil Diperbaharui');
+    }
+
+    public function diskonDelete($id){
+        helper(['form']);
+        $postModel = new DiskonModel();
+        $post = $postModel->find($id);
+        $postModel->delete($id);
+
+        return redirect()->to('/admin/diskon/')->with('success', 'Data Berhasil Diperbaharui');
     }
 }

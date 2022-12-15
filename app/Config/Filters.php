@@ -3,6 +3,8 @@
 namespace Config;
 
 use App\Filters\Auth;
+use App\Filters\AdminAuth;
+use App\Filters\AdminRedirectLogin;
 use App\Filters\RedirectLogin;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\Honeypot;
@@ -27,6 +29,8 @@ class Filters extends BaseConfig
         'secureheaders' => SecureHeaders::class,
         'auth'     => Auth::class,
         'redirectlogin'     => RedirectLogin::class,
+        'adminauth'     => AdminAuth::class,
+        'adminredirect'     => AdminRedirectLogin::class,
     ];
 
     /**

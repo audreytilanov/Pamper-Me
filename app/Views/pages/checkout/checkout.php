@@ -145,30 +145,24 @@
               <p>Order Total</p>
               <p>Rp. <?php echo number_format($total , 0, ',', '.'); ?></p>
             </div>
-
+            <form action="<?= base_url('user/checkout/metode-bayar/') ?>" method="post">
             <div class="flex flex-col items-start gap-[8px]">
               <div class="flex flex-row items-center gap-[8px]">
                 <img src="/icons/discount.svg" alt="">
                 <p class="text-pink-500 font-bold">Kupon</p>
               </div>
               <div class="flex xl:flex-row xl:items-stretch gap-[8px] w-full flex-col">
-                <input type="text" placeholder="CONTOH: PROMO10" class="w-full border px-5 rounded-lg xl:text-base text-sm p-[8px]">
-                <buttom
-                type="buttom"
-                href="/checkout/metode-bayar"
-                class="flex flex-row gap-[8px] items-center justify-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm xl:px-[24px] xl:py-[12px] p-[8px] text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800 text-sm"
-                >
-                Pakai
-                </buttom>
+                <input type="text" name="diskon" placeholder="CONTOH: PROMO10" class="w-full border px-5 rounded-lg xl:text-base text-sm p-[8px]">
               </div>
             </div>
 
-            <a
-              href="/user/checkout/metode-bayar"
+            <button
+              type="submit"
               class="flex flex-row gap-[8px] items-center justify-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm xl:px-[24px] xl:py-[12px] p-[8px] text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800 text-sm"
             >
               Checkout
-            </a>
+                </button>
+            </form>
           </div>
         </div>
       </div>

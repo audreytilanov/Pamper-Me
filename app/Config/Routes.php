@@ -84,7 +84,8 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
 
     // lihat antrian
     $routes->get('checkout', 'Checkout::index', ['as' => 'user.checkout.index']);
-    $routes->get('checkout/metode-bayar', 'Checkout::metodeBayar', ['as' => 'user.checkout.method']);
+    // $routes->post('checkout/checkout', 'Checkout::checkout', ['as' => 'user.checkout.checkout']);
+    $routes->post('checkout/metode-bayar', 'Checkout::metodeBayar', ['as' => 'user.checkout.method']);
     $routes->post('checkout/setPayment', 'Checkout::setPayment', ['as' => 'user.checkout.setPayment']);
     $routes->get('checkout/bayar', 'Checkout::bayar', ['as' => 'user.checkout.payment']);
     $routes->get('checkout/detail', 'Checkout::detail', ['as' => 'user.checkout.detail']);
@@ -135,11 +136,17 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 // $routes->get('/checkout/metode-bayar', 'Checkout::metodeBayar');
 // $routes->get('/checkout/bayar', 'Checkout::bayar');
 // $routes->get('/checkout/detail', 'Checkout::detail');
+$routes->group('admin', ['filter' => 'adminredirect'], static function ($routes) {
+    // Dashboard User
+    $routes->get('login', 'Admin::login',['as' => 'admin.login']);
+    $routes->post('login/post', 'Admin::authLogin',['as' => 'admin.auth.login']);
 
-$routes->group('admin', static function ($routes) {
+}); 
+
+
+$routes->group('admin',['filter' => 'adminauth'], static function ($routes) {
     // Admin
 
-    $routes->get('login', 'Admin::login',['as' => 'admin.login']);
 
 
     // Barcode Update Scan
@@ -201,6 +208,13 @@ $routes->group('admin', static function ($routes) {
     $routes->get('operator/edit/(:segment)', 'Admin::operatorEdit/$1', ['as' => 'admin.operator.edit']);
     $routes->post('operator/edit/(:segment)', 'Admin::operatorUpdate/$1',['as' => 'admin.operator.update']);
     $routes->post('operator/delete/(:segment)', 'Admin::operatorDelete/$1',['as' => 'admin.operator.delete']);
+
+    // Diskon
+    $routes->get('diskon', 'Admin::diskonIndex',['as' => 'admin.diskon']);
+    $routes->post('diskon/tambah', 'Admin::diskonTambah',['as' => 'admin.diskon.tambah']);
+    $routes->get('diskon/edit/(:segment)', 'Admin::diskonEdit/$1', ['as' => 'admin.diskon.edit']);
+    $routes->post('diskon/edit/(:segment)', 'Admin::diskonUpdate/$1',['as' => 'admin.diskon.update']);
+    $routes->post('diskon/delete/(:segment)', 'Admin::diskonDelete/$1',['as' => 'admin.diskon.delete']);
 
 });
 
