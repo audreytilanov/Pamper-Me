@@ -105,14 +105,21 @@ class Checkout extends BaseController
                 }elseif($diskon['tipe_diskon'] == 2){
                     $diskonTotal = $totalHarga * ($diskon['nominal']/100);
                     $totalHargaAkhir = $totalHarga - $diskonTotal;
+                }else{
+                    $totalHargaAkhir = $totalHarga;
                 }
+            }else{
+                $totalHargaAkhir = $totalHarga;
             }
-            $itemTransaksi[] = [
-                'id'       => $datas['id'],
-                'price'    => -$diskonTotal,
-                'quantity' => 1,
-                'name'     => 'diskon'
-            ];
+            if(!empty($diskonTotal)){
+                $itemTransaksi[] = [
+                    'id'       => $datas['id'],
+                    'price'    => -$diskonTotal,
+                    'quantity' => 1,
+                    'name'     => 'diskon'
+                ];
+            }
+            
             $customer_details = array(
                 'first_name'       => $dataUser['nama_orangtua'],
                 'email'            => $dataUser['email'],
