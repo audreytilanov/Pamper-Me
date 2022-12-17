@@ -4,16 +4,16 @@
 
 <!-- Start lihat antrian -->
 <div class="xl:w-[980px] px-[25px] py-[64px] flex flex-col items-center mx-auto">
-  <div class="mt-[64px] flex flex-col items-center w-full">
+  <div class="mt-[64px] flex flex-col items-center w-full gap-[32px]">
     <div class="w-full text-center">
       <h3 class="xl:text-5xl text-2xl font-bold">Spin Hadiah</h3>
     </div>
     <div class="container flex flex-col gap-[24px] items-center">
       <div class="row relative">
-      <div class="rotate-180 flex justify-center mb-[8px]">
+      <div class="rotate-180 flex justify-center mb-[8px] absolute w-full">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 22h-24l12-20z"/></svg>
     </div>
-        <div class="col-xs-12" align="center">
+        <div class="col-xs-12 mt-[16px]" align="center">
           <div id="wheel">
             <canvas id="canvas" width="260" height="260"></canvas>
           </div>
@@ -35,7 +35,7 @@
   </div>
 </div>
 <!-- End lihat antrian -->
-
+z
 <script language="JavaScript">
   function create_spinner() {
     color_data = ['#fedf30', '#fdb441', '#fd6930', '#eb5454', '#bf9dd3', '#29b8cd', "#00f2a6", "#f67"];
