@@ -2,40 +2,127 @@
 
 <?= $this->section('content') ?>
 
-<!-- Start lihat antrian -->
-<div class="xl:w-[980px] px-[25px] py-[64px] flex flex-col items-center mx-auto">
-  <div class="mt-[64px] flex flex-col items-center w-full gap-[32px]">
-    <div class="w-full text-center">
-      <h3 class="xl:text-5xl text-2xl font-bold">Spin Hadiah</h3>
+<div class="px-[24px] xl:px-[80px] py-[64px]">
+  <div class="flex flex-col items-start gap-[24px]">
+    <div class="flex flex-col items-start gap-[8px]">
+      <h1 class="font-bold xl:text-5xl xl:mt-[50px] mt-[40px] text-2xl">Spin Hadiah</h1>
+      <p class="text-base ml-[4px]">
+        Halaman ini dapat melakukan spin hadiah.
+      </p>
     </div>
-    <div class="container flex flex-col gap-[24px] items-center">
-      <div class="row relative">
-      <div class="rotate-180 flex justify-center mb-[8px] absolute w-full">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 22h-24l12-20z"/></svg>
-    </div>
-        <div class="col-xs-12 mt-[16px]" align="center">
-          <div id="wheel">
-            <canvas id="canvas" width="260" height="260"></canvas>
+  </div>
+  <div class="grid xl:grid-cols-2 gap-[24px] items-start mt-[40px]">
+    <div class="xl:p-[40px] p-[16px] border border-zinc-900 w-full flex flex-col items-start gap-[32px] rounded-lg">
+      <div class="flex flex-col items-start gap-[8px]">
+        <div class="flex flex-row gap-[24px] items-center">
+          <img
+            class="w-[190px] h-[190px] object-cover rounded-lg"
+            src="/images/baby.jpg"
+            alt=""
+          />
+        </div>
+        </div>
+          <div class="w-full flex flex-col gap-[24px] items-start">
+            <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
+            <h3 class="w-full text-base">Nama anak :</h3>
+            <div class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base">
+            Joko
+          </div>
+        </div>
+
+        <!-- Start Tanggal -->
+        <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
+          <h3 class="w-full text-base">Tanggal Lahir :</h3>
+          <div
+            class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
+          >        
+            2022-11-26 
+          </div>
+        </div>
+        <!-- End Tanggal -->
+
+        <!-- Start Kelamin -->
+        <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
+          <h3 class="w-full text-base">Kelamin :</h3>
+          <div
+            class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
+          >
+          Pilih Kelamin Anak
+          </div>
+        </div>
+        <!-- End Kelamin -->
+        <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
+          <h3 class="w-full text-base">QR Code :</h3>
+          <div
+            class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
+          >
+            Pesan Layanan Terlebih Dahulu.
           </div>
         </div>
       </div>
-      <!--  end row -->
-      <div class="flex gap-[8px] flex-row justify-center">
-        <div>
-          <button type="button" class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-base px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800" onclick="spin()">Spin Now!</button>
-        </div>
-        <div>
-          <button type="button" id="stop" class="flex flex-row gap-[8px] items-center text-white border border-pink-700 text-pink-700 hover:bg-pink-700 hover:text-white focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-base px-[24px] py-2.5 text-center dark:focus:ring-pink-800" onclick="stops()">Stop Now!</button>
-        </div>
-      </div>
     </div>
-    <!-- end container -->
-    <br>
+    <div>
+    <div class="flex flex-col">
+  <div class="">
+    <h4 class="font-bold text-2xl">History Poin</h4>
+    <div class="py-4 inline-block min-w-full">
+      <div class="">
+        <table class="min-w-full text-center">
+          <thead class="border-b bg-pink-500">
+            <tr>
+              <th scope="col" class="text-sm font-medium text-white xl:px-6 xl:py-4 p-2">
+                No
+              </th>
+              <th scope="col" class="text-sm font-medium text-white xl:px-6 xl:py-4 p-2">
+                Date
+              </th>
+              <th scope="col" class="text-sm font-medium text-white xl:px-6 xl:py-4 p-2">
+                Poin
+              </th>
+            </tr>
+          </thead class="border-b">
+          <tbody>
+            <tr class="bg-white border-b">
+              <td class="xl:px-6 xl:py-4 p-2 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+              <td class="text-sm text-gray-900 font-light xl:px-6 xl:py-4 p-2 whitespace-nowrap">
+                Sabtu, 17 Okt 2022
+              </td>
+              <td class="text-sm text-gray-900 font-light xl:px-6 xl:py-4 p-2 whitespace-nowrap">
+                30 Poin
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
-<!-- End lihat antrian -->
-z
+      <div class="flex flex-col gap-[16px] items-center">
+        <h4 class="text-2xl font-bold">Spin Hadiah</h4>
+        <div class="row relative">
+        <div class="rotate-180 flex justify-center mb-[8px] absolute w-full">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 22h-24l12-20z"/></svg>
+        </div>
+          <div class="col-xs-12 mt-[16px]" align="center">
+            <div id="wheel">
+              <canvas id="canvas" width="260" height="260"></canvas>
+            </div>
+          </div>
+        </div>
+        <!--  end row -->
+        <div class="flex gap-[8px] flex-row justify-center">
+          <div>
+            <button type="button" class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-base px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800" onclick="spin()">Spin Now!</button>
+          </div>
+          <div>
+            <button type="button" id="stop" class="flex flex-row gap-[8px] items-center text-white border border-pink-700 text-pink-700 hover:bg-pink-700 hover:text-white focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-base px-[24px] py-2.5 text-center dark:focus:ring-pink-800" onclick="stops()">Stop Now!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script language="JavaScript">
   function create_spinner() {
     color_data = ['#fedf30', '#fdb441', '#fd6930', '#eb5454', '#bf9dd3', '#29b8cd', "#00f2a6", "#f67"];
