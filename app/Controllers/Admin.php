@@ -30,25 +30,30 @@ class Admin extends BaseController
         $password = $this->request->getVar('password');
         $data = $model->where('email', $email)->first();
         // dd($data);
-        if($data['tipe_akses'] != null){
-            $pass = $data['password'];
-            $verify_pass = password_verify($password, $pass);
-            if($verify_pass){
-                $ses_data = [
-                    'nama'       => $data['nama'],
-                    'email'    => $data['email'],
-                    'admin_logged_in'     => TRUE
-                ];
-                $session->set($ses_data);
-                return redirect()->to('/admin/orangtua');
+        if(!empty($data)){
+            if($data['tipe_akses'] != null){
+                $pass = $data['password'];
+                $verify_pass = password_verify($password, $pass);
+                if($verify_pass){
+                    $ses_data = [
+                        'nama'       => $data['nama'],
+                        'email'    => $data['email'],
+                        'admin_logged_in'     => TRUE
+                    ];
+                    $session->set($ses_data);
+                    return redirect()->to('/admin/orangtua');
+                }else{
+                    $session->setFlashdata('msg', 'Password yang dimasukkan salah!');
+                    return redirect()->to('/admin/login');
+                }
             }else{
-                $session->setFlashdata('msg', 'Password yang dimasukkan salah!');
+                $session->setFlashdata('msg', 'Email Tidak Ditemukan');
                 return redirect()->to('/admin/login');
             }
         }else{
-            $session->setFlashdata('msg', 'Email Tidak Ditemukan');
             return redirect()->to('/admin/login');
         }
+        
     }
 
     // Masterdata Orangtua
