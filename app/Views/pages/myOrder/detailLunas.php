@@ -37,7 +37,7 @@
                       <h3 class="font-bold text-xl"><?= $datas['nama_anak'] ?></h3>
                       <?php if($datas['time_scan'] == null && $dataRes['status_pembayaran'] == "settlement"): ?>
                       <a
-                        href="<?= base_url('user/scan-barcode/'. $datas['id']) ?>"
+                        href="<?= base_url('user/scan-barcode/'. $datas['qr_code']) ?>"
                         class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
                       >
                         Scan Barcode

@@ -67,6 +67,12 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
     $routes->get('data-anak/edit/(:segment)', 'DataAnak::edit/$1', ['as' => 'user.anak.edit']);
     $routes->post('data-anak/edit/(:segment)', 'DataAnak::update/$1', ['as' => 'user.dashboard.update']);
     $routes->post('data-anak/delete/(:segment)', 'DataAnak::delete/$1', ['as' => 'user.dashboard.delete']);
+    $routes->get('data-anak/scan-barcode/(:segment)', 'ScanBarcode::anak/$1');
+    $routes->get('data-anak/spin/(:segment)', 'Spin::index/$1');
+    $routes->post('postSpin', 'Spin::postData');
+    $routes->get('indexData', 'Spin::indexData');
+    $routes->get('poinDetail', 'Spin::detailPoin');
+
 
 
     // Scan Barcode
@@ -222,4 +228,3 @@ $routes->group('admin',['filter' => 'adminauth'], static function ($routes) {
     // Riwayat Pemesanan
 
 
-$routes->get('/spin', 'Spin::index');

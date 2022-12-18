@@ -165,7 +165,17 @@
           >
             <?php
               if(!empty($data['link_barcode'])){
-                echo $data['link_barcode'];
+                // echo $data['link_barcode'];
+                ?>
+                <a
+                  class="flex flex-row gap-[4px] items-center text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-800 cursor-pointer"
+                  href="<?= base_url('user/data-anak/scan-barcode/'. $data['link_barcode']) ?>"
+                >
+                  <span class="xl:text-sm text-xs leading-normal text-zinc-900 font-bold"
+                    >Lihat QrCode</span
+                  >
+                </a>
+                <?php
               }else{
                 echo "Pesan Layanan Terlebih Dahulu.";
               } 

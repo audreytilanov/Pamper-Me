@@ -78,7 +78,7 @@ class Checkout extends BaseController
             ->join('tb_anak', 'tb_anak.id_anak = tb_reservasi_detail.id_anak')
             ->join('tb_kategori_layanan', 'tb_kategori_layanan.id_kategori_layanan = tb_produk.id_kategori_layanan')
             ->where('tb_reservasi.id_reservasi', $data['id_reservasi'])->findAll();
-            dd($detail);
+            // dd($detail);
             $itemTransaksi = [];
             $totalHarga = 0;
             $resData = $model->find($data['id_reservasi']);
@@ -137,7 +137,6 @@ class Checkout extends BaseController
             );
             
             $snapToken = \Midtrans\Snap::getSnapToken($params);
-            
             $res = [
                 'data' => $detail,
                 'list' => $detail,

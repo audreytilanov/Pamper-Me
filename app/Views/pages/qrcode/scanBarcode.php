@@ -7,8 +7,6 @@
     <div class="mt-[64px] flex flex-col items-center gap-[8px] bg-white shadow-md px-[32px] py-[24px] rounded-md">
         <h1 class="md:text-xl text-base text-pink-500 font-bold">Nama anak :</h1>
         <h1 class="font-bold text-5xl text-pink-500 font-bold"><?= $data['nama_anak'] ?></h1>
-        <h3 class="font-bold md:text-xl text-base text-pink-500 font-bold"><?= $data['nama_produk'] ?></h3>
-        <h3 class="font-bold md:text-xl text-base text-pink-500 font-bold">Jam :<?= $data['jam'] ?> (<?= $data['durasi'] ?> Menit)</h3>
     </div>
     <img class="w-[300px] xl:h-[300px] object-contain shadow-md p-[16px] rounded-md bg-white" src="<?= $dataUri ?>">
     <div class="flex flex-col items-center gap-[8px] text-center md:text-start bg-white shadow-md px-[16px] py-[8px] rounded-md">
