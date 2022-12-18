@@ -111,7 +111,13 @@
                     />
                   </svg>
   
-                  <span class="mt-[3px]"> <?= $datas['status_pembayaran'] ?> </span>
+                  <span class="mt-[3px]">
+                  <?php if($datas['status_pembayaran'] == 'settlement'){ ?>   
+                    Paid
+                  <?php }else{ ?>
+                    <?= $datas['status_pembayaran'] ?>
+                    <?php }?>
+                  </span>
                 </div>
                 <a
                   href="<?= base_url('user/my-order/detail-order/'. $datas['id_reservasi']) ?>"

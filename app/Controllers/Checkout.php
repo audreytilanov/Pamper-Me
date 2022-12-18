@@ -77,7 +77,8 @@ class Checkout extends BaseController
             ->join('tb_cabang', 'tb_cabang.id_cabang = tb_produk.id_cabang')
             ->join('tb_anak', 'tb_anak.id_anak = tb_reservasi_detail.id_anak')
             ->join('tb_kategori_layanan', 'tb_kategori_layanan.id_kategori_layanan = tb_produk.id_kategori_layanan')
-            ->where('tb_reservasi.id_orangtua', $session->get('user_id_orangtua'))->findAll();
+            ->where('tb_reservasi.id_reservasi', $data['id_reservasi'])->findAll();
+            dd($detail);
             $itemTransaksi = [];
             $totalHarga = 0;
             $resData = $model->find($data['id_reservasi']);
