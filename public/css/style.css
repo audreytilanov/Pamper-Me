@@ -36,3 +36,8 @@ input[type="radio"][disabled] + label {
   background-color: #dc2626;
   color: white;
 }
+
+.bg-pattern {
+  background-image: url("../images/pattern.jpg");
+  background-size: cover;
+}
