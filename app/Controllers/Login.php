@@ -22,28 +22,35 @@ class Login extends BaseController
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
         $data = $model->where('email', $email)->first();
-        if($data['status_pendaftaran'] == 1){
-            $pass = $data['password'];
-            $verify_pass = password_verify($password, $pass);
-            if($verify_pass){
-                $ses_data = [
-                    'user_id'       => $data['id_reg'],
-                    'user_id_orangtua'       => $data['id_orangtua'],
-                    'user_name'     => $data['nama_orangtua'],
-                    'user_email'    => $data['email'],
-                    'no_whatsapp'    => $data['no_whatsapp'],
-                    'status_pendaftaran' => $data['status_pendaftaran'],
-                    'logged_in'     => TRUE
-                ];
-                $session->set($ses_data);
-                return redirect()->to('/');
-            }else{
-                $session->setFlashdata('msg', 'Password yang dimasukkan salah!');
+        if(!empty($data)){
+            if($data['status_pendaftaran'] == 1){
+                $pass = $data['password'];
+                $verify_pass = password_verify($password, $pass);
+                if($verify_pass){
+                    $ses_data = [
+                        'user_id'       => $data['id_reg'],
+                        'user_id_orangtua'       => $data['id_orangtua'],
+                        'user_name'     => $data['nama_orangtua'],
+                        'user_email'    => $data['email'],
+                        'no_whatsapp'    => $data['no_whatsapp'],
+                        'status_pendaftaran' => $data['status_pendaftaran'],
+                        'logged_in'     => TRUE
+                    ];
+                    $session->set($ses_data);
+                    return redirect()->to('/');
+                }else{
+                    $session->setFlashdata('msg', 'Password yang dimasukkan salah!');
+                    return redirect()->to('/login');
+                }
+            }elseif($data['status_pendaftaran'] == 0){
+                return view('register/verifikasi');
+            }
+            else{
+                $session->setFlashdata('msg', 'Email Tidak Ditemukan');
                 return redirect()->to('/login');
             }
-        }elseif($data['status_pendaftaran'] == 0){
-            return view('register/verifikasi');
-        }else{
+        }
+        else{
             $session->setFlashdata('msg', 'Email Tidak Ditemukan');
             return redirect()->to('/login');
         }
