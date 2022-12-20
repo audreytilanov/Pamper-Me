@@ -32,7 +32,7 @@ class Register extends BaseController
         // if($this->validate($rules)){
             $model = new OrangtuaModel();
             $data = [
-                'id_orangtua' => hash ( "sha256", $this->request->getVar('nama_orangtua') ),
+                'id_orangtua' => hash ( "sha256", uniqid().$this->request->getVar('nama_orangtua') ),
                 'nama_orangtua'     => $this->request->getVar('nama_orangtua'),
                 'email'    => $this->request->getVar('email'),
                 'no_whatsapp'    => $this->request->getVar('no_whatsapp'),

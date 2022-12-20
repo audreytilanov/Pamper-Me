@@ -94,7 +94,6 @@ class Spin extends BaseController
             $model = new PoinDetailModel();
             $data = $model
             ->join('tb_anak', 'tb_point_detail.id_anak = tb_anak.id_anak')
-            ->join('tb_reservasi', 'tb_reservasi.id_reservasi = tb_point_detail.id_reservasi')
             ->where('tb_point_detail.id_anak', $anak)->findAll();
             $res = [
                 'data' => $data,
