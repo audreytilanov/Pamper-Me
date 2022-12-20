@@ -11,7 +11,7 @@ class MyOrder extends BaseController
     {
         $session = session();
         $model = new ReservasiModel();
-        $data = $model->where('id_orangtua', $session->get('user_id_orangtua'))->where('status', 'payment')->findAll();
+        $data = $model->where('id_orangtua', $session->get('user_id_orangtua'))->where('status', 'payment')->orderBy('id_reservasi', 'DESC')->findAll();
 
         $res = [
             'data' => $data,

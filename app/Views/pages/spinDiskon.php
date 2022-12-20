@@ -58,6 +58,37 @@
     <div class="flex flex-col viewData">
       
     </div>
+    <div class="">
+    <h4 class="font-bold text-2xl">Penukaran Hadiah | T</h4>
+    <div class="py-4 inline-block min-w-full">
+      <div class="">
+        <table class="min-w-full text-center">
+          <thead class="border-b bg-pink-500">
+            <tr>
+              <th scope="col" class="text-sm font-medium text-white xl:px-6 xl:py-4 p-2">
+                Nama Hadiah
+              </th>
+              <th scope="col" class="text-sm font-medium text-white xl:px-6 xl:py-4 p-2">
+                Point Penukaran
+              </th>
+            </tr>
+          </thead class="border-b">
+          <tbody>
+            <?php foreach($hadiah as $dataHadiah): ?>
+            <tr class="bg-white border-b">
+              <td class="xl:px-6 xl:py-4 p-2 whitespace-nowrap text-sm font-medium text-gray-900">
+                <?= $dataHadiah['nama_hadiah'] ?>
+            </td>
+              <td class="text-sm text-gray-900 font-light xl:px-6 xl:py-4 p-2 whitespace-nowrap">
+                <?= $dataHadiah['point_hadiah'] ?>
+              </td>
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
 <?php //if(!empty($res)){ ?>
       <div class="flex flex-col gap-[16px] items-center">

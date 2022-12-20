@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\AnakModel;
+use App\Models\HadiahModel;
 use App\Models\PoinDetailModel;
 use App\Models\ReservasiDetailModel;
 use App\Models\SpinMasterModel;
@@ -20,8 +21,10 @@ class Spin extends BaseController
 
         $session = session();
         $model = new AnakModel();
+        $modelHadiah = new HadiahModel();
         // $modelReservasi = new ReservasiDetailModel();
         $data = $model->where('link_barcode', $id)->first();
+        $dataHadiah = $modelHadiah->orderBy('point_hadiah', 'DESC')->findAll();
         // $reservasi = $modelReservasi->where('id_anak', $data['id_anak'])->where('status_spin_point', 0)->findAll();
 
         // dd($reservasi);
@@ -33,6 +36,7 @@ class Spin extends BaseController
         // dd($arr);
         $res = [
             'data' => $data,
+            'hadiah' => $dataHadiah,
             // 'res' => $reservasi,
             'spin' => $arr,
         ];

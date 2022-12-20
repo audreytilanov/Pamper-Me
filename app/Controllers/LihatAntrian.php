@@ -46,7 +46,7 @@ class LihatAntrian extends BaseController
 
         foreach($data as $key=>$item){
             $waktu = $jadwal->join('tb_produk', 'tb_produk.id_produk = tb_jadwal_produk.id_produk', 'left')
-            ->join('tb_cabang', 'tb_cabang.id_cabang = tb_produk.id_cabang', 'left')->where('tb_jadwal_produk.id_produk', $data[$key]['id_produk'])->findAll();
+            ->join('tb_cabang', 'tb_cabang.id_cabang = tb_produk.id_cabang', 'left')->where('tb_jadwal_produk.id_produk', $data[$key]['id_produk'])->where('tanggal', $tanggal)->findAll();
             
 
             // $dataFix[] = array_push();

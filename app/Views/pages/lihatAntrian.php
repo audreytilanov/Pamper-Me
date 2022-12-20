@@ -741,8 +741,9 @@
                 class="px-2 form-select appearance-none block w-full py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border-b-[2px] border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-pink-500 focus:outline-none"
                 aria-label="Default select example"
                 name="anak"
+                required
               >
-                <option selected>Silahkan pilih Anak</option>
+                <option value="" selected>Silahkan pilih Anak</option>
                 <?php foreach(session()->getFlashdata('anak') as $anaks) :?>
 
                 <option value="<?php echo $anaks['id_anak']; ?>"><?php echo $anaks['nama_anak']; ?></option>

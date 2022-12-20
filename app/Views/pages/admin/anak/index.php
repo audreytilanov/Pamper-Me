@@ -146,6 +146,15 @@
               <td>
                 <div class="form-button-action">
                   <a
+                    href="<?= base_url('admin/anak/hadiah/'. $data['id_anak']) ?>"
+                    data-toggle="tooltip"
+                    title=""
+                    class="btn btn-link btn-primary btn-lg"
+                    data-original-title="Hadiah"
+                  >
+                    <i class="fa fa-gift"></i>
+                  </a>
+                  <a
                     href="<?= base_url('admin/anak/edit/'. $data['id_anak']) ?>"
                     data-toggle="tooltip"
                     title=""

@@ -14,7 +14,7 @@
         if(!empty($session->get('user_id_orangtua'))) : ?>
         <li class="mx-4 my-6 lg:my-0">
           <a
-            href=""
+            href="/"
             class="xl:text-sm lg:text-xs hover:text-pink-500 duration-500 font-semibold"
             >Buat Reservasi</a
           >

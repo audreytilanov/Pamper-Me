@@ -20,7 +20,11 @@
             </tr>
           </thead class="border-b">
           <tbody>
-            <?php foreach($data as $data): ?>
+            <?php
+            $totalPoinMasuk=0;
+            $totalPoinKeluar = 0;
+            $totalPoinAkhir = 0;
+            foreach($data as $data): ?>
             <tr class="bg-white border-b">
               <td class="xl:px-6 xl:py-4 p-2 whitespace-nowrap text-sm font-medium text-gray-900">
                 <?= $data['id_reservasi'] ?>
@@ -35,7 +39,20 @@
                 <?= $data['point_keluar'] ?>
               </td>
             </tr>
-            <?php endforeach; ?>
+            <?php 
+            $totalPoinMasuk += $data['point_masuk'];
+            $totalPoinKeluar += $data['point_keluar'];
+            $totalPoinAkhir = $data['point_masuk'] - $data['point_keluar'];
+            endforeach; ?>
+            <tr class="bg-white border-b">
+              
+              <td class="text-sm text-gray-900 font-light xl:px-6 xl:py-4 p-2 whitespace-nowrap" colspan="3">
+                Total Poin Anak
+              </td>
+              <td class="text-sm text-gray-900 font-light xl:px-6 xl:py-4 p-2 whitespace-nowrap">
+                <?= $totalPoinAkhir ?>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

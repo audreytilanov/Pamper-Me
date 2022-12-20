@@ -6,11 +6,14 @@ use DateTime;
 use App\Models\AnakModel;
 use App\Models\CabangModel;
 use App\Models\DiskonModel;
+use App\Models\HadiahModel;
 use App\Models\ProdukModel;
 use App\Models\OperatorModel;
 use App\Models\OrangtuaModel;
 use App\Models\JadwalProdukModel;
 use App\Models\KategoriLayananModel;
+use App\Models\PenukaranHadiahModel;
+use App\Models\PoinDetailModel;
 use App\Models\ReservasiDetailModel;
 
 class Admin extends BaseController
@@ -37,6 +40,7 @@ class Admin extends BaseController
                 if($verify_pass){
                     $ses_data = [
                         'nama'       => $data['nama'],
+                        'user_id_admin'       => $data['id_operator'],
                         'email'    => $data['email'],
                         'admin_logged_in'     => TRUE
                     ];
@@ -132,6 +136,7 @@ class Admin extends BaseController
             'anak' => $anak,
             'page' => $page
         ];
+        // dd($anak);
 
         return view('pages/admin/anak/index', $res);
     }
@@ -163,6 +168,54 @@ class Admin extends BaseController
         $data = $model->where('id_anak', $id)->first();
         $data['page'] = $page;
         return view('pages/admin/anak/edit', $data);
+    }
+
+    public function anakHadiah($id){
+        $model = new PoinDetailModel();
+        $page = "orangtua";
+        $dataMasuk = $model->selectSum('point_masuk')->where('id_anak', $id)->first();
+        $dataKeluar = $model->selectSum('point_keluar')->where('id_anak', $id)->first();
+        $totalPoinAkhir = $dataMasuk['point_masuk'] - $dataKeluar['point_keluar'];
+        
+        $modelHadiah = new HadiahModel();
+        $dataHadiah = $modelHadiah->where('point_hadiah <=', $totalPoinAkhir)->findAll();
+
+        $res = [
+            'page' => $page,
+            'dataHadiah' => $dataHadiah,
+            'total' => $totalPoinAkhir,
+            'id_anak' => $id,
+        ];
+        // dd($dataHadiah);
+
+        return view('pages/admin/anak/hadiah', $res);
+    }
+
+    public function anakHadiahTukar($id){
+        $session = session();
+        $model = new PenukaranHadiahModel();
+        $modelHadiah = new HadiahModel();
+        $dataHadiah = $modelHadiah->where('id_hadiah', $this->request->getVar('id_hadiah'))->first();
+        $data = [
+            'id_anak'     => $id,
+            'id_hadiah'     => $this->request->getVar('id_hadiah'),
+            'point'    => $dataHadiah['point_hadiah'],
+            'tanggal_penukaran'    => date('Y-m-d'),
+            'id_operator' => $session->get('user_id_admin'),
+            'qty_hadiah' => 1,
+        ];
+
+        $model->save($data);
+
+        $modelPoin = new PoinDetailModel();
+        $dataPoin = [
+            'id_anak'     => $id,
+            'point_keluar'     => $dataHadiah['point_hadiah']
+        ];
+
+        $modelPoin->save($dataPoin);
+
+        return redirect()->to('/admin/orangtua/');
     }
 
     public function anakUpdate($id){
