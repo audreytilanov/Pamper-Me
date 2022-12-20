@@ -40,9 +40,9 @@
               </td>
             </tr>
             <?php 
-            $totalPoinMasuk += $data['point_masuk'];
-            $totalPoinKeluar += $data['point_keluar'];
-            $totalPoinAkhir = $data['point_masuk'] - $data['point_keluar'];
+            $totalPoinMasuk += (int)$data['point_masuk'];
+            $totalPoinKeluar += (int)$data['point_keluar'];
+            $totalPoinAkhir = $totalPoinMasuk - $totalPoinKeluar;
             endforeach; ?>
             <tr class="bg-white border-b">
               
