@@ -28,7 +28,7 @@
         },
       });
     </script>
-
+    <?php $session = session(); ?>
     <!-- CSS Files -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/azzara.min.css" />
@@ -96,266 +96,12 @@
         </div>
         <!-- End Logo Header -->
 
-        <!-- Navbar Header -->
-        <nav class="navbar navbar-header navbar-expand-lg">
-          <div class="container-fluid">
-            <div class="collapse" id="search-nav">
-              <form class="navbar-left navbar-form nav-search mr-md-3">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <button type="submit" class="btn btn-search pr-1">
-                      <i class="fa fa-search search-icon"></i>
-                    </button>
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Search ..."
-                    class="form-control"
-                  />
-                </div>
-              </form>
-            </div>
-            <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-              <li class="nav-item toggle-nav-search hidden-caret">
-                <a
-                  class="nav-link"
-                  data-toggle="collapse"
-                  href="#search-nav"
-                  role="button"
-                  aria-expanded="false"
-                  aria-controls="search-nav"
-                >
-                  <i class="fa fa-search"></i>
-                </a>
-              </li>
-              <li class="nav-item dropdown hidden-caret">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="messageDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <i class="fa fa-envelope"></i>
-                </a>
-                <ul
-                  class="dropdown-menu messages-notif-box animated fadeIn"
-                  aria-labelledby="messageDropdown"
-                >
-                  <li>
-                    <div
-                      class="dropdown-title d-flex justify-content-between align-items-center"
-                    >
-                      Messages
-                      <a href="#" class="small">Mark all as read</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="message-notif-scroll scrollbar-outer">
-                      <div class="notif-center">
-                        <a href="#">
-                          <div class="notif-img">
-                            <img
-                              src="/img/jm_denis.jpg"
-                              alt="Img Profile"
-                            />
-                          </div>
-                          <div class="notif-content">
-                            <span class="subject">Jimmy Denis</span>
-                            <span class="block"> How are you ? </span>
-                            <span class="time">5 minutes ago</span>
-                          </div>
-                        </a>
-                        <a href="#">
-                          <div class="notif-img">
-                            <img
-                              src="/img/chadengle.jpg"
-                              alt="Img Profile"
-                            />
-                          </div>
-                          <div class="notif-content">
-                            <span class="subject">Chad</span>
-                            <span class="block"> Ok, Thanks ! </span>
-                            <span class="time">12 minutes ago</span>
-                          </div>
-                        </a>
-                        <a href="#">
-                          <div class="notif-img">
-                            <img
-                              src="/img/mlane.jpg"
-                              alt="Img Profile"
-                            />
-                          </div>
-                          <div class="notif-content">
-                            <span class="subject">Jhon Doe</span>
-                            <span class="block">
-                              Ready for the meeting today...
-                            </span>
-                            <span class="time">12 minutes ago</span>
-                          </div>
-                        </a>
-                        <a href="#">
-                          <div class="notif-img">
-                            <img
-                              src="/img/talha.jpg"
-                              alt="Img Profile"
-                            />
-                          </div>
-                          <div class="notif-content">
-                            <span class="subject">Talha</span>
-                            <span class="block"> Hi, Apa Kabar ? </span>
-                            <span class="time">17 minutes ago</span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <a class="see-all" href="javascript:void(0);"
-                      >See all messages<i class="fa fa-angle-right"></i>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown hidden-caret">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="notifDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <i class="fa fa-bell"></i>
-                  <span class="notification">4</span>
-                </a>
-                <ul
-                  class="dropdown-menu notif-box animated fadeIn"
-                  aria-labelledby="notifDropdown"
-                >
-                  <li>
-                    <div class="dropdown-title">
-                      You have 4 new notification
-                    </div>
-                  </li>
-                  <li>
-                    <div class="notif-center">
-                      <a href="#">
-                        <div class="notif-icon notif-primary">
-                          <i class="fa fa-user-plus"></i>
-                        </div>
-                        <div class="notif-content">
-                          <span class="block"> New user registered </span>
-                          <span class="time">5 minutes ago</span>
-                        </div>
-                      </a>
-                      <a href="#">
-                        <div class="notif-icon notif-success">
-                          <i class="fa fa-comment"></i>
-                        </div>
-                        <div class="notif-content">
-                          <span class="block"> Rahmad commented on Admin </span>
-                          <span class="time">12 minutes ago</span>
-                        </div>
-                      </a>
-                      <a href="#">
-                        <div class="notif-img">
-                          <img
-                            src="/img/profile2.jpg"
-                            alt="Img Profile"
-                          />
-                        </div>
-                        <div class="notif-content">
-                          <span class="block"> Reza send messages to you </span>
-                          <span class="time">12 minutes ago</span>
-                        </div>
-                      </a>
-                      <a href="#">
-                        <div class="notif-icon notif-danger">
-                          <i class="fa fa-heart"></i>
-                        </div>
-                        <div class="notif-content">
-                          <span class="block"> Farrah liked Admin </span>
-                          <span class="time">17 minutes ago</span>
-                        </div>
-                      </a>
-                    </div>
-                  </li>
-                  <li>
-                    <a class="see-all" href="javascript:void(0);"
-                      >See all notifications<i class="fa fa-angle-right"></i>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown hidden-caret">
-                <a
-                  class="dropdown-toggle profile-pic"
-                  data-toggle="dropdown"
-                  href="#"
-                  aria-expanded="false"
-                >
-                  <div class="avatar-sm">
-                    <img
-                      src="/img/profile.jpg"
-                      alt="..."
-                      class="avatar-img rounded-circle"
-                    />
-                  </div>
-                </a>
-                <ul class="dropdown-menu dropdown-user animated fadeIn">
-                  <li>
-                    <div class="user-box">
-                      <div class="avatar-lg">
-                        <img
-                          src="/img/profile.jpg"
-                          alt="image profile"
-                          class="avatar-img rounded"
-                        />
-                      </div>
-                      <div class="u-text">
-                        <h4>Hizrian</h4>
-                        <p class="text-muted">hello@example.com</p>
-                        <a
-                          href="profile.html"
-                          class="btn btn-rounded btn-danger btn-sm"
-                          >View Profile</a
-                        >
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">My Profile</a>
-                    <a class="dropdown-item" href="#">My Balance</a>
-                    <a class="dropdown-item" href="#">Inbox</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Account Setting</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Logout</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <!-- End Navbar -->
       </div>
       <!-- Sidebar -->
       <div class="sidebar">
         <div class="sidebar-wrapper scrollbar-inner">
           <div class="sidebar-content">
             <div class="user">
-              <div class="avatar-sm float-left mr-2">
-                <img
-                  src="/img/profile.jpg"
-                  alt="..."
-                  class="avatar-img rounded-circle"
-                />
-              </div>
               <div class="info">
                 <a
                   data-toggle="collapse"
@@ -363,7 +109,7 @@
                   aria-expanded="true"
                 >
                   <span>
-                    Hizrian
+                  <?= $session->get('nama') ?>
                     <span class="user-level">Administrator</span>
                     <span class="caret"></span>
                   </span>
@@ -373,19 +119,11 @@
                 <div class="collapse in" id="collapseExample">
                   <ul class="nav">
                     <li>
-                      <a href="#profile">
-                        <span class="link-collapse">My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#edit">
-                        <span class="link-collapse">Edit Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#settings">
-                        <span class="link-collapse">Settings</span>
-                      </a>
+                    <a
+                      href="<?= url_to('admin.logout') ?>"
+                    >
+                      <span class="link-collapse">Logout</span>
+                    </a>
                     </li>
                   </ul>
                 </div>
@@ -435,21 +173,36 @@
                 <a href="<?= url_to('admin.operator') ?>">
                   <i class="fas fa-user"></i>
                   <p>Operator</p>
-                  <span class="caret"></span>
                 </a>
               </li>
               <li class="nav-item <?php if($page == "reservasi"){ echo "active";};?> submenu">
                 <a href="<?= url_to('admin.reservasi') ?>">
                   <i class="fas fa-book"></i>
                   <p>Reservasi</p>
-                  <span class="caret"></span>
                 </a>
               </li>
               <li class="nav-item <?php if($page == "diskon"){ echo "active";};?> submenu">
                 <a href="<?= url_to('admin.diskon') ?>">
-                  <i class="fas fa-book"></i>
+                  <i class="fas fa-percent"></i>
                   <p>Diskon</p>
-                  <span class="caret"></span>
+                </a>
+              </li>
+              <li class="nav-item <?php if($page == "point"){ echo "active";};?> submenu">
+                <a href="<?= url_to('admin.point') ?>">
+                  <i class="fa fa-adjust"></i>
+                  <p>Point Setting</p>
+                </a>
+              </li>
+              <li class="nav-item <?php if($page == "hadiah"){ echo "active";};?> submenu">
+                <a href="<?= url_to('admin.hadiah') ?>">
+                  <i class="fa fa-gift"></i>
+                  <p>Hadiah</p>
+                </a>
+              </li>
+              <li class="nav-item <?php if($page == "histori"){ echo "active";};?> submenu">
+                <a href="<?= url_to('admin.histori') ?>">
+                  <i class="fa fa-recycle"></i>
+                  <p>History Penukaran</p>
                 </a>
               </li>
             </ul>
@@ -467,73 +220,7 @@
         </div>
       </div>
 
-      <!-- Custom template | don't include it in your project! -->
-      <div class="custom-template">
-        <div class="title">Settings</div>
-        <div class="custom-content">
-          <div class="switcher">
-            <div class="switch-block">
-              <h4>Topbar</h4>
-              <div class="btnSwitch">
-                <button
-                  type="button"
-                  class="changeMainHeaderColor"
-                  data-color="blue"
-                ></button>
-                <button
-                  type="button"
-                  class="selected changeMainHeaderColor"
-                  data-color="purple"
-                ></button>
-                <button
-                  type="button"
-                  class="changeMainHeaderColor"
-                  data-color="light-blue"
-                ></button>
-                <button
-                  type="button"
-                  class="changeMainHeaderColor"
-                  data-color="green"
-                ></button>
-                <button
-                  type="button"
-                  class="changeMainHeaderColor"
-                  data-color="orange"
-                ></button>
-                <button
-                  type="button"
-                  class="changeMainHeaderColor"
-                  data-color="red"
-                ></button>
-              </div>
-            </div>
-            <div class="switch-block">
-              <h4>Background</h4>
-              <div class="btnSwitch">
-                <button
-                  type="button"
-                  class="changeBackgroundColor"
-                  data-color="bg2"
-                ></button>
-                <button
-                  type="button"
-                  class="changeBackgroundColor selected"
-                  data-color="bg1"
-                ></button>
-                <button
-                  type="button"
-                  class="changeBackgroundColor"
-                  data-color="bg3"
-                ></button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="custom-toggle">
-          <i class="flaticon-settings"></i>
-        </div>
-      </div>
-      <!-- End Custom template -->
+      
     </div>
     <!--   Core JS Files   -->
     <script src="<?php echo base_url('js/core/popper.min.js')?>"></script>

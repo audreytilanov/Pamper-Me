@@ -68,10 +68,7 @@ $routes->group('user', ['filter' => 'auth'], static function ($routes) {
     $routes->post('data-anak/edit/(:segment)', 'DataAnak::update/$1', ['as' => 'user.dashboard.update']);
     $routes->post('data-anak/delete/(:segment)', 'DataAnak::delete/$1', ['as' => 'user.dashboard.delete']);
     $routes->get('data-anak/scan-barcode/(:segment)', 'ScanBarcode::anak/$1');
-    $routes->get('data-anak/spin/(:segment)', 'Spin::index/$1');
-    $routes->post('postSpin', 'Spin::postData');
-    $routes->get('indexData', 'Spin::indexData');
-    $routes->get('poinDetail', 'Spin::detailPoin');
+    
 
 
 
@@ -223,6 +220,31 @@ $routes->group('admin',['filter' => 'adminauth'], static function ($routes) {
     $routes->get('diskon/edit/(:segment)', 'Admin::diskonEdit/$1', ['as' => 'admin.diskon.edit']);
     $routes->post('diskon/edit/(:segment)', 'Admin::diskonUpdate/$1',['as' => 'admin.diskon.update']);
     $routes->post('diskon/delete/(:segment)', 'Admin::diskonDelete/$1',['as' => 'admin.diskon.delete']);
+
+    // Point Setting
+    $routes->get('point', 'AdminPoint::index',['as' => 'admin.point']);
+    $routes->post('point/tambah', 'AdminPoint::tambah',['as' => 'admin.point.tambah']);
+    $routes->get('point/edit/(:segment)', 'AdminPoint::edit/$1', ['as' => 'admin.point.edit']);
+    $routes->post('point/edit/(:segment)', 'AdminPoint::update/$1',['as' => 'admin.point.update']);
+    $routes->post('point/delete/(:segment)', 'AdminPoint::delete/$1',['as' => 'admin.point.delete']);
+
+    // Hadiah
+    $routes->get('hadiah', 'AdminHadiah::index',['as' => 'admin.hadiah']);
+    $routes->post('hadiah/tambah', 'AdminHadiah::tambah',['as' => 'admin.hadiah.tambah']);
+    $routes->get('hadiah/edit/(:segment)', 'AdminHadiah::edit/$1', ['as' => 'admin.hadiah.edit']);
+    $routes->post('hadiah/edit/(:segment)', 'AdminHadiah::update/$1',['as' => 'admin.hadiah.update']);
+    $routes->post('hadiah/delete/(:segment)', 'AdminHadiah::delete/$1',['as' => 'admin.hadiah.delete']);
+
+    // History Penukaran
+    $routes->get('histori', 'Admin::historiIndex',['as' => 'admin.histori']);
+
+    // Spin
+    $routes->get('data-anak/spin/(:segment)', 'Spin::index/$1');
+    $routes->post('postSpin', 'Spin::postData');
+    $routes->get('indexData', 'Spin::indexData');
+    $routes->get('poinDetail', 'Spin::detailPoin');
+
+    $routes->get('logout', 'Admin::logout',['as' => 'admin.logout']);
 
 });
 

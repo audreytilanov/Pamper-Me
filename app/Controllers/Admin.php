@@ -581,4 +581,43 @@ class Admin extends BaseController
 
         return redirect()->to('/admin/diskon/')->with('success', 'Data Berhasil Diperbaharui');
     }
+
+    public function historiIndex(){
+        $model = new PenukaranHadiahModel();
+        $data = $model
+        ->join('tb_anak', 'tb_penukaran_hadiah.id_anak = tb_anak.id_anak', 'inner')
+        ->join('tb_hadiah', 'tb_penukaran_hadiah.id_hadiah = tb_hadiah.id_hadiah', 'inner')
+        ->join('tb_operator', 'tb_penukaran_hadiah.id_operator = tb_operator.id_operator')
+        ->orderBy('tb_penukaran_hadiah.id', 'DESC')->findAll();
+        // var_dump($data[0]["id_orangtua"]);
+        $page = "histori";
+        $res = [
+            'data' => $data,
+            'page' => $page,
+            // 'nama_anak' => '',
+        ];
+        // dd($res);
+        helper(['text']);
+
+        return view('pages/admin/histori/index', $res);
+    }
+
+    public function logout(){
+        $session = session();
+        // $ses_data = [
+        //     'user_id'       => $data['id_reg'],
+        //     'user_id_orangtua'       => $data['id_orangtua'],
+        //     'user_name'     => $data['nama_orangtua'],
+        //     'user_email'    => $data['email'],
+        //     'no_whatsapp'    => $data['no_whatsapp'],
+        //     'status_pendaftaran' => $data['status_pendaftaran'],
+        //     'logged_in'     => TRUE
+        // ];
+        $session->remove('nama');
+        $session->remove('user_id_admin');
+        $session->remove('email');
+        $session->remove('admin_logged_in');
+        $session->stop();
+        return redirect()->to('admin/login');
+    }
 }

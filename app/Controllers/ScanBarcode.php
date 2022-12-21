@@ -75,7 +75,7 @@ class ScanBarcode extends BaseController
 
         // Create QR code
         // dd($data);
-        $qrCode = QrCode::create('https://baligroupbooking.com/user/data-anak/spin/'.$id)
+        $qrCode = QrCode::create('https://baligroupbooking.com/admin/data-anak/spin/'.$id)
             ->setEncoding(new Encoding('UTF-8'))
             ->setErrorCorrectionLevel(new ErrorCorrectionLevelLow())
             ->setSize(300)

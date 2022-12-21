@@ -14,23 +14,30 @@ class Homepage extends BaseController
     public function index()
     {
         $session = session();
+        $modelAnak = new AnakModel();
 
         if(!empty($session->get('user_id_orangtua'))){
-            $model = new LayananModel();
-            $cabang = new CabangModel();
-            $data = $model->findAll();
-            $cabangData = $cabang->findAll();
-            // var_dump($data[0]["id_orangtua"]);
-            $res = [
-                'data' => $data,
-                'cabangData' => $cabangData,
-                // 'nama_anak' => '',
-            ];
+            $dataAnak = $modelAnak->where('id_orangtua',$session->get('user_id_orangtua'))->findAll();
+
+            if(empty($dataAnak)){
+                return redirect()->to('user/data-anak');
+            }else{
+                $model = new LayananModel();
+                $cabang = new CabangModel();
+                $data = $model->findAll();
+                $cabangData = $cabang->findAll();
+                // var_dump($data[0]["id_orangtua"]);
+                $res = [
+                    'data' => $data,
+                    'cabangData' => $cabangData,
+                    // 'nama_anak' => '',
+                ];
+                
+                return view('pages/index', $res);
+            }
             
-            return view('pages/index', $res);
         }else{
             return redirect()->to('/login');
-
         }
     }
 
