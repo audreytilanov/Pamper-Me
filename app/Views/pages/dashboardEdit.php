@@ -18,12 +18,22 @@
       >
         <div class="flex flex-col items-start gap-[8px]">
           <div class="xl:flex flex-row gap-[24px] items-center">
-            <img
+            
+            <?php if(empty($link_foto)){ ?>
+              <img
               class="w-[190px] h-[190px] object-cover rounded-lg"
               id="ajaxImgUpload" 
               alt="Preview Image" 
               src="https://via.placeholder.com/300"
             />
+            <?php }else{ ?>
+              <img
+              class="w-[190px] h-[190px] object-cover rounded-lg"
+              src="/ortu/<?= $link_foto?>"
+              id="ajaxImgUpload" 
+              alt="Preview Image" 
+            />
+            <?php } ?>
             <div class="flex flex-col items-start gap-[8px]">
               <h1 class="text-2xl font-semibold"><?= $nama_orangtua; ?></h1>
               <div class="flex flex-row items-center gap-[16px]">
@@ -32,6 +42,9 @@
               </div>
             </div>
           </div>
+          <form class="w-full flex flex-col gap-[24px] items-start" action="<?= base_url('user/dashboard/edit/'. $session->get('user_id')) ?>" method="POST"
+          enctype="multipart/form-data">
+        <?= csrf_field(); ?>
           <div class="flex flex-row justify-start gap-[8px]">
             <label
               class="flex flex-row gap-[4px] items-center text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-[8px] py-[8px] text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-800 cursor-pointer"
@@ -47,7 +60,7 @@
               <span class="md:text-sm leading-normal text-white text-xs"
                 >Ganti Gambar</span>
                 
-              <input type="file" class="hidden" id="finput" onchange="onFileUpload(this);" name="image" accept="image/*"/>
+              <input type="file" name="link_foto" class="hidden" id="finput" onchange="onFileUpload(this);" name="image" accept="image/*"/>
               </label>
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
               <script>
@@ -62,14 +75,6 @@
                       }
                   }
               </script>
-            <button
-              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg md:text-s text-xs px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-              type="button"
-              data-modal-toggle="default-modal"
-            >
-              <img class="hidden xl:block" src="/icons/trash.svg" alt="" />
-              Remove Image
-            </button>
 
             <!-- Start Modal -->
             <div
@@ -142,8 +147,7 @@
             <!-- End Modal -->
           </div>
         </div>
-        <form class="w-full flex flex-col gap-[24px] items-start" action="<?= base_url('user/dashboard/edit/'. $session->get('user_id')) ?>" method="POST">
-        <?= csrf_field(); ?>
+        
           <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
             <h3 class="w-full text-base">Nama orang tua :</h3>
             <div class="w-full">
@@ -189,6 +193,18 @@
                 type="number"
                 name="no_whatsapp"
                 value="<?= $no_whatsapp ?>"
+              />
+            </div>
+          </div>
+          <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
+            <h3 class="w-full text-base">Password :</h3>
+            <div class="w-full">
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="namaOrangTua"
+                type="password"
+                name="password"
+                required
               />
             </div>
           </div>

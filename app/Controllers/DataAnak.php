@@ -39,48 +39,48 @@ class DataAnak extends BaseController
         // if($this->validate($rules)){
         // dd($this->request->getVar('tanggal_lahir'));
 
-            $model = new AnakModel();
-            // dd($this->request->getFile('link_foto'));
-            if($this->request->getFile('link_foto')){
-                $link_foto = $this->request->getFile('link_foto');
-                if ($link_foto->isValid() && ! $link_foto->hasMoved()) {
-                    // Get file name and extension
-                    $name = $link_foto->getName();
-                    $ext = $link_foto->getClientExtension();
-     
-                    // Get random file name
-                    $newName = $link_foto->getRandomName(); 
-     
-                    // Store file in public/uploads/ folder
-                    $link_foto->move('../public/uploads', $newName);
-     
-                    // File path to display preview
-                    // $filepath = base_url()."/uploads/".$newName;
-                }
-        
-                $data = [
-                    'id_orangtua'     => $session->get('user_id_orangtua'),
-                    'nama_anak'     => $this->request->getVar('nama_anak'),
-                    'tanggal_lahir'    => $this->request->getVar('tanggal_lahir'),
-                    'jenis_kelamin'    => $this->request->getVar('jenis_kelamin'),
-                    'status_aktif' => 1,
-                    'link_foto' =>  $newName,
-                    'link_barcode' => hash ( "sha256", uniqid().$session->get('user_id_orangtua'). $this->request->getVar('nama_anak'))
-                ];
-                $model->save($data);
-            }else{
-                $data = [
-                    'id_orangtua'     => $session->get('user_id_orangtua'),
-                    'nama_anak'     => $this->request->getVar('nama_anak'),
-                    'tanggal_lahir'    => $this->request->getVar('tanggal_lahir'),
-                    'jenis_kelamin'    => $this->request->getVar('jenis_kelamin'),
-                    'status_aktif' => 1,
-                    'link_barcode' => hash ( "sha256", uniqid().$session->get('user_id_orangtua'). $this->request->getVar('nama_anak'))
-                ];
-                $model->save($data);
+        $model = new AnakModel();
+        // dd($this->request->getFile('link_foto'));
+        if(!empty($this->request->getFile('link_foto'))){
+            $link_foto = $this->request->getFile('link_foto');
+            if ($link_foto->isValid() && ! $link_foto->hasMoved()) {
+                // Get file name and extension
+                $name = $link_foto->getName();
+                $ext = $link_foto->getClientExtension();
+    
+                // Get random file name
+                $newName = $link_foto->getRandomName(); 
+    
+                // Store file in public/uploads/ folder
+                $link_foto->move('../public/uploads', $newName);
+    
+                // File path to display preview
+                // $filepath = base_url()."/uploads/".$newName;
             }
-            
-            return redirect()->to('/user/data-anak');
+    
+            $data = [
+                'id_orangtua'     => $session->get('user_id_orangtua'),
+                'nama_anak'     => $this->request->getVar('nama_anak'),
+                'tanggal_lahir'    => $this->request->getVar('tanggal_lahir'),
+                'jenis_kelamin'    => $this->request->getVar('jenis_kelamin'),
+                'status_aktif' => 1,
+                'link_foto' =>  $newName,
+                'link_barcode' => hash ( "sha256", uniqid().$session->get('user_id_orangtua'). $this->request->getVar('nama_anak'))
+            ];
+            $model->save($data);
+        }else{
+            $data = [
+                'id_orangtua'     => $session->get('user_id_orangtua'),
+                'nama_anak'     => $this->request->getVar('nama_anak'),
+                'tanggal_lahir'    => $this->request->getVar('tanggal_lahir'),
+                'jenis_kelamin'    => $this->request->getVar('jenis_kelamin'),
+                'status_aktif' => 1,
+                'link_barcode' => hash ( "sha256", uniqid().$session->get('user_id_orangtua'). $this->request->getVar('nama_anak'))
+            ];
+            $model->save($data);
+        }
+        
+        return redirect()->to('/user/data-anak');
         // }
     }
 
@@ -94,8 +94,10 @@ class DataAnak extends BaseController
     public function update($id){
         $data = new AnakModel();
         $detailData = $data->find($id);
-        if($this->request->getFile('link_foto')){
-            unlink("../public/uploads/".$detailData['link_foto']);
+        if(!empty($this->request->getFile('link_foto'))){
+            if(!empty($detailData['link_foto'])){
+                unlink("../public/uploads/".$detailData['link_foto']);
+            }
             $link_foto = $this->request->getFile('link_foto');
             if ($link_foto->isValid() && ! $link_foto->hasMoved()) {
                 // Get file name and extension

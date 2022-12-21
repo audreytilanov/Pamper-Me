@@ -18,11 +18,19 @@
       >
         <div class="flex flex-col items-start gap-[40px]">
           <div class="xl:flex flex-row gap-[24px] items-center">
+          <?php if(empty($link_foto)){ ?>
+          <img
+            class="w-[190px] h-[190px] object-cover rounded-lg"
+            src="/images/dashboardLogo.png"
+            alt=""
+          />
+          <?php }else{ ?>
             <img
-              class="w-[190px] h-[190px] object-cover rounded-lg"
-              src="/images/dashboardLogo.png"
-              alt=""
-            />
+            class="w-[190px] h-[190px] object-cover rounded-lg"
+            src="/ortu/<?= $link_foto?>"
+            alt=""
+          />
+          <?php } ?>
             <div class="flex flex-col items-start gap-[8px]">
               <h1 class="xl:text-2xl text-xl font-semibold mt-[8px] xl:mt-[0px]"><?= $nama_orangtua; ?></h1>
               <div class="flex flex-row items-center gap-[16px]">
