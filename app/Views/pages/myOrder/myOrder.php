@@ -58,15 +58,15 @@
           >
             <div class="flex flex-row items-start gap-[24px]">
               <div class="flex flex-row items-start gap-[24px]">
-                <img
+                <!-- <img
                   class="w-[292.11px] h-[162.93px] object-cover rounded-md"
                   src="/images/keranjangProduct.png"
                   alt=""
-                />
+                /> -->
                 <div class="flex flex-col items-start gap-[16px]">
                   <div class="flex flex-col items-start gap-[16px]">
                     <h3 class="font-bold text-xl"><?= $datas['transaction_time'] ?></h3>
-                    <h3 class="font-bold text-xl">ID: <?= $datas['id_transaksi_pembayaran'] ?></h3>
+                    <h3 class="font-bold text-xl">ID: <?= $datas['order_id'] ?></h3>
                   </div>
                   <div
                     class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
@@ -133,7 +133,7 @@
                   Receipt
                 </a>
                 <?php } ?>
-                
+                <?php if($datas['status_pembayaran'] != 'settlement'){ ?>
                 <form action="<?= base_url('user/my-order/notification/'. $datas['order_id']) ?>" method="POST">
                   <button
                     type="submit"
@@ -142,6 +142,7 @@
                     Cek Status Pembayaran
                   </button>
                 </form>
+                <?php } ?>
               </div>
           <!-- <button
             class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"

@@ -90,7 +90,7 @@
     </div>
   </div>
 </div>
-<?php //if(!empty($res)){ ?>
+<?php if(!empty($res)){ ?>
       <div class="flex flex-col gap-[16px] items-center">
         <h4 class="text-2xl font-bold">Spin Hadiah</h4>
         <div class="row relative">
@@ -116,7 +116,7 @@
     </div>
   </div>
 </div>
-<?php //} ?>
+<?php } ?>
 
 <script language="JavaScript">
   $(document).ready(function(){
@@ -226,7 +226,7 @@
 
       dataDetail();
       
-      return;
+      return location.reload();
     }
     function showAlert(response){
       if(response == 0){

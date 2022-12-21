@@ -63,6 +63,7 @@
                   <thead class="bg-gray-50 w-full">
                     <tr>
                       <th class="px-4 py-2 text-xs text-gray-500">#</th>
+                      <th class="px-4 py-2 text-xs text-gray-500">Nama Anak</th>
                       <th class="px-4 py-2 text-xs text-gray-500">
                         Nama Produk
                       </th>
@@ -74,11 +75,18 @@
                   <tbody class="bg-white">
                     <?php 
                     $total = 0;
+                    $loop = 0;
                     foreach($data as $datas): 
                       $total += $datas['harga'];
+                      $loop = $loop+1;
                     ?>
                     <tr class="whitespace-nowrap">
-                      <td class="px-6 py-4 text-sm text-gray-500">1</td>
+                      <td class="px-6 py-4 text-sm text-gray-500"><?= $loop ?></td>
+                      <td class="px-6 py-4">
+                        <div class="text-sm text-gray-900">
+                          <?= $datas['nama_anak'] ?>
+                        </div>
+                      </td>
                       <td class="px-6 py-4">
                         <div class="text-sm text-gray-900">
                           <?= $datas['nama_produk'] ?>
@@ -102,7 +110,7 @@
                     <tr class="text-white bg-gray-800">
                         <th colspan="3"></th>
                         <td class="text-sm font-bold px-6 py-2"><b>Total</b></td>
-                        <td class="text-sm font-bold px-6 py-2 text-end"><b>Rp. <?= number_format($total , 0, ',', '.'); ?></b></td>
+                        <td colspan="2" class="text-sm font-bold px-6 py-2 text-end"><b>Rp. <?= number_format($total , 0, ',', '.'); ?></b></td>
                     </tr>
                     <!--end tr-->
                   </tbody>

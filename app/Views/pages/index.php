@@ -396,9 +396,11 @@
         </div>
       <?php 
       endforeach;
-      endif;
+      else:
       ?>
     </div>
+    <p class="text-center">Silahkan cari layanan terlebih dahulu pada formulir di atas</p>
+    <?php endif; ?>
   <!-- End Cards -->
   </div>
 </div>
