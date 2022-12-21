@@ -15,11 +15,19 @@
     <div class="xl:p-[40px] p-[16px] border border-zinc-900 w-full flex flex-col items-start gap-[32px] rounded-lg">
       <div class="flex flex-col items-start gap-[8px]">
         <div class="flex flex-row gap-[24px] items-center">
+        <?php if(empty($data['link_foto'])){ ?>
           <img
             class="w-[190px] h-[190px] object-cover rounded-lg"
-            src="/images/baby.jpg"
+            src="/images/dashboardLogo.png"
             alt=""
           />
+          <?php }else{ ?>
+            <img
+            class="w-[190px] h-[190px] object-cover rounded-lg"
+            src="/uploads/<?= $data['link_foto']?>"
+            alt=""
+          />
+          <?php } ?>
         </div>
         </div>
           <div class="w-full flex flex-col gap-[24px] items-start">
@@ -59,7 +67,7 @@
       
     </div>
     <div class="">
-    <h4 class="font-bold text-2xl">Penukaran Hadiah | T</h4>
+    <h4 class="font-bold text-2xl">Penukaran Hadiah</h4>
     <div class="py-4 inline-block min-w-full">
       <div class="">
         <table class="min-w-full text-center">
@@ -226,7 +234,7 @@
 
       dataDetail();
       
-      return location.reload();
+      return;
     }
     function showAlert(response){
       if(response == 0){
@@ -236,7 +244,10 @@
           type: "error",
           confirmButtonText: "OK",
           // closeOnConfirm: false
-        });
+        }).then(function(){ 
+          location.reload();
+          }
+        );
       }else{
         return swal({
           title: "Wow!!!!",
@@ -244,7 +255,10 @@
           type: "success",
           confirmButtonText: "OK",
           // closeOnConfirm: false
-        });
+        }).then(function(){ 
+          location.reload();
+          }
+        );
 
       }
 

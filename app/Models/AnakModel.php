@@ -10,6 +10,7 @@ class AnakModel extends Model{
         'id_orangtua',
         'nama_anak',
         'tanggal_lahir',
+        'link_foto',
         'jenis_kelamin',
         'status_aktif',
         'link_barcode',

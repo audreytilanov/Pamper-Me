@@ -27,7 +27,7 @@
             foreach($data as $data): ?>
             <tr class="bg-white border-b">
               <td class="xl:px-6 xl:py-4 p-2 whitespace-nowrap text-sm font-medium text-gray-900">
-                <?= $data['id_reservasi'] ?>
+                <?= $data['no_receipt'] ?>
             </td>
               <td class="text-sm text-gray-900 font-light xl:px-6 xl:py-4 p-2 whitespace-nowrap">
                 <?= $data['nama_anak'] ?>

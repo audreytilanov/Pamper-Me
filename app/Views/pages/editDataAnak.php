@@ -17,12 +17,27 @@
       >
         <div class="flex flex-col items-start gap-[8px]">
           <div class="flex flex-row gap-[24px] items-center">
+          <?php if(empty($link_foto)){ ?>
             <img
               class="w-[190px] h-[190px] object-cover rounded-lg"
-              src="/images/baby.jpg"
+              src="/images/dashboardLogo.png"
               alt=""
             />
+            <?php }else{ ?>
+              <img
+              class="w-[190px] h-[190px] object-cover rounded-lg"
+              src="/uploads/<?= $link_foto?>"
+              alt=""
+            />
+          <?php } ?>
           </div>
+          <form
+          class="w-full flex flex-col gap-[24px] items-start"
+          action="<?= base_url('user/data-anak/edit/'. $id_anak) ?>"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+        <?= csrf_field(); ?>
           <div class="flex flex-row justify-start gap-[8px]">
             <label
               class="flex flex-row gap-[4px] items-center text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-md text-sm px-[8px] py-[8px] text-center dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-800 cursor-pointer"
@@ -32,7 +47,7 @@
               <span class="xl:text-sm text-xs leading-normal text-zinc-900 font-semibold"
                 >Edit Gambar</span
               >
-              <input type="file" class="hidden" />
+              <input type="file" name="link_foto" class="hidden" />
             </label>
             <button
               class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md xl:text-sm text-xs px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
@@ -114,12 +129,7 @@
             <!-- End Modal -->
           </div>
         </div>
-        <form
-          class="w-full flex flex-col gap-[24px] items-start"
-          action="<?= base_url('user/data-anak/edit/'. $id_anak) ?>"
-          method="POST"
-        >
-        <?= csrf_field(); ?>
+        
           <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
             <h3 class="w-full text-base">Nama Anak :</h3>
             <div class="w-full">

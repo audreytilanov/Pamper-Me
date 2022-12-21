@@ -29,11 +29,19 @@
     >
       <div class="flex flex-col items-start gap-[8px]">
         <div class="flex flex-row gap-[24px] items-center">
+          <?php if(empty($data['link_foto'])){ ?>
           <img
             class="w-[190px] h-[190px] object-cover rounded-lg"
-            src="/images/baby.jpg"
+            src="/images/dashboardLogo.png"
             alt=""
           />
+          <?php }else{ ?>
+            <img
+            class="w-[190px] h-[190px] object-cover rounded-lg"
+            src="/uploads/<?= $data['link_foto']?>"
+            alt=""
+          />
+          <?php } ?>
         </div>
         <div class="flex flex-row justify-start gap-[8px]">
           <a
@@ -45,13 +53,16 @@
               >Edit Data Anak</span
             >
           </a>
-          <button
-            class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md xl:text-sm text-xs px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-            type="button"
-            data-modal-toggle="default-modal">
-            <img class="hidden xl:block" src="/icons/trash.svg" alt="" />
-            Hapus Data Anak
-          </button>
+          <form
+          action="<?= base_url('user/data-anak/delete/'. $data['id_anak']) ?>" 
+          method="POST">
+            <button
+              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md xl:text-sm text-xs px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+              type="submit">
+              <img class="hidden xl:block" src="/icons/trash.svg" alt="" />
+              Hapus Data Anak
+            </button>
+          </form>
 
           <!-- Start Modal -->
           <div
