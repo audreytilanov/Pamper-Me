@@ -126,7 +126,7 @@
     var anak = <?php echo json_encode($data['id_anak']); ?>;
     // console.log(anak);
         $.ajax({
-            url:"<?= base_url('user/poinDetail') ?>",
+            url:"<?= base_url('admin/poinDetail') ?>",
             data: {anak:anak},
             dataType: "json",
             success: function (response){
@@ -212,7 +212,7 @@
       console.log(anak);
       var status = null;
       $.ajax({
-          url: "<?= base_url('user/postSpin') ?>",
+          url: "<?= base_url('admin/postSpin') ?>",
           type: 'post',
           data: {poin:poin, anak:anak},
           dataType: 'json',
