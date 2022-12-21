@@ -49,12 +49,7 @@
             class="flex md:flex-row flex-col justify-between items-end md:items-start pb-[32px] border-b-4 w-full gap-[24px]">
             <div class="flex flex-row items-start gap-[24px] w-full md:w-max">
               <div class="flex items-center">
-                <input
-                  id="default-checkbox"
-                  type="checkbox"
-                  value=""
-                  class="accent-pink-500 w-4 h-4 text-pink-600 bg-gray-100 rounded border-gray-300 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
+                
               </div>
               <div class="flex xl:flex-row items-start gap-[24px] flex-col">
                 <img
