@@ -5,8 +5,8 @@
 <div class="px-[80px] py-[64px] flex flex-col items-start gap-[32px]">
   <!-- Start lihat antrian -->
   <div class="mt-[64px] flex flex-col items-start justify-between w-full">
-    <div class="flex flex-row items-start justify-between gap-[40px]">
-      <div class="flex flex-col gap-[40px] items-start">
+    <div class="flex flex-row items-start justify-between gap-[40px] w-full">
+      <div class="flex flex-col gap-[40px] items-start w-full">
         <div class="w-full">
           <h3 class="text-4xl font-bold">My Order</h3>
         </div>
@@ -50,8 +50,8 @@
           </div>
           </a>
         <!-- End Filter -->
-        <?php foreach($data as $datas): ?>
         <div class="flex flex-col items-start gap-[32px] w-full">
+          <?php foreach($data as $datas): ?>
           <!-- Start Cards Keranjang -->
           <div
             class="flex flex-row justify-between items-screth  pb-[32px] border-b-4 w-full "
@@ -63,13 +63,13 @@
                   src="/images/keranjangProduct.png"
                   alt=""
                 /> -->
-                <div class="flex flex-col items-start gap-[16px]">
-                  <div class="flex flex-col items-start gap-[16px]">
+                <div class="flex flex-row items-start gap-[40px]">
+                  <div class="flex flex-col items-start gap-[8px]">
                     <h3 class="font-bold text-xl"><?= $datas['transaction_time'] ?></h3>
                     <h3 class="font-bold text-xl">ID: <?= $datas['order_id'] ?></h3>
                   </div>
                   <div
-                    class="flex flex-row items-center gap-[8px] border-b-4 pb-[16px]"
+                    class="flex flex-row items-start gap-[8px]"
                   >
                     <img src="/icons/money.svg" alt="" />
                     <h3 class="font-bold text-lg text-pink-500">
@@ -77,7 +77,7 @@
                     <?= $datas['bank']?> : <?= $datas['va_number_cc'] ?>
                     </h3>
                   </div>
-                  <div class="grid grid-cols-2 gap-[10px]">
+                  <div class="flex flex-col item-start gap-[8px]">
                     <div class="flex flex-row items-center gap-[4px]">
                       <img src="/icons/checkBox.svg" alt="" />
                       <p class="text-xs">Order ID : <?= $datas['order_id'] ?></p>
@@ -223,8 +223,8 @@
             </div>
           </div>
           <!-- End Cards Keranjang -->
+          <?php endforeach; ?>
         </div>
-        <?php endforeach; ?>
       </div>
     </div>
   </div>
