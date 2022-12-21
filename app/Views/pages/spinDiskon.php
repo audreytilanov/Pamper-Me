@@ -117,6 +117,7 @@
   </div>
 </div>
 <?php } ?>
+</div>
 
 <script language="JavaScript">
   $(document).ready(function(){
