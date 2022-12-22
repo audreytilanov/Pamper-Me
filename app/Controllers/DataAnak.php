@@ -52,7 +52,7 @@ class DataAnak extends BaseController
                 $newName = $link_foto->getRandomName(); 
     
                 // Store file in public/uploads/ folder
-                $link_foto->move('../pamper/public/uploads', $newName);
+                $link_foto->move('/uploads', $newName);
     
                 // File path to display preview
                 // $filepath = base_url()."/uploads/".$newName;
