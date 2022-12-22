@@ -40,7 +40,7 @@ class DataAnak extends BaseController
         // dd($this->request->getVar('tanggal_lahir'));
 
         $model = new AnakModel();
-        // dd($this->request->getFile('link_foto'));
+        dd($this->request->getFile('link_foto'));
         if(!empty($this->request->getFile('link_foto'))){
             $link_foto = $this->request->getFile('link_foto');
             if ($link_foto->isValid() && ! $link_foto->hasMoved()) {
