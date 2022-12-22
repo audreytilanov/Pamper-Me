@@ -29,7 +29,7 @@
             <?php }else{ ?>
               <img
               class="w-[190px] h-[190px] object-cover rounded-lg"
-              src="/ortu/<?= $link_foto?>"
+              src="/images/<?= $link_foto?>"
               id="ajaxImgUpload" 
               alt="Preview Image" 
             />

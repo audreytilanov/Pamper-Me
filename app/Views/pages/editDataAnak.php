@@ -26,7 +26,7 @@
             <?php }else{ ?>
               <img
               class="w-[190px] h-[190px] object-cover rounded-lg"
-              src="/uploads/<?= $link_foto?>"
+              src="/images/<?= $link_foto?>"
               alt=""
             />
           <?php } ?>

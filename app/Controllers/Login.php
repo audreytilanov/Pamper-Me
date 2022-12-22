@@ -78,7 +78,7 @@ class Login extends BaseController
         // dd($this->request->getFile('link_foto'));
         if(!empty($this->request->getFile('link_foto'))){
             if(!empty($detailData['link_foto'])){
-                unlink("../public/ortu/".$detailData['link_foto']);
+                unlink("images/".$detailData['link_foto']);
             }
             $link_foto = $this->request->getFile('link_foto');
             if ($link_foto->isValid() && ! $link_foto->hasMoved()) {
@@ -90,7 +90,7 @@ class Login extends BaseController
                 $newName = $link_foto->getRandomName(); 
  
                 // Store file in public/uploads/ folder
-                $link_foto->move('../public/ortu', $newName);
+                $link_foto->move('images', $newName);
  
                 // File path to display preview
                 // $filepath = base_url()."/uploads/".$newName;

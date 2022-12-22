@@ -38,7 +38,7 @@
           <?php }else{ ?>
             <img
             class="w-[190px] h-[190px] object-cover rounded-lg"
-            src="/uploads/<?= $data['link_foto']?>"
+            src="/images/<?= $data['link_foto']?>"
             alt=""
           />
           <?php } ?>
