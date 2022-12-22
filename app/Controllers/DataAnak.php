@@ -99,7 +99,7 @@ class DataAnak extends BaseController
 
         if(!empty($link_foto->getName())){
             if(!empty($detailData['link_foto'])){
-                unlink("../public/uploads/".$detailData['link_foto']);
+                unlink("images/".$detailData['link_foto']);
             }
             if ($link_foto->isValid() && ! $link_foto->hasMoved()) {
                 // Get file name and extension
@@ -110,7 +110,7 @@ class DataAnak extends BaseController
                 $newName = $link_foto->getRandomName(); 
  
                 // Store file in public/uploads/ folder
-                $link_foto->move('../public/uploads', $newName);
+                $link_foto->move('images', $newName);
  
                 // File path to display preview
                 // $filepath = base_url()."/uploads/".$newName;
