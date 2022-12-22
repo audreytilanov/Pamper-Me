@@ -41,8 +41,9 @@ class DataAnak extends BaseController
 
         $model = new AnakModel();
         dd($this->request->getFile('link_foto'));
-        if(!empty($this->request->getFile('link_foto'))){
-            $link_foto = $this->request->getFile('link_foto');
+        $link_foto = $this->request->getFile('link_foto');
+
+        if(!empty($link_foto->getName())){
             if ($link_foto->isValid() && ! $link_foto->hasMoved()) {
                 // Get file name and extension
                 $name = $link_foto->getName();
@@ -94,11 +95,12 @@ class DataAnak extends BaseController
     public function update($id){
         $data = new AnakModel();
         $detailData = $data->find($id);
-        if(!empty($this->request->getFile('link_foto'))){
+        $link_foto = $this->request->getFile('link_foto');
+
+        if(!empty($link_foto->getName())){
             if(!empty($detailData['link_foto'])){
                 unlink("../public/uploads/".$detailData['link_foto']);
             }
-            $link_foto = $this->request->getFile('link_foto');
             if ($link_foto->isValid() && ! $link_foto->hasMoved()) {
                 // Get file name and extension
                 $name = $link_foto->getName();
