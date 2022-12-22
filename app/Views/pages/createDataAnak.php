@@ -41,14 +41,6 @@
               >
               <input type="file" name="link_foto" class="hidden" />
             </label>
-            <button
-              class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg xl:text-sm text-xs px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-              type="button"
-              data-modal-toggle="default-modal"
-            >
-              <img class="hidden xl:block" src="/icons/trash.svg" alt="" />
-              Remove Image
-            </button>
 
             <!-- Start Modal -->
             <div
