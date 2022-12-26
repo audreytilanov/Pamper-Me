@@ -8,7 +8,7 @@
     <div class="flex flex-row items-start justify-between gap-[40px]">
       <div class="flex flex-col gap-[40px] items-start">
         <div class="w-full">
-          <h3 class="text-4xl font-bold">Riwayat Pemesanan</h3>
+          <h3 class="text-4xl font-bold">Order history</h3>
         </div>
 
         <!-- Start Filter -->
@@ -46,7 +46,7 @@
             class="font-bold text-base text-pink-500 flex flex-row gap-[8px] items-center"
           >
             <img src="/icons/history.svg" alt="" />
-            Riwayat pemesanan
+            Order history
           </div>
         </div>
         <!-- End Filter -->

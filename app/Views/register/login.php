@@ -16,7 +16,7 @@
     <div class="pt-[32px]">
       <form method="post" action="/login/auth" class="">
       <?= csrf_field(); ?>
-        <h1 class="font-bold text-3xl">Masuk Akun Pamper Me</h1>
+        <h1 class="font-bold text-3xl">Login Pamper Me Account</h1>
         <div class="py-[32px]">
           <div class="mb-4">
             <label
@@ -53,11 +53,11 @@
               class="w-full bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
-              Masuk
+              Log In
             </button>
           </div>
           <div class="flex justify-center mt-4 text-gray-400">
-            Belum punya akun? <span> <a href="/register" class="text-blue-500 font-semibold ml-[4px]">Daftar</a> </span> 
+          Don't have an account yet? <span> <a href="/register" class="text-blue-500 font-semibold ml-[4px]">Register</a> </span> 
           </div>
         </div>
       </form>

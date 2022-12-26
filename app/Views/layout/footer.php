@@ -6,10 +6,7 @@
   <div class="flex-col flex gap-[24px] items-start">
     <a href="/"><img src="/images/footerLogo.png" alt="" /></a>
     <p class="xl:text-base text-xs text-white font-regular">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley. Lorem Ipsum is simply dummy
-      text of the printing and typesetting industry.
+    At our baby spa, we understand that taking care of a newborn can be overwhelming. That's why we offer a variety of services designed to help relax and soothe your little one. Our trained professionals are dedicated to providing a safe and calming environment for your baby. 
       <div class="flex gap-2">
         <img src="/icons/instagram.svg" alt="">
         <img src="/icons/facebook.svg" alt="">
@@ -25,19 +22,19 @@
     <h1 class="font-bold text-[24px] text-white">Information</h1>
     <div class="mt-[24px] flex flex-col gap-[16px] items-start">
       <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
-        >Buat Reservasi</a
+        >Make Reservation</a
       >
       <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
-        >Lihat Antrian</a
+        >See Queue</a
       >
       <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
-        >Data Anak</a
+        >Child Data</a
       >
       <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
         >Scan Barcode</a
       >
       <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
-        >Keranjang</a
+        >Basket</a
       >
       <a href="#our_services" class="xl:text-base text-xs text-white block font-regular"
         >My Order</a
@@ -52,9 +49,9 @@
 
   <!-- Start column 3 -->
   <div class="xl:justify-self-end">
-    <h1 class="font-bold text-[24px] text-white">Ada Pertanyaan</h1>
+    <h1 class="font-bold text-[24px] text-white">Any Question?</h1>
     <a href="/" class="border-2 border-white px-[16px] py-[6px] rounded-[8px] font-regular xl:text-base text-xs inline-block mt-[24px] text-white" >
-      Kontak kami
+      Contact Us
     </a>
   </div>
   </div>

@@ -13,7 +13,7 @@
 
         <!-- Start Filter -->
         <div
-          class="w-full p-[16px] flex flex-row items-center justify-between bg-white shadow-md rounded-md border"
+          class="w-[50%] p-[16px] flex flex-row items-center justify-between bg-white shadow-md rounded-md border"
         >
           <div>
             <!-- Start Kelamin -->
@@ -46,7 +46,7 @@
             href="<?= base_url('user/my-order/riwayat/') ?>"
             class="font-bold text-base text-pink-500 flex flex-row gap-[8px] items-center">
             <img src="/icons/history.svg" alt="" />
-            Riwayat pemesanan
+            Order history
           </div>
           </a>
         <!-- End Filter -->
@@ -139,7 +139,7 @@
                     type="submit"
                     class="flex flex-row gap-[4px] border-2 items-center border-gray-400 hover:bg-gray-400 hover:text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
                   >
-                    Cek Status Pembayaran
+                  Check Payment Status
                   </button>
                 </form>
                 <?php } ?>

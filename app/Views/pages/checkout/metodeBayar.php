@@ -11,21 +11,21 @@
       <div class="flex flex-col md:flex-row items-center gap-[4px]">
         <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
         <div class="text-pink-500 xl:ml-2 font-semibold xl:text-base text-xs text-center xl:text-left">
-          Pesan
+          Order
         </div>
       </div>
       <h2 class="border-pink-500"></h2>
       <div class="flex flex-col md:flex-row items-center gap-[4px]">
         <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
         <div class="text-pink-500 xl:ml-2 font-semibold xl:text-base text-xs text-center xl:text-left">
-          Bayar
+          Payment
         </div>
       </div>
       <h2 class="border-gray-400"></h2>
       <div class="flex flex-col md:flex-row items-center gap-[4px]">
         <img class="w-[20px] h-[20px]" src="/icons/nonCheck.png" alt="" />
         <div class="text-gray-400 xl:ml-2 font-semibold xl:text-base text-xs text-center xl:text-left">
-          Selesai
+          History
         </div>
       </div>
     </div>
@@ -34,18 +34,18 @@
     <div class="flex xl:flex-row flex-col items-start justify-between gap-[40px] mt-[32px] w-full xl:w-max">
       <div class="xl:w-[748.344px] flex flex-col items-start gap-[40px]">
         <div class="w-full">
-          <h3 class="xl:text-4xl text-2xl font-bold">Pilih Metode pembayaran</h3>
+          <h3 class="xl:text-4xl text-2xl font-bold">Select Payment method</h3>
         </div>
         <div class="flex flex-col items-start p-[32px] gap-[10px] bg-white rounded-md drop-shadow-lg">
             <div class="flex flex-col items-start pb-[24px] gap-[16px] border-b-2">
                 <h3 class="font-bold text-2xl">Virtual Account</h3>
-                <p class="text-sm xl:text-base">Anda bisa membayar dengan transfer melalui ATM, Internet Banking & Mobile Banking.</p>
+                <p class="text-sm xl:text-base">You can pay by transfer via ATM, Internet Banking and Mobile Banking.</p>
             </div>
 
             <!-- Start VA -->
             <button id="pay-button" class="w-full">
               <div class="flex xl:flex-row flex-col justify-between xl:items-center w-full pb-[8px] border-b-2 text-zinc-500 hover:text-zinc-900">
-                  <h3 class="font-bold text-sm xl:text-base">Bayar Sekarang !</h3>
+                  <h3 class="font-bold text-sm xl:text-base">pay now</h3>
                   <div class="flex flew-row items-center gap-[16px] justify-between xl:justify-start">
   
                     <!-- Start Icon bank -->
@@ -76,18 +76,18 @@
           <?php endforeach; ?>
             
           <div class="flex flex-col items-start gap-[12px] w-full">
-            <h4 class="font-bold font-bold text-xl">Detail Harga</h4>
+            <h4 class="font-bold font-bold text-xl">Detail Price</h4>
             <div class="w-full flex flex-col gap-[16px]">
             <div
                 class="flex items-center flex-row justify-between px-[16px] py-[10px] w-full bg-pink-100 border-2 border-pink-500 rounded-lg text-pink-500 font-bold text-sm"
             >
-                <p>Order Total</p>
+                <p>Total Orders</p>
                 <p>Rp. <?php echo number_format($total , 0, ',', '.'); ?></p>
             </div>
             <div
                 class="flex items-center flex-row justify-between px-[16px] py-[10px] w-full bg-pink-100 border-2 border-pink-500 rounded-lg text-pink-500 font-bold text-sm"
             >
-                <p>Diskon</p>
+                <p>Discount</p>
                 <p>Rp. <?php echo number_format($data['nominal_diskon'] , 0, ',', '.'); ?></p>
             </div>
             

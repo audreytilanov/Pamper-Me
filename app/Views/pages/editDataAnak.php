@@ -7,9 +7,9 @@
   <div class="grid xl:grid-cols-2 gap-[24px]">
     <div class="flex flex-col items-start gap-[32px]">
       <div class="flex flex-col items-start gap-[8px]">
-        <h1 class="font-bold xl:text-5xl xl:mt-[50px] mt-[40px] text-2xl">Edit Data Diri Anak</h1>
+        <h1 class="font-bold xl:text-5xl xl:mt-[50px] mt-[40px] text-2xl">Edit Child Personal Data</h1>
         <p class="text-base ml-[4px]">
-          Halaman ini dapat mengedit data diri dari anak.
+        This page can edit the child's personal data.
         </p>
       </div>
       <div
@@ -45,7 +45,7 @@
             >
               <img class="hidden xl:block" src="/icons/image.svg" alt="" />
               <span class="xl:text-sm text-xs leading-normal text-zinc-900 font-semibold"
-                >Edit Gambar</span
+                >Edit Image</span
               >
               <input type="file" name="link_foto" class="hidden" />
             </label>
@@ -122,7 +122,7 @@
         </div>
         
           <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
-            <h3 class="w-full text-base">Nama Anak :</h3>
+            <h3 class="w-full text-base">Child Name :</h3>
             <div class="w-full">
               <input
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -137,7 +137,7 @@
 
           <!-- Start Tanggal -->
           <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
-            <h1 class="w-full text-base">Tanggal Lahir :</h1>
+            <h1 class="w-full text-base">Date of birth :</h1>
             <div
               class="flex justify-start shadow appearance-none border rounded w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             >
@@ -167,7 +167,7 @@
           <!-- Start Kelamin -->
           <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
             <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
-              <h1 class="text-base w-full">Kelamin :</h1>
+              <h1 class="text-base w-full">Child's gender:</h1>
               <div class="flex justify-center w-full">
                 <div class="flex items-center relative z-[2] w-full">
                   <select
@@ -187,7 +187,7 @@
           <!-- End Kelamin -->
 
           <input
-            type="submit" value="Edit Data Anak"
+            type="submit" value="Edit Child Data"
             class="border-2 border-pink-500 bg-pink-500 px-[40px] py-[8px] rounded-[8px] font-semibold text-white text-base"
           >
           </a>

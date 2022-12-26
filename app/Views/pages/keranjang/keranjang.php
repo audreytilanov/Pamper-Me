@@ -8,13 +8,13 @@
   <div class="mt-[64px] flex flex-col items-start justify-between w-full">
     <div class="flex flex-row gap-[4px]">
     <img src="/icons/left.svg" alt="">
-  <a href="/" class="text-pink-500 font-bold">Kembali Ke Menu Pencarian</a>
+  <a href="/" class="text-pink-500 font-bold">Return to Search Menu</a>
     </div>
   
     <div class="flex xl:flex-row flex-col items-start justify-between gap-[40px] mt-[32px] w-full">
       <div class="xl:w-[80%] w-full">
         <div class="w-full">
-          <h3 class="xl:text-4xl text-2xl font-bold">List keranjang kamu</h3>
+          <h3 class="xl:text-4xl text-2xl font-bold">Your cart list</h3>
         </div>
         <div class="flex flex-col items-start gap-[32px] w-full">
           <!-- Start Select All -->
@@ -74,7 +74,7 @@
                     <div class="flex items-center gap-[8px]">
                       <img src="/icons/money.svg" alt="" />
                       <h3 class="font-bold xl:text-lg text-sm text-pink-500">
-                        Rp. <?php echo number_format($data['harga'] , 0, ',', '.'); ?> / <?php echo $data['durasi'] ?> Menit
+                        Rp. <?php echo number_format($data['harga'] , 0, ',', '.'); ?> / <?php echo $data['durasi'] ?> Minute
                       </h3>
                     </div>
                   </div>
@@ -108,7 +108,7 @@
                   type="submit"
                 >
                   <img src="/icons/trash.svg" alt="" />
-                  Hapus
+                  Remove
                 </button>
               </form>
             </div>
@@ -126,7 +126,7 @@
           <div
             class="flex flex-col items-start pb-[24px] gap-[24px] border-b-4 w-full"
           >
-            <h4 class="font-bold font-bold text-xl">Ringkasan pesanan</h4>
+            <h4 class="font-bold font-bold text-xl">Order summary</h4>
             <ul class="space-y-1 max-w-md list-disc list-inside w-full">
               <?php 
                 $total = 0;
@@ -149,7 +149,7 @@
             <div
               class="flex items-center flex-row justify-between px-[16px] py-[10px] w-full bg-pink-100 border-2 border-pink-500 rounded-lg text-pink-500 font-bold text-sm"
             >
-              <p>Order Total</p>
+              <p>Total Orders</p>
               <p>Rp. <?php echo number_format($total , 0, ',', '.'); ?></p>
             </div>
             <form action="<?= base_url('user/keranjang/checkout/'. $id_reservasi) ?>" method="POST">
