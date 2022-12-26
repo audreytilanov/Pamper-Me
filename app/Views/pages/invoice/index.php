@@ -37,24 +37,41 @@
               </div>
             </div>
             <div class="w-full h-0.5 bg-pink-500"></div>
-            <div class="flex flex-col gap-[16px] p-4">
-              <div>
-                <h6 class="font-bold">
-                  Tanggal Order :
-                  <span class="text-sm font-medium"> <?= $dataRes['tanggal'] ?></span>
-                </h6>
-                <h6 class="font-bold">
-                  Order ID : <span class="text-sm font-medium"> <?= $dataRes['order_id'] ?></span>
-                </h6>
-                <h6 class="font-bold">
-                  Receipt ID : <span class="text-sm font-medium"> <?= $dataRes['no_receipt'] ?></span>
-                </h6>
+            <div class="flex flex-row justify-between">
+              <div class="flex flex-col gap-[16px] p-4">
+                <div>
+                  <h6 class="font-bold">
+                    Tanggal Order :
+                    <span class="text-sm font-medium"> <?= $dataRes['tanggal'] ?></span>
+                  </h6>
+                  <h6 class="font-bold">
+                    Order ID : <span class="text-sm font-medium"> <?= $dataRes['order_id'] ?></span>
+                  </h6>
+                  <h6 class="font-bold">
+                    Receipt ID : <span class="text-sm font-medium"> <?= $dataRes['no_receipt'] ?></span>
+                  </h6>
+                </div>
+                <div class="w-40">
+                  <address class="text-sm">
+                    <span class="font-bold"> Ditagih ke : </span>
+                    <?= $dataOrtu['nama_orangtua'] ?>: <?= $dataOrtu['no_whatsapp'] ?><br>
+                  </address>
+                </div>
               </div>
-              <div class="w-40">
-                <address class="text-sm">
-                  <span class="font-bold"> Ditagih ke : </span>
-                  <?= $dataOrtu['nama_orangtua'] ?>: <?= $dataOrtu['no_whatsapp'] ?><br>
-                </address>
+              <div class="flex flex-col gap-[16px] p-4">
+              <a href="/"><img class="w-[140px]" src="/images/logo.png" alt=""></a>
+              <div class="flex flex-col text-sm gap-[8px]">
+                <p>baligroupbooking.com</p>
+                <p>081292191929</p>
+              </div>
+              </div>
+              <div class="p-4">
+              <button
+                    type="submit"
+                    class="flex flex-row gap-[4px] border-2 items-center border-gray-400 bg-gray-400 text-white rounded-md text-sm px-[16px] py-[8px] text-center font-bold"
+                  >
+                  Pending
+                  </button>
               </div>
             </div>
             <div class="flex justify-center p-4 w-full text-center">
