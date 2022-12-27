@@ -166,6 +166,7 @@ $routes->group('admin',['filter' => 'adminauth'], static function ($routes) {
     $routes->post('anak/tambah', 'Admin::anakTambah',['as' => 'admin.anak.tambah']);
     $routes->get('anak/edit/(:segment)', 'Admin::anakEdit/$1', ['as' => 'admin.anak.edit']);
     $routes->get('anak/hadiah/(:segment)', 'Admin::anakHadiah/$1', ['as' => 'admin.anak.hadiah']);
+    $routes->get('anak/history/(:segment)', 'Admin::anakHistory/$1', ['as' => 'admin.anak.history']);
     $routes->post('anak/hadiahTukar/(:segment)', 'Admin::anakHadiahTukar/$1', ['as' => 'admin.anak.hadiah']);
     $routes->post('anak/edit/(:segment)', 'Admin::anakUpdate/$1',['as' => 'admin.anak.update']);
 
@@ -185,6 +186,9 @@ $routes->group('admin',['filter' => 'adminauth'], static function ($routes) {
     $routes->post('produk/edit/(:segment)', 'Admin::produkUpdate/$1',['as' => 'admin.produk.update']);
 
     // reservasi
+    $routes->post('reservasi/statusTamu/(:segment)', 'AdminReservasi::statusTamu/$1',['as' => 'admin.statusTamu']);
+
+
     $routes->get('reservasi', 'AdminReservasi::reservasiIndex',['as' => 'admin.reservasi']);
     $routes->get('reservasi/detail/(:segment)', 'AdminReservasi::reservasiDetail/$1',['as' => 'admin.reservasi.detail']);
     $routes->get('reservasi/tambah', 'AdminReservasi::reservasiTambah',['as' => 'admin.reservasi.tambah']);

@@ -155,6 +155,15 @@
                     <i class="fa fa-gift"></i>
                   </a>
                   <a
+                    href="<?= base_url('admin/anak/history/'. $data['id_anak']) ?>"
+                    data-toggle="tooltip"
+                    title=""
+                    class="btn btn-link btn-primary btn-lg"
+                    data-original-title="History Penukaran"
+                  >
+                    <i class="fa fa-map"></i>
+                  </a>
+                  <a
                     href="<?= base_url('admin/anak/edit/'. $data['id_anak']) ?>"
                     data-toggle="tooltip"
                     title=""

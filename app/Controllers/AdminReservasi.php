@@ -9,20 +9,57 @@ use App\Models\JadwalProdukModel;
 use App\Models\ProdukModel;
 use App\Models\KategoriLayananModel;
 use App\Models\LayananModel;
+use App\Models\OperatorModel;
 use App\Models\OrangtuaModel;
 use App\Models\ReservasiDetailModel;
 use App\Models\ReservasiModel;
 
 class AdminReservasi extends BaseController
 {
+    public function statusTamu($id){
+        helper(['form']);
+        $session = session();
+
+        $ortuModel = new ReservasiModel();
+        $ortu = $ortuModel->find($id);
+
+        $data = new ReservasiModel();
+        date_default_timezone_set('Asia/Hong_Kong');
+        $date = date('Y/m/d H:i:s');
+        // if($this->request->getVar('status_tamu' == 'on_progress')){
+            $data->update($id, [
+                'update_by'     => $session->get('user_id_admin'),
+                'update_at'     => $date,
+                'id_pegawai'     => $this->request->getVar('id_pegawai'),
+                'status_service'     => $this->request->getVar('status_tamu'),
+            ]);
+        // }
+        // else{
+        //     $data->update($id, [
+        //         'update_by'     => $session->get('user_id_admin'),
+        //         'update_at'     => $date,
+        //         'status_service'     => $this->request->getVar('status_tamu'),
+        //     ]);
+        // }
+        
+        // dd($session);
+
+        return redirect()->to('/admin/reservasi/')->with('success', 'Data Berhasil Diperbaharui');
+    }
+
     public function reservasiIndex(){
         $model = new ReservasiModel();
-        $data = $model->findAll();
+        $data = $model->join('tb_orangtua', 'tb_orangtua.id_orangtua = tb_reservasi.id_orangtua')
+        ->findAll();
+
+        $modelOperator = new OperatorModel();
+        $dataOps = $modelOperator->findAll();
 
         $page = "reservasi";
         $res = [
             'data' => $data,
             'page' => $page,
+            'ops' => $dataOps
         ];
         // dd($res);
 

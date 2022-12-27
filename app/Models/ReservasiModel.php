@@ -23,6 +23,10 @@ class ReservasiModel extends Model{
         'va_number_cc',
         'bank',
         'metode_reservasi',
-        'no_receipt'
+        'no_receipt',
+        'update_at',
+        'update_by',
+        'id_pegawai',
+        'status_service',
     ];
 }

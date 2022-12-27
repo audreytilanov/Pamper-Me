@@ -46,28 +46,28 @@
         <table id="add-row" class="display table table-striped table-hover">
           <thead>
             <tr>
+              <th>Mama</th>
               <th>Tanggal</th>
-              <th>Metode Reservasi</th>
+              <th style="width: 30%">Status Tamu</th>
               <th>Total Biaya</th>
               <th>Metode Pembayaran</th>
               <th>Status Pembayaran</th>
               <th>Status Reservasi</th>
               <th>ID Order</th>
-              <th>VA Number</th>
               <th>Bank</th>
               <th style="width: 10%">Action</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
+              <th>Nama</th>
               <th>Tanggal</th>
-              <th>Metode Reservasi</th>
+              <th>Status Tamu</th>
               <th>Total Biaya</th>
               <th>Metode Pembayaran</th>
               <th>Status Pembayaran</th>
               <th>Status Reservasi</th>
               <th>ID Order</th>
-              <th>VA Number</th>
               <th>Bank</th>
               <th>Action</th>
             </tr>
@@ -75,14 +75,44 @@
           <tbody>
           <?php foreach($data as $data) : ?>
             <tr>
+              <td><?php echo $data['nama_orangtua'] ?></td>
               <td><?php echo $data['tanggal'] ?></td>
-              <td><?php echo $data['metode_reservasi'] ?></td>
+              <td>
+              <form action="<?= base_url('admin/reservasi/statusTamu/'. $data['id_reservasi']) ?>" method="POST">
+                    <div class="form-group">
+                        <select class="form-control" id="exampleFormControlSelect1" name="status_tamu">
+                            <option <?php if($data['status_service'] == 'booked'): ?> selected <?php endif; ?> value="booked">Booked</option>
+                            <option <?php if($data['status_service'] == 'waiting'): ?> selected <?php endif; ?> value="waiting">Waiting</option>
+                            <option <?php if($data['status_service'] == 'on_progress'): ?> selected <?php endif; ?> value="on_progress">On Progress</option>
+                            <option <?php if($data['status_service'] == 'completed'): ?> selected <?php endif; ?> value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="exampleFormControlSelect1" name="id_pegawai">
+                          <?php foreach($ops as $dataOps): ?>
+                            <option <?php if($data['id_pegawai'] == $dataOps['id_operator']): ?> selected disabled <?php endif; ?> value="<?= $dataOps['id_operator'] ?>"><?= $dataOps['nama'] ?></option>
+                          <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <?php if($data['status_service'] != 'completed'): ?>
+                    <button
+                      type="submit"
+                      data-toggle="tooltip"
+                      title=""
+                      class="btn btn-success"
+                      data-original-title="Ganti Status"
+                    >
+                      Submit
+                      <i class="fa fa-chevron-right"></i>
+                    </button>
+                    <?php endif; ?>
+                  </form>
+              </td>
               <td><?php echo $data['total_biaya'] ?></td>
               <td><?php echo $data['metode_pembayaran'] ?> Menit</td>
               <td><?php echo $data['status_pembayaran'] ?></td>
               <td><?php echo $data['status'] ?></td>
               <td><?php echo $data['order_id'] ?></td>
-              <td><?php echo $data['va_number_cc'] ?></td>
               <td><?php echo $data['bank'] ?></td>
               <td>
                 <div class="form-button-action">

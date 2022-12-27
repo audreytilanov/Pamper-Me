@@ -190,6 +190,23 @@ class Admin extends BaseController
 
         return view('pages/admin/anak/hadiah', $res);
     }
+    
+    public function anakHistory($id){
+        $model = new PenukaranHadiahModel();
+        $page = "orangtua";
+        $dataPenukaran = $model
+        ->join('tb_hadiah', 'tb_penukaran_hadiah.id_hadiah = tb_hadiah.id_hadiah', 'inner')
+        ->join('tb_anak', 'tb_penukaran_hadiah.id_anak = tb_anak.id_anak', 'inner')->where('tb_penukaran_hadiah.id_anak', $id)->findAll();
+        
+        $res = [
+            'page' => $page,
+            'data' => $dataPenukaran,
+            'id_anak' => $id,
+        ];
+        // dd($dataHadiah);
+
+        return view('pages/admin/anak/history', $res);
+    }
 
     public function anakHadiahTukar($id){
         $session = session();
