@@ -13,21 +13,21 @@
           <a
             href=""
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
-            >Buat Reservasi</a
+            >Make Reservation</a
           >
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
           href="<?= url_to('user.antrian.index') ?>"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
-            >Lihat Antrian</a
+            >See Queue</a
           >
         </li>
         <li class="mx-4 my-6 md:my-0">
           <a
             href="<?= url_to('user.anak.index') ?>"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
-            >Data Anak</a
+            >Child Data</a
           >
         </li>
         <li class="mx-4 my-6 md:my-0">
@@ -41,7 +41,7 @@
           <a
             href="<?= url_to('user.keranjang.index') ?>"
             class="text-sm hover:text-pink-500 duration-500 font-semibold"
-            >Keranjang</a
+            >Cart</a
           >
         </li>
         <li class="mx-4 my-6 md:my-0">
@@ -63,13 +63,13 @@
           href="<?= url_to('user.login') ?>"
             class="border-2 border-pink-500 px-[16px] py-[6px] rounded-[8px] font-semibold text-base"
           >
-            Masuk
+            Log In
           </a>
           <a
           href="<?= url_to('user.register') ?>"
             class="border-2 border-pink-500  bg-pink-500 px-[16px] py-[6px] rounded-[8px] font-semibold text-white ml-2 text-base"
           >
-            Daftar
+            Register
           </a>
         </div>
       </ul>

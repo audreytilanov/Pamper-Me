@@ -6,7 +6,7 @@
 <div class="xl:w-[980px] px-[25px] py-[64px] flex flex-col items-center gap-[40px] mx-auto">
   <div class="mt-[64px] flex flex-col items-start gap-[40px] w-full">
     <div class="w-full text-center">
-      <h3 class="xl:text-5xl text-2xl font-bold">Lihat Antrian</h3>
+      <h3 class="xl:text-5xl text-2xl font-bold">See Queue</h3>
     </div>
     <!-- <ul class="flex flex-start gap-[16px] w-full overflow-x-auto">
         <li class="relative">
@@ -153,7 +153,7 @@
     <!-- Start Tanggal  -->
     <form class="w-full flex flex-col gap-[24px] items-start" action="<?= base_url('user/lihat-antrian/cari') ?>" method="GET">
     <div class="flex flex-start flex-col gap-[16px]">
-      <h3 class="text-2xl font-bold">Pilih Tanggal</h3>
+      <h3 class="text-2xl font-bold">Select Date</h3>
       <div class="flex flex-row items-stretch gap-[24px]">
         <!-- Start Tanggal -->
         <div class="flex flex-row justify-center items-end gap-[40px]">
@@ -300,7 +300,7 @@
 
     <!-- Start Cabang -->
     <div class="flex items-start flex-col gap-[16px]">
-      <h3 class="xl:text-2xl font-bold text-xl">Cabang / Lokasi</h3>
+      <h3 class="xl:text-2xl font-bold text-xl">Branch / Location</h3>
 
       <ul class="flex flex-row items-start gap-[8px] flex-wrap">
       <?php foreach($cabangData as $cabang): ?>
@@ -328,7 +328,7 @@
     <!-- End Cabang -->
     <!-- Start Services -->
     <div class="flex items-start flex-col gap-[16px]">
-      <h3 class="xl:text-2xl font-bold text-xl">Layanan</h3>
+      <h3 class="xl:text-2xl font-bold text-xl">Service</h3>
 
       <ul class="flex flex-row items-start gap-[8px] flex-wrap">
       <?php foreach($data as $layanan): ?>
@@ -711,7 +711,7 @@
      <button
         class="text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm xl:px-[128px] w-full py-3 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
         type="submit">
-        Cari Data
+        Search Data
       </button>
       <!-- End Cari -->
     </div>
@@ -729,7 +729,7 @@
           <?php echo $data['jam']?> | <?php echo $data['tanggal']?>
         </h3>
         <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
-          <?php echo $data['harga']?> / <?php echo $data['durasi']; ?> Menit
+          <?php echo $data['harga']?> / <?php echo $data['durasi']; ?> Minute
         </h3>
         <form action="<?= base_url('user/lihat-antrian/tambah/') ?>" method="POST">
         <input type="hidden" value="<?php echo $data['id_jadwal_produk'] ?>" name="id_jadwal">
@@ -743,7 +743,7 @@
                 name="anak"
                 required
               >
-                <option value="" selected>Silahkan pilih Anak</option>
+                <option value="" selected>Please select Child</option>
                 <?php foreach(session()->getFlashdata('anak') as $anaks) :?>
 
                 <option value="<?php echo $anaks['id_anak']; ?>"><?php echo $anaks['nama_anak']; ?></option>
@@ -760,7 +760,7 @@
           class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
           type="submit"
         >
-          + Keranjang
+          + Cart
         </button>
         </form>
       </div>

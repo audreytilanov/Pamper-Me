@@ -11,7 +11,7 @@
         <!-- Start Alamat  -->
         <div class="flex flex-col flex start py-[32px] px-[40px] gap-[32px] bg-white shadow-lg rounded-lg border">
                 <div class="flex flex-col items-start pb-[24px] gap-[24px] border-b-2">
-                    <h4 class="text-xl font-bold">Detail Reservasi</h4>
+                    <h4 class="text-xl font-bold">Reservation Details</h4>
                     
                     <div class="flex flex-col gap-[4px] items-start">
                         <p class="">Pamper Me Bali</p>

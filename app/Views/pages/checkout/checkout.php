@@ -12,21 +12,21 @@
         <div class="flex flex-col md:flex-row items-center gap-[4px]">
           <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
           <div class="text-pink-500 xl:ml-2 font-semibold xl:text-base text-xs text-center xl:text-left">
-            Pesan
+            Order
           </div>
         </div>
         <h2 class="border-gray-400"></h2>
         <div class="flex flex-col md:flex-row items-center gap-[4px]">
           <img class="w-[20px] h-[20px]" src="/icons/nonCheck.png" alt="" />
           <div class="text-gray-400 xl:ml-2 font-semibold xl:text-base xl:text-left text-center text-xs">
-            Bayar
+            Payment
           </div>
         </div>
         <h2 class="border-gray-400"></h2>
         <div class="flex flex-col md:flex-row items-center gap-[4px]">
           <img class="w-[20px] h-[20px]" src="/icons/nonCheck.png" alt="" />
           <div class="text-gray-400 xl:ml-2 font-semibold xl:text-base xl:text-left text-center text-xs">
-            Selesai
+            Finish
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
             <div class="flex items-center">
             <div class="flex-col flex gap-[8px]">
               <h3 class="font-bold text-xl">
-                Alamat treatment
+              Treatment address
               </h3>
               <div>
                 <p>Pamper Me Bali (Renon)</p>
@@ -120,7 +120,7 @@
           <div
             class="flex flex-col items-start pb-[24px] gap-[24px] border-b-4 w-full"
           >
-            <h4 class="font-bold font-bold text-xl">Ringkasan pesanan</h4>
+            <h4 class="font-bold font-bold text-xl">Order summary</h4>
             <ul class="space-y-1 max-w-md list-disc list-inside flex flex-col gap-[8px] xl:black">
               <?php 
                 $total = 0;
@@ -142,17 +142,17 @@
           <div class="w-full flex flex-col gap-[16px]">
             <div
               class="flex items-center flex-row justify-between px-[16px] py-[10px] w-full bg-pink-100 border-2 border-pink-500 rounded-lg text-pink-500 font-bold text-sm">
-              <p>Order Total</p>
+              <p>Total Orders</p>
               <p>Rp. <?php echo number_format($total , 0, ',', '.'); ?></p>
             </div>
             <form action="<?= base_url('user/checkout/metode-bayar/') ?>" method="post">
             <div class="flex flex-col items-start gap-[8px]">
               <div class="flex flex-row items-center gap-[8px]">
                 <img src="/icons/discount.svg" alt="">
-                <p class="text-pink-500 font-bold">Kupon</p>
+                <p class="text-pink-500 font-bold">Coupon</p>
               </div>
               <div class="flex xl:flex-row xl:items-stretch gap-[8px] w-full flex-col">
-                <input type="text" name="diskon" placeholder="CONTOH: PROMO10" class="w-full border px-5 rounded-lg xl:text-base text-sm p-[8px]">
+                <input type="text" name="diskon" placeholder="Example: PROMO10" class="w-full border px-5 rounded-lg xl:text-base text-sm p-[8px]">
               </div>
             </div>
 

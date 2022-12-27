@@ -6,16 +6,16 @@
 <div class="px-[24px] xl:px-[80px] py-[64px]">
   <div class="flex flex-col items-start gap-[24px]">
     <div class="flex flex-col items-start gap-[8px]">
-      <h1 class="font-bold xl:text-5xl xl:mt-[50px] mt-[40px] text-2xl">Tambah Data Diri Anak</h1>
+      <h1 class="font-bold xl:text-5xl xl:mt-[50px] mt-[40px] text-2xl">Add Child's Personal Data</h1>
       <p class="text-base ml-[4px]">
-        Halaman ini dapat menambahkan data diri dari anak.
+      This page can add personal data from children.
       </p>
     </div>
     <a
       href="<?= url_to('user.anak.add') ?>"
       class="border-2 border-pink-500 bg-pink-500 px-[40px] py-[8px] rounded-[8px] font-semibold text-white text-base"
     >
-      + Tambah Data Anak
+    + Add Child Data
     </a>
   </div>
 
@@ -50,7 +50,7 @@
           >
             <img class="hidden xl:block" src="/icons/edit.svg" alt="" />
             <span class="xl:text-sm text-xs leading-normal text-zinc-900 font-semibold"
-              >Edit Data Anak</span
+              >Edit Child Data</span
             >
           </a>
           <form
@@ -60,7 +60,7 @@
               class="flex flex-row gap-[4px] items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-md xl:text-sm text-xs px-[8px] py-[8px] text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
               type="submit">
               <img class="hidden xl:block" src="/icons/trash.svg" alt="" />
-              Hapus Data Anak
+              Delete Child Data
             </button>
           </form>
 
@@ -140,7 +140,7 @@
         method="POST"
       >
         <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
-          <h3 class="w-full text-base">Nama anak :</h3>
+          <h3 class="w-full text-base">Child name:</h3>
           <div
             class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
@@ -150,7 +150,7 @@
 
         <!-- Start Tanggal -->
         <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
-          <h3 class="w-full text-base">Tanggal Lahir :</h3>
+          <h3 class="w-full text-base">Date of birth :</h3>
           <div
             class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
@@ -161,7 +161,7 @@
 
         <!-- Start Kelamin -->
         <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
-          <h3 class="w-full text-base">Kelamin :</h3>
+          <h3 class="w-full text-base">Child's gender :</h3>
           <div
             class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
@@ -183,12 +183,12 @@
                   href="<?= base_url('user/data-anak/scan-barcode/'. $data['link_barcode']) ?>"
                 >
                   <span class="xl:text-sm text-xs leading-normal text-zinc-900 font-bold"
-                    >Lihat QrCode</span
+                    >See QrCode</span
                   >
                 </a>
                 <?php
               }else{
-                echo "Pesan Layanan Terlebih Dahulu.";
+                echo "Order Advance Service.";
               } 
             ?>
           </div>

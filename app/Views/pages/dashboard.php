@@ -8,9 +8,9 @@
   <div class="grid xl:grid-cols-2 gap-[24px]">
     <div class="flex flex-col items-start gap-[32px]">
       <div class="flex flex-col items-start gap-[8px]">
-        <h1 class="font-bold xl:text-5xl xl:mt-[50px] mt-[40px] text-2xl">Detail Akun</h1>
+        <h1 class="font-bold xl:text-5xl xl:mt-[50px] mt-[40px] text-2xl">Account Details</h1>
         <p class="text-base ml-[4px]">
-          Di sini kamu bisa mengatur detail akunmu.
+        Here you can set your account details.
         </p>
       </div>
       <div
@@ -33,15 +33,15 @@
           <?php } ?>
             <div class="flex flex-col items-start gap-[8px]">
               <h1 class="xl:text-2xl text-xl font-semibold mt-[8px] xl:mt-[0px]"><?= $nama_orangtua; ?></h1>
-              <div class="flex flex-row items-center gap-[16px]">
+              <!-- <div class="flex flex-row items-center gap-[16px]">
                 <img class="" src="/icons/maps.svg" alt="" />
                 <p>Kab. Badung, Bali</p>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
         <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
-          <h3 class="w-full text-base">Nama orang tua :</h3>
+          <h3 class="w-full text-base">Parents' name : :</h3>
           <div
             class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
@@ -66,7 +66,7 @@
           </div>
         </div>
         <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
-          <h3 class="w-full text-base">No Whatsapp :</h3>
+          <h3 class="w-full text-base">Whatsapp number :</h3>
           <div
             class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
@@ -74,7 +74,7 @@
           </div>
         </div>
         <div class="flex xl:flex-row flex-col items-start w-full items-center gap-[8px]">
-          <h3 class="w-full text-base">Ubah password :</h3>
+          <h3 class="w-full text-base">Password :</h3>
           <div
             class="py-[10px] px-[16px] rounded bg-gray-100 w-full rounded-md font-bold text-base"
           >
@@ -85,7 +85,7 @@
           href="<?= url_to('user.dashboard.edit') ?>"
           class="border-2 border-pink-500 bg-pink-500 px-[40px] py-[8px] rounded-[8px] font-semibold text-white text-base"
         >
-          Edit Data Diri
+        Edit Personal Data
         </a>
       </div>
     </div>

@@ -25,7 +25,7 @@
                 aria-label="Default select example"
                 name="layanan"
               >
-                <option selected>Silahkan pilih layanan</option>
+                <option selected>Please select a service</option>
                 <?php foreach($data as $data) :?>
 
                 <option <?php
@@ -55,7 +55,7 @@
                 aria-label="Default select example"
                 name="cabang"
               >
-                <option selected>Silahkan pilih Cabang</option>
+                <option selected>Please select a Branch</option>
                 <?php foreach($cabangData as $data) :?>
 
                 <option <?php 
@@ -79,7 +79,7 @@
 
       <!-- Start Tanggal -->
       <div class="flex flex-col justify-between flex-start xl:h-[90px] h-[65px] w-full">
-        <h1 class="text-lg font-bold">Tanggal :</h1>
+        <h1 class="text-lg font-bold">Date :</h1>
         <div
           class="flex justify-start w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
@@ -152,7 +152,7 @@
         class="flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[64px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
         type="submit"
       >
-        Cari
+        Search
       </button>
       <?php //else:// ?>
       <!-- <button
@@ -205,7 +205,7 @@
               <h3
                 class="text-gray-900 text-base lg:text-2xl font-bold text-center"
               >
-                Silahkan Pilih Layanan
+                Please select a service
               </h3>
 
               <!-- start form  -->
@@ -221,7 +221,7 @@
                     <div class="flex flex-col flex-start gap-[8px] w-full">
                       <div class="flex justify-center w-full">
                         <div class="flex items-start flex-col w-full gap-[8px] w-full"> 
-                          <h3 class="font-bold xl:text-2xl text-base">Pilih nama anak :</h3>
+                          <h3 class="font-bold xl:text-2xl text-base">Choose a child's name:</h3>
                           <div
                             class="w-full xl:w-[400px] relative z-[2] flex items-center flex-row"
                           >
@@ -252,22 +252,18 @@
                     <!-- End Kelamin -->
                     <!-- Start Tanggal  -->
                     <div class="flex flex-col flex-start gap-[8px]">
-                      <h1 class="xl:text-xl font-bold">Tanggal :</h1>
+                      <h1 class="xl:text-xl font-bold">Date :</h1>
                       <div
                         class="flex flex-col items-center gap-[4px] px-[16px] py-[8px] bg-pink-500 text-white rounded-md"
                       >
-                        <h3
-                          class="flex flex-start flex-row px-[24px] py-[10px] bg-pink-600 font-bold rounded-md"
-                        >
                           <?php echo session()->getFlashdata('tanggal'); ?>
-                        </h3>
                       </div>
                     </div>
                     <!-- End Tanggal -->
 
                     <!-- Start Layanan  -->
                     <div class="flex flex-col flex-start gap-[8px]">
-                      <h1 class="xl:text-xl font-bold">Pilih Jadwal Jam :</h1>
+                      <h1 class="xl:text-xl font-bold">Select Schedule Hours:</h1>
                       <ul class="flex flex-row items-start gap-[8px] flex-wrap">
                       <?php 
                       if(!empty(session()->getFlashdata('modal'))):
@@ -329,7 +325,7 @@
                       class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
                       type="submit"
                     >
-                      + Keranjang
+                      + Basket
                     </button>
                     <!-- End Layanan -->
                   </div>
@@ -337,7 +333,7 @@
                   <!-- Start Cards -->
                   <div>
                     <h3 class="text-gray-900 text-base lg:text-2xl font-bold">
-                      <!-- Silahkan Pilih Layanan -->
+                      <!-- Please select a service -->
                     </h3>
                     <?php //foreach(session()->getFlashdata('jadwal') as $data) :?>
                     <div class="pt-[16px] grid grid-cols-3 gap-[24px]">
@@ -378,9 +374,9 @@
   foreach(session()->getFlashdata('group') as $data) :?>
     <div class="w-full bg-white rounded-xl shadow-lg">
       <img class="rounded-t-xl" src="<?php echo $data['link_gambar']?>" alt="" />
-      <div class="py-[16px] px-[24px]">
+      <div class="py-[16px] px-[24px] flex flex-col gap-[8px] items-start">
         <h3 class="font-bold text-sm"><?php echo $data['nama_produk'] ?></h3>
-        <h3 class="font-bold text-sm text-pink-500 mt-[24px]">
+        <h3 class="font-bold text-sm text-pink-500">
           <p><?php echo $data['deskripsi_produk'] ?></p>
           <p>Rp. <?php echo number_format($data['harga'] , 0, ',', '.'); ?> / <?php echo $data['durasi'] ?> Menit</p>
 
@@ -390,7 +386,7 @@
             type="submit"
             data-modal-toggle="default-modal<?php echo $data['id_produk'] ?>"
           >
-            Detail Produk
+            Detail Product
           </button>
           </div>
         </div>
@@ -399,7 +395,7 @@
       else:
       ?>
     </div>
-    <p class="text-center">Silahkan cari layanan terlebih dahulu pada formulir di atas</p>
+    <p class="text-center">Please search for services first on the form above</p>
     <?php endif; ?>
   <!-- End Cards -->
   </div>

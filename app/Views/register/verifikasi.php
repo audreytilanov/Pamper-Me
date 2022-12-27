@@ -12,21 +12,21 @@
         <div class="flex flex-col md:flex-row items-center gap-[4px]">
           <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
           <div class="text-pink-500 xl:ml-2 font-semibold xl:text-base text-xs text-center xl:text-left">
-            Daftar akun
+            Register
           </div>
         </div>
         <h2 class="border-gray-400"></h2>
         <div class="flex flex-col md:flex-row items-center gap-[4px]">
           <img class="w-[20px] h-[20px]" src="/icons/checklist.png" alt="" />
           <div class="text-pink-500 xl:ml-2 font-semibold xl:text-base xl:text-left text-center text-xs">
-            Verifikasi
+            Verification
           </div>
         </div>
         <h2 class="border-gray-400"></h2>
         <div class="flex flex-col md:flex-row items-center gap-[4px]">
           <img class="w-[20px] h-[20px]" src="/icons/nonCheck.png" alt="" />
           <div class="text-gray-400 xl:ml-2 font-semibold xl:text-base xl:text-left text-center text-xs">
-            Masuk Akun
+            Log In
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
         <div class="w-full flex justify-end">
           <img class="" src="/images/star.png" alt="">
         </div>
-        <h1 class="font-bold sm:text-3xl text-2xl text-center md:px-[24px] lg:px-[160px] xl:p-[0px]">Silahkan cek WhatsApp anda untuk memverifikasi akun</h1>
+        <h1 class="font-bold sm:text-3xl text-2xl text-center md:px-[24px] lg:px-[160px] xl:p-[0px]">Please check your WhatsApp to verify the account</h1>
         <img src="/images/rainbow.png" alt="">
       </form>
     </div>
