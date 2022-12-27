@@ -11,30 +11,14 @@
       <div id="invoice">
         <div class="">
           <div class="w-[720px]">
-            <div class="flex justify-between p-4 gap-[24px]">
-              <div class="flex justify-between items-center w-full">
+            <div class="flex flex-col justify-center p-4 gap-[8px] items-center">
+              <div class="flex justify-center items-center w-full">
                 <a href="/"
                   ><img class="w-[140px]" src="/images/logo.png" alt=""
                 /></a>
               </div>
-              <div class="border-l-2 border-pink-200"></div>
-              <div class="flex flex-col items-center p-2 w-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6 text-pink-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                  />
-                </svg>
-                <span class="text-sm"> www.pamperme.com </span>
-              </div>
+              <span class="text-sm"> www.pamperme.com </span>
+              <span class="text-sm"> 081219378339 </span>
             </div>
             <div class="w-full h-0.5 bg-pink-500"></div>
             <div class="flex flex-row justify-between">
@@ -57,13 +41,6 @@
                     <?= $dataOrtu['nama_orangtua'] ?>: <?= $dataOrtu['no_whatsapp'] ?><br>
                   </address>
                 </div>
-              </div>
-              <div class="flex flex-col gap-[16px] p-4">
-              <a href="/"><img class="w-[140px]" src="/images/logo.png" alt=""></a>
-              <div class="flex flex-col text-sm gap-[8px]">
-                <p>baligroupbooking.com</p>
-                <p>081292191929</p>
-              </div>
               </div>
               <div class="p-4">
               <button
