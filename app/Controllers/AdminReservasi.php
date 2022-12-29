@@ -26,14 +26,20 @@ class AdminReservasi extends BaseController
         $data = new ReservasiModel();
         date_default_timezone_set('Asia/Hong_Kong');
         $date = date('Y/m/d H:i:s');
-        // if($this->request->getVar('status_tamu' == 'on_progress')){
+        if(empty($ortu['id_pegawai'])){
             $data->update($id, [
                 'update_by'     => $session->get('user_id_admin'),
                 'update_at'     => $date,
                 'id_pegawai'     => $this->request->getVar('id_pegawai'),
                 'status_service'     => $this->request->getVar('status_tamu'),
             ]);
-        // }
+        }else{
+            $data->update($id, [
+                'update_by'     => $session->get('user_id_admin'),
+                'update_at'     => $date,
+                'status_service'     => $this->request->getVar('status_tamu'),
+            ]);
+        }
         // else{
         //     $data->update($id, [
         //         'update_by'     => $session->get('user_id_admin'),
@@ -64,6 +70,25 @@ class AdminReservasi extends BaseController
         // dd($res);
 
         return view('pages/admin/reservasi/index', $res);
+    }
+
+    public function reservasiScan($id){
+        $model = new ReservasiModel();
+        $data = $model->join('tb_orangtua', 'tb_orangtua.id_orangtua = tb_reservasi.id_orangtua')
+        ->where('id_reservasi', $id)->first();
+
+        $modelOperator = new OperatorModel();
+        $dataOps = $modelOperator->findAll();
+
+        $page = "reservasi";
+        $res = [
+            'data' => $data,
+            'page' => $page,
+            'ops' => $dataOps
+        ];
+        // dd($res);
+
+        return view('pages/admin/reservasi/scanDetail', $res);
     }
 
     public function reservasiTambah(){

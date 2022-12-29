@@ -143,6 +143,7 @@
                 </span>
                 <h4 class="text-section">Components</h4>
               </li>
+              <?php if($session->get('akses') == 1): ?>
               <li class="nav-item active submenu">
                 <a data-toggle="collapse" href="#tables">
                   <i class="fas fa-table"></i>
@@ -175,12 +176,14 @@
                   <p>Operator</p>
                 </a>
               </li>
+              <?php endif; ?>
               <li class="nav-item <?php if($page == "reservasi"){ echo "active";};?> submenu">
                 <a href="<?= url_to('admin.reservasi') ?>">
                   <i class="fas fa-book"></i>
                   <p>Reservasi</p>
                 </a>
               </li>
+              <?php if($session->get('akses') == 1): ?>
               <li class="nav-item <?php if($page == "diskon"){ echo "active";};?> submenu">
                 <a href="<?= url_to('admin.diskon') ?>">
                   <i class="fas fa-percent"></i>
@@ -205,6 +208,7 @@
                   <p>History Penukaran</p>
                 </a>
               </li>
+              <?php endif; ?>
             </ul>
           </div>
         </div>

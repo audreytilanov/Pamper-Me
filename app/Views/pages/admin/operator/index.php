@@ -93,7 +93,7 @@
                         <label for="exampleFormControlSelect1">Tipe Akses</label>
                         <select class="form-control" id="exampleFormControlSelect1" name="tipe_akses">
                             <option value="1">Admin</option>
-                            <option value="0">Pegawai</option>
+                            <option value="2">Kasir</option>
                         </select>
                     </div>
                   </div>
@@ -139,8 +139,8 @@
                 <?php 
                 if($data['tipe_akses'] == 1){
                   echo "Admin";
-                }else if($data['tipe_akses'] == 0){
-                  echo "Pegawai";
+                }else if($data['tipe_akses'] == 2){
+                  echo "Kasir";
                 };
                 ?>
               </td>

@@ -15,6 +15,7 @@ use App\Models\KategoriLayananModel;
 use App\Models\PenukaranHadiahModel;
 use App\Models\PoinDetailModel;
 use App\Models\ReservasiDetailModel;
+use App\Models\ReservasiModel;
 
 class Admin extends BaseController
 {
@@ -42,10 +43,11 @@ class Admin extends BaseController
                         'nama'       => $data['nama'],
                         'user_id_admin'       => $data['id_operator'],
                         'email'    => $data['email'],
+                        'akses'    => $data['tipe_akses'],
                         'admin_logged_in'     => TRUE
                     ];
                     $session->set($ses_data);
-                    return redirect()->to('/admin/orangtua');
+                    return redirect()->to('/admin/reservasi');
                 }else{
                     $session->setFlashdata('msg', 'Password yang dimasukkan salah!');
                     return redirect()->to('/admin/login');
@@ -451,15 +453,21 @@ class Admin extends BaseController
         $detailModel = new ReservasiDetailModel();
         $datas = $detailModel->where('qr_code', $id)->first();
         // dd($id);
+        $resModel = new ReservasiModel();
+        $dataRes = $resModel->where('id_reservasi', $datas['id_reservasi'])->first();
 
         date_default_timezone_set('Asia/Hong_Kong');
         $date = date('Y/m/d H:i:s');
 
         $detailModel->update($datas['id'], [
-            'time_scan' => $date
+            'time_scan' => $date,
         ]);
 
-        return redirect()->to('/admin/reservasi/')->with('success', 'Data Berhasil Diperbaharui');
+        $resModel->update($datas['id_reservasi'], [
+            'status_service' => 'waiting'
+        ]);
+
+        return redirect()->to('/admin/reservasi/'. $datas['id_reservasi'])->with('success', 'Data Berhasil Diperbaharui');
 
     }
 
