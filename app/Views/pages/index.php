@@ -325,7 +325,7 @@
                       class="mt-[24px] flex flex-row gap-[8px] items-center text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-semibold rounded-lg text-sm px-[24px] py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
                       type="submit"
                     >
-                      + Basket
+                      + Add To Cart
                     </button>
                     <!-- End Layanan -->
                   </div>
