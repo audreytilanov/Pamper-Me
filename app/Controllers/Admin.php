@@ -467,7 +467,7 @@ class Admin extends BaseController
             'status_service' => 'waiting'
         ]);
 
-        return redirect()->to('/admin/reservasi/'. $datas['id_reservasi'])->with('success', 'Data Berhasil Diperbaharui');
+        return redirect()->to('/admin/reservasi/scan/'. $datas['id_reservasi'])->with('success', 'Data Berhasil Diperbaharui');
 
     }
 
