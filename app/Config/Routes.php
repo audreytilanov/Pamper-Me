@@ -190,7 +190,7 @@ $routes->group('admin',['filter' => 'adminauth'], static function ($routes) {
 
 
     $routes->get('reservasi', 'AdminReservasi::reservasiIndex',['as' => 'admin.reservasi']);
-    $routes->get('reservasi/(:segment)', 'AdminReservasi::reservasiScan/$1',['as' => 'admin.reservasi.scan']);
+    $routes->get('reservasi/scan/(:segment)', 'AdminReservasi::reservasiScan/$1',['as' => 'admin.reservasi.scan']);
     $routes->get('reservasi/detail/(:segment)', 'AdminReservasi::reservasiDetail/$1',['as' => 'admin.reservasi.detail']);
     $routes->get('reservasi/tambah', 'AdminReservasi::reservasiTambah',['as' => 'admin.reservasi.tambah']);
 
