@@ -46,7 +46,7 @@
         <table id="add-row" class="display table table-striped table-hover">
           <thead>
             <tr>
-              <th>Mama</th>
+              <th>Nama</th>
               <th>Tanggal</th>
               <th style="width: 30%">Status Tamu</th>
               <th>Total Biaya</th>
