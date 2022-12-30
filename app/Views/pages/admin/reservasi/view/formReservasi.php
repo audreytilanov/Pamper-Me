@@ -12,11 +12,11 @@
             <input class="form-control" type="date" name="id_tanggal" id="id_tanggal" onChange="getJam()">
         </div>
 
-        <!-- <div class="form-group form-group-default anakShow col-md-4">
+        <div class="form-group form-group-default anakShow col-md-4">
             <label for="exampleFormControlSelect1">ID QR Code</label>
             <select class="form-control selectForm id_anak" autocomplete="off" list="anak" name="id_anak" id="anak" onChange="getLayanan()">
             </select>
-        </div> -->
+        </div>
 
         <div class="col-md-8">
             <div class="form-group form-group-default">
