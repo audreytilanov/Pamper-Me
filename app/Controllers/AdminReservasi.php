@@ -101,9 +101,16 @@ class AdminReservasi extends BaseController
         ->join('tb_orangtua', 'tb_orangtua.id_orangtua = tb_anak.id_orangtua')
         ->where('id_reservasi', null)->findAll();
 
+        $dataWaiting = $model->join('tb_jadwal_produk', 'tb_jadwal_produk.id_jadwal_produk = tb_reservasi_detail.id_jadwal_produk')
+        ->join('tb_produk', 'tb_produk.id_produk = tb_reservasi_detail.id_produk')
+        ->join('tb_anak', 'tb_reservasi_detail.id_anak = tb_anak.id_anak')
+        ->join('tb_orangtua', 'tb_orangtua.id_orangtua = tb_anak.id_orangtua')
+        ->where('id_reservasi', null)->findAll();
+
         $page = "reservasi";
         $res = [
             'data' => $data,
+            'dataWaiting' => $dataWaiting,
             'page' => $page,
         ];
 
@@ -127,6 +134,28 @@ class AdminReservasi extends BaseController
             // dd($data);
             $msg = [
                 'data' => view('pages/admin/reservasi/view/detailReservasi', $res)
+            ];
+
+            echo json_encode($msg);
+        }else{
+            exit('Data Tidak Dapat Diproses');
+        }
+    }
+
+    public function reservasiWaiting(){
+        if($this->request->isAJAX()){
+            $model = new ReservasiModel();
+            $data = $model
+            ->join('tb_orangtua', 'tb_orangtua.id_orangtua = tb_reservasi.id_orangtua')
+            ->where('status_service', 'waiting')->findAll();
+            $page = "reservasi";
+            $res = [
+                'data' => $data,
+                'page' => $page,
+            ];
+            // dd($data);
+            $msg = [
+                'data' => view('pages/admin/reservasi/view/formWaiting', $res)
             ];
 
             echo json_encode($msg);

@@ -69,17 +69,8 @@
         
         </div>
 
-        <div class="form-group form-group-default col-md-4" style="height: 200px;   overflow: auto;">
-            <div class="form-group form-group-default layananShow">
-                <label for="exampleFormControlSelect1"> <span style="font-size: 16px; font-weight: bold;">List User Waiting</span> </label>
-                <ul class="list-group">
-                    <li class="list-group-item">Item 1</li>
-                    <li class="list-group-item">Item 2</li>
-                    <li class="list-group-item">Item 3</li>
-                    <li class="list-group-item">Item 4</li>
-                    <li class="list-group-item">Item 5</li>
-                </ul>
-            </div>
+        <div class="form-group form-group-default col-md-4 viewWaiting" style="height: 200px;   overflow: auto;">
+            
         </div>
 
 
@@ -89,14 +80,33 @@
     </div>
 </form>
 <script>
+    
+    $( document ).ready(function() {
+        dataDetail();
+        dataWaiting();
+    });
     function dataDetail(){
         $.ajax({
             url:"<?= base_url('admin/reservasi/cari/ortu') ?>",
             data: "data",
             dataType: "json",
             success: function (response){
-                console.log(response.data);
+                // console.log(response.data);
                 $('.viewData').html(response.data)
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                console.log(xhr.status + "\n" + xhr.responseText + "\n" +thrownError);  
+            }
+        })
+    }
+    function dataWaiting(){
+        $.ajax({
+            url:"<?= base_url('admin/reservasi/waiting') ?>",
+            data: "data",
+            dataType: "json",
+            success: function (response){
+                console.log(response.data);
+                $('.viewWaiting').html(response.data)
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 console.log(xhr.status + "\n" + xhr.responseText + "\n" +thrownError);  
