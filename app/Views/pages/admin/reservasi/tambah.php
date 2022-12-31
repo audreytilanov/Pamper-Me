@@ -23,6 +23,15 @@
     <div class="card-body">
         <p class="card-text viewData">
         </p>
+        <div class="col-md-12">
+            <div class="form-group form-group-default produkShow">
+                <label for="exampleFormControlSelect1"><span style="font-size: 16px; font-weight: bold;">Metode Pembayaran</span></label>
+                <select class="form-control selectForm id_produk" autocomplete="off" list="produk" name="payment_method" id="payment_method">
+                    <option value="cash">Cash</option>
+                    <option value="transfer">Transfer</option>
+                </select>
+            </div>
+        </div>
         <button class="btn btn-success" id="selesaiTransaksi" onclick="selesaiTransaksi()">Transaksi Selesai</button>
         
     </div>
@@ -227,15 +236,21 @@
     }
     
     function selesaiTransaksi(){
+        var payment_method = $('#payment_method').val();
         $.ajax({
             type: "POST",
+            data: {payment_method:payment_method},
             url: "<?= base_url('admin/reservasi/selesai') ?>",
             dataType: "json",
             encode: true,
             error: function(xhr, ajaxOptions, thrownError) {
                 console.log(xhr.status + "\n" + xhr.responseText + "\n" +thrownError);  
             }
-        })
+        }).done(function (data) {
+            alert('Data Berhasil Ditambahkan');
+            // console.log(data);
+            window.location.href = "<?= base_url('admin/reservasi/') ?>";
+        });
         event.preventDefault();
         dataDetail();
     }

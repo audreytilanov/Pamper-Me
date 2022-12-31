@@ -56,7 +56,9 @@ class AdminReservasi extends BaseController
     public function reservasiIndex(){
         $model = new ReservasiModel();
         $data = $model->join('tb_orangtua', 'tb_orangtua.id_orangtua = tb_reservasi.id_orangtua')
+        ->orderBy('tb_reservasi.id_reservasi', 'DESC')
         ->findAll();
+        // dd($data);
 
         $modelOperator = new OperatorModel();
         $dataOps = $modelOperator->findAll();
@@ -261,7 +263,7 @@ class AdminReservasi extends BaseController
     }
 
     public function selesai(){
-        // if($this->request->isAJAX()){
+        if($this->request->isAJAX()){
             helper(['form']);
 
             $reservasiModel = new ReservasiModel();
@@ -291,6 +293,7 @@ class AdminReservasi extends BaseController
                 'transaction_time' => $date,
                 'metode_reservasi' => "offline",
                 'no_receipt' => $random,
+                'metode_pembayaran' => $this->request->getVar('payment_method'),
             ];
             $reservasiModel->save($data);
 
@@ -300,9 +303,9 @@ class AdminReservasi extends BaseController
             $detailModel->update();
 
             echo json_encode($data);
-        // }else{
+        }else{
             exit('Data Tidak Dapat Diproses');
-        // }
+        }
     }
 
     public function reservasiDetail($id){

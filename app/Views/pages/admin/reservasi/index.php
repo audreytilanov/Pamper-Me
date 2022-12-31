@@ -46,6 +46,7 @@
         <table id="add-row" class="display table table-striped table-hover">
           <thead>
             <tr>
+              <th>No</th>
               <th>Nama</th>
               <th>Tanggal</th>
               <th style="width: 30%">Status Tamu</th>
@@ -60,6 +61,7 @@
           </thead>
           <tfoot>
             <tr>
+              <th>No</th>
               <th>Nama</th>
               <th>Tanggal</th>
               <th>Status Tamu</th>
@@ -73,8 +75,13 @@
             </tr>
           </tfoot>
           <tbody>
-          <?php foreach($data as $data) : ?>
+          <?php
+          $index = 0;
+          foreach($data as $data) : 
+          $index = $index+1;
+          ?>
             <tr>
+              <td><?php echo $index ?></td>
               <td><?php echo $data['nama_orangtua'] ?></td>
               <td><?php echo $data['tanggal'] ?></td>
               <td>
@@ -109,7 +116,7 @@
                   </form>
               </td>
               <td><?php echo $data['total_biaya'] ?></td>
-              <td><?php echo $data['metode_pembayaran'] ?> Menit</td>
+              <td><?php echo $data['metode_pembayaran'] ?><br><?php echo $data['metode_reservasi'] ?></td>
               <td><?php echo $data['status_pembayaran'] ?></td>
               <td><?php echo $data['status'] ?></td>
               <td><?php echo $data['order_id'] ?></td>
