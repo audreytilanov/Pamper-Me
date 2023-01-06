@@ -7,10 +7,18 @@
     <div class="card-body">
         <div class="form-row">
 
-        <div class="form-group form-group-default tanggalShow col-md-8">
+        <div class="form-group form-group-default tanggalShow col-md-4">
             <label for="exampleFormControlSelect1" class="font-weight-bold">Tanggal</label>
             <input class="form-control" type="date" name="id_tanggal" id="id_tanggal" onChange="getJam()">
         </div>
+
+        <div class="form-group form-group-default Lokasi col-md-4">
+            
+            <label for="exampleFormControlSelect1">Lokasi</label>
+            <select class="form-control selectForm id_lokasi" autocomplete="off" list="lokasi" name="id_lokasi" id="lokasi" onChange="getKategori()">
+            </select>
+        </div>
+        
 
         <div class="form-group form-group-default anakShow col-md-4">
             
@@ -47,17 +55,20 @@
     
 
         <div class="col-md-4">
+
+            <div class="form-group form-group-default layananShow">
+                <label for="exampleFormControlSelect1" >Kategori Anak</label>
+                <select class="form-control selectForm id_kategori" autocomplete="off" list="kategori" name="id_kategori" id="kategori" onChange="getProduk()">
+                </select>
+            </div>
+
             <div class="form-group form-group-default produkShow">
                 <label for="exampleFormControlSelect1">Produk</label>
                 <select class="form-control selectForm id_produk" autocomplete="off" list="produk" name="id_produk" id="produk" onChange="getTanggal()">
                 </select>
             </div>
     
-            <div class="form-group form-group-default layananShow">
-                <label for="exampleFormControlSelect1" >Kategori Anak</label>
-                <select class="form-control selectForm id_kategori" autocomplete="off" list="kategori" name="id_kategori" id="kategori" onChange="getProduk()">
-                </select>
-            </div>
+
             <div class="form-group form-group-default jamShow">
                 <label for="exampleFormControlSelect1">Jam Reservasi</label>
                 <select class="form-control selectForm id_jam" autocomplete="off" list="jam" name="id_jam" id="jam" onChange="">
