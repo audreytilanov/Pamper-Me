@@ -19,7 +19,7 @@
             <label for="exampleFormControlSelect1">Cabang</label>
             <select class="form-control selectForm id_cabang" autocomplete="off" list="cabang" name="id_cabang" id="cabang" onChange="getProduk()">
                 <option value="">Pilih Data Cabang</option>
-                <option value="1">Gianyar</option>
+                <option value="1">Renon</option>
                 <option value="2">Jimbaran</option>
                 <option value="3">Gianyar</option>
             </select>
