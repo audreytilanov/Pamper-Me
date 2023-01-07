@@ -198,6 +198,7 @@ $routes->group('admin',['filter' => 'adminauth'], static function ($routes) {
     $routes->get('reservasi/cari/ortu', 'AdminReservasi::reservasiCariOrtu',['as' => 'admin.reservasi.cariOrtu']);
     $routes->get('reservasi/waiting', 'AdminReservasi::reservasiWaiting',['as' => 'admin.reservasi.waiting']);
     $routes->get('reservasi/cari/ortuInput', 'AdminReservasi::reservasiOrtuInput',['as' => 'admin.reservasi.ortuInput']);
+    $routes->get('reservasi/cari/cabangInput', 'AdminReservasi::reservasiCabangInput',['as' => 'admin.reservasi.cabangInput']);
     
     $routes->post('reservasi/cari/anakInput', 'AdminReservasi::reservasiAnakInput',['as' => 'admin.reservasi.anakInput']);
     $routes->post('reservasi/cari/layananInput', 'AdminReservasi::reservasiLayananInput',['as' => 'admin.reservasi.layananInput']);

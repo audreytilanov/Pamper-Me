@@ -63,6 +63,8 @@ class AdminReservasi extends BaseController
         $modelOperator = new OperatorModel();
         $dataOps = $modelOperator->findAll();
 
+
+
         $page = "reservasi";
         $res = [
             'data' => $data,
@@ -106,6 +108,7 @@ class AdminReservasi extends BaseController
         ->join('tb_anak', 'tb_reservasi_detail.id_anak = tb_anak.id_anak')
         ->join('tb_orangtua', 'tb_orangtua.id_orangtua = tb_anak.id_orangtua')
         ->where('id_reservasi', null)->findAll();
+
 
         $page = "reservasi";
         $res = [
@@ -169,9 +172,13 @@ class AdminReservasi extends BaseController
             $model = new OrangtuaModel();
             $data = $model->findAll();
 
+            $cabangModel = new CabangModel();
+            $cabang = $cabangModel->findAll();
+
             $page = "reservasi";
             $res = [
                 'data' => $data,
+                'cabang' => $cabang,
                 'page' => $page,
             ];
 
@@ -184,6 +191,28 @@ class AdminReservasi extends BaseController
             exit('Data Tidak Dapat Diproses');
         }
     }
+
+    // public function reservasiCabangInput(){
+    //     if($this->request->isAJAX()){
+            
+    //         $cabangModel = new CabangModel();
+    //         $cabang = $cabangModel->findAll();
+
+    //         $page = "reservasi";
+    //         $res = [
+    //             'data' => $cabang,
+    //             'page' => $page,
+    //         ];
+
+    //         $msg = [
+    //             'data' => view('pages/admin/reservasi/view/formReservasi', $res)
+    //         ];
+
+    //         echo json_encode($msg);
+    //     }else{
+    //         exit('Data Tidak Dapat Diproses');
+    //     }
+    // }
 
     public function reservasiAnakInput(){
         if($this->request->isAJAX()){
@@ -223,8 +252,9 @@ class AdminReservasi extends BaseController
     public function reservasiProdukInput(){
         if($this->request->isAJAX()){
             $kategori = $this->request->getVar('kategori');
+            $cabang = $this->request->getVar('cabang');
             $model = new ProdukModel();
-            $data = $model->where('id_kategori_layanan', $kategori)->findAll();
+            $data = $model->where('id_kategori_layanan', $kategori)->where('id_cabang', $cabang)->findAll();
 
             echo json_encode($data);
         }else{

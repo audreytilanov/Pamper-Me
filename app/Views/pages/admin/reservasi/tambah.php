@@ -40,6 +40,9 @@
 <!-- End Tambah Services -->
 
 <script>
+    $( document ).ready(function() {
+        getJam();
+    });
     function dataDetail(){
         $.ajax({
             url:"<?= base_url('admin/reservasi/cari/ortu') ?>",
@@ -61,7 +64,22 @@
             data: "data",
             dataType: "json",
             success: function (response){
+                console.log(response.data);
                 $('.formReservasi').html(response.data)
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                console.log(xhr.status + "\n" + xhr.responseText + "\n" +thrownError);  
+            }
+        })
+    }
+
+    function inputCabang(){
+        $.ajax({
+            url:"<?= base_url('admin/reservasi/cari/cabangInput') ?>",
+            data: "data",
+            dataType: "json",
+            success: function (response){
+                console.log(response)
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 console.log(xhr.status + "\n" + xhr.responseText + "\n" +thrownError);  
@@ -141,10 +159,11 @@
 
     function getProduk(){
         var kategori = $('.id_kategori').val();
+        var cabang = $('.id_cabang').val();
         $.ajax({
             url: "<?= base_url('admin/reservasi/cari/produkInput') ?>",
             type: 'post',
-            data: {kategori:kategori},
+            data: {kategori:kategori, cabang:cabang},
             dataType: 'json',
             success:function(response){
                 $('.produkShow').css('display', 'block')

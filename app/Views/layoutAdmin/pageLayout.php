@@ -42,6 +42,7 @@
         // In your Javascript (external .js resource or <script> tag)
       $(document).ready(function() {
           dataDetail();
+          // inputCabang();
           inputOrangtua();
           $('#id_tanggal').val(new Date().toDateInputValue());
       });

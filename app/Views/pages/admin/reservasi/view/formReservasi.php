@@ -6,10 +6,23 @@
     </script>
     <div class="card-body">
         <div class="form-row">
-
-        <div class="form-group form-group-default tanggalShow col-md-8">
+        <?php
+        date_default_timezone_set('Australia/Melbourne');
+        ?>
+        <div class="form-group form-group-default tanggalShow col-md-4">
             <label for="exampleFormControlSelect1" class="font-weight-bold">Tanggal</label>
-            <input class="form-control" type="date" name="id_tanggal" id="id_tanggal" onChange="getJam()">
+            <input class="form-control" type="date" name="id_tanggal" id="id_tanggal" value="<?php echo date('Y-m-d'); ?>" onChange="getJam()">
+        </div>
+
+        <div class="form-group form-group-default col-md-4">
+            
+            <label for="exampleFormControlSelect1">Cabang</label>
+            <select class="form-control selectForm id_cabang" autocomplete="off" list="cabang" name="id_cabang" id="cabang" onChange="getProduk()">
+                <option value="">Pilih Data Cabang</option>
+                <option value="1">Gianyar</option>
+                <option value="2">Jimbaran</option>
+                <option value="3">Gianyar</option>
+            </select>
         </div>
 
         <div class="form-group form-group-default anakShow col-md-4">
@@ -47,17 +60,17 @@
     
 
         <div class="col-md-4">
-            <div class="form-group form-group-default produkShow">
-                <label for="exampleFormControlSelect1">Produk</label>
-                <select class="form-control selectForm id_produk" autocomplete="off" list="produk" name="id_produk" id="produk" onChange="getTanggal()">
-                </select>
-            </div>
-    
             <div class="form-group form-group-default layananShow">
                 <label for="exampleFormControlSelect1" >Kategori Anak</label>
                 <select class="form-control selectForm id_kategori" autocomplete="off" list="kategori" name="id_kategori" id="kategori" onChange="getProduk()">
                 </select>
             </div>
+            <div class="form-group form-group-default produkShow">
+                <label for="exampleFormControlSelect1">Produk</label>
+                <select class="form-control selectForm id_produk" autocomplete="off" list="produk" name="id_produk" id="produk" onChange="getJam()">
+                </select>
+            </div>
+    
             <div class="form-group form-group-default jamShow">
                 <label for="exampleFormControlSelect1">Jam Reservasi</label>
                 <select class="form-control selectForm id_jam" autocomplete="off" list="jam" name="id_jam" id="jam" onChange="">
