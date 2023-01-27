@@ -36,7 +36,7 @@
             <div class="form-group form-group-default">
                 <label for="exampleFormControlSelect1">Cari Orangtua</label>
                 <select class="form-control selectForm id_orangtua" name="id_orangtua" id="id_orangtua" onChange="getAnak()">
-                    <option value="">Pilih Data Orangtua</option>
+                    <option value="">Pilih Data Orangstua</option>
                     <?php foreach($data as $datas) : ?>
                     <option value="<?= $datas['id_orangtua'] ?>"><?= $datas['nama_orangtua'] ?></option>
                     <?php endforeach; ?>

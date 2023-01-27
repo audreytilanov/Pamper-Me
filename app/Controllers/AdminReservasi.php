@@ -172,13 +172,9 @@ class AdminReservasi extends BaseController
             $model = new OrangtuaModel();
             $data = $model->findAll();
 
-            $cabangModel = new CabangModel();
-            $cabang = $cabangModel->findAll();
-
             $page = "reservasi";
             $res = [
                 'data' => $data,
-                'cabang' => $cabang,
                 'page' => $page,
             ];
 
