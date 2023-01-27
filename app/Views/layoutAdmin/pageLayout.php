@@ -64,15 +64,11 @@
       <!--
 				Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
 		-->
-      <div class="main-header" data-background-color="purple">
+      <div class="main-header" style="background-color:#ffffff;filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));">
         <!-- Logo Header -->
         <div class="logo-header">
           <a href="../index.html" class="logo">
-            <img
-              src="/img/logoazzara.svg"
-              alt="navbar brand"
-              class="navbar-brand"
-            />
+          <img class="" src="/images/logo.png" alt="" style="width: 120px;;">
           </a>
           <button
             class="navbar-toggler sidenav-toggler ml-auto"
