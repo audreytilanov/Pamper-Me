@@ -459,12 +459,21 @@ class Admin extends BaseController
         date_default_timezone_set('Asia/Hong_Kong');
         $date = date('Y/m/d H:i:s');
 
+        if($datas['time_scan'] == null){
+            $updateStatusTamu = $resModel->where('id_reservasi',$datas['id_reservasi'])->first();
+            $resModel->update($datas['id_reservasi'], [
+                'status_service' => 'on_progress',
+            ]);
+    
+        }else{
+            $updateStatusTamu = $resModel->where('id_reservasi',$datas['id_reservasi'])->first();
+            $resModel->update($datas['id_reservasi'], [
+                'status_service' => 'complete',
+            ]);
+        }
+
         $detailModel->update($datas['id'], [
             'time_scan' => $date,
-        ]);
-
-        $resModel->update($datas['id_reservasi'], [
-            'status_service' => 'waiting'
         ]);
 
         return redirect()->to('/admin/reservasi/scan/'. $datas['id_reservasi'])->with('success', 'Data Berhasil Diperbaharui');

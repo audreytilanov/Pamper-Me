@@ -254,6 +254,14 @@ $routes->group('admin',['filter' => 'adminauth'], static function ($routes) {
 
     $routes->get('logout', 'Admin::logout',['as' => 'admin.logout']);
 
+
+    // Laporan
+    $routes->get('laporan/history', 'AdminReservasi::laporanReservasi',['as' => 'admin.laporan.history']);
+
+    // $routes->get('data-anak/scan-barcode/(:segment)', 'ScanBarcode::anak/$1');
+
+    $routes->get('scan-barcode/(:segment)', 'ScanBarcode::index/$1');
+
 });
 
 

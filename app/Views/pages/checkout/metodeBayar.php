@@ -81,7 +81,7 @@
             <div
                 class="flex items-center flex-row justify-between px-[16px] py-[10px] w-full bg-pink-100 border-2 border-pink-500 rounded-lg text-pink-500 font-bold text-sm"
             >
-                <p>Total Orders</p>
+                <p>Total Orderss</p>
                 <p>Rp. <?php echo number_format($total , 0, ',', '.'); ?></p>
             </div>
             <div
@@ -137,8 +137,8 @@
           document.getElementById("va_number_cc").value = dataObj.masked_card;
           document.getElementById("bank").value = dataObj.bank;
         }else{
-          document.getElementById("va_number_cc").value = dataObj[0].va_number;
-          document.getElementById("bank").value = dataObj[0].bank;
+          // document.getElementById("va_number_cc").value = dataObj[0].va_number;
+          // document.getElementById("bank").value = dataObj[0].bank;
         }
         document.getElementById("formPayment").submit();
       },
@@ -154,7 +154,7 @@
         document.getElementById("order_id").value = dataObj.order_id;
         document.getElementById("pdf_url").value = dataObj.pdf_url;
         document.getElementById("transaction_time").value = dataObj.transaction_time;
-        console.log(dataObj.va_numbers[0].va_number);
+        // console.log(dataObj.va_numbers[0].va_number);
         if(dataObj.payment_type == "credit_card"){
           document.getElementById("va_number_cc").value = dataObj.masked_card;
           document.getElementById("bank").value = dataObj.bank;

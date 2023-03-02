@@ -179,7 +179,7 @@ class Checkout extends BaseController
             'order_id'    => $this->request->getVar('order_id'),
             'pdf_url'    => $this->request->getVar('pdf_url'),
             'transaction_time'    => $this->request->getVar('transaction_time'),
-            'va_number_cc'    => $this->request->getVar('va_number_cc'),
+            'va_number_cc'    => $this->request->getVar('va_number_cc') ?? 0,
             'bank'    => $this->request->getVar('bank'),
             'no_receipt'    => $random,
         ]);

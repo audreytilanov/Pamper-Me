@@ -57,11 +57,11 @@ class ScanBarcode extends BaseController
             'data' => $data,
         ];
 
-        if($data['time_scan'] == null){
+        // if($data['time_scan'] == null || $){
             return view('pages/qrcode/scanBarcode', $res);
-        }else{
-            return redirect()->to('/user/my-order');
-        }
+        // }else{
+        //     return redirect()->to('/user/my-order');
+        // }
 
 
     }

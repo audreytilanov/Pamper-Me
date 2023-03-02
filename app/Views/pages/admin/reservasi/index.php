@@ -49,12 +49,12 @@
               <th>No</th>
               <th>Nama</th>
               <th>Tanggal</th>
-              <th style="width: 30%">Status Tamu</th>
-              <th>Total Biaya</th>
+              <th>Status Tamu</th>
+              <th style="width: 20%">Total Biaya</th>
               <th>Metode Pembayaran</th>
               <th>Status Pembayaran</th>
               <th>Status Reservasi</th>
-              <th>ID Order</th>
+              <!-- <th>ID Order</th> -->
               <th>Bank</th>
               <th style="width: 10%">Action</th>
             </tr>
@@ -69,7 +69,7 @@
               <th>Metode Pembayaran</th>
               <th>Status Pembayaran</th>
               <th>Status Reservasi</th>
-              <th>ID Order</th>
+              <!-- <th>ID Order</th> -->
               <th>Bank</th>
               <th>Action</th>
             </tr>
@@ -84,42 +84,13 @@
               <td><?php echo $index ?></td>
               <td><?php echo $data['nama_orangtua'] ?></td>
               <td><?php echo $data['tanggal'] ?></td>
-              <td>
-              <form action="<?= base_url('admin/reservasi/statusTamu/'. $data['id_reservasi']) ?>" method="POST">
-                    <div class="form-group">
-                        <select class="form-control" id="exampleFormControlSelect1" name="status_tamu">
-                            <option <?php if($data['status_service'] == 'booked'): ?> selected <?php endif; ?> value="booked">Booked</option>
-                            <option <?php if($data['status_service'] == 'waiting'): ?> selected <?php endif; ?> value="waiting">Waiting</option>
-                            <option <?php if($data['status_service'] == 'on_progress'): ?> selected <?php endif; ?> value="on_progress">On Progress</option>
-                            <option <?php if($data['status_service'] == 'completed'): ?> selected <?php endif; ?> value="completed">Completed</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <select <?php if(!empty($data['id_pegawai'])): ?> disabled <?php endif; ?> class="form-control" id="exampleFormControlSelect1" name="id_pegawai">
-                          <?php foreach($ops as $dataOps): ?>
-                            <option <?php if($data['id_pegawai'] == $dataOps['id_operator']): ?> selected disabled <?php endif; ?> value="<?= $dataOps['id_operator'] ?>"><?= $dataOps['nama'] ?></option>
-                          <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <?php if($data['status_service'] != 'completed'): ?>
-                    <button
-                      type="submit"
-                      data-toggle="tooltip"
-                      title=""
-                      class="btn btn-success"
-                      data-original-title="Ganti Status"
-                    >
-                      Submit
-                      <i class="fa fa-chevron-right"></i>
-                    </button>
-                    <?php endif; ?>
-                  </form>
-              </td>
-              <td><?php echo $data['total_biaya'] ?></td>
+              <td><?php echo $data['status_service'] ?></td>
+              <td>Rp. <?php echo number_format($data['total_biaya'] , 0, ',', '.'); ?></td>
+              
               <td><?php echo $data['metode_pembayaran'] ?><br><?php echo $data['metode_reservasi'] ?></td>
               <td><?php echo $data['status_pembayaran'] ?></td>
               <td><?php echo $data['status'] ?></td>
-              <td><?php echo $data['order_id'] ?></td>
+              <!-- <td><?php //echo $data['order_id'] ?></td> -->
               <td><?php echo $data['bank'] ?></td>
               <td>
                 <div class="form-button-action">
@@ -141,6 +112,7 @@
                   >
                     <i class="fa fa-times"></i>
                   </button> -->
+                  
                   <a
                     href="<?= base_url('admin/my-order/invoice/'. $data['id_reservasi']) ?>"
                     data-toggle="tooltip"
@@ -149,6 +121,15 @@
                     data-original-title="Cetak Receipt"
                   >
                   <i class="fa fa-print"></i>
+                  </a>
+                  <a
+                    href="<?= base_url('admin/scan-barcode/'. $data['qr_code']) ?>"
+                    data-toggle="tooltip"
+                    title=""
+                    class="btn btn-link btn-primary btn-lg"
+                    data-original-title="Qr Code"
+                  >
+                  <i class="fa fa-info"></i>
                   </a>
                 </div>
               </td>

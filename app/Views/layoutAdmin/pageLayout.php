@@ -36,7 +36,12 @@
     <link rel="stylesheet" href="/css/demo.css" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/2.3.4/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.3.1/css/dataTables.dateTime.min.css">
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
 
     <script>
         // In your Javascript (external .js resource or <script> tag)
@@ -205,6 +210,22 @@
                   <p>History Penukaran</p>
                 </a>
               </li>
+              <li class="nav-item active submenu">
+                <a data-toggle="collapse" href="#tables">
+                  <i class="fas fa-table"></i>
+                  <p>Laporan</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse show" id="tables">
+                  <ul class="nav nav-collapse">
+                    <li <?php if($page == "history"){ echo "class='active'";};?>>
+                      <a href="<?= url_to('admin.laporan.history') ?>">
+                        <span class="sub-item">Laporan Keuangan Reservasi</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
               <?php endif; ?>
             </ul>
           </div>
@@ -235,12 +256,39 @@
     <script src="<?php echo base_url('js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')?>"></script>
     <!-- Datatables -->
     <script src="<?php echo base_url('js/plugin/datatables/datatables.min.js')?>"></script>
+    <!-- <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script> -->
     <!-- Azzara JS -->
     <script src="<?php echo base_url('js/ready.min.js')?>"></script>
     <!-- Azzara DEMO methods, don't include it in your project! -->
     <script src="<?php echo base_url('js/setting-demo.js')?>"></script>
     <script>
+      
+  var minDate, maxDate;
+  
+  // Custom filtering function which will search data in column four between two values
+ 
       $(document).ready(function () {
+        var table = $('#example').DataTable( {
+              dom: 'Bfrtip',
+              buttons: [
+                  'copy', 'csv', 'excel', 'pdf', 'print'
+              ]
+          } );
+          // Create date inputs
+          minDate = new DateTime($('#min'), {
+              format: 'MMMM Do YYYY'
+          });
+          maxDate = new DateTime($('#max'), {
+              format: 'MMMM Do YYYY'
+          });
+        
+          // DataTables initialisation
+          
+        
+          // Refilter the table
+          $('#min, #max').on('change', function () {
+              table.draw();
+          });
         $("#basic-datatables").DataTable({});
 
         $("#multi-filter-select").DataTable({
@@ -274,10 +322,31 @@
               });
           },
         });
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min = minDate.val();
+                var max = maxDate.val();
+                var date = new Date( data[4] );
+          
+                if (
+                    ( min === null && max === null ) ||
+                    ( min === null && date <= max ) ||
+                    ( min <= date   && max === null ) ||
+                    ( min <= date   && date <= max )
+                ) {
+                    return true;
+                }
+                return false;
+            }
+        );
 
         // Add Row
         $("#add-row").DataTable({
           pageLength: 5,
+          dom: 'Bfrtip',
+              buttons: [
+                  'copy', 'csv', 'excel', 'pdf', 'print'
+              ]
         });
 
         var action =
@@ -294,7 +363,57 @@
             ]);
           $("#addRowModal").modal("hide");
         });
+
+        $("#add-row2").DataTable({
+          pageLength: 5,
+          dom: 'Bfrtip',
+              buttons: [
+                  'copy', 'csv', 'excel', 'pdf', 'print'
+              ]
+        });
+
+        var action =
+          '<td> <div class="form-button-action"> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
+
+        $("#addRowButton").click(function () {
+          $("#add-row2")
+            .dataTable()
+            .fnAddData([
+              $("#addName").val(),
+              $("#addPosition").val(),
+              $("#addOffice").val(),
+              action,
+            ]);
+          $("#addRowModal2").modal("hide");
+        });
+
+        $("#add-row3").DataTable({
+          pageLength: 5,
+          dom: 'Bfrtip',
+              buttons: [
+                  'copy', 'csv', 'excel', 'pdf', 'print'
+              ]
+        });
+
+        var action =
+          '<td> <div class="form-button-action"> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
+
+        $("#addRowButton").click(function () {
+          $("#add-row3")
+            .dataTable()
+            .fnAddData([
+              $("#addName").val(),
+              $("#addPosition").val(),
+              $("#addOffice").val(),
+              action,
+            ]);
+          $("#addRowModal3").modal("hide");
+        });
       });
+
+      
     </script>
+    <script>
+</script>
   </body>
 </html>

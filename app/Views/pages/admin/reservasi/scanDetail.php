@@ -45,37 +45,7 @@
             <tr>
               <td><?php echo $data['nama_orangtua'] ?></td>
               <td><?php echo $data['tanggal'] ?></td>
-              <td>
-              <form action="<?= base_url('admin/reservasi/statusTamu/'. $data['id_reservasi']) ?>" method="POST">
-                    <div class="form-group">
-                        <select class="form-control" id="exampleFormControlSelect1" name="status_tamu">
-                            <option <?php if($data['status_service'] == 'booked'): ?> selected <?php endif; ?> value="booked">Booked</option>
-                            <option <?php if($data['status_service'] == 'waiting'): ?> selected <?php endif; ?> value="waiting">Waiting</option>
-                            <option <?php if($data['status_service'] == 'on_progress'): ?> selected <?php endif; ?> value="on_progress">On Progress</option>
-                            <option <?php if($data['status_service'] == 'completed'): ?> selected <?php endif; ?> value="completed">Completed</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <select <?php if(!empty($data['id_pegawai'])): ?> disabled <?php endif; ?> class="form-control" id="exampleFormControlSelect1" name="id_pegawai">
-                          <?php foreach($ops as $dataOps): ?>
-                            <option <?php if($data['id_pegawai'] == $dataOps['id_operator']): ?> selected disabled <?php endif; ?> value="<?= $dataOps['id_operator'] ?>"><?= $dataOps['nama'] ?></option>
-                          <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <?php if($data['status_service'] != 'completed'): ?>
-                    <button
-                      type="submit"
-                      data-toggle="tooltip"
-                      title=""
-                      class="btn btn-success"
-                      data-original-title="Ganti Status"
-                    >
-                      Submit
-                      <i class="fa fa-chevron-right"></i>
-                    </button>
-                    <?php endif; ?>
-                  </form>
-              </td>
+              <td><?php echo $data['status_service'] ?></td>
               <td><?php echo $data['total_biaya'] ?></td>
               <td><?php echo $data['metode_pembayaran'] ?> Menit</td>
               <td><?php echo $data['status_pembayaran'] ?></td>
