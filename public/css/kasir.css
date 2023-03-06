@@ -1,0 +1,43 @@
+#profile-details {
+  display: none;
+}
+
+/* Menambahkan animasi */
+#profile-details.show {
+  animation: fadeIn 0.5s ease;
+  display: block;
+}
+
+#spa-content.show {
+  animation: fadeIn 0.5s ease;
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #ec4899;
+  color: white;
+  border-color: #ec4899;
+}

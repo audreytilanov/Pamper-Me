@@ -133,6 +133,9 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 // // keranjang
 // $routes->get('/keranjang', 'Keranjang::index');
 
+// kasir
+$routes->get('/kasir', 'Kasir::index');
+
 // // lihat antrian
 // $routes->get('/lihat-antrian', 'LihatAntrian::index');
 
